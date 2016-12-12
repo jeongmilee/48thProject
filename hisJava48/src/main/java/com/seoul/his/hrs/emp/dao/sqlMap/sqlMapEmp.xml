@@ -115,7 +115,7 @@
 		from hm_emp
 		<where>
             RET_DATE is null
-        
+
 		<if test="empNo != null">
 			AND emp_no like
 			'%'||#{empNo}||'%'
@@ -519,8 +519,8 @@
         DEPT_NM = #{appmtDeptNm}   <!-- 부서명 -->
         WHERE
         EMP_NO =#{empNo}
-    
-    
+
+
     </update>
 
 </mapper>
