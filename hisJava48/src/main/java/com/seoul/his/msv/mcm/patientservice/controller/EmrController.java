@@ -34,7 +34,7 @@ public class EmrController {
 	@Autowired
 	PatientServiceServiceFacade patientserviceServiceFacade;
 
-    // 약물유해반응 조회
+    // Emr 조회
     @RequestMapping("msv/mcm/patientservice/findEmrList.do")
     public void findEmrList(HttpServletRequest request, HttpServletResponse response) throws Exception {
         PlatformData inData = (PlatformData) request.getAttribute("inData");

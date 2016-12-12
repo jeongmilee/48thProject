@@ -1388,7 +1388,6 @@
         	var doctNo=this.patInfoDiv.doctNoEd.value;
         	var doctDept=this.patInfoDiv.doctDeptEd.value;
         	var inOut=this.patInfoDiv.inoutRadio.text;
-        	alert("dd");
         	var argument = 'patNo='+patNo+' trmtDate='+trmtDate+' doctNo='+doctNo+' doctDept='+doctDept+' inOut='+inOut; 
         	var serviceRow = this.dsService.findRow("serviceID", "findEmrList");
         	

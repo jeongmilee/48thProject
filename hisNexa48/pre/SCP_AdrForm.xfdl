@@ -7,11 +7,11 @@
         <Div id="adrDiv" taborder="2" left="1.92%" top="66" width="381" height="104" style="background:#eceff1ff;border:1 solid #808080ff ;font:9 돋움;">
           <Layouts>
             <Layout>
-              <Static id="subCodeStc02" taborder="20" text="작성자" onclick="subCodeStc_onclick" left="2.9%" top="13" right="74.41%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
-              <Static id="subCodeStc00" taborder="21" text="작성일" onclick="subCodeStc_onclick" left="3.17%" top="59" right="74.41%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
-              <Calendar id="writeDateCal" taborder="22" dateformat="yyyy-MM-dd" left="29.02%" top="59" right="30.08%" height="31" style="font:9 돋움;"/>
-              <Edit id="trmtDeptEd" taborder="23" enable="false" left="66.23%" top="13" width="115" height="30" class="AreaEdt" style="font:9 돋움;"/>
-              <Edit id="trmtDoctEd" taborder="24" enable="false" left="29.02%" top="12" width="94" height="30" class="AreaEdt" style="font:9 돋움;"/>
+              <Static id="subCodeStc02" taborder="20" text="작성자" onclick="subCodeStc_onclick" left="2.9%" top="17" right="74.41%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+              <Static id="subCodeStc00" taborder="21" text="작성일" onclick="subCodeStc_onclick" left="3.17%" top="57" right="74.41%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+              <Calendar id="writeDateCal" taborder="22" dateformat="yyyy-MM-dd" left="28.23%" top="57" right="30.87%" height="31" style="font:9 돋움;"/>
+              <Edit id="doctNmEd" taborder="23" enable="false" left="67.02%" top="18" width="115" height="30" class="AreaEdt" style="font:9 돋움;"/>
+              <Edit id="doctNoEd" taborder="24" enable="false" left="28.23%" top="17" width="100" height="30" class="AreaEdt" style="font:9 돋움;"/>
               <Button id="DelBtn10" taborder="25" onclick="DelBtn_onclick" cssclass="DelBtn" left="212" top="11" width="32" height="32" style="background:@gradation URL('img::miniSearchBtn.png') stretch;border:1 none #999999ff ;font:9 돋움;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
             </Layout>
           </Layouts>
@@ -31,11 +31,11 @@
                 <Row size="24"/>
               </Rows>
               <Band id="head">
-                <Cell text="adrNo"/>
-                <Cell col="1" text="patNo"/>
-                <Cell col="2" text="prescNo"/>
-                <Cell col="3" text="writeDate"/>
-                <Cell col="4" text="drugNm"/>
+                <Cell style="background:#eceff1ff;" text="adrNo"/>
+                <Cell col="1" style="background:#eceff1ff;" text="patNo"/>
+                <Cell col="2" style="background:#eceff1ff;" text="prescNo"/>
+                <Cell col="3" style="background:#eceff1ff;" text="writeDate"/>
+                <Cell col="4" style="background:#eceff1ff;" text="drugNm"/>
               </Band>
               <Band id="body">
                 <Cell text="bind:adrNo"/>
@@ -47,15 +47,13 @@
             </Format>
           </Formats>
         </Grid>
-        <Button id="batchBtn" taborder="6" left="200" top="188" width="110" height="32" style="background:@gradation URL('img::batchBtn.png') stretch;border:1 none #999999ff ;font:9 돋움;cursor:hand;gradation:none 0,0 white 100,100 black;" class="" onclick="batchBtn_onclick"/>
-        <Button id="DelBtn26" taborder="7" onclick="DelBtn_onclick" cssclass="DelBtn" left="315" top="188" width="90" height="32" style="background:@gradation URL('img::receiptBtn.png') stretch;border:1 none #999999ff ;font:9 돋움;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
         <Div id="writerDiv" taborder="9" left="33.92%" top="149" width="805" height="45" style="background:whitesmoke;border:1 solid #808080ff ;font:9 돋움;">
           <Layouts>
             <Layout>
               <Static id="subCodeStc02" taborder="0" text="작성일" onclick="subCodeStc_onclick" left="0.62%" top="7" right="88.04%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Static id="subCodeStc00" taborder="1" text="작성자" onclick="subCodeStc_onclick" left="27.02%" top="7" right="61.64%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Static id="subCodeStc01" taborder="2" text="자격" onclick="subCodeStc_onclick" left="65.5%" top="7" right="23.16%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
-              <Calendar id="writeDateCal" taborder="3" autoskip="true" left="12.7%" top="7" right="74.22%" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd" value="null"/>
+              <Calendar id="writeDateCal" taborder="3" autoskip="true" left="12.7%" top="7" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd" value="null" width="110"/>
               <Edit id="writerNoEdit" taborder="4" left="38.98%" top="7" right="49.81%" height="30" style="font:9 돋움;"/>
               <Edit id="writerNmEdit" taborder="5" left="50.93%" top="7" right="35.74%" height="30" style="font:9 돋움;"/>
               <Radio id="writerJobRadio" taborder="6" columncount="3" index="-1" codecolumn="codecolumn" datacolumn="datacolumn" left="78.33%" top="10" right="0.75%" height="25" onitemclick="adrDiv01_inoutRadio_onitemclick" style="font:9 돋움;align:center middle;" value="doctor">
@@ -156,15 +154,15 @@
               <Static id="subCodeStc04" taborder="4" text="용량" onclick="subCodeStc_onclick" left="73.85%" top="41" right="14.69%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Static id="subCodeStc05" taborder="5" text="투약기간" onclick="subCodeStc_onclick" left="0.62%" top="41" right="88.04%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Static id="subCodeStc06" taborder="6" text="투약목적" onclick="subCodeStc_onclick" left="0.62%" top="77" right="88.17%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
-              <Calendar id="Calendar01" taborder="7" autoskip="true" left="12.7%" top="41" right="74.22%" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd" value="null"/>
-              <Calendar id="Calendar00" taborder="8" autoskip="true" left="28.77%" top="41" right="58.16%" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd"/>
+              <Calendar id="Calendar01" taborder="7" autoskip="true" left="12.7%" top="41" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd" value="null" width="110"/>
+              <Calendar id="Calendar00" taborder="8" autoskip="true" left="29.51%" top="41" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd" width="110"/>
               <Edit id="drugNoEdit" taborder="9" left="12.7%" top="5" right="74.22%" height="30" style="font:9 돋움;"/>
               <Edit id="drugNmEdit" taborder="10" left="39.23%" top="5" right="28.27%" height="30" style="font:9 돋움;"/>
               <Edit id="manifactureEdit" taborder="11" left="85.93%" top="5" right="0.75%" height="30" style="font:9 돋움;"/>
               <Edit id="Edit03" taborder="12" left="58.41%" top="41" right="28.27%" height="30" style="font:9 돋움;"/>
               <Edit id="Edit04" taborder="13" left="85.93%" top="41" right="0.75%" height="30" style="font:9 돋움;"/>
               <Edit id="Edit05" taborder="14" left="12.7%" top="77" right="0.75%" height="30" style="font:9 돋움;"/>
-              <Static id="Static00" taborder="15" text="~" left="26.65%" top="41" right="71.36%" height="30" style="font:9 돋움;"/>
+              <Static id="Static00" taborder="15" text="~" left="27.4%" top="41" right="70.61%" height="30" style="font:9 돋움;"/>
             </Layout>
           </Layouts>
         </Div>
@@ -174,9 +172,9 @@
               <Static id="subCodeStc02" taborder="0" text="발현기간" onclick="subCodeStc_onclick" left="30.14%" top="5" right="58.53%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Static id="subCodeStc00" taborder="1" text="투약 후 발현시기" onclick="subCodeStc_onclick" left="0.62%" top="41" right="84.93%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Static id="subCodeStc01" taborder="2" text="발현인지일" onclick="subCodeStc_onclick" left="0.62%" top="5" right="88.04%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
-              <Calendar id="Calendar01" taborder="3" autoskip="true" left="12.58%" top="5" right="74.35%" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd"/>
-              <Calendar id="Calendar00" taborder="4" autoskip="true" left="42.22%" top="5" right="44.71%" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd"/>
-              <Calendar id="Calendar02" taborder="5" autoskip="true" left="58.16%" top="5" right="28.77%" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd"/>
+              <Calendar id="Calendar01" taborder="3" autoskip="true" left="12.58%" top="5" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd" width="110"/>
+              <Calendar id="Calendar00" taborder="4" autoskip="true" left="42.22%" top="5" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd" width="110"/>
+              <Calendar id="Calendar02" taborder="5" autoskip="true" left="58.9%" top="5" height="30" style="padding:0 0 0 0;font:9 돋움;" dateformat="yyyy-MM-dd" width="110"/>
               <Radio id="inoutRadio" taborder="6" columncount="3" index="0" codecolumn="codecolumn" datacolumn="datacolumn" left="23.16%" top="44" right="51.31%" height="25" onitemclick="adrDiv05_inoutRadio_onitemclick" style="font:9 돋움;">
                 <Dataset id="innerdataset">
                   <ColumnInfo>
@@ -200,7 +198,7 @@
                 </Dataset>
               </Radio>
               <Edit id="Edit03" taborder="7" left="15.94%" top="41" right="78.46%" height="30" style="font:9 돋움;"/>
-              <Static id="Static00" taborder="8" text="~" left="56.16%" top="5" right="41.47%" height="30" style="font:9 돋움;"/>
+              <Static id="Static00" taborder="8" text="~" left="56.91%" top="5" right="40.72%" height="30" style="font:9 돋움;"/>
             </Layout>
           </Layouts>
         </Div>
@@ -252,12 +250,13 @@
           </Layouts>
         </Div>
         <Static id="Static00" taborder="16" text="약물유해반응" left="1.84%" top="7" right="85.76%" height="41" style="color:#6c6c6cff;bordertype:normal 0 0 ;align:middle;font:antialias 16 arial;"/>
-        <Button id="searchAdrBtn" taborder="17" text="조회" onclick="adrDiv_searchAdrBtn_onclick" cssclass="btn_WF_Search" left="298" top="130" width="58" height="23" style="background:#455a64ff;bordertype:normal 3 3 ;font:9 Gulim;"/>
-        <Button id="addBtn" taborder="18" text="추가" onclick="addBtn_onclick" cssclass="btn_WF_CRUD" left="27" top="195" width="45" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;"/>
-        <Button id="delBtn" taborder="19" text="삭제" cssclass="btn_WF_CRUD" left="80" top="195" width="45" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;" onclick="delBtn_onclick"/>
-        <Button id="Button06" taborder="20" cssclass="btn_WF_SearchSmall" left="234" top="78" width="30" height="30"/>
+        <Button id="searchAdrBtn" taborder="17" text="조회" onclick="adrDiv_searchAdrBtn_onclick" cssclass="btn_WF_Search" left="294" top="128" width="58" height="23" style="background:#455a64ff;bordertype:normal 3 3 ;font:9 Gulim;"/>
+        <Button id="addBtn" taborder="18" text="추가" onclick="addBtn_onclick" cssclass="btn_WF_CRUD" left="219" top="199" width="62" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;"/>
+        <Button id="delBtn" taborder="19" text="삭제" cssclass="btn_WF_CRUD" left="281" top="199" width="62" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;" onclick="delBtn_onclick"/>
+        <Button id="findWriterBtn" taborder="20" cssclass="btn_WF_SearchSmall" left="239" top="85" width="30" height="30" onclick="findWriterBtn_onclick"/>
         <Button id="Button00" taborder="21" cssclass="btn_WF_SearchSmall" left="642" top="72" width="30" height="30"/>
         <Button id="Button01" taborder="22" cssclass="btn_WF_SearchSmall" left="876" top="443" width="30" height="30"/>
+        <Button id="batchBtn" taborder="23" text="저장" cssclass="btn_WF_CRUD" left="343" top="199" width="62" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;" onclick="batchBtn_onclick"/>
       </Layout>
     </Layouts>
     <Bind>
@@ -446,6 +445,25 @@ this.patCallback = function(svcID, errorCode, errorMsg)
 	this.patDiv.patNmEdit.set_value(this.dsPat.getColumn(0, "patNm"));
 	this.patDiv.patAgeEdit.set_value(this.dsPat.getColumn(0, "age"));
 	this.patDiv.patGenderCombo.set_value(this.dsPat.getColumn(0, "gender"));
-}]]></Script>
+}
+
+this.findWriterBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+		return application.open(
+			"CM_DoctPopupForm",
+			"com::CM_DoctPopupForm.xfdl",
+			this.parent,
+			{},
+			"showtitlebar=true showstatusbar=false",
+			110, 110,
+			this
+	);
+}
+
+this.setDoct = function(arrRtn){ 
+	this.adrDiv.doctNoEd.set_value(arrRtn[0]);
+	this.adrDiv.doctNmEd.set_value(arrRtn[1]);                
+}
+]]></Script>
   </Form>
 </FDL>

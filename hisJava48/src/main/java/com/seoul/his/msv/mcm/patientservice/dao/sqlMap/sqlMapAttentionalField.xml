@@ -21,6 +21,16 @@
 
  	</select>
 
+
+
+
+
+
+
+
+
+
+
  	<update id="insertAttentionalField" parameterType="AttentionalFieldBean">
             INSERT INTO MB_ATTENTIONAL_FIELD (
                 ATTENTIONAL_FIELD_SEQ

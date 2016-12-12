@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.nexacro.xapi.data.PlatformData;
 import com.seoul.his.common.util.DataSetBeanMapper;
 import com.seoul.his.msv.mcm.patientservice.service.PatientServiceServiceFacade;
-import com.seoul.his.msv.mcm.patientservice.to.AttentionalFieldBean;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalPatientBean;
 
 /**
@@ -44,20 +43,11 @@ public class AttentionalPatientController {
 		dataSetBeanMapper.beansToDataset(outData, attentionalPatientList, AttentionalPatientBean.class);
 	}
 
-	@RequestMapping("msv/mcm/patientservice/findAttentionalFieldList.do")
-	public void findAttentionalFieldList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping("msv/mcm/patientservice/batchAttentionalPatientProcess.do")
+	public void batchAttentionalPatientProcess(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		PlatformData inData = (PlatformData) request.getAttribute("inData");
-		PlatformData outData = (PlatformData) request.getAttribute("outData");
-		Map<String, String> argsMap = dataSetBeanMapper.variablesToMap(inData);
-		List<AttentionalFieldBean> attentionalFieldList = patientserviceServiceFacade.findAttentionalFieldList(argsMap);
-		dataSetBeanMapper.beansToDataset(outData, attentionalFieldList, AttentionalFieldBean.class);
-	}
-
-	@RequestMapping("msv/mcm/patientservice/batchAttentionalFieldProcess.do")
-	public void batchAttentionalFieldProcess(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		PlatformData inData = (PlatformData) request.getAttribute("inData");
-		List<AttentionalFieldBean> attentionalFieldList = dataSetBeanMapper.datasetToBeans(inData, AttentionalFieldBean.class);
-		patientserviceServiceFacade.batchAttentionalFieldProcess(attentionalFieldList);
+		List<AttentionalPatientBean> attentionalPatientList = dataSetBeanMapper.datasetToBeans(inData, AttentionalPatientBean.class);
+		patientserviceServiceFacade.batchAttentionalPatientProcess(attentionalPatientList);
 	}
 
 	@RequestMapping("msv/mcm/patientservice/registerAttentionalPatient.do")

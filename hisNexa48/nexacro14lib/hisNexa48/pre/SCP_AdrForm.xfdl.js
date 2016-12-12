@@ -56,7 +56,7 @@
             obj.style.set_border("1 solid #808080ff");
             obj.style.set_font("9 돋움");
             this.addChild(obj.name, obj);
-            obj = new Static("subCodeStc02", "absolute", "2.9%", "13", null, "30", "74.41%", null, this.adrDiv);
+            obj = new Static("subCodeStc02", "absolute", "2.9%", "17", null, "30", "74.41%", null, this.adrDiv);
             obj.set_taborder("20");
             obj.set_text("작성자");
             obj.style.set_background("#b0bec5ff");
@@ -65,7 +65,7 @@
             obj.style.set_font("9 돋움");
             obj.getSetter("class").set("AreaStc");
             this.adrDiv.addChild(obj.name, obj);
-            obj = new Static("subCodeStc00", "absolute", "3.17%", "59", null, "30", "74.41%", null, this.adrDiv);
+            obj = new Static("subCodeStc00", "absolute", "3.17%", "57", null, "30", "74.41%", null, this.adrDiv);
             obj.set_taborder("21");
             obj.set_text("작성일");
             obj.style.set_background("#b0bec5ff");
@@ -74,18 +74,18 @@
             obj.style.set_font("9 돋움");
             obj.getSetter("class").set("AreaStc");
             this.adrDiv.addChild(obj.name, obj);
-            obj = new Calendar("writeDateCal", "absolute", "29.02%", "59", null, "31", "30.08%", null, this.adrDiv);
+            obj = new Calendar("writeDateCal", "absolute", "28.23%", "57", null, "31", "30.87%", null, this.adrDiv);
             this.adrDiv.addChild(obj.name, obj);
             obj.set_taborder("22");
             obj.set_dateformat("yyyy-MM-dd");
             obj.style.set_font("9 돋움");
-            obj = new Edit("trmtDeptEd", "absolute", "66.23%", "13", "115", "30", null, null, this.adrDiv);
+            obj = new Edit("doctNmEd", "absolute", "67.02%", "18", "115", "30", null, null, this.adrDiv);
             obj.set_taborder("23");
             obj.set_enable("false");
             obj.getSetter("class").set("AreaEdt");
             obj.style.set_font("9 돋움");
             this.adrDiv.addChild(obj.name, obj);
-            obj = new Edit("trmtDoctEd", "absolute", "29.02%", "12", "94", "30", null, null, this.adrDiv);
+            obj = new Edit("doctNoEd", "absolute", "28.23%", "17", "100", "30", null, null, this.adrDiv);
             obj.set_taborder("24");
             obj.set_enable("false");
             obj.getSetter("class").set("AreaEdt");
@@ -107,28 +107,7 @@
             obj.set_binddataset("dsAdr");
             obj.set_autofittype("col");
             obj.style.set_font("9 돋움");
-            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"adrNo\"/><Cell col=\"1\" text=\"patNo\"/><Cell col=\"2\" text=\"prescNo\"/><Cell col=\"3\" text=\"writeDate\"/><Cell col=\"4\" text=\"drugNm\"/></Band><Band id=\"body\"><Cell text=\"bind:adrNo\"/><Cell col=\"1\" edittype=\"text\" text=\"bind:patNo\"/><Cell col=\"2\" edittype=\"text\" text=\"bind:prescNo\"/><Cell col=\"3\" edittype=\"text\" text=\"bind:writeDate\"/><Cell col=\"4\" edittype=\"text\" text=\"bind:drugNm\"/></Band></Format></Formats>");
-            this.addChild(obj.name, obj);
-
-            obj = new Button("batchBtn", "absolute", "200", "188", "110", "32", null, null, this);
-            obj.set_taborder("6");
-            obj.style.set_background("@gradation URL('img::batchBtn.png') stretch");
-            obj.style.set_border("1 none #999999ff");
-            obj.style.set_font("9 돋움");
-            obj.style.set_cursor("hand");
-            obj.style.set_gradation("none 0,0 white 100,100 black");
-            obj.getSetter("class").set("");
-            this.addChild(obj.name, obj);
-
-            obj = new Button("DelBtn26", "absolute", "315", "188", "90", "32", null, null, this);
-            obj.set_taborder("7");
-            obj.set_cssclass("DelBtn");
-            obj.style.set_background("@gradation URL('img::receiptBtn.png') stretch");
-            obj.style.set_border("1 none #999999ff");
-            obj.style.set_font("9 돋움");
-            obj.style.set_cursor("hand");
-            obj.style.set_gradation("none 0,0 white 100,100 black");
-            obj.getSetter("class").set("DelBtn");
+            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell style=\"background:#eceff1ff;\" text=\"adrNo\"/><Cell col=\"1\" style=\"background:#eceff1ff;\" text=\"patNo\"/><Cell col=\"2\" style=\"background:#eceff1ff;\" text=\"prescNo\"/><Cell col=\"3\" style=\"background:#eceff1ff;\" text=\"writeDate\"/><Cell col=\"4\" style=\"background:#eceff1ff;\" text=\"drugNm\"/></Band><Band id=\"body\"><Cell text=\"bind:adrNo\"/><Cell col=\"1\" edittype=\"text\" text=\"bind:patNo\"/><Cell col=\"2\" edittype=\"text\" text=\"bind:prescNo\"/><Cell col=\"3\" edittype=\"text\" text=\"bind:writeDate\"/><Cell col=\"4\" edittype=\"text\" text=\"bind:drugNm\"/></Band></Format></Formats>");
             this.addChild(obj.name, obj);
 
             obj = new Div("writerDiv", "absolute", "33.92%", "149", "805", "45", null, null, this);
@@ -164,7 +143,7 @@
             obj.style.set_font("9 돋움");
             obj.getSetter("class").set("AreaStc");
             this.writerDiv.addChild(obj.name, obj);
-            obj = new Calendar("writeDateCal", "absolute", "12.7%", "7", null, "30", "74.22%", null, this.writerDiv);
+            obj = new Calendar("writeDateCal", "absolute", "12.7%", "7", "110", "30", null, null, this.writerDiv);
             this.writerDiv.addChild(obj.name, obj);
             obj.set_taborder("3");
             obj.set_autoskip("true");
@@ -349,7 +328,7 @@
             obj.style.set_font("9 돋움");
             obj.getSetter("class").set("AreaStc");
             this.drugDiv.addChild(obj.name, obj);
-            obj = new Calendar("Calendar01", "absolute", "12.7%", "41", null, "30", "74.22%", null, this.drugDiv);
+            obj = new Calendar("Calendar01", "absolute", "12.7%", "41", "110", "30", null, null, this.drugDiv);
             this.drugDiv.addChild(obj.name, obj);
             obj.set_taborder("7");
             obj.set_autoskip("true");
@@ -357,7 +336,7 @@
             obj.style.set_font("9 돋움");
             obj.set_dateformat("yyyy-MM-dd");
             obj.set_value("null");
-            obj = new Calendar("Calendar00", "absolute", "28.77%", "41", null, "30", "58.16%", null, this.drugDiv);
+            obj = new Calendar("Calendar00", "absolute", "29.51%", "41", "110", "30", null, null, this.drugDiv);
             this.drugDiv.addChild(obj.name, obj);
             obj.set_taborder("8");
             obj.set_autoskip("true");
@@ -388,7 +367,7 @@
             obj.set_taborder("14");
             obj.style.set_font("9 돋움");
             this.drugDiv.addChild(obj.name, obj);
-            obj = new Static("Static00", "absolute", "26.65%", "41", null, "30", "71.36%", null, this.drugDiv);
+            obj = new Static("Static00", "absolute", "27.4%", "41", null, "30", "70.61%", null, this.drugDiv);
             obj.set_taborder("15");
             obj.set_text("~");
             obj.style.set_font("9 돋움");
@@ -427,21 +406,21 @@
             obj.style.set_font("9 돋움");
             obj.getSetter("class").set("AreaStc");
             this.revealDiv.addChild(obj.name, obj);
-            obj = new Calendar("Calendar01", "absolute", "12.58%", "5", null, "30", "74.35%", null, this.revealDiv);
+            obj = new Calendar("Calendar01", "absolute", "12.58%", "5", "110", "30", null, null, this.revealDiv);
             this.revealDiv.addChild(obj.name, obj);
             obj.set_taborder("3");
             obj.set_autoskip("true");
             obj.style.set_padding("0 0 0 0");
             obj.style.set_font("9 돋움");
             obj.set_dateformat("yyyy-MM-dd");
-            obj = new Calendar("Calendar00", "absolute", "42.22%", "5", null, "30", "44.71%", null, this.revealDiv);
+            obj = new Calendar("Calendar00", "absolute", "42.22%", "5", "110", "30", null, null, this.revealDiv);
             this.revealDiv.addChild(obj.name, obj);
             obj.set_taborder("4");
             obj.set_autoskip("true");
             obj.style.set_padding("0 0 0 0");
             obj.style.set_font("9 돋움");
             obj.set_dateformat("yyyy-MM-dd");
-            obj = new Calendar("Calendar02", "absolute", "58.16%", "5", null, "30", "28.77%", null, this.revealDiv);
+            obj = new Calendar("Calendar02", "absolute", "58.9%", "5", "110", "30", null, null, this.revealDiv);
             this.revealDiv.addChild(obj.name, obj);
             obj.set_taborder("5");
             obj.set_autoskip("true");
@@ -463,7 +442,7 @@
             obj.set_taborder("7");
             obj.style.set_font("9 돋움");
             this.revealDiv.addChild(obj.name, obj);
-            obj = new Static("Static00", "absolute", "56.16%", "5", null, "30", "41.47%", null, this.revealDiv);
+            obj = new Static("Static00", "absolute", "56.91%", "5", null, "30", "40.72%", null, this.revealDiv);
             obj.set_taborder("8");
             obj.set_text("~");
             obj.style.set_font("9 돋움");
@@ -614,7 +593,7 @@
             obj.style.set_font("antialias 16 arial");
             this.addChild(obj.name, obj);
 
-            obj = new Button("searchAdrBtn", "absolute", "298", "130", "58", "23", null, null, this);
+            obj = new Button("searchAdrBtn", "absolute", "294", "128", "58", "23", null, null, this);
             obj.set_taborder("17");
             obj.set_text("조회");
             obj.set_cssclass("btn_WF_Search");
@@ -623,7 +602,7 @@
             obj.style.set_font("9 Gulim");
             this.addChild(obj.name, obj);
 
-            obj = new Button("addBtn", "absolute", "27", "195", "45", "25", null, null, this);
+            obj = new Button("addBtn", "absolute", "219", "199", "62", "25", null, null, this);
             obj.set_taborder("18");
             obj.set_text("추가");
             obj.set_cssclass("btn_WF_CRUD");
@@ -632,7 +611,7 @@
             obj.style.set_bordertype("normal 3 3");
             this.addChild(obj.name, obj);
 
-            obj = new Button("delBtn", "absolute", "80", "195", "45", "25", null, null, this);
+            obj = new Button("delBtn", "absolute", "281", "199", "62", "25", null, null, this);
             obj.set_taborder("19");
             obj.set_text("삭제");
             obj.set_cssclass("btn_WF_CRUD");
@@ -641,7 +620,7 @@
             obj.style.set_bordertype("normal 3 3");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button06", "absolute", "234", "78", "30", "30", null, null, this);
+            obj = new Button("findWriterBtn", "absolute", "239", "85", "30", "30", null, null, this);
             obj.set_taborder("20");
             obj.set_cssclass("btn_WF_SearchSmall");
             this.addChild(obj.name, obj);
@@ -654,6 +633,15 @@
             obj = new Button("Button01", "absolute", "876", "443", "30", "30", null, null, this);
             obj.set_taborder("22");
             obj.set_cssclass("btn_WF_SearchSmall");
+            this.addChild(obj.name, obj);
+
+            obj = new Button("batchBtn", "absolute", "343", "199", "62", "25", null, null, this);
+            obj.set_taborder("23");
+            obj.set_text("저장");
+            obj.set_cssclass("btn_WF_CRUD");
+            obj.style.set_background("#455a64ff");
+            obj.style.set_color("#ffffffff");
+            obj.style.set_bordertype("normal 3 3");
             this.addChild(obj.name, obj);
 
 
@@ -935,6 +923,25 @@
         	this.patDiv.patAgeEdit.set_value(this.dsPat.getColumn(0, "age"));
         	this.patDiv.patGenderCombo.set_value(this.dsPat.getColumn(0, "gender"));
         }
+
+        this.findWriterBtn_onclick = function(obj,e)
+        {
+        		return application.open(
+        			"CM_DoctPopupForm",
+        			"com::CM_DoctPopupForm.xfdl",
+        			this.parent,
+        			{},
+        			"showtitlebar=true showstatusbar=false",
+        			110, 110,
+        			this
+        	);
+        }
+
+        this.setDoct = function(arrRtn){ 
+        	this.adrDiv.doctNoEd.set_value(arrRtn[0]);
+        	this.adrDiv.doctNmEd.set_value(arrRtn[1]);                
+        }
+        
         });
 
 
@@ -945,8 +952,6 @@
             this.adrDiv.subCodeStc02.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.adrDiv.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.adrDiv.DelBtn10.addEventHandler("onclick", this.DelBtn_onclick, this);
-            this.batchBtn.addEventHandler("onclick", this.batchBtn_onclick, this);
-            this.DelBtn26.addEventHandler("onclick", this.DelBtn_onclick, this);
             this.writerDiv.subCodeStc02.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.writerDiv.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.writerDiv.subCodeStc01.addEventHandler("onclick", this.subCodeStc_onclick, this);
@@ -979,6 +984,8 @@
             this.searchAdrBtn.addEventHandler("onclick", this.adrDiv_searchAdrBtn_onclick, this);
             this.addBtn.addEventHandler("onclick", this.addBtn_onclick, this);
             this.delBtn.addEventHandler("onclick", this.delBtn_onclick, this);
+            this.findWriterBtn.addEventHandler("onclick", this.findWriterBtn_onclick, this);
+            this.batchBtn.addEventHandler("onclick", this.batchBtn_onclick, this);
 
         };
 

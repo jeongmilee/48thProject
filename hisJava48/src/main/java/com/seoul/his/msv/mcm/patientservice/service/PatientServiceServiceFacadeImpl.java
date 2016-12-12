@@ -11,7 +11,6 @@ import com.seoul.his.msv.mcm.patientservice.to.AdrBean;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalFieldBean;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalPatientBean;
 import com.seoul.his.msv.mcm.patientservice.to.EmrBean;
-import com.seoul.his.msv.mcm.patientservice.to.PatientServiceBean;
 
 /**
  * <pre>
@@ -28,13 +27,6 @@ import com.seoul.his.msv.mcm.patientservice.to.PatientServiceBean;
 public class PatientServiceServiceFacadeImpl implements PatientServiceServiceFacade {
 	@Autowired
 	PatientServiceApplicationService patientserviceApplicationService;
-
-	@Override
-	public List<PatientServiceBean> findPatientServiceList(Map<String, String> argsMap) {
-		List<PatientServiceBean> patientserviceList = patientserviceApplicationService.findPatientServiceList(argsMap);
-		return patientserviceList;
-	}
-
 
 	/* 	 EMR 관리	*/
 	@Override
@@ -61,6 +53,10 @@ public class PatientServiceServiceFacadeImpl implements PatientServiceServiceFac
 	@Override
 	public void registerAttentionalPatient(AttentionalPatientBean attentionalPatient) {
 		patientserviceApplicationService.registerAttentionalPatient(attentionalPatient);
+	}
+	@Override
+	public void  batchAttentionalPatientProcess(List<AttentionalPatientBean> attentionalPatientList ){
+		patientserviceApplicationService.batchAttentionalPatientProcess(attentionalPatientList);
 	}
 
 	/* 관심분류관리 */

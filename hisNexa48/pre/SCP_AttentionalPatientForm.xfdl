@@ -16,27 +16,10 @@
               <Static id="fieldStc03" taborder="31" text="관심내역" onclick="subCodeStc_onclick" left="2.64%" top="280" right="74.93%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Calendar id="startDateCal" taborder="32" autoskip="true" dateformat="yyyy-MM-dd" left="28.5%" top="202" right="22.69%" height="30" style="padding:0 0 0 0;font:9 돋움;"/>
               <Calendar id="endDateCal" taborder="33" autoskip="true" dateformat="yyyy-MM-dd" left="28.5%" top="241" right="22.69%" height="30" style="padding:0 0 0 0;font:9 돋움;"/>
-              <Combo id="attDivCombo" taborder="34" datacolumn="attentionalDiv" left="28.5%" top="163" right="22.69%" height="30" style="font:9 돋움;" innerdataset="@dsAttentionalField" codecolumn="attentionalFieldName"/>
+              <Combo id="attDivCombo" taborder="34" left="28.5%" top="163" right="22.69%" height="30" style="font:9 돋움;" innerdataset="@dsAttentionalField" codecolumn="attentionalDiv" datacolumn="attentionalDiv"/>
               <Edit id="patNoEd" taborder="36" enable="false" left="28.76%" top="85" width="94" height="30" style="font:9 돋움;" class="AreaEdt"/>
               <Static id="pNameStc00" taborder="37" text="환자번호" onclick="subCodeStc_onclick" left="2.37%" top="85" right="74.93%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
-              <Combo id="attFieldCombo" taborder="38" codecolumn="codecolumn" datacolumn="datacolumn" left="28.5%" top="123" right="22.69%" height="30" style="font:9 돋움;" oncloseup="regAttPatDiv_attFieldCombo_oncloseup">
-                <Dataset id="innerdataset">
-                  <ColumnInfo>
-                    <Column id="codecolumn" size="256"/>
-                    <Column id="datacolumn" size="256"/>
-                  </ColumnInfo>
-                  <Rows>
-                    <Row>
-                      <Col id="codecolumn">내과</Col>
-                      <Col id="datacolumn">내과</Col>
-                    </Row>
-                    <Row>
-                      <Col id="codecolumn">외과</Col>
-                      <Col id="datacolumn">외과</Col>
-                    </Row>
-                  </Rows>
-                </Dataset>
-              </Combo>
+              <Combo id="attFieldCombo" taborder="38" codecolumn="attentionalFieldName" datacolumn="attentionalFieldName" left="28.5%" top="123" right="22.69%" height="30" style="font:9 돋움;" oncloseup="regAttPatDiv_attFieldCombo_oncloseup" innerdataset="@dsAttFieldCombo"/>
             </Layout>
           </Layouts>
           <InitValue/>
@@ -44,13 +27,13 @@
         <Div id="attPatDiv" taborder="14" left="33.92%" top="67" width="805" height="670" style="background:#eceff1ff;border:1 solid #808080ff ;font:9 돋움;">
           <Layouts>
             <Layout>
-              <Static id="subCodeStc00" taborder="2" text="환자명" onclick="subCodeStc_onclick" left="0.87%" top="47" right="87.8%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Edit id="patNmEd" taborder="3" left="12.95%" top="47" right="73.97%" height="30" style="font:9 돋움;" enable="false"/>
               <Edit id="patNoEd" taborder="12" left="33%" top="47" right="53.18%" height="30" style="font:9 돋움;" enable="false"/>
               <Grid id="Grid00" taborder="13" binddataset="dsAttentionalPatient" useinputpanel="false" autofittype="col" left="0.87%" top="89" right="2.24%" height="563" style="border:2 solid #9f8f71ff,0 none #808080ff,0 none #808080ff,0 none #808080ff;font:9 돋움;">
                 <Formats>
                   <Format id="default">
                     <Columns>
+                      <Column size="113"/>
                       <Column size="71"/>
                       <Column size="71"/>
                       <Column size="71"/>
@@ -64,28 +47,31 @@
                       <Row size="24"/>
                     </Rows>
                     <Band id="head">
-                      <Cell style="align:center;background:#cfd8dcff;" text="환자번호"/>
-                      <Cell col="1" style="align:center;background:#cfd8dcff;" text="이름"/>
-                      <Cell col="2" style="align:center;background:#cfd8dcff;" text="관심영역"/>
-                      <Cell col="3" style="align:center;background:#cfd8dcff;" text="관심분류"/>
-                      <Cell col="4" style="align:center;background:#cfd8dcff;" text="관심내역"/>
-                      <Cell col="5" style="align:center;background:#cfd8dcff;" text="시작일자"/>
-                      <Cell col="6" style="align:center;background:#cfd8dcff;" text="종료일자"/>
+                      <Cell style="align:center;background:#cfd8dcff;" text="관심환자등록번호"/>
+                      <Cell col="1" style="align:center;background:#cfd8dcff;" text="환자번호"/>
+                      <Cell col="2" style="align:center;background:#cfd8dcff;" text="이름"/>
+                      <Cell col="3" style="align:center;background:#cfd8dcff;" text="관심영역"/>
+                      <Cell col="4" style="align:center;background:#cfd8dcff;" text="관심분류"/>
+                      <Cell col="5" style="align:center;background:#cfd8dcff;" text="관심내역"/>
+                      <Cell col="6" style="align:center;background:#cfd8dcff;" text="시작일자"/>
+                      <Cell col="7" style="align:center;background:#cfd8dcff;" text="종료일자"/>
                     </Band>
                     <Band id="body">
-                      <Cell displaytype="normal" edittype="normal" style="align:center;" text="bind:patNo"/>
-                      <Cell col="1" edittype="text" style="align:center;" text="bind:patName"/>
-                      <Cell col="2" edittype="text" style="align:center;" text="bind:attentionalFieldName"/>
-                      <Cell col="3" edittype="text" style="align:center;" text="bind:attentionalDiv"/>
-                      <Cell col="4" style="align:center;" text="bind:attentionalContent"/>
-                      <Cell col="5" style="align:center;" text="bind:startDate"/>
-                      <Cell col="6" style="align:center;" text="bind:endDate"/>
+                      <Cell text="bind:attentionalRegNo"/>
+                      <Cell col="1" displaytype="normal" edittype="none" style="align:center;" text="bind:patNo"/>
+                      <Cell col="2" edittype="none" style="align:center;" text="bind:patName"/>
+                      <Cell col="3" edittype="normal" style="align:center;" text="bind:attentionalFieldName"/>
+                      <Cell col="4" edittype="none" style="align:center;" text="bind:attentionalDiv"/>
+                      <Cell col="5" edittype="none" style="align:center;" text="bind:attentionalContent"/>
+                      <Cell col="6" edittype="none" style="align:center;" text="bind:startDate"/>
+                      <Cell col="7" edittype="none" style="align:center;" text="bind:endDate"/>
                     </Band>
                   </Format>
                 </Formats>
               </Grid>
               <Static id="subCodeStc03" taborder="15" text="   관심환자조회" onclick="subCodeStc_onclick" left="0.87%" top="6" right="2.24%" height="30" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Button id="DelBtn02" taborder="19" onclick="searchBtn_onclick" cssclass="DelBtn" left="-188" top="45" width="32" height="32" style="background:@gradation URL('img::ic_search_black_24dp_2x.png') stretch;border:1 none #999999ff ;font:9 돋움;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
+              <Static id="subCodeStc00" taborder="20" text="환자명" onclick="subCodeStc_onclick" left="0.87%" top="47" right="87.8%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
             </Layout>
           </Layouts>
         </Div>
@@ -95,24 +81,7 @@
             <Layout>
               <Static id="fieldStc" taborder="37" text="관심영역" onclick="subCodeStc_onclick" left="2.9%" top="41" right="74.67%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
               <Static id="fieldStc00" taborder="41" text="분류명" onclick="subCodeStc_onclick" left="2.9%" top="76" right="74.67%" height="30" style="background:#b0bec5ff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
-              <Combo id="attFieldCombo" taborder="48" codecolumn="codecolumn" datacolumn="datacolumn" left="28.76%" top="41" right="22.43%" height="30" style="font:9 돋움;" oncloseup="regAttDiv_attFieldEd_oncloseup">
-                <Dataset id="innerdataset">
-                  <ColumnInfo>
-                    <Column id="codecolumn" size="256"/>
-                    <Column id="datacolumn" size="256"/>
-                  </ColumnInfo>
-                  <Rows>
-                    <Row>
-                      <Col id="codecolumn">내과</Col>
-                      <Col id="datacolumn">내과</Col>
-                    </Row>
-                    <Row>
-                      <Col id="codecolumn">외과</Col>
-                      <Col id="datacolumn">외과</Col>
-                    </Row>
-                  </Rows>
-                </Dataset>
-              </Combo>
+              <Combo id="attFieldCombo" taborder="48" codecolumn="attentionalFieldName" datacolumn="attentionalFieldName" left="28.76%" top="41" right="22.43%" height="30" style="font:9 돋움;" oncloseup="regAttDiv_attFieldEd_oncloseup" innerdataset="@dsAttFieldCombo"/>
               <Edit id="attDivEd" taborder="49" enable="true" left="28.76%" top="76" width="166" height="30" class="AreaEdt" style="font:9 돋움;"/>
             </Layout>
           </Layouts>
@@ -126,10 +95,10 @@
         <Button id="deleteAttFieldBtn" taborder="30" text="삭제" cssclass="btn_WF_CRUD" left="344" top="482" width="45" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;" onclick="clickBtn"/>
         <Button id="regAttBtn" taborder="32" text="저장" cssclass="btn_WF_CRUD" left="299" top="76" width="45" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;" onclick="clickBtn"/>
         <Button id="clearRegAttBtn" taborder="33" text="초기화" cssclass="btn_WF_CRUD" left="344" top="76" width="45" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;" onclick="clickBtn"/>
-        <Button id="Button04" taborder="34" text="삭제" cssclass="btn_WF_CRUD" left="885" top="76" width="58" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;"/>
+        <Button id="deleteAttPatientBtn" taborder="34" text="삭제" cssclass="btn_WF_CRUD" left="885" top="76" width="58" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;" onclick="clickBtn"/>
         <Button id="searchAttPatBtn" taborder="35" cssclass="btn_WF_SearchSmall" left="232" top="113" width="30" height="30" onclick="clickBtn"/>
         <Button id="searchAttBtnForSch" taborder="36" cssclass="btn_WF_SearchSmall" left="641" top="115" width="30" height="30" onclick="clickBtn"/>
-        <Grid id="Grid01" taborder="37" binddataset="dsAttentionalField" useinputpanel="false" autofittype="col" left="2.88%" top="589" right="68.4%" height="131" style="border:2 solid #9f8f71ff,0 none #808080ff,0 none #808080ff,0 none #808080ff;font:9 돋움;">
+        <Grid id="Grid01" taborder="37" binddataset="dsRegAttentionalField" useinputpanel="false" autofittype="col" left="2.88%" top="589" right="68.4%" height="131" style="border:2 solid #9f8f71ff,0 none #808080ff,0 none #808080ff,0 none #808080ff;font:9 돋움;">
           <Formats>
             <Format id="default">
               <Columns>
@@ -152,6 +121,7 @@
           </Formats>
         </Grid>
         <Static id="Static00" taborder="38" text="관심환자관리" left="1.84%" top="7" right="85.76%" height="41" style="color:#6c6c6cff;bordertype:normal 0 0 ;align:middle;font:antialias 16 arial;"/>
+        <Button id="saveAttPatientBtn" taborder="40" text="저장" onclick="clickBtn" cssclass="btn_WF_CRUD" left="943" top="76" width="62" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;"/>
       </Layout>
     </Layouts>
     <Bind>
@@ -172,6 +142,8 @@
       <BindItem id="item8" compid="regAttPatDiv.startDateCal" propid="value" datasetid="dsRegAttentionalPatient" columnid="startDate"/>
       <BindItem id="item9" compid="regAttPatDiv.endDateCal" propid="value" datasetid="dsRegAttentionalPatient" columnid="endDate"/>
       <BindItem id="item12" compid="TextArea00" propid="value" datasetid="dsRegAttentionalPatient" columnid="attentionalContent"/>
+      <BindItem id="item13" compid="regAttPatDiv.attFieldCombo" propid="value" datasetid="dsRegAttentionalPatient" columnid="attentionalFieldName"/>
+      <BindItem id="item14" compid="regAttPatDiv.attDivCombo" propid="value" datasetid="dsRegAttentionalPatient" columnid="attentionalDiv"/>
     </Bind>
     <InitValue/>
     <Objects>
@@ -188,7 +160,7 @@
           <Row>
             <Col id="serviceID">findAttentionalPatientList</Col>
             <Col id="URL">his::msv/mcm/patientservice/findAttentionalPatientList.do</Col>
-            <Col id="callbackFunc">findAttentionalPatientListCallback</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
             <Col id="outData">dsAttentionalPatient=dsAttentionalPatient</Col>
             <Col id="inData"/>
           </Row>
@@ -196,20 +168,28 @@
             <Col id="serviceID">findAttentionalFieldList</Col>
             <Col id="URL">his::msv/mcm/patientservice/findAttentionalFieldList.do</Col>
             <Col id="inData"/>
-            <Col id="callbackFunc">findAttentionalFieldListCallback</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
             <Col id="outData">dsAttentionalField=dsAttentionalField</Col>
           </Row>
           <Row>
             <Col id="serviceID">batchAttentionalFieldProcess</Col>
             <Col id="URL">his::msv/mcm/patientservice/batchAttentionalFieldProcess.do</Col>
-            <Col id="inData">dsAttentionalField=dsAttentionalField:u</Col>
-            <Col id="callbackFunc">batchAttentionalFieldProcessCallback</Col>
+            <Col id="inData">dsAttentionalField=dsRegAttentionalField:u</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
           </Row>
           <Row>
             <Col id="serviceID">registerAttentionalPatient</Col>
             <Col id="URL">his::msv/mcm/patientservice/registerAttentionalPatient.do</Col>
             <Col id="inData">dsAttentionalPatient=dsRegAttentionalPatient:u</Col>
-            <Col id="callbackFunc">registerPatientCallback</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">batchAttentionalPatientProcess</Col>
+            <Col id="URL">his::msv/mcm/patientservice/batchAttentionalPatientProcess.do</Col>
+            <Col id="inData">dsAttentionalPatient=dsAttentionalPatient:u</Col>
+            <Col id="outData">[Undefined]</Col>
+            <Col id="argument">[Undefined]</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -244,9 +224,20 @@
           <Column id="attentionalContent" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
+      <Dataset id="dsAttFieldCombo">
+        <ColumnInfo>
+          <Column id="attentionalFieldName" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsRegAttentionalField">
+        <ColumnInfo>
+          <Column id="attentionalFieldSeq" type="STRING" size="256"/>
+          <Column id="attentionalFieldName" type="STRING" size="256"/>
+          <Column id="attentionalDiv" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
     </Objects>
-    <Script type="xscript5.0"><![CDATA[
-/**************************************************************************************************
+    <Script type="xscript5.0"><![CDATA[/**************************************************************************************************
 *                                         공통 Script Include                                     *
 ***************************************************************************************************/
 
@@ -261,9 +252,30 @@ this.SCP_AttentionalPatientForm_onload = function(obj:Form, e:nexacro.LoadEventI
 {
 	this.dsAttentionalField.clearData();
 	this.gfnService("findAttentionalFieldList","false");
-	this.dsAttentionalField.filter("attentionalFieldName=='###'");
+	//this.dsAttentionalField.filter("attentionalFieldName=='###'");
 }
 
+this.callbackFunc = function(svcID, ErrorCode, ErrorMsg){
+   if (ErrorCode < 1) {
+      trace("[" + svcID + "] 에러코드 : " + ErrorCode + "\n" + ErrorMsg);
+   } else {
+      // 트랜잭션 완료
+      trace("===== " + svcID + " 트랜잭션 성공 =====\n");
+		if(svcID=="findAttentionalFieldList"){
+		this.dsAttentionalField.set_keystring("attentionalFieldName"); 
+		var rowCnt=this.dsAttentionalField.getRowCount();
+		var attentionalFieldName="";
+			for(var i=0;i<rowCnt;i++){
+			if(attentionalFieldName!=this.dsAttentionalField.getColumn(i,"attentionalFieldName")){
+				attentionalFieldName=this.dsAttentionalField.getColumn(i,"attentionalFieldName");
+				var nRow=this.dsAttFieldCombo.addRow();
+				this.dsAttFieldCombo.setColumn(nRow,"attentionalFieldName",attentionalFieldName);
+				}
+			}
+		this.dsAttentionalField.set_keystring(""); 
+      }
+}
+}
 /***************************************************************************************************
 *                                          버튼 EVENT START                                       *
 /*-------------------------------------------------------------------------------------------------+
@@ -278,6 +290,12 @@ this.clickBtn = function(obj:Button,  e:nexacro.ClickEventInfo)
 			break;
 		case this.searchAttBtnForSch: // 관심환자 조회를 위한 환자 조회
 			this.clickSearchAttBtnForSch();
+			break;
+		case this.deleteAttPatientBtn:// 관심환자 삭제
+			this.clickDeleteAttPatientBtn();
+			break;
+		case this.saveAttPatientBtn:  // 관심환자 저장
+			this.clickSaveAttPatientBtn();
 			break;
 		case this.regAttBtn:  		  // 관심환자 등록
 			this.clickRegAttBtn();
@@ -316,11 +334,17 @@ this.clickSearchAttBtn = function () {
 }
 
 this.clickSearchAttPatBtn = function () {
+	if(this.dsRegAttentionalPatient.rowcount>0){
+		if(this.confirm("다시하시겠습니까 ?"))
+			this.reload();
+		else
+			return;
+	}
 	this.dsRegAttentionalPatient.addRow();
 	this.gfnPatPopup();
 	this.setPatInfo = function(arrRtn){ 
+	this.regAttPatDiv.patNoEd.set_value(arrRtn[0]);                              
 	this.regAttPatDiv.patNmEd.set_value(arrRtn[1]);   
-    this.regAttPatDiv.patNoEd.set_value(arrRtn[0]);                              
 	}
 }
 
@@ -347,20 +371,23 @@ this.clickAddAttFieldBtn = function(obj:Button,  e:nexacro.ClickEventInfo)
 		else if(attDiv==null)
 			alert("분류명은 필수항목입니다");
 	}else{
-			this.dsAttentionalField.addRow();
-			var rowIdx=this.dsAttentionalField.getRowCount();
-			this.dsAttentionalField.setColumn(rowIdx-1,"attentionalFieldSeq",rowIdx+1);
-			this.dsAttentionalField.setColumn(rowIdx-1,"attentionalDiv",attDiv);
-			this.dsAttentionalField.setColumn(rowIdx-1,"attentionalFieldName",fieldNm);
+			this.dsRegAttentionalField.addRow();
+			var rowIdx=this.dsRegAttentionalField.getRowCount();
+			this.dsRegAttentionalField.setColumn(rowIdx-1,"attentionalFieldSeq",rowIdx+1);
+			this.dsRegAttentionalField.setColumn(rowIdx-1,"attentionalDiv",attDiv);
+			this.dsRegAttentionalField.setColumn(rowIdx-1,"attentionalFieldName",fieldNm);
 		}
 }
 
 this.clickDeleteAttFieldBtn = function(obj:Button,  e:nexacro.ClickEventInfo)
 {
-	this.dsAttentionalField.deleteRow(this.dsAttentionalField.rowposition);
+	this.dsRegAttentionalField.deleteRow(this.dsRegAttentionalField.rowposition);
 }
 
-
+this.clickDeleteAttPatientBtn = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsAttentionalPatient.deleteRow(this.dsAttentionalPatient.rowposition);
+}
 /*-------------------------------------------------------------------------------------------------+
 >>  저장
 +-------------------------------------------------------------------------------------------------*/
@@ -368,18 +395,19 @@ this.clickRegAttBtn = function()
 {
 	var attField = this.regAttPatDiv.attFieldCombo.value;
 	var attDiv = this.regAttPatDiv.attDivCombo.text;
-	this.dsRegAttentionalPatient.setColumn(0,"attentionalFieldName",attField);
-	this.dsRegAttentionalPatient.setColumn(0,"attentionalDiv",attDiv);
 	this.gfnService("registerAttentionalPatient","false");
-	
 	this.reload();
 }
-
 
 this.clickSaveAttFieldBtn = function ()
 {
 	this.gfnService("batchAttentionalFieldProcess","false");
-	
+	this.reload();
+}
+
+this.clickSaveAttPatientBtn = function ()
+{
+	this.gfnService("batchAttentionalPatientProcess","false");
 	this.reload();
 }
 
@@ -389,17 +417,17 @@ this.clickSaveAttFieldBtn = function ()
 
 this.regAttDiv_attFieldEd_oncloseup = function(obj:Combo, e:nexacro.ComboCloseUpEventInfo)
 {
-	this.dsAttentionalField.filter("");
+	this.dsRegAttentionalField.copyData(this.dsAttentionalField);
 	var ftr=this.regAttDiv.attFieldCombo.value;
-	this.dsAttentionalField.filter("attentionalFieldName=='"+ftr+"'");
+	this.dsRegAttentionalField.filter("attentionalFieldName=='"+ftr+"'");
 }
 
 this.regAttPatDiv_attFieldCombo_oncloseup = function(obj:Combo, e:nexacro.ComboCloseUpEventInfo)
 {
-	this.dsAttentionalField.filter("");
 	var ftr=this.regAttPatDiv.attFieldCombo.value;
 	this.dsAttentionalField.filter("attentionalFieldName=='"+ftr+"'");
 }
+
 /*-------------------------------------------------------------------------------------------------+
 >>  초기화
 +-------------------------------------------------------------------------------------------------*/
@@ -410,6 +438,8 @@ this.clickClearRegAttBtn = function ()
 	this.regAttPatDiv.attDivCombo.set_value(null);
 	this.dsAttentionalField.filter("attentionalFieldName=='###'");
 }
+
+
 ]]></Script>
   </Form>
 </FDL>

@@ -26,10 +26,12 @@
 				    , START_DATE
 				    , END_DATE
 	   FROM     MB_ATTENTIONAL_PATIENT
-	   WHERE    PAT_NO = #{attPtNo}
-
+	   WHERE 	1=1
+  		<if test='attPtNo != null'>
+        AND PAT_NO = #{attPtNo}
+    	</if>
  	</select>
-	<update id="insertAttentionalPatient" parameterType="AttentionalPatientBean">
+    <update id="insertAttentionalPatient" parameterType="AttentionalPatientBean">
             INSERT INTO MB_ATTENTIONAL_PATIENT (
                 ATTENTIONAL_REG_NO
               , PAT_NO
@@ -49,5 +51,22 @@
              , #{startDate}
              , #{endDate}
             )
+    </update>
+    <update id="updateAttentionalPatient" parameterType="AttentionalPatientBean">
+            UPDATE MB_ATTENTIONAL_PATIENT
+            SET
+              , PAT_NO = #{patNo}
+              , PAT_NAME =  #{patName}
+              , ATTENTIONAL_FIELD_NAME = #{attentionalFieldName}
+              , ATTENTIONAL_DIV = #{attentionalDiv}
+              , ATTENTIONAL_CONTENT = #{attentionalContent}
+              , START_DATE = #{startDate}
+              , END_DATE = #{endDate}
+            WHERE ATTENTIONAL_REG_NO = #{attentionalRegNo}
+    </update>
+	<update id="deleteAttentionalPatient" parameterType="AttentionalPatientBean">
+            DELETE
+            FROM    MB_ATTENTIONAL_PATIENT
+            WHERE   ATTENTIONAL_REG_NO = #{attentionalRegNo}
     </update>
 </mapper>
