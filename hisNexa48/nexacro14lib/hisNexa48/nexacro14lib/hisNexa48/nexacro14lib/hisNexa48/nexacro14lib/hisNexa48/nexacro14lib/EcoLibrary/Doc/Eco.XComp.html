@@ -1,0 +1,3670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: Eco.XComp</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: Eco.XComp</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+
+    Eco.XComp
+    
+	</h2> 
+	
+	
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Method Summary (17) </h3>
+
+
+        
+
+		
+        <dl>
+            
+<dt>
+    <h4 class="name" id="contains">
+      <a href="#Eco.XComp.contains">
+      contains</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 상위 컴포넌트에 하위 컴포넌트가 포함되는지 여부를 반환
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="deleteUserProperty">
+      <a href="#Eco.XComp.deleteUserProperty">
+      deleteUserProperty</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 nexacro Component, object 에서 지정된 사용자 정의 속성을 제거한다.<br>
+※ setUserProperty 메소드에 의해 지정된 사용자 정의 속성을 대상으로 한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getCompByPathName">
+      <a href="#Eco.XComp.getCompByPathName">
+      getCompByPathName</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        계층 위치의 정보 명칭으로 nexacro component를 얻는다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getPathName">
+      <a href="#Eco.XComp.getPathName">
+      getPathName</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        ChildFrame에 속한 계층 위치의 정보까지 명칭으로 얻는다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getPopupArguments">
+      <a href="#Eco.XComp.getPopupArguments">
+      getPopupArguments</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        showModal 호출 시 추가된 변수 목록값을 반환한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getProperties">
+      <a href="#Eco.XComp.getProperties">
+      getProperties</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 component, object 의 지정된 속성 목록을 얻어온다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getScriptForm">
+      <a href="#Eco.XComp.getScriptForm">
+      getScriptForm</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 c(XComp) 가 사용하는 script 영역(scope)의 Form을 찾는다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getTopLevelForm">
+      <a href="#Eco.XComp.getTopLevelForm">
+      getTopLevelForm</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 Form 을 포함하는 최상위 Form을 찾는다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getUserProperty">
+      <a href="#Eco.XComp.getUserProperty">
+      getUserProperty</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 nexacro Component, object 에서 사용자 정의 속성값을 얻어온다.<br>
+※ setUserProperty 메소드에 의해 지정된 사용자 정의 속성값을 얻어온다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="isEnable">
+      <a href="#Eco.XComp.isEnable">
+      isEnable</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 컴포넌트의 실제 활성화 여부를 반환<br><br>
+대상 컴포넌트의 상위컴포넌트(parent)의 enable 속성이 false 가 <br>
+지정되어 화면에 대상 컴포넌트가 비활성화 상태이어도 대상 컴포넌트의 <br>
+enable 속성값은 지정된 값을 유지하고 있으므로 실제 활성화 여부를 <br>
+판단하기 위해서는 본 메소드를 사용한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="isVisible">
+      <a href="#Eco.XComp.isVisible">
+      isVisible</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 컴포넌트가 실제 화면에 보여지는지 여부를 반환<br><br>
+대상 컴포넌트의 상위컴포넌트(parent)의 visible 속성이 false 가<br> 
+지정되어 화면에 대상 컴포넌트가 보이지 않더라도 대상 컴포넌트의<br> 
+visible 속성값은 지정된 값을 유지하고 있으므로 화면에 실제 <br>
+보여지는지 여부를 판단하기 위해서는 본 메소드를 사용한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="isVisual">
+      <a href="#Eco.XComp.isVisual">
+      isVisual</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 오브젝트가 Visual한 컴포넌트인지를 반환
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="lookup">
+      <a href="#Eco.XComp.lookup">
+      lookup</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 대상을 포함한 상위 범위로 지정된 이름에 최초로 일치하는 component, object 반환
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="query">
+      <a href="#Eco.XComp.query">
+      query</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 nexacro Component 에 포함되고 조건에 맞는 component, object 반환<br><br>
+1. where 조건문에 지원하는 예약어 피연산자(operand) 는 다음과 같다.<br>
+ - prop[property_name] : property 중 name 에 해당하는 값을 의미<br>
+ - curStyle[currentstyle_name] : currentstyle 중 name 에 해당하는 값(문자열)을 의미<br>
+ - style[style_name] : style 중 name 에 해당하는 값을 의미<br>
+ - typeOf : XP Component type을 의미<br>
+ - isVisible : XP Component의 실제 visible 여부<br>
+ - isVisual : 주어진 오브젝트가 Visual한 컴포넌트인지 여부<br>
+ - isEnable : XP Component의 실제 enable 여부<br><br>
+※ isVisible는 실제 컴포넌트가 화면에 보여지는 여부를 체크하게 된다.<br>
+   prop[visible] == true 형식으로 사용하면 대상 컴포넌트의 value property 값이 true 인지를 체크한다.<br>
+   대상 컴포넌트의 상위컴포넌트(parent)의 visible 속성이 false 가 지정되어 화면에 대상 컴포넌트가<br>
+   보이지 않더라도 대상 컴포넌트의 visible 속성값은 자신이 지정된 값을 유지하고 있으므로 반드시<br>
+   false 가 나오지 않는다. (같은 이유로 isEnable 로 실제 활성화 되어있는지를 체크해야 한다.)<br><br>
+2. where 조건문에 지원하는 연산자(operator) 는 다음과 같다.<br>
+ - A && B : A 와 B 가 모두 참이면 참<br>
+ - A || B : A 와 B 가 모두 거짓이면 거짓<br>
+ - A == B : A 와 B 는 같다.<br>
+ - A != B : A 와 B 는 같지 않다.<br>
+ - A > B : A 는 B 보다 크다.<br>
+ - A >= B : A 는 B 보다 크거나 같다.<br>
+ - A < B : A 는 B 보다 작다.<br>
+ - A <= B : A 는 B 보다 작거나 같다.<br>
+ - 'b' *= 'abc' : 'abc' 에 'b' 가 포함되어 있다. (like)<br>
+ - 'a' ^= 'abc' : 'abc' 는 'a' 로 시작한다. (startWith)<br>
+ - 'c' $= 'abc' : 'abc' 는 'c' 로 끝난다. (endWith)
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="setProperties">
+      <a href="#Eco.XComp.setProperties">
+      setProperties</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 component, object에 속성 값을 지정한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="setUserProperty">
+      <a href="#Eco.XComp.setUserProperty">
+      setUserProperty</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 nexacro Component, object 에 사용자 속성을 추가한다.<br>
+대상이 원래 가지고 있는 이름을 지정해도 상관없이 동작한다.<br>
+※ 사용자 정의 속성을 대상에 바로 사용하면 내부 속성을<br> 
+덮어쓸 수 있으므로 본 메소드를 통해서 사용하도록 한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="typeOf">
+      <a href="#Eco.XComp.typeOf">
+      typeOf</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 nexacro 개체의 type 을 반환
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        </dl>
+                
+        <h3 class="subsection-title">Method Detail</h3>        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="contains">
+        <a name="Eco.XComp.contains">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.contains<span class="signature">(p,target)</span><span class="type-signature"> &rarr; {boolean}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 상위 컴포넌트에 하위 컴포넌트가 포함되는지 여부를 반환
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>p</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">상위 컴포넌트</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">하위 컴포넌트</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    포함 여부
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">boolean</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// this = Form, obj = Button
+trace(Eco.XComp.contains(this, obj));	// output : true
+
+trace(Eco.XComp.contains(this, ds_test));	// output : true		 </code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1093
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="deleteUserProperty">
+        <a name="Eco.XComp.deleteUserProperty">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.deleteUserProperty<span class="signature">(target,name)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 nexacro Component, object 에서 지정된 사용자 정의 속성을 제거한다.<br>
+※ setUserProperty 메소드에 의해 지정된 사용자 정의 속성을 대상으로 한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">nexacro Component, object</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">제거할 사용자 정의 속성 명</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// Button00 (text : Button00)
+Eco.XComp.setUserProperty(Button00, "text", "user property");
+trace(Button00.text + " : " + Eco.XComp.getUserProperty(Button00, "text"));
+
+Eco.XComp.deleteUserProperty(Button00, "text");
+trace(Button00.text + " : " + Eco.XComp.getUserProperty(Button00, "text"));		 
+
+// output : 
+Button00 : user property
+Button00 : undefined</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1836
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getCompByPathName">
+        <a name="Eco.XComp.getCompByPathName">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.getCompByPathName<span class="signature">(pathName,p)</span><span class="type-signature"> &rarr; {XComp}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        계층 위치의 정보 명칭으로 nexacro component를 얻는다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>pathName</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">계층 구조의 명칭(xpform.Div00.Button01)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>p</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">검색 기준 상위 nexacro component (p의 범위에서 검색)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    obj nexacro component.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">XComp</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.XComp.getCompByPathName("Div01.st_test", this));
+// output : [object Static]
+
+trace(Eco.XComp.getCompByPathName("st_test", Div00));
+// output : [object Static]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1026
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getPathName">
+        <a name="Eco.XComp.getPathName">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.getPathName<span class="signature">(obj,<span class="optional">refParent</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        ChildFrame에 속한 계층 위치의 정보까지 명칭으로 얻는다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">nexacro component.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>refParent</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">계층 구조에서 중단할 상위 nexacro component</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    obj 계층 구조의 명칭(xpform.Div00.Button01)
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// obj = Button
+trace(Eco.XComp.getPathName(obj, this));
+// output : Button00
+
+trace(Eco.XComp.getPathName(Div00.st_test, this));
+// output : Div00.st_test</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 997
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getPopupArguments">
+        <a name="Eco.XComp.getPopupArguments">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.getPopupArguments<span class="signature">(scope,variableNames)</span><span class="type-signature"> &rarr; {object}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        showModal 호출 시 추가된 변수 목록값을 반환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>scope</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Form</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">현재 form</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>variableNames</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">얻고자 하는 변수명 목록</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    {변수명:값, 변수명:값, ...} 객체.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">object</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var frame = new ChildFrame();
+frame.init("testFrame", "absolute", 10, 10, 400, 400, null, null, "Sample::XComp_sub2.xfdl");
+frame.showModal(this.getOwnerFrame(), {'name':'James', 'address':"Seoul, Korea" });		 
+
+alert(Eco.XComp.getPopupArguments( this, ['name', 'address'] );	// output : {'name':'James', 'address':"Seoul, Korea" }</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1140
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getProperties">
+        <a name="Eco.XComp.getProperties">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.getProperties<span class="signature">(target,prop,value,<span class="optional">*</span>)</span><span class="type-signature"> &rarr; {array}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 component, object 의 지정된 속성 목록을 얻어온다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">nexacro Component, object</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>prop</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">property name</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">property value</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>*</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">(prop, value 반복)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    속성값 배열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">array</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// obj = Button
+trace(Eco.XComp.getProperties(obj, "text", "visible"));
+// output : 실행,true
+
+// obj = Button
+trace(Eco.XComp.getProperties(obj, "test", "position", "style"));
+// output : ,absolute 519 634 575 656,[object StyleObject]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1253
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getScriptForm">
+        <a name="Eco.XComp.getScriptForm">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.getScriptForm<span class="signature">(c)</span><span class="type-signature"> &rarr; {Form}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 c(XComp) 가 사용하는 script 영역(scope)의 Form을 찾는다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Form</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">XComp</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    script 영역이 존재하는 Form
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Form</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.XComp.getScriptForm(this.Div00.Button00));	// output : [object Form]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1169
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getTopLevelForm">
+        <a name="Eco.XComp.getTopLevelForm">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.getTopLevelForm<span class="signature">(curForm)</span><span class="type-signature"> &rarr; {Form}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 Form 을 포함하는 최상위 Form을 찾는다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>curForm</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Form</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">찾을 대상 이름</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    최상위 Form
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Form</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.XComp.getTopLevelForm(this));	// output : [object Form]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1114
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getUserProperty">
+        <a name="Eco.XComp.getUserProperty">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.getUserProperty<span class="signature">(target,name)</span><span class="type-signature"> &rarr; {*}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 nexacro Component, object 에서 사용자 정의 속성값을 얻어온다.<br>
+※ setUserProperty 메소드에 의해 지정된 사용자 정의 속성값을 얻어온다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">nexacro Component, object</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">사용자 정의 속성 명</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    주어진 target에 name으로 지정된 사용자 정의 속성값
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">*</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// Button00 (text : Button00)
+Eco.XComp.setUserProperty(Button00, "text", "user property");
+trace(Button00.text + " : " + Eco.XComp.getUserProperty(Button00, "text"));
+
+// output : 
+Button00 : user property</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1807
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isEnable">
+        <a name="Eco.XComp.isEnable">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.isEnable<span class="signature">(obj)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 컴포넌트의 실제 활성화 여부를 반환<br><br>
+대상 컴포넌트의 상위컴포넌트(parent)의 enable 속성이 false 가 <br>
+지정되어 화면에 대상 컴포넌트가 비활성화 상태이어도 대상 컴포넌트의 <br>
+enable 속성값은 지정된 값을 유지하고 있으므로 실제 활성화 여부를 <br>
+판단하기 위해서는 본 메소드를 사용한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">nexacro Component</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    개체의 type
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>Div00.Button00.enable = true;
+Div00.enable = false;	// Button00 이 비활성화 된다.
+trace(Div00.Button00.enable);	// output : true
+trace(Eco.XComp.isEnable(Div00.Button00));	// output : false</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 181
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isVisible">
+        <a name="Eco.XComp.isVisible">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.isVisible<span class="signature">(obj)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 컴포넌트가 실제 화면에 보여지는지 여부를 반환<br><br>
+대상 컴포넌트의 상위컴포넌트(parent)의 visible 속성이 false 가<br> 
+지정되어 화면에 대상 컴포넌트가 보이지 않더라도 대상 컴포넌트의<br> 
+visible 속성값은 지정된 값을 유지하고 있으므로 화면에 실제 <br>
+보여지는지 여부를 판단하기 위해서는 본 메소드를 사용한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">nexacro Component</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    개체의 type
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>Div00.Button00.visible = true;
+Div00.visible = false;	// 화면에 Button00 이 보이지 않는다.
+trace(Div00.Button00.visible);	// output : true
+trace(Eco.XComp.isVisible(Div00.Button00));	// output : false</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 128
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isVisual">
+        <a name="Eco.XComp.isVisual">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.isVisual<span class="signature">(obj)</span><span class="type-signature"> &rarr; {boolean}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 오브젝트가 Visual한 컴포넌트인지를 반환
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">nexacro Component</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    visual Component 여부
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">boolean</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.XComp.isVisual(Button00));	// output : true
+trace(Eco.XComp.isVisual(Dataset00));	// output : false</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 159
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="lookup">
+        <a name="Eco.XComp.lookup">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.lookup<span class="signature">(p,name)</span><span class="type-signature"> &rarr; {XComp}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 대상을 포함한 상위 범위로 지정된 이름에 최초로 일치하는 component, object 반환
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>p</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">찾을 대상</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">찾을 대상 이름</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    검색된 component, object
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">XComp</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// this = Form 
+// Form 에 Button11 존재
+trace(Eco.XComp.lookup(this, "Button11"));	// output : [object Button]
+
+// Button12 는 Div01 에 존재하지 않으나 Div01 의 상위 컴포넌트인 Form 에 존재
+trace(Eco.XComp.lookup(Div01, "Button11"));	// output : [object Button]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1062
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="query">
+        <a name="Eco.XComp.query">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.query<span class="signature">(obj,<span class="optional">where</span>,<span class="optional">depth</span>)</span><span class="type-signature"> &rarr; {array}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 nexacro Component 에 포함되고 조건에 맞는 component, object 반환<br><br>
+1. where 조건문에 지원하는 예약어 피연산자(operand) 는 다음과 같다.<br>
+ - prop[property_name] : property 중 name 에 해당하는 값을 의미<br>
+ - curStyle[currentstyle_name] : currentstyle 중 name 에 해당하는 값(문자열)을 의미<br>
+ - style[style_name] : style 중 name 에 해당하는 값을 의미<br>
+ - typeOf : XP Component type을 의미<br>
+ - isVisible : XP Component의 실제 visible 여부<br>
+ - isVisual : 주어진 오브젝트가 Visual한 컴포넌트인지 여부<br>
+ - isEnable : XP Component의 실제 enable 여부<br><br>
+※ isVisible는 실제 컴포넌트가 화면에 보여지는 여부를 체크하게 된다.<br>
+   prop[visible] == true 형식으로 사용하면 대상 컴포넌트의 value property 값이 true 인지를 체크한다.<br>
+   대상 컴포넌트의 상위컴포넌트(parent)의 visible 속성이 false 가 지정되어 화면에 대상 컴포넌트가<br>
+   보이지 않더라도 대상 컴포넌트의 visible 속성값은 자신이 지정된 값을 유지하고 있으므로 반드시<br>
+   false 가 나오지 않는다. (같은 이유로 isEnable 로 실제 활성화 되어있는지를 체크해야 한다.)<br><br>
+2. where 조건문에 지원하는 연산자(operator) 는 다음과 같다.<br>
+ - A && B : A 와 B 가 모두 참이면 참<br>
+ - A || B : A 와 B 가 모두 거짓이면 거짓<br>
+ - A == B : A 와 B 는 같다.<br>
+ - A != B : A 와 B 는 같지 않다.<br>
+ - A > B : A 는 B 보다 크다.<br>
+ - A >= B : A 는 B 보다 크거나 같다.<br>
+ - A < B : A 는 B 보다 작다.<br>
+ - A <= B : A 는 B 보다 작거나 같다.<br>
+ - 'b' *= 'abc' : 'abc' 에 'b' 가 포함되어 있다. (like)<br>
+ - 'a' ^= 'abc' : 'abc' 는 'a' 로 시작한다. (startWith)<br>
+ - 'c' $= 'abc' : 'abc' 는 'c' 로 끝난다. (endWith)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Object, Component, Frame, .. 등 nexacro 모든 개체</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>where</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">찾을 조건문</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>depth</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">하위 레벨 깊이 (default: 제한없음)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    검색된 component, object
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">array</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>Form(Form00) 에 아래와 같은 구조가 존재 할 경우
+
+|----------------------------------------------------------------------------|
+| Div00 (depth:0)                                                            |
+|                                                                            |
+|    ------------                                                            |
+|    | Button00 |                                                            |
+|    ------------                                                            |
+|                                                                            |
+|    |-------------------------------------------------------------------|   |
+|    | Div01 (depth:1)                                                   |   |
+|    |                                                                   |   |
+|    |   ------------                                                    |   |
+|    |   | Button01 |                                                    |   |
+|    |   ------------                                                    |   |
+|    |                                                                   |   |
+|    |   |-----------------------------------------------------------|   |   |
+|    |   | Tab00 (depth:2)                                           |   |   |
+|    |   |                                                           |   |   |
+|    |   |   |-----------------------|   |-----------------------|   |   |   |
+|    |   |   | Tabpage1 (depth:3)    |   | Tabpage2 (depth:3)    |   |   |   |
+|    |   |   |                       |   |                       |   |   |   |
+|    |   |   |   ------------        |   |   ------------        |   |   |   |
+|    |   |   |   | Button02 |        |   |   | Button03 |        |   |   |   |
+|    |   |   |   ------------        |   |   ------------        |   |   |   |
+|    |   |   |                       |   |                       |   |   |   |
+|    |   |   |-----------------------|   |-----------------------|   |   |   |
+|    |   |                                                           |   |   |
+|    |   |-----------------------------------------------------------|   |   |
+|    |                                                                   |   |
+|    |-------------------------------------------------------------------|   |
+|                                                                            |
+|----------------------------------------------------------------------------|
+
+// from이 Form00 이고 depth 를 지정하지 않은 경우 Form00 에 포함된 모든 하위요소 검색
+trace(Eco.XComp.query(Form00, ""));
+// output : [object Div],[object Button],[object Div],[object Button],[object Tab],
+            [object Tabpage],[object Button],[object Tabpage],[object Button]
+
+// from이 Div00 이고 depth 를 지정하지 않은 경우 Div00 에 포함된 모든 하위요소 검색
+trace(Eco.XComp.query(Div00, ""));
+// output : [object Button],[object Div],[object Button],[object Tab],
+            [object Tabpage],[object Button],[object Tabpage],[object Button]
+
+// from이 Div00 이고 depth가 0 인 경우 Div00 에 포함된 요소까지 검색
+trace(Eco.XComp.query(Div00, "", 0));
+// output : [object Button],[object Div]
+
+// from이 Div00 이고 depth가 1 인 경우 Div01 에 포함된 요소까지 검색
+trace(Eco.XComp.query(Div00, "", 1));
+// output : [object Button],[object Div],[object Button],[object Tab]
+
+// from이 Div00 이고 depth가 2 인 경우 Tab00 에 포함된 요소까지 검색
+trace(Eco.XComp.query(Div00, "", 2));
+// output : [object Button],[object Div],[object Button],[object Tab],
+            [object Tabpage],[object Tabpage]
+
+// Div00 에 하위로 포함된 모든 Button 검색
+trace(Eco.XComp.query(Div00, "typeOf == 'Button'"));
+// output : [object Button],[object Button],[object Button],[object Button]
+
+// Div00 에 하위로 포함된 모든 Button, Div 검색
+trace(Eco.XComp.query(Div00, "typeOf == 'Button' || typeOf == 'Div'"));
+// output : [object Button],[object Div],[object Button],[object Button],[object Button]
+
+// Div00 에 포함된 모든 하위요소중 property visible 값이 true 인 요소 검색
+// Div01에 포함된 Tab 과 Button이 보이지 않지만 visible 속성값은 true 임
+// 실제 visible 한 요소만 찾을 경우 isVisible 을 사용
+Div00.Div01.visible = false;
+trace(Eco.XComp.query(Div00, "prop[visible] == true"));
+// output : [object Button],[object Button],[object Tab],[object Button],[object Button]
+
+// Div00 에 포함된 모든 하위요소중 property text 값이 "Button02" 인 요소 검색
+trace(Eco.XComp.query(Div00, "prop[text] == 'Button02'"));
+// output : [object Button]
+
+// Div00 에 포함된 모든 하위요소중 currentstyle align 값이 "center middle" 인 요소 검색
+// (currentstyle은 현재 적용되고 있는 style object를 얻어오는 property 임)
+Div00.Div01.Button01.style.align = "left bottom";
+trace(Eco.XComp.query(Div00, "curStyle[align] == 'center middle'"));
+// output : [object Button],[object Div],[object Tab],[object Button],[object Button]
+
+// Div00 에 포함된 모든 하위요소중 style align 값이 "left top" 인 요소 검색
+// 화면디자인시 적용된 style 의 특정 값을 얻어온다.
+trace(Eco.XComp.query(Div00, "style[align] == 'left top'"));
+// output : [object Button]
+
+// Div00 에 포함된 모든 하위요소중 화면에 보이는 요소 검색
+// prop[value] == true 는 실제 보이는 요소가 아니어도 속성값이 true이면 검색됨.
+Div00.Div01.visible = false;	
+trace(Eco.XComp.query(Div00, "isVisible == true"));
+// output : [object Button]
+
+// Div00 에 Dataset과 Button이 포함됐을 경우 하위요소중 visual한 컴포넌트만 검색
+trace(Eco.XComp.query(Div00, "isVisual == true", 0));
+// output : [object Button]
+
+// Div00 에 포함된 모든 하위요소중 활성화된 요소 검색
+// prop[enable] == true 는 실제 활성화된 요소가 아니어도 속성값이 true이면 검색됨.
+Div00.Div01.enable = false;	
+trace(Eco.XComp.query(Div00, "isEnable == true"));
+// output : [object Button]
+
+// Div00 에 포함된 모든 하위요소중 property name에 'ab' 이 포함된 요소을 검색
+trace(Eco.XComp.query(Div00, "prop[name] *= 'ab'"));
+// output : [object Tab],[object Tabpage],[object Tabpage]
+
+// Div00 에 포함된 모든 하위요소중 property name이 'Bu' 로 시작되는 요소을 검색
+trace(Eco.XComp.query(Div00, "prop[name] ^= 'Bu'"));
+// output : [object Button],[object Button],[object Button],[object Button]
+
+// Div00 에 포함된 모든 하위요소중 property name이 '01' 로 끝나는 요소을 검색
+trace(Eco.XComp.query(Div00, "prop[name] $= '01'"));
+// output : [object Div],[object Button]
+
+// Div00에 포함된 모든 하위요소중 화면에 보이면서 type이 Button 인 요소를 검색
+Div00.Div01.visible = false;
+trace(Eco.XComp.query(Div00, "isVisible == true && typeOf == 'Button'"));
+// output : [object Button]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 930
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setProperties">
+        <a name="Eco.XComp.setProperties">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.setProperties<span class="signature">(target,prop,value,<span class="optional">*</span>)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 component, object에 속성 값을 지정한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">nexacro Component, object</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>prop</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">property name</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">property value</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>*</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">(prop, value 반복)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// obj = Button
+Eco.XComp.setProperties(obj, "text", "1234");
+// ==> Button.text = "1234";
+
+Eco.XComp.setProperties(obj, "class", "", "enable", false);
+// ==> Button.class = "";
+// ==> Button.enable = false;		 </code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1202
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setUserProperty">
+        <a name="Eco.XComp.setUserProperty">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.setUserProperty<span class="signature">(target,name,<span class="optional">value</span>)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 nexacro Component, object 에 사용자 속성을 추가한다.<br>
+대상이 원래 가지고 있는 이름을 지정해도 상관없이 동작한다.<br>
+※ 사용자 정의 속성을 대상에 바로 사용하면 내부 속성을<br> 
+덮어쓸 수 있으므로 본 메소드를 통해서 사용하도록 한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">nexacro Component, object</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">사용자 정의 속성 명</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">속성 값</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// Button00 (text : Button00)
+Eco.XComp.setUserProperty(Button00, "text", "user property");
+Eco.XComp.setUserProperty(Button00, "myProp", [0,1,2]);</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 1781
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="typeOf">
+        <a name="Eco.XComp.typeOf">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.typeOf<span class="signature">(obj)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 nexacro 개체의 type 을 반환
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Object, Component, Frame, .. 등 nexacro 모든 개체</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    개체의 type
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.XComp.typeOf(Button00));	// output : Button
+trace(Eco.XComp.typeOf(Tab00));	// output : Tab
+trace(Eco.XComp.typeOf(Tab00.tabpage1));	// output : Tabpage
+trace(Eco.XComp.typeOf(Dataset00));	// output : Dataset
+trace(Eco.XComp.typeOf(PropertyAnimation00));	// output : PropertyAnimation
+
+var o;
+o = new Buffer;
+trace(Eco.XComp.typeOf(o));	// output : Buffer
+
+o = new DomDocument;
+trace(Eco.XComp.typeOf(o));	// output : DomDocument
+
+o = new Rect;
+trace(Eco.XComp.typeOf(o));	// output : Rect
+
+o = new FileDialog;
+trace(Eco.XComp.typeOf(o));	// output : FileDialog
+
+o = new UserEvent;
+trace(Eco.XComp.typeOf(o));	// output : UserEvent
+
+// non XP Component/Object return undefined.
+o = {};
+trace(Eco.XComp.typeOf(o));	// output : undefined		 
+
+o = new Date();
+trace(Eco.XComp.typeOf(o));	// output : undefined</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="XComp.js.html">XComp.js</a>, line 99
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="Eco.html">Eco</a></li><li><a href="Eco.array.html">Eco.array</a></li><li><a href="Eco.Color.html">Eco.Color</a></li><li><a href="Eco.date.html">Eco.date</a></li><li><a href="Eco.Json.html">Eco.Json</a></li><li><a href="Eco.LocalStorage.html">Eco.LocalStorage</a></li><li><a href="Eco.Logger.html">Eco.Logger</a></li><li><a href="Eco.number.html">Eco.number</a></li><li><a href="Eco.object.html">Eco.object</a></li><li><a href="Eco.string.html">Eco.string</a></li><li><a href="Eco.XComp.html">Eco.XComp</a></li><li><a href="Eco.XComp.Event.html">Eco.XComp.Event</a></li><li><a href="Eco.XComp.Factory.html">Eco.XComp.Factory</a></li><li><a href="Eco.XComp.PositionSize.html">Eco.XComp.PositionSize</a></li><li><a href="Eco.XComp.Style.html">Eco.XComp.Style</a></li><li><a href="JsNamespace.html">JsNamespace</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Fri May 27 2016 16:56:29 GMT+0900 (KST)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>

@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: Eco.number</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: Eco.number</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+
+    Eco.number
+    
+	</h2> 
+	
+	
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members (3)</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="point"><span class="type-signature">&lt;static> </span>point<span class="type-signature"> :string</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        소수점 표시자 (locale에 따라 정의)
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code> "." ==> "0.01"</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="separator"><span class="type-signature">&lt;static> </span>separator<span class="type-signature"> :string</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        숫자 단위 구분 표시자 (locale에 따라 정의)
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code> "," ==> "1,234"</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="separatorGrouping"><span class="type-signature">&lt;static> </span>separatorGrouping<span class="type-signature"> :string</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        통화 표시에서 separator 규칙 정의 (locale에 따라 정의)
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>  "\\3" ==> 10,000,000  "\\1\\2\\3" ==> 1,000,00,0  "\\3\\1" ==> 1,0,0,0,000</code></pre>
+
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Method Summary (8) </h3>
+
+
+        
+
+		
+        <dl>
+            
+<dt>
+    <h4 class="name" id="bytesToSize">
+      <a href="#Eco.number.bytesToSize">
+      bytesToSize</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        파일 사이즈 환산.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="divide">
+      <a href="#Eco.number.divide">
+      divide</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        소수점 이하 나누기 연산 처리가 부적합하게 처리되는 경우 정정처리 하기 위한 함수.<br>arguments 들을 / 연산 처리하여 결과를 반환합니다.<br>"일반용계산기(공학용아님)"와 동일한 나누기 결과를 반환합니다.<br>왜 필요하나? -> plus 함수 설명 내용 참조<br><br>The largest value JavaScript can express using floating point is <br>1.7976931348623157E+10308 (10에 308승)<br>so anything bigger than that will be Infinity.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="evenRound">
+      <a href="#Eco.number.evenRound">
+      evenRound</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        반올림할 자리의 값이 1~4인 경우는 버리고, 6~9인 경우는 올림 처리한다.<br>5의 경우 그 앞자리 값이 짝수이면 버리고, 홀수이면 올림 처리한다.<br>편중 오차를 최소화하는 방법 중의 하나로 Banker's Rounding을 사용하는 것입니다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getMaskFormatString">
+      <a href="#Eco.number.getMaskFormatString">
+      getMaskFormatString</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 숫자 형식값에 Mask Format 처리된 문자열을 반환합니다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="intToHanGul">
+      <a href="#Eco.number.intToHanGul">
+      intToHanGul</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        숫자를 한글로 표기.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="intToHanJa">
+      <a href="#Eco.number.intToHanJa">
+      intToHanJa</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        숫자를 한자로 표기.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="multiply">
+      <a href="#Eco.number.multiply">
+      multiply</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        소수점 이하 곱하기 연산 처리가 부적합하게 처리되는 경우 정정처리 하기 위한 함수.<br>arguments 들을 * 연산 처리하여 결과를 반환합니다.<br>"일반용계산기(공학용아님)"와 동일한 곱하기 결과를 반환합니다.<br>왜 필요하나? -> plus 함수 설명 내용 참조
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="plus">
+      <a href="#Eco.number.plus">
+      plus</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        소수점 이하 더하기 연산 처리가 부적합하게 처리되는 경우 정정처리 하기 위한 함수.<br>arguments 들을 + 연산 처리하여 결과를 반환합니다.<br>"일반용계산기(공학용아님)"와 동일한 더하기 결과를 반환합니다.<br><br>javascript에서 아래 연산 처리하는 경우 발생되는 오류입니다.<br>trace(0.1 + 0.2); // output : 0.30000000000000004<br>Chrome, Safari, Firefox, IE8, Rutime 에서 모두 위와 같은 결과가 나온다.<br>이 놀라운 결과에 대한 몇가지 질문 :<br>-. 이것이 bug인가?<br>-. bug이면, 왜 해결하지 않는가?<br>-. bug가 아니면, javascript language spec인가?<br>대답은 :<br>javascript는 부동소수점 방식(floating point)으로 계산을 하며 IEEE Standard 754규격을 사용합니다.<br>javascript는 실수의 변환을 위해 53bit의 연산을 합니다.<br>정수인 경우에는 해당 기억공간의 범위안에서 정확한 결과를 나타내는데,,<br>실수인 경우에는 기억공간의 범위를 벗어나는 결과가 나타나면 나머지수를 버립니다.<br>컴퓨터가 연산을 위해 소수점 이하의 자릿수를 이진수로 변환하는 과정에서,,<br>예를들어,<br>0.3 을 이진수로 바꾼다면,,<br>0.3 * 2 = 0.6<br>0.6 * 2 = 1.2<br>0.2 * 2 = 0.4<br>0.4 * 2 = 0.8<br>0.8 * 2 = 1.6<br>0.6.. <== 다시 0.6이 나와,, 0.0100110011001.... 와 같이 무한히 반복됩니다.<br>0.3의 이진수처럼 기억공간의 한계를 벗어나는 결과치가 나오는 경우에는<br>부정확한(최대한 가까운?) 연산을 하게 되는 것이지요.<br>따라서 Eco.number.plus 함수를 사용하여 처리합니다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        </dl>
+                
+        <h3 class="subsection-title">Method Detail</h3>        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="bytesToSize">
+        <a name="Eco.number.bytesToSize">
+        <span class="type-signature">&lt;static> </span>Eco.number.bytesToSize<span class="signature">(bytes,<span class="optional">precision</span>,<span class="optional">unit</span>)</span><span class="type-signature"> &rarr; {number|string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        파일 사이즈 환산.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>bytes</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">파일 사이즈(byte 단위)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>precision</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">정밀도(default : 1)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">파일단위(KB,MB,...) 포함여부(default : true).</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    파일 사이즈(소수점 1자리 포함).
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var size = 1023405670,    precision = 2,    unit = false;var result = Eco.number.bytesToSize(size, precision, unit);trace(result); // output : 976.00result = Eco.number.bytesToSize(size, 0);trace(result); // output : 976 MBresult = Eco.number.bytesToSize(size);trace(result); // output : 976.0 MB</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="number.js.html">number.js</a>, line 529
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="divide">
+        <a name="Eco.number.divide">
+        <span class="type-signature">&lt;static> </span>Eco.number.divide<span class="signature">(arguments)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        소수점 이하 나누기 연산 처리가 부적합하게 처리되는 경우 정정처리 하기 위한 함수.<br>arguments 들을 / 연산 처리하여 결과를 반환합니다.<br>"일반용계산기(공학용아님)"와 동일한 나누기 결과를 반환합니다.<br>왜 필요하나? -> plus 함수 설명 내용 참조<br><br>The largest value JavaScript can express using floating point is <br>1.7976931348623157E+10308 (10에 308승)<br>so anything bigger than that will be Infinity.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>arguments</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">. 예: (1660, -1559.9, 0.33)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    성공 = 결과값. 실패 = NaN ???
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(1660 - 1559.9 + 0.33); // output : -3.2247599399339895trace(Eco.number.divide(1660, -1559.9, 0.33)); // output : -3.22475993993399</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="number.js.html">number.js</a>, line 159
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="evenRound">
+        <a name="Eco.number.evenRound">
+        <span class="type-signature">&lt;static> </span>Eco.number.evenRound<span class="signature">(value,length)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        반올림할 자리의 값이 1~4인 경우는 버리고, 6~9인 경우는 올림 처리한다.<br>5의 경우 그 앞자리 값이 짝수이면 버리고, 홀수이면 올림 처리한다.<br>편중 오차를 최소화하는 방법 중의 하나로 Banker's Rounding을 사용하는 것입니다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">변환할 값.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>length</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">소수부.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>alert(Eco.number.evenRound(1.5)); // 2alert(Eco.number.evenRound(2.5)); // 2alert(Eco.number.evenRound(1.535, 2)); // 1.54alert(Eco.number.evenRound(1.525, 2)); // 1.52</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="number.js.html">number.js</a>, line 575
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getMaskFormatString">
+        <a name="Eco.number.getMaskFormatString">
+        <span class="type-signature">&lt;static> </span>Eco.number.getMaskFormatString<span class="signature">(value,strMask)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 숫자 형식값에 Mask Format 처리된 문자열을 반환합니다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">숫자형식 값</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>strMask</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">mask할 format 문자열.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    변환된 문자열.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var val = 1234.567;var result = Eco.number.getMaskFormatString(val, "99.99");trace(result); // output : 1234.56result = Eco.number.getMaskFormatString(val, "9900.0099");trace(result); // output : 1234.567result = Eco.number.getMaskFormatString(val, "9,999.9");trace(result); // output : 1,234.5val = 1.2;result = Eco.number.getMaskFormatString(val, "99.99");trace(result); // output : 1.2result = Eco.number.getMaskFormatString(val, "9900.0099");trace(result); // output : 01.20result = Eco.number.getMaskFormatString(val, "9,999.9");trace(result); // output : 1.2</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="number.js.html">number.js</a>, line 915
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="intToHanGul">
+        <a name="Eco.number.intToHanGul">
+        <span class="type-signature">&lt;static> </span>Eco.number.intToHanGul<span class="signature">(val)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        숫자를 한글로 표기.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">숫자</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var val = 1200340500.01;var str = Eco.number.intToHanGul(val);trace(str); // output : 일십이억 삼십사만 오백  소수점 영일var val = 1200340500;var str = Eco.number.intToHanGul(val);trace(str); // output : 일십이억 삼십사만 오백</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="number.js.html">number.js</a>, line 257
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="intToHanJa">
+        <a name="Eco.number.intToHanJa">
+        <span class="type-signature">&lt;static> </span>Eco.number.intToHanJa<span class="signature">(val)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        숫자를 한자로 표기.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">숫자</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var val = 1200340500.01;var str = Eco.number.intToHanJa(val);trace(str); // output : 壹拾貳億 參拾四萬 五百  小數點 零壹var val = 1200340500;var str = Eco.number.intToHanJa(val);trace(str); // output : 壹拾貳億 參拾四萬 五百 </code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="number.js.html">number.js</a>, line 391
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="multiply">
+        <a name="Eco.number.multiply">
+        <span class="type-signature">&lt;static> </span>Eco.number.multiply<span class="signature">(arguments)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        소수점 이하 곱하기 연산 처리가 부적합하게 처리되는 경우 정정처리 하기 위한 함수.<br>arguments 들을 * 연산 처리하여 결과를 반환합니다.<br>"일반용계산기(공학용아님)"와 동일한 곱하기 결과를 반환합니다.<br>왜 필요하나? -> plus 함수 설명 내용 참조
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>arguments</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">. 예: (1660, -1559.9, 0.33)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    성공 = 결과값. 실패 = NaN ???
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(1660*-1559.9*0.33); // output : -854513.2200000001trace(Eco.number.multiply(1660, -1559.9, 0.33)); // output : -854513.22</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="number.js.html">number.js</a>, line 203
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="plus">
+        <a name="Eco.number.plus">
+        <span class="type-signature">&lt;static> </span>Eco.number.plus<span class="signature">(arguments)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        소수점 이하 더하기 연산 처리가 부적합하게 처리되는 경우 정정처리 하기 위한 함수.<br>arguments 들을 + 연산 처리하여 결과를 반환합니다.<br>"일반용계산기(공학용아님)"와 동일한 더하기 결과를 반환합니다.<br><br>javascript에서 아래 연산 처리하는 경우 발생되는 오류입니다.<br>trace(0.1 + 0.2); // output : 0.30000000000000004<br>Chrome, Safari, Firefox, IE8, Rutime 에서 모두 위와 같은 결과가 나온다.<br>이 놀라운 결과에 대한 몇가지 질문 :<br>-. 이것이 bug인가?<br>-. bug이면, 왜 해결하지 않는가?<br>-. bug가 아니면, javascript language spec인가?<br>대답은 :<br>javascript는 부동소수점 방식(floating point)으로 계산을 하며 IEEE Standard 754규격을 사용합니다.<br>javascript는 실수의 변환을 위해 53bit의 연산을 합니다.<br>정수인 경우에는 해당 기억공간의 범위안에서 정확한 결과를 나타내는데,,<br>실수인 경우에는 기억공간의 범위를 벗어나는 결과가 나타나면 나머지수를 버립니다.<br>컴퓨터가 연산을 위해 소수점 이하의 자릿수를 이진수로 변환하는 과정에서,,<br>예를들어,<br>0.3 을 이진수로 바꾼다면,,<br>0.3 * 2 = 0.6<br>0.6 * 2 = 1.2<br>0.2 * 2 = 0.4<br>0.4 * 2 = 0.8<br>0.8 * 2 = 1.6<br>0.6.. <== 다시 0.6이 나와,, 0.0100110011001.... 와 같이 무한히 반복됩니다.<br>0.3의 이진수처럼 기억공간의 한계를 벗어나는 결과치가 나오는 경우에는<br>부정확한(최대한 가까운?) 연산을 하게 되는 것이지요.<br>따라서 Eco.number.plus 함수를 사용하여 처리합니다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>arguments</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">. 예: (1660, -1559.9, 0.33)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    성공 = 결과값. 실패 = NaN ???
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var a = 0.1,    b = 0.2;trace(Eco.number.plus(a, b)); // output : 0.3trace(1660 - 1559.9 + 0.33); // output : 100.42999999999991trace(Eco.number.plus(1660, -1559.9, 0.33)); // output : 100.43</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="number.js.html">number.js</a>, line 125
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="Eco.html">Eco</a></li><li><a href="Eco.array.html">Eco.array</a></li><li><a href="Eco.Color.html">Eco.Color</a></li><li><a href="Eco.date.html">Eco.date</a></li><li><a href="Eco.Json.html">Eco.Json</a></li><li><a href="Eco.LocalStorage.html">Eco.LocalStorage</a></li><li><a href="Eco.Logger.html">Eco.Logger</a></li><li><a href="Eco.number.html">Eco.number</a></li><li><a href="Eco.object.html">Eco.object</a></li><li><a href="Eco.string.html">Eco.string</a></li><li><a href="Eco.XComp.html">Eco.XComp</a></li><li><a href="Eco.XComp.Event.html">Eco.XComp.Event</a></li><li><a href="Eco.XComp.Factory.html">Eco.XComp.Factory</a></li><li><a href="Eco.XComp.PositionSize.html">Eco.XComp.PositionSize</a></li><li><a href="Eco.XComp.Style.html">Eco.XComp.Style</a></li><li><a href="JsNamespace.html">JsNamespace</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Fri May 27 2016 16:56:29 GMT+0900 (KST)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>

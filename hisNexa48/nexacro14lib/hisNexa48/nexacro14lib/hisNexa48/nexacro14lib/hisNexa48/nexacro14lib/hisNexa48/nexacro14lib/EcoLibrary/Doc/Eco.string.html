@@ -1,0 +1,5821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: Eco.string</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: Eco.string</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+
+    Eco.string
+    
+	</h2> 
+	
+	
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Method Summary (28) </h3>
+
+
+        
+
+		
+        <dl>
+            
+<dt>
+    <h4 class="name" id="camelize">
+      <a href="#Eco.string.camelize">
+      camelize</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 문장열에서 '-' 제거하고 제거된 위치에서 첫 문자만 대문자 변경
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="capitalize">
+      <a href="#Eco.string.capitalize">
+      capitalize</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 문자열을 첫 문자만 대문자 변경
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="countNonword">
+      <a href="#Eco.string.countNonword">
+      countNonword</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열의 특수문자(개행문자 Tab문자 ~ ` ! @ # $ % % ^ & * - = + 등) 포함개수.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="decimalToUnicode">
+      <a href="#Eco.string.decimalToUnicode">
+      decimalToUnicode</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        decimal표시된 문자열 -> unicode 문자열로 변경.<br>(ex : left,right delimiter가 default이면 &#38;#32; -> space문자)
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="endsWith">
+      <a href="#Eco.string.endsWith">
+      endsWith</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        지정된 문자로 끝나는지 여부.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="escapeXML">
+      <a href="#Eco.string.escapeXML">
+      escapeXML</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        XML 의 예약문자,특수문자를 치환하여 반환.<br><br>
+대상문자 : &, <, >, ', ", \t, \r, \n
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="format">
+      <a href="#Eco.string.format">
+      format</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열 내의 {0},{1}...{n}값을 전달받은 arguments로 치환.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getLength">
+      <a href="#Eco.string.getLength">
+      getLength</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열 길이계산.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getMaskFormatString">
+      <a href="#Eco.string.getMaskFormatString">
+      getMaskFormatString</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 문자열의 Mask Format 처리된 문자열을 반환합니다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="getRightStr">
+      <a href="#Eco.string.getRightStr">
+      getRightStr</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열의 오른쪽에서 length만큼의 문자열을 가져온다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="hanGulToUnicode">
+      <a href="#Eco.string.hanGulToUnicode">
+      hanGulToUnicode</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        한글 → 유니코드로 변환.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="hexToUnicode">
+      <a href="#Eco.string.hexToUnicode">
+      hexToUnicode</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        hex표시 문자열 ->  unicode 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 &#38;#x20; -> space문자 로 변경된다.)
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="hyphenate">
+      <a href="#Eco.string.hyphenate">
+      hyphenate</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 문장열에서 대문자 기준으로 '-' 삽입하고 대문자는 소문자 변경
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="indexOfIgnoreCase">
+      <a href="#Eco.string.indexOfIgnoreCase">
+      indexOfIgnoreCase</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열의 위치를 대소문자 구별없이 찾는다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="lastIndexOfIgnoreCase">
+      <a href="#Eco.string.lastIndexOfIgnoreCase">
+      lastIndexOfIgnoreCase</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열의 위치를 대소문자 구별없이 오른쪽에서 왼쪽으로 검색이 수행됩니다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="removeMultibyteChar">
+      <a href="#Eco.string.removeMultibyteChar">
+      removeMultibyteChar</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열에서 multibyte character(한글, 한자, 일어)을 제거.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="removeStr">
+      <a href="#Eco.string.removeStr">
+      removeStr</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열을 "좌 or 우" + "대소문자 구분유무"로 첫번째 일치되는 문자열 제거.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="repeatStr">
+      <a href="#Eco.string.repeatStr">
+      repeatStr</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 문자열을 n회 반복해서 반환한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="replaceIgnoreCase">
+      <a href="#Eco.string.replaceIgnoreCase">
+      replaceIgnoreCase</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        문자열을 대소문자 구별없이 주어진 변경문자열(문자) 치환한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="replaceInvalidFileNameChars">
+      <a href="#Eco.string.replaceInvalidFileNameChars">
+      replaceInvalidFileNameChars</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        file, folder, or shortcut명에 허용되지 않는 특수문자 치환.<br>
+\ / : * ? " < > | 를 치환한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="startsWith">
+      <a href="#Eco.string.startsWith">
+      startsWith</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        지정된 문자로 시작하는지 여부.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="strFullToHalf">
+      <a href="#Eco.string.strFullToHalf">
+      strFullToHalf</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        전각문자를 반각문자로 변환.<br><br>
+참고: <br>
+전각문자는 "정사각형" 안에 들어가는 문자이고, <br>
+반각은 그 정사각형의 반쪽에 들어가는 문자이다.<br>
+전각문자의 폭은, 반각문자의 2배입니다. <br><br>
+예를 들어 숫자 "3" 은, 한글 "가"의 절반의 폭만을 가지고 있습니다. <br>
+그래서 영문과 숫자 등은 반각이고, 한글이나 한자들은 전각문자입니다. <br>
+다만, 영문과 숫자를 전각으로 표현할 수도 있습니다.<br>
+예 : 전각문자 ==> ※★０＋ , 반각문자 ==> 1a
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="strHalfToFull">
+      <a href="#Eco.string.strHalfToFull">
+      strHalfToFull</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        반각문자를 전각문자로 변환.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="unicodeToDecimal">
+      <a href="#Eco.string.unicodeToDecimal">
+      unicodeToDecimal</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        unicode 문자열 -> decimal표시 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 space문자 -> &#38;#32; 로 변경된다.)
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="unicodeToHanGul">
+      <a href="#Eco.string.unicodeToHanGul">
+      unicodeToHanGul</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        유니코드 → 한글로 변환.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="unicodeToHex">
+      <a href="#Eco.string.unicodeToHex">
+      unicodeToHex</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        unicode 문자열 -> hex표시 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 space문자 -> &#38;#x20; 로 변경된다.)
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="unicodeToUtf8">
+      <a href="#Eco.string.unicodeToUtf8">
+      unicodeToUtf8</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        unicode 문자열 -> utf-8 인코딩 hex표시된 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 space문자 -> 20 로 변경된다.)
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="utf8ToUnicode">
+      <a href="#Eco.string.utf8ToUnicode">
+      utf8ToUnicode</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        utf-8 인코딩 hex표시된 문자열 -> unicode 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 20 -> space문자 로 변경된다.)
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        </dl>
+                
+        <h3 class="subsection-title">Method Detail</h3>        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="camelize">
+        <a name="Eco.string.camelize">
+        <span class="type-signature">&lt;static> </span>Eco.string.camelize<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 문장열에서 '-' 제거하고 제거된 위치에서 첫 문자만 대문자 변경
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    처리된 문자
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.string.camelize("create-point")); // output : createPoint		 </code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 1306
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="capitalize">
+        <a name="Eco.string.capitalize">
+        <span class="type-signature">&lt;static> </span>Eco.string.capitalize<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 문자열을 첫 문자만 대문자 변경
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    첫 문자 대문자 처리된 문자
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.string.capitalize("point")); // output : Point		 </code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 1289
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="countNonword">
+        <a name="Eco.string.countNonword">
+        <span class="type-signature">&lt;static> </span>Eco.string.countNonword<span class="signature">(str)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열의 특수문자(개행문자 Tab문자 ~ ` ! @ # $ % % ^ & * - = + 등) 포함개수.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">대상 문자열.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    특수문자 개수.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "2011-12-27\r\n\t~`";
+var cnt = Eco.string.countNonword(str);
+trace(cnt); // output : 7</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 410
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="decimalToUnicode">
+        <a name="Eco.string.decimalToUnicode">
+        <span class="type-signature">&lt;static> </span>Eco.string.decimalToUnicode<span class="signature">(val,<span class="optional">leftDelimiter</span>,<span class="optional">rightDelimiter</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        decimal표시된 문자열 -> unicode 문자열로 변경.<br>(ex : left,right delimiter가 default이면 &#38;#32; -> space문자)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">대상 decimal표시된 문자열</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>leftDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 Decimal 표시할 때 좌측에 표시하는 문자열(default:"&#")</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>rightDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 Decimal 표시할 때 우측에 표시하는 문자열(default:";")</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    decimal값으로 표시한 문자열을 unicode 문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "&#38;#102;&#38;#111;&#38;#114;&#38;#109;&#38;#32;&#38;#47196;&#38;#46377;";
+var result = Eco.string.decimalToUnicode(str);
+trace(result); // output : form 로딩</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 695
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="endsWith">
+        <a name="Eco.string.endsWith">
+        <span class="type-signature">&lt;static> </span>Eco.string.endsWith<span class="signature">(str,target)</span><span class="type-signature"> &rarr; {boolean}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        지정된 문자로 끝나는지 여부.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">문자열.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">대상문자열.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    끝나는지 여부.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">boolean</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "Hello World!";
+var result = Eco.string.endsWith(str, "ld!");
+trace(result); // output : true
+result = Eco.string.endsWith(str, "Wor");
+trace(result); // output : false</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 643
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="escapeXML">
+        <a name="Eco.string.escapeXML">
+        <span class="type-signature">&lt;static> </span>Eco.string.escapeXML<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        XML 의 예약문자,특수문자를 치환하여 반환.<br><br>
+대상문자 : &, <, >, ', ", \t, \r, \n
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">문자열.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    치환된 문자열.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.string.escapeXML("1 > 0")); // output : 1 &gt; 0
+trace(Eco.string.escapeXML("Q&A")); // output : Q&amp;A</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 1238
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="format">
+        <a name="Eco.string.format">
+        <span class="type-signature">&lt;static> </span>Eco.string.format<span class="signature">(str,arguments)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열 내의 {0},{1}...{n}값을 전달받은 arguments로 치환.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">대상 문자열.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>arguments</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">arguments</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">식별자 {N}을 대체할 값.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    치환된 문자열.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "I {0} a {1} {2}.";
+Eco.string.format(str, "am", "cool", "guy"); //return "I am a cool guy."
+
+str = "Currency: [{0}], Date : [{1}], JuminNo: [{2}]";
+var result = Eco.string.format(str,
+     Eco.number.getMaskFormatString(12301234, "#,###"),
+     Eco.date.getMaskFormatString(new Date(), "yyyy-MM-dd tt hh:mm"),
+     Eco.string.getMaskFormatString("6601011234567", "@@@@@@-{@@@@@@@}")
+   );
+trace(result); // output : Currency: [12,301,234], Date : [2013-05-03 오후 07:49], JuminNo: [660101-*******]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 216
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getLength">
+        <a name="Eco.string.getLength">
+        <span class="type-signature">&lt;static> </span>Eco.string.getLength<span class="signature">(str,<span class="optional">unit</span>)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열 길이계산.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">대상 문자열.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자열의 길이를 검사하는 단위 . 
+						   "utf16" - 한문자당 1의 값으로 합산함(default).
+						   "utf8"  - 한 문자당 영문1, 다국어 2~5의 값으로 합산함.
+						   "ascii" - 한문자당 영문 1, 한글 2의 값으로 합산함.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    문자열 길이.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "unit 문자열";
+var len = Eco.string.getLength(str);
+trace(len); // output : 8
+len = Eco.string.getLength(str, "ascii");
+trace(len); // output : 11
+len = Eco.string.getLength(str, "utf8");
+trace(len); // output : 14</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 243
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getMaskFormatString">
+        <a name="Eco.string.getMaskFormatString">
+        <span class="type-signature">&lt;static> </span>Eco.string.getMaskFormatString<span class="signature">(val,strMask,<span class="optional">maskChr</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 문자열의 Mask Format 처리된 문자열을 반환합니다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">원본 문자열.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>strMask</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">mask할 format 문자열.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maskChr</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">mask 문자.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    변환된 문자열.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "20060607";
+var result = Eco.string.getMaskFormatString(str, "@@@@-@@-@@");
+trace(result); // output : 2006-06-07
+
+str = "6601011234567";
+result = Eco.string.getMaskFormatString(str, "######-{#######}");
+trace(result); // output : 660101-*******</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 1168
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getRightStr">
+        <a name="Eco.string.getRightStr">
+        <span class="type-signature">&lt;static> </span>Eco.string.getRightStr<span class="signature">(source,length)</span><span class="type-signature"> &rarr; {boolean}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열의 오른쪽에서 length만큼의 문자열을 가져온다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">원래 문자열( 예 : "aaBBbbcc" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>length</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">가져올문자열 길이 ( 예 : 2 )</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    오른쪽에서 length만큼의 문자열 ( 예 : "cc" )]
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">boolean</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "myT1 and myT2 are the strings used for padding";
+var res = Eco.string.getRightStr(str, 7);
+trace(res); // output : padding</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 108
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="hanGulToUnicode">
+        <a name="Eco.string.hanGulToUnicode">
+        <span class="type-signature">&lt;static> </span>Eco.string.hanGulToUnicode<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        한글 → 유니코드로 변환.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">한글 문자열.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    유니코드.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "www.투비소프트.com";
+var result = Eco.string.hanGulToUnicode(str);
+trace(result); // output : www.\uD22C\uBE44\uC18C\uD504\uD2B8.com</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 539
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="hexToUnicode">
+        <a name="Eco.string.hexToUnicode">
+        <span class="type-signature">&lt;static> </span>Eco.string.hexToUnicode<span class="signature">(val,<span class="optional">leftDelimiter</span>,<span class="optional">rightDelimiter</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        hex표시 문자열 ->  unicode 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 &#38;#x20; -> space문자 로 변경된다.)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">대상 hex표시 문자열</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>leftDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 hex 표시할 때 좌측에 표시하는 문자열(default:"&#x")</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>rightDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 hex 표시할 때 우측에 표시하는 문자열(default:";")</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    hex값으로 표시한 문자열을 unicode 문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "&#38;#102;&#38;#111;&#38;#114;&#38;#109;&#38;#32;&#38;#47196;&#38;#46377;";
+var result = Eco.string.hexToUnicode(str);
+trace(result); // output : form 로딩</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 767
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="hyphenate">
+        <a name="Eco.string.hyphenate">
+        <span class="type-signature">&lt;static> </span>Eco.string.hyphenate<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 문장열에서 대문자 기준으로 '-' 삽입하고 대문자는 소문자 변경
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    처리된 문자
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.string.hyphenate("createPoint")); // output : create-point		 </code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 1322
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="indexOfIgnoreCase">
+        <a name="Eco.string.indexOfIgnoreCase">
+        <span class="type-signature">&lt;static> </span>Eco.string.indexOfIgnoreCase<span class="signature">(value,sFind,nStart)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열의 위치를 대소문자 구별없이 찾는다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">원래 문자열( 예 : "aaBBbbcc" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>sFind</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">찾고자 하는 문자열( 예 : "bb" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>nStart</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">검색 시작위치 (옵션 : Default=0) ( 예 : 1 )</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    찾고자 하는 문자열의 시작위치 ( 예 : 2 ). 실패 = -1.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "DCABCABAABAAB",
+    findStr = "ab";
+var idx = Eco.string.indexOfIgnoreCase(str, findStr);
+trace(idx); // output : 2
+idx = Eco.string.indexOfIgnoreCase(str, findStr, 3);
+trace(idx); // output : 5</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 28
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="lastIndexOfIgnoreCase">
+        <a name="Eco.string.lastIndexOfIgnoreCase">
+        <span class="type-signature">&lt;static> </span>Eco.string.lastIndexOfIgnoreCase<span class="signature">(source,target,<span class="optional">opt_start</span>)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열의 위치를 대소문자 구별없이 오른쪽에서 왼쪽으로 검색이 수행됩니다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">원래 문자열( 예 : "aaBBbbcc" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">찾고자 하는 문자열( 예 : "BB" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>opt_start</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">검색 시작위치 index(Default=문자열의 끝 )</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    찾고자 하는 문자열의 시작위치
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "CABCDABCDABCD",
+    findStr = "abc";
+var idx = Eco.string.lastIndexOfIgnoreCase(str, findStr);
+trace(idx); // output : 9
+idx = Eco.string.lastIndexOfIgnoreCase(str, findStr, 8);
+trace(idx); // output : 5</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 86
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="removeMultibyteChar">
+        <a name="Eco.string.removeMultibyteChar">
+        <span class="type-signature">&lt;static> </span>Eco.string.removeMultibyteChar<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열에서 multibyte character(한글, 한자, 일어)을 제거.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">문자열.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    multibyte character가 제거된 문자열.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "unit문자열s五ご";
+var result = Eco.string.removeMultibyteChar(str);
+trace(result); // output : units</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 592
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="removeStr">
+        <a name="Eco.string.removeStr">
+        <span class="type-signature">&lt;static> </span>Eco.string.removeStr<span class="signature">(source,target,direction,<span class="optional">opt_ignoreCase</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열을 "좌 or 우" + "대소문자 구분유무"로 첫번째 일치되는 문자열 제거.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">원래 문자열( 예 : "aaBBbbcc" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">제거할 문자열( 예 : "cc" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>direction</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">삭제방향."left(default)", "right".</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>opt_ignoreCase</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">대소문자구분유무.true(default), false.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    제거된 문자열.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "www.domain.com";
+var result = Eco.string.removeStr(str, "www.");
+trace(result); // output : domain.com
+str = "www.tobesoft.com, www.tobesoft.co.kr";
+result = Eco.string.removeStr(str, ".com", "right");
+trace(result); // output : www.tobesoft, www.tobesoft.co.kr
+str = "www.tobesoft.COM, www.tobesoft.co.kr";
+result = Eco.string.removeStr(str, ".com", "right", false);
+trace(result); // output : www.tobesoft, www.tobesoft.co.kr</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 139
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="repeatStr">
+        <a name="Eco.string.repeatStr">
+        <span class="type-signature">&lt;static> </span>Eco.string.repeatStr<span class="signature">(str,count)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 문자열을 n회 반복해서 반환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">반복할 문자열.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">반복 횟수.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    반복된 문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "0";
+var result = Eco.string.repeatStr(str, 4);
+trace(result); // output : 0000</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 523
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="replaceIgnoreCase">
+        <a name="Eco.string.replaceIgnoreCase">
+        <span class="type-signature">&lt;static> </span>Eco.string.replaceIgnoreCase<span class="signature">(sOrg,sRepFrom,sRepTo)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        문자열을 대소문자 구별없이 주어진 변경문자열(문자) 치환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>sOrg</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">원래 문자열( 예 : "aaBBbbcc" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>sRepFrom</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">찾고자 하는 문자열( 예 : "bb" )</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>sRepTo</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">치환될 문자열 ( 예 : "xx" )</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    치환된 문자열 ( 예 : "aaxxxxccxx" ).
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "DCABCABAABAAB",
+    findStr = "ab";
+var str = Eco.string.replaceIgnoreCase(str, findStr, "x");
+trace(str); // output : DCxCxAxAx</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 46
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="replaceInvalidFileNameChars">
+        <a name="Eco.string.replaceInvalidFileNameChars">
+        <span class="type-signature">&lt;static> </span>Eco.string.replaceInvalidFileNameChars<span class="signature">(str,<span class="optional">opt_newvalue</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        file, folder, or shortcut명에 허용되지 않는 특수문자 치환.<br>
+\ / : * ? " < > | 를 치환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자열.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>opt_newvalue</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">치환할 문자열(default: underscore( "_" ) ).</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    허용되지 않는 특수문자를 치환한 문자열.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "test:uploadfile.php";
+var result = Eco.string.replaceInvalidFileNameChars(str);
+trace(result); // output : test_uploadfile.php
+str = "test-uploadfile.php";
+result = Eco.string.replaceInvalidFileNameChars(str);
+trace(result); // output : test-uploadfile.php</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 574
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="startsWith">
+        <a name="Eco.string.startsWith">
+        <span class="type-signature">&lt;static> </span>Eco.string.startsWith<span class="signature">(str,target)</span><span class="type-signature"> &rarr; {boolean}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        지정된 문자로 시작하는지 여부.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">문자열.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">대상문자열.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    시작하는지 여부.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">boolean</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "Hello World!";
+var result = Eco.string.startsWith(str, "He");
+trace(result); // output : true
+result = Eco.string.startsWith(str, "hew");
+trace(result); // output : false</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 625
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="strFullToHalf">
+        <a name="Eco.string.strFullToHalf">
+        <span class="type-signature">&lt;static> </span>Eco.string.strFullToHalf<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        전각문자를 반각문자로 변환.<br><br>
+참고: <br>
+전각문자는 "정사각형" 안에 들어가는 문자이고, <br>
+반각은 그 정사각형의 반쪽에 들어가는 문자이다.<br>
+전각문자의 폭은, 반각문자의 2배입니다. <br><br>
+예를 들어 숫자 "3" 은, 한글 "가"의 절반의 폭만을 가지고 있습니다. <br>
+그래서 영문과 숫자 등은 반각이고, 한글이나 한자들은 전각문자입니다. <br>
+다만, 영문과 숫자를 전각으로 표현할 수도 있습니다.<br>
+예 : 전각문자 ==> ※★０＋ , 반각문자 ==> 1a
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">전각문자( 예 : "０＋" ).</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    반각문자 ( 예 : "0+" ).
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var var str = "０１＋ｗｏｒｌｄ투비소프트";
+var result = Eco.string.strFullToHalf(str);
+trace(result); // output : 01+world투비소프트</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 435
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="strHalfToFull">
+        <a name="Eco.string.strHalfToFull">
+        <span class="type-signature">&lt;static> </span>Eco.string.strHalfToFull<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        반각문자를 전각문자로 변환.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">반각문자( 예 : "0+" ).</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    전각문자 ( 예 : "０＋" ).
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var var str = "01+world투비소프트";
+var result = Eco.string.strHalfToFull(str);
+trace(result); // output : ０１＋ｗｏｒｌｄ투비소프트</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 470
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="unicodeToDecimal">
+        <a name="Eco.string.unicodeToDecimal">
+        <span class="type-signature">&lt;static> </span>Eco.string.unicodeToDecimal<span class="signature">(val,<span class="optional">leftDelimiter</span>,<span class="optional">rightDelimiter</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        unicode 문자열 -> decimal표시 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 space문자 -> &#38;#32; 로 변경된다.)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">대상 unicodeString</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>leftDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 Decimal 표시할 때 좌측에 표시하는 문자열(default:"&#")</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>rightDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 Decimal 표시할 때 우측에 표시하는 문자열(default:";")</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    unicode 문자열을 decimal값으로 표시한 문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "form 로딩";
+var result = Eco.string.unicodeToDecimal(str);
+trace(result); // output : &#38;#102;&#38;#111;&#38;#114;&#38;#109;&#38;#32;&#38;#47196;&#38;#46377;</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 662
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="unicodeToHanGul">
+        <a name="Eco.string.unicodeToHanGul">
+        <span class="type-signature">&lt;static> </span>Eco.string.unicodeToHanGul<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        유니코드 → 한글로 변환.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">유니코드 문자열.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    한글.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "www.\uD22C\uBE44\uC18C\uD504\uD2B8.com";
+var result = Eco.string.unicodeToHanGul(str);
+trace(result); // output : www.투비소프트.com</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 554
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="unicodeToHex">
+        <a name="Eco.string.unicodeToHex">
+        <span class="type-signature">&lt;static> </span>Eco.string.unicodeToHex<span class="signature">(val,<span class="optional">leftDelimiter</span>,<span class="optional">rightDelimiter</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        unicode 문자열 -> hex표시 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 space문자 -> &#38;#x20; 로 변경된다.)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">대상 unicodeString</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>leftDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 hex 표시할 때 좌측에 표시하는 문자열(default:"&#x")</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>rightDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 hex 표시할 때 우측에 표시하는 문자열(default:";")</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    unicode 문자열을 hex값으로 표시한 문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "form 로딩";
+var result = Eco.string.unicodeToHex(str);
+trace(result); // output : &#38;#x66;&#38;#x6F;&#38;#x72;&#38;#x6D;&#38;#x20;&#38;#xB85C;&#38;#xB529;</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 733
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="unicodeToUtf8">
+        <a name="Eco.string.unicodeToUtf8">
+        <span class="type-signature">&lt;static> </span>Eco.string.unicodeToUtf8<span class="signature">(val,<span class="optional">leftDelimiter</span>,<span class="optional">rightDelimiter</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        unicode 문자열 -> utf-8 인코딩 hex표시된 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 space문자 -> 20 로 변경된다.)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">대상 unicodeString</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>leftDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 utf-8 인코딩 hex 표시할 때 좌측에 표시하는 문자열(default:"")</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>rightDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 utf-8 인코딩 hex 표시할 때 우측에 표시하는 문자열(default:" ")</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    unicode 문자열을 utf-8 인코딩 hex값으로 표시한 문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "form 로딩";
+var result = Eco.string.unicodeToUtf8(str);
+trace(result); // output : 66 6F 72 6D 20 EB A1 9C EB 94 A9</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 826
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="utf8ToUnicode">
+        <a name="Eco.string.utf8ToUnicode">
+        <span class="type-signature">&lt;static> </span>Eco.string.utf8ToUnicode<span class="signature">(val,<span class="optional">leftDelimiter</span>,<span class="optional">rightDelimiter</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        utf-8 인코딩 hex표시된 문자열 -> unicode 문자열로 변경.<br>(ex : left,right delimiter가 default 값으로 주어지면 20 -> space문자 로 변경된다.)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">대상 utf-8 인코딩 hex표시된 문자열</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>leftDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 utf-8 인코딩 hex 표시할 때 좌측에 표시하는 문자열(default:"")</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>rightDelimiter</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">문자를 utf-8 인코딩 hex 표시할 때 우측에 표시하는 문자열(default:" ")</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    utf-8 인코딩 hex값으로 표시한 문자열 -> unicode 문자열
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var str = "66 6F 72 6D 20 EB A1 9C EB 94 A9";
+var result = Eco.string.utf8ToUnicode(str);
+trace(result); // output : form 로딩</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="string.js.html">string.js</a>, line 884
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="Eco.html">Eco</a></li><li><a href="Eco.array.html">Eco.array</a></li><li><a href="Eco.Color.html">Eco.Color</a></li><li><a href="Eco.date.html">Eco.date</a></li><li><a href="Eco.Json.html">Eco.Json</a></li><li><a href="Eco.LocalStorage.html">Eco.LocalStorage</a></li><li><a href="Eco.Logger.html">Eco.Logger</a></li><li><a href="Eco.number.html">Eco.number</a></li><li><a href="Eco.object.html">Eco.object</a></li><li><a href="Eco.string.html">Eco.string</a></li><li><a href="Eco.XComp.html">Eco.XComp</a></li><li><a href="Eco.XComp.Event.html">Eco.XComp.Event</a></li><li><a href="Eco.XComp.Factory.html">Eco.XComp.Factory</a></li><li><a href="Eco.XComp.PositionSize.html">Eco.XComp.PositionSize</a></li><li><a href="Eco.XComp.Style.html">Eco.XComp.Style</a></li><li><a href="JsNamespace.html">JsNamespace</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Fri May 27 2016 16:56:29 GMT+0900 (KST)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="HM_FinalCandidateInfoSystemForm" classname="HM_FinalCandidateInfoSystemForm" left="0" top="0" width="1250" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div04" taborder="2" left="0.72%" top="717" right="0.88%" height="38" style="border:1 solid black ;bordertype:normal 0 0 ;font:9 Dotum;"/>
+        <Div id="Div02" taborder="7" text="Div01" left="0.72%" top="60" right="0.8%" height="654" style="background:#eceff1ff;border:1 solid #808080ff ;bordertype:normal 0 0 ;">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Grid id="Grid00" taborder="8" binddataset="dsHmFinSufcandi" useinputpanel="false" autofittype="col" left="11" top="63" width="1225" height="518" class="AreaGrid" style="bordertype:normal 0 0 ;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="32"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="83"/>
+                <Column size="146"/>
+                <Column size="80"/>
+                <Column size="107"/>
+                <Column size="112"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="108"/>
+                <Column size="72"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#eceff1ff;" text="No"/>
+                <Cell col="1" style="background:#eceff1ff;" text="신규사원번호"/>
+                <Cell col="2" style="background:#eceff1ff;" text="사원명"/>
+                <Cell col="3" style="background:#eceff1ff;" text="고용구분"/>
+                <Cell col="4" style="background:#eceff1ff;" text="주민등록번호"/>
+                <Cell col="5" style="background:#eceff1ff;" text="성별"/>
+                <Cell col="6" style="background:#eceff1ff;" text="생년월일"/>
+                <Cell col="7" style="background:#eceff1ff;" text="휴대번호"/>
+                <Cell col="8" style="background:#eceff1ff;" text="근무지"/>
+                <Cell col="9" style="background:#eceff1ff;" text="호봉"/>
+                <Cell col="10" style="background:#eceff1ff;" text="거주국"/>
+                <Cell col="11" style="background:#eceff1ff;" text="상태"/>
+                <Cell col="12" style="background:#eceff1ff;" text="응시번호"/>
+              </Band>
+              <Band id="body">
+                <Cell style="background: ;" expr="currow+1"/>
+                <Cell col="1" displaytype="normal" edittype="normal" style="background: ;" text="bind:empNo"/>
+                <Cell col="2" edittype="normal" style="background: ;" text="bind:empNm"/>
+                <Cell col="3" edittype="normal" style="background: ;" text="bind:hireDiv"/>
+                <Cell col="4" edittype="normal" style="background: ;" text="bind:rrn"/>
+                <Cell col="5" edittype="normal" style="background: ;" text="bind:gender"/>
+                <Cell col="6" edittype="normal" style="background: ;" text="bind:birthday"/>
+                <Cell col="7" edittype="normal" style="background: ;" text="bind:phone"/>
+                <Cell col="8" edittype="normal" style="background: ;" text="bind:workPlace"/>
+                <Cell col="9" edittype="normal" style="background: ;" text="bind:pstep"/>
+                <Cell col="10" edittype="normal" style="background: ;" text="bind:resCty"/>
+                <Cell col="11" edittype="normal" style="background: ;" text="bind:sts"/>
+                <Cell col="12" edittype="none" style="background: ;" expr="bind:takeNum"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="07Stc" taborder="9" text="성  별" left="507" top="679" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="10Stc" taborder="10" text="근무지 " left="735" top="679" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="08Stc" taborder="11" text="생년월일" left="256" top="615" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="04Stc" taborder="12" text="고용구분" left="507" top="583" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Edit id="empNameEd" taborder="13" onkeyup="durationEdt_onkeyup" left="119" top="583" width="115" height="30" style="margin:0 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <Static id="06Stc" taborder="14" text="주민등록번호" left="256" top="583" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Radio id="genderRadio" taborder="15" tabstop="false" columncount="3" codecolumn="codecolumn" datacolumn="datacolumn" onitemclick="Div01_Div02_Radio00_onitemclick" left="615" top="679" width="86" height="30" style="font:9 Dotum;bordertype:normal 0 0 ;">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">M</Col>
+                <Col id="datacolumn">남</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">W</Col>
+                <Col id="datacolumn">여</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="11Stc" taborder="16" text="직 급" left="734" top="583" width="101" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="13Stc" taborder="17" text="장애여부" left="1008" top="647" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="14Stc" taborder="18" text="보훈여부" left="1008" top="615" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="02Stc" taborder="19" text="신규 사원번호" left="16" top="615" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="05Stc" taborder="20" text="휴대전화번호" left="507" top="647" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="03Stc" taborder="21" text="성 명" left="16" top="583" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Edit id="empNoEd" taborder="22" onkeyup="durationEdt_onkeyup" left="119" top="615" width="115" height="30" style="margin:0 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <Static id="17Stc" taborder="23" text="외국인여부" left="1008" top="679" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Radio id="disperYnRadio" taborder="24" tabstop="false" columncount="3" codecolumn="codecolumn" datacolumn="datacolumn" onitemclick="Div01_Div02_Radio00_onitemclick" left="1111" top="647" width="115" height="30" style="font:9 Dotum;bordertype:normal 0 0 ;align:left middle;" class="AreaRadio">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Y</Col>
+                <Col id="datacolumn">예</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">N</Col>
+                <Col id="datacolumn">아니요</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Radio id="vtrYnRadio" taborder="25" tabstop="false" columncount="3" codecolumn="codecolumn" datacolumn="datacolumn" onitemclick="Div01_Div02_Radio00_onitemclick" left="1111" top="615" width="114" height="30" style="font:9 Dotum;bordertype:normal 0 0 ;align:left middle;" class="AreaRadio">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Y</Col>
+                <Col id="datacolumn">예</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">N</Col>
+                <Col id="datacolumn">아니요</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Calendar id="birthdayCal" taborder="26" left="359" top="615" width="126" height="30" style="bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <MaskEdit id="empRrnEd" taborder="27" type="string" mask="######'-'#######" left="359" top="583" width="126" height="30" style="bordertype:normal 0 0 ;align:left middle;font:9 Dotum;" class="AreaMaskEdt"/>
+        <MaskEdit id="phoneMaskEd" taborder="28" type="string" mask="###'-'####'-'####" left="610" top="647" width="105" height="30" style="bordertype:normal 0 0 ;align:center middle;font:9 Dotum;" class="AreaMaskEdt"/>
+        <Radio id="disperYnRadio00" taborder="29" tabstop="false" columncount="3" codecolumn="codecolumn" datacolumn="datacolumn" onitemclick="Div01_Div02_Radio00_onitemclick" left="1111" top="679" width="114" height="30" style="font:9 Dotum;bordertype:normal 0 0 ;align:left middle;" class="AreaRadio">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Y</Col>
+                <Col id="datacolumn">예</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">N</Col>
+                <Col id="datacolumn">아니요</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Static id="18Stc" taborder="30" text="상태" left="1008" top="583" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Combo id="hireDivCombo" taborder="31" codecolumn="codecolumn" datacolumn="datacolumn" left="1111" top="583" width="110" height="30" style="bordertype:normal 0 0 ;font:9 Dotum;" class="AreaCal">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">불합격</Col>
+                <Col id="datacolumn">불합격</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">1차합격</Col>
+                <Col id="datacolumn">1차합격</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">발령</Col>
+                <Col id="datacolumn">발령</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">최종합격</Col>
+                <Col id="datacolumn">최종합격</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">저장</Col>
+                <Col id="datacolumn">저장</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2차합격</Col>
+                <Col id="datacolumn">2차합격</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">응시중</Col>
+                <Col id="datacolumn">응시중</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Combo id="hireDivCombo00" taborder="32" codecolumn="codecolumn" datacolumn="datacolumn" left="610" top="583" width="105" height="30" style="bordertype:normal 0 0 ;font:9 Dotum;" class="AreaCal">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">정규직</Col>
+                <Col id="datacolumn">정규직</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">비정규직</Col>
+                <Col id="datacolumn">비정규직</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">별정직</Col>
+                <Col id="datacolumn">별정직</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Static id="15Stc" taborder="33" text="호봉" left="507" top="615" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Combo id="hireDivCombo01" taborder="34" codecolumn="codecolumn" datacolumn="datacolumn" left="610" top="615" width="105" height="30" style="bordertype:normal 0 0 ;font:9 Dotum;" class="AreaCal">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">1호봉</Col>
+                <Col id="datacolumn">1호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">2호봉</Col>
+                <Col id="datacolumn">2호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">3호봉</Col>
+                <Col id="datacolumn">3호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">4호봉</Col>
+                <Col id="datacolumn">4호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">5호봉</Col>
+                <Col id="datacolumn">5호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">6호봉</Col>
+                <Col id="datacolumn">6호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">7호봉</Col>
+                <Col id="datacolumn">7호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">8호봉</Col>
+                <Col id="datacolumn">8호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">9호봉</Col>
+                <Col id="datacolumn">9호봉</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">10호봉</Col>
+                <Col id="datacolumn">10호봉</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Static id="16Stc" taborder="35" text="거주국" left="735" top="615" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="20Stc" taborder="36" text="부서" left="735" top="647" width="100" height="30" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="10Stc00" taborder="37" text="주  소" left="16" top="647" width="101" height="62" style="background:#b0bec5ff;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Edit id="workPlaceEd" taborder="40" onkeyup="durationEdt_onkeyup" left="838" top="679" width="119" height="30" style="margin:0 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <Edit id="jobrkEd" taborder="41" left="838" top="583" width="119" height="30" style="margin:0 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <Edit id="nantEd" taborder="43" onkeyup="durationEdt_onkeyup" left="838" top="615" width="119" height="30" style="margin:0 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <Edit id="deptNmEd" taborder="45" onkeyup="durationEdt_onkeyup" left="838" top="647" width="119" height="30" style="margin:0 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <Edit id="editAddrDetail" taborder="47" left="120" top="679" width="365" height="30" style="margin:0 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <Edit id="editAddr" taborder="48" left="208" top="647" width="243" height="30" style="margin:0 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaEdt"/>
+        <Edit id="editZipCode" taborder="61" left="9.6%" top="647" right="83.68%" height="28" style="bordertype:normal 0 0 ;"/>
+        <Button id="DelBtn03" taborder="63" onclick="btn_empMajorPopup_onclick" cssclass="btn_WF_SearchSmall" left="959" top="678" width="30" height="30"/>
+        <Button id="DelBtn00" taborder="64" onclick="btn_empDeptPopup02_onclick" cssclass="btn_WF_SearchSmall" left="959" top="645" width="30" height="30"/>
+        <Button id="DelBtn01" taborder="65" onclick="btn_empDeptPopup01_onclick" cssclass="btn_WF_SearchSmall" left="959" top="614" width="30" height="30"/>
+        <Button id="DelBtn02" taborder="66" onclick="btn_empDeptPopup00_onclick" cssclass="btn_WF_SearchSmall" left="959" top="582" width="30" height="30"/>
+        <Static id="Static00" taborder="67" text="최종합격자관리" left="1.84%" top="7" right="85.76%" height="41" style="color:#6c6c6cff;bordertype:normal 0 0 ;align:middle;font:antialias 16 arial;"/>
+        <Button id="btn_searchEmp" taborder="68" text="조회" onclick="btn_searchEmp_onclick" cssclass="btn_WF_Search" left="1178" top="21" width="58" height="23" style="background:#455a64ff;bordertype:normal 3 3 ;font:9 Gulim;"/>
+        <Button id="register01" taborder="69" text="추가" onclick="btn_insertEmp_onclick" cssclass="btn_WF_CRUD" left="976" top="723" width="62" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;"/>
+        <Button id="remove" taborder="70" text="삭제" onclick="btn_deleteEmp_onclick" cssclass="btn_WF_CRUD" left="1040" top="723" width="62" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;"/>
+        <Button id="mngnt" taborder="71" text="저장" onclick="btn_saveAll_onclick" cssclass="btn_WF_CRUD" left="1104" top="723" width="62" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;"/>
+        <Button id="btnClose00" taborder="72" text="닫기" onclick="exitFxAstBtn_onclick" cssclass="btn_WF_CRUD" left="1167" top="723" width="62" height="25" style="background:#455a64ff;color:#ffffffff;bordertype:normal 3 3 ;"/>
+        <Button id="DelBtn10" taborder="73" onclick="div_empInfo2_btn_findZip_onclick" cssclass="btn_WF_SearchSmall" left="455" top="646" width="30" height="30"/>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item15" compid="empNameEd" propid="value" datasetid="dsHmFinSufcandi" columnid="empNm"/>
+      <BindItem id="item18" compid="genderRadio" propid="value" datasetid="dsHmFinSufcandi" columnid="gender"/>
+      <BindItem id="item6" compid="empNoEd" propid="value" datasetid="dsHmFinSufcandi" columnid="empNo"/>
+      <BindItem id="item29" compid="disperYnRadio" propid="value" datasetid="dsHmFinSufcandi" columnid="disperYn"/>
+      <BindItem id="item28" compid="vtrYnRadio" propid="value" datasetid="dsHmFinSufcandi" columnid="vtrYn"/>
+      <BindItem id="item19" compid="birthdayCal" propid="value" datasetid="dsHmFinSufcandi" columnid="birthday"/>
+      <BindItem id="item17" compid="empRrnEd" propid="value" datasetid="dsHmFinSufcandi" columnid="rrn"/>
+      <BindItem id="item22" compid="phoneMaskEd" propid="value" datasetid="dsHmFinSufcandi" columnid="phone"/>
+      <BindItem id="item30" compid="disperYnRadio00" propid="value" datasetid="dsHmFinSufcandi" columnid="fornerYn"/>
+      <BindItem id="item31" compid="hireDivCombo" propid="value" datasetid="dsHmFinSufcandi" columnid="sts"/>
+      <BindItem id="item20" compid="hireDivCombo" propid="text" datasetid="dsHmFinSufcandi" columnid=""/>
+      <BindItem id="item21" compid="hireDivCombo00" propid="value" datasetid="dsHmFinSufcandi" columnid="hireDiv"/>
+      <BindItem id="item27" compid="hireDivCombo01" propid="value" datasetid="dsHmFinSufcandi" columnid="pstep"/>
+      <BindItem id="item23" compid="workPlaceEd" propid="value" datasetid="dsHmFinSufcandi" columnid="workPlace"/>
+      <BindItem id="item24" compid="jobrkEd" propid="value" datasetid="dsHmFinSufcandi" columnid="jobrk"/>
+      <BindItem id="item25" compid="nantEd" propid="value" datasetid="dsHmFinSufcandi" columnid="resCty"/>
+      <BindItem id="item26" compid="deptNmEd" propid="value" datasetid="dsHmFinSufcandi" columnid="deptCd"/>
+      <BindItem id="item2" compid="editAddrDetail" propid="value" datasetid="dsHmFinSufcandi" columnid="detailAddr"/>
+      <BindItem id="item1" compid="editAddr" propid="value" datasetid="dsHmFinSufcandi" columnid="addr"/>
+      <BindItem id="item0" compid="editZipCode" propid="value" datasetid="dsHmFinSufcandi" columnid="zipCd"/>
+    </Bind>
+    <Objects>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">FinSufcandiList</Col>
+            <Col id="URL">his::hrs/emp/findFinSufcandiList.do</Col>
+            <Col id="inData"/>
+            <Col id="outData">dsHmFinSufcandi=dsHmFinSufcandi</Col>
+            <Col id="argument"/>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">mngntFinSufcandi</Col>
+            <Col id="URL">his::hrs/emp/mngntFinSufcandi.do</Col>
+            <Col id="inData">dsHmFinSufcandi=dsHmFinSufcandi:U</Col>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsHmFinSufcandi" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="hireDiv" type="STRING" size="256"/>
+          <Column id="rrn" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="birthday" type="STRING" size="256"/>
+          <Column id="addr" type="STRING" size="256"/>
+          <Column id="phone" type="STRING" size="256"/>
+          <Column id="deptCd" type="STRING" size="256"/>
+          <Column id="workPlace" type="STRING" size="256"/>
+          <Column id="jobrk" type="STRING" size="256"/>
+          <Column id="pstep" type="STRING" size="256"/>
+          <Column id="vtrYn" type="STRING" size="256"/>
+          <Column id="disperYn" type="STRING" size="256"/>
+          <Column id="fornerYn" type="STRING" size="256"/>
+          <Column id="resCty" type="STRING" size="256"/>
+          <Column id="detailAddr" type="STRING" size="256"/>
+          <Column id="sts" type="STRING" size="256"/>
+          <Column id="takeNum" type="STRING" size="256"/>
+          <Column id="employSeq" type="STRING" size="256"/>
+          <Column id="zipCd" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/********************************************************************
+*                                                                   *
+* 최종합격자관리                                                  *
+*                                                                   *
+* @Path		    최종합격자정보관리        	                    *
+* @Description  최종합격자정보 조회,등록,수정,삭제 화면        *
+* @Author		최창근   					                        *
+* 								                                    *
+* Created on 2016. 6. 7.                             		        *
+*								                                    *
+********************************************************************/
+
+include "scripts::commonTran.xjs";
+include "scripts::commonScripts.xjs";  
+include "scripts::commonUtil.xjs";
+include "scripts::commonScripts.xjs";  
+
+
+// 최종합격자정보 조회
+this.btn_searchEmp_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{ 	confirm("합격자정보를 조회하하시겠습니까?");
+	this.gfnService("FinSufcandiList");}
+	
+	
+	
+// 최종합격자정보 그리드 행추가
+this.btn_insertEmp_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+
+{ this.dsHmFinSufcandi.addRow(); }
+
+
+
+// 최종합격자정보 그리드 행삭제
+this.btn_deleteEmp_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{ this.dsHmFinSufcandi.deleteRow( this.dsHmFinSufcandi.rowposition); }
+
+
+
+// 최종합격자정보 일괄처리
+this.btn_saveAll_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{       confirm("최종합격정보를 처리하하시겠습니까?");
+		this.gfnService("mngntFinSufcandi");}
+
+
+
+// 폼 닫기
+this.exitFxAstBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{ this.close();}
+
+
+ 
+// 직급 검색버튼
+this.btn_empDeptPopup00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	 var arr = this.gfnCodePopup("GP074"/*,"1"*/);// 뒤에칸에는 시퀀스가 가야하는데 여기선 안쓰니 비워도되는듯
+     this.setCode = function(code,arrRtn){this.jobrkEd.set_value(arrRtn[1]);}//이부분 안되면 뒤에 팝업안뜬다 안뜰땐 뒷부분 다 주석하고해보자
+}
+
+
+// 거주국가 검색버튼
+this.btn_empDeptPopup01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	 var arr = this.gfnCodePopup("GP099"/*,"1"*/); 
+     this.setCode = function(code,arrRtn){this.nantEd.set_value(arrRtn[1]);} 
+}
+
+// 부서 검색버튼
+this.btn_empDeptPopup02_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	 var arr = this.gfnCodePopup("GP500"/*,"1"*/); 
+     this.setCode = function(code,arrRtn){this.deptNmEd.set_value(arrRtn[1]);} 
+}
+
+
+// 근무지 검색버튼
+this.btn_empMajorPopup_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	 var arr = this.gfnCodePopup("GP121"/*,"1"*/); 
+     this.setCode = function(code,arrRtn){this.workPlaceEd.set_value(arrRtn[1]);} 
+}
+ 
+ 
+ 
+// 주소 검색버튼
+this.div_empInfo2_btn_findZip_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{ var arr = this.gfnPostPopup(); 
+   this.setPost = function(zipCode,addr,addrDetail){    
+									   this.editZipCode.set_value(zipCode); 
+									   this.editAddr.set_value(addr); 
+									   this.editAddrDetail.set_value(addrDetail);}
+}
+
+
+ 
+// 콜백
+ this.CallbackFunc = function(trid,errcd,errmsg){
+	
+	if(trid =="FinSufcandiList"){ 
+		if(errcd == 1){       alert("최종합격자정보가 조회되었습니다");
+		}else{                alert("최종합격자정보가 존재하지 않습니다");
+		}
+		
+	}else if(trid == "mngntFinSufcandi"){
+		if(errcd == 1){       alert("최종합격자정보가 일괄처리 되었습니다");
+							this.reload();
+		}else{                alert("변경된 내용을 처리하지 못했습니다");
+		} } }
+
+
+
+ ]]></Script>
+  </Form>
+</FDL>

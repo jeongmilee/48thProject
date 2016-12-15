@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: Eco.Color</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: Eco.Color</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+
+    Eco.Color
+    
+	</h2> 
+	
+	
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members (3)</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="basicColors"><span class="type-signature">&lt;static> </span>basicColors<span class="type-signature"> :array</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        기본색상 배열.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="HSLMAX"><span class="type-signature">&lt;static, constant> </span>HSLMAX<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        HSL MAX값.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="RGBMAX"><span class="type-signature">&lt;static, constant> </span>RGBMAX<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        RGB MAX값.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Method Summary (4) </h3>
+
+
+        
+
+		
+        <dl>
+            
+<dt>
+    <h4 class="name" id="hexToHsl">
+      <a href="#Eco.Color.hexToHsl">
+      hexToHsl</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        Hexadecimal code를 HSL로 변환한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="hexToRgb">
+      <a href="#Eco.Color.hexToRgb">
+      hexToRgb</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        Hexadecimal code를 [r, g, b, a]로 변환한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="hslToRgb">
+      <a href="#Eco.Color.hslToRgb">
+      hslToRgb</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        HSL을 RGB로 변환한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="rgbToHex">
+      <a href="#Eco.Color.rgbToHex">
+      rgbToHex</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        RGB를 Hexadecimal code로 변환한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        </dl>
+                
+        <h3 class="subsection-title">Method Detail</h3>        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="hexToHsl">
+        <a name="Eco.Color.hexToHsl">
+        <span class="type-signature">&lt;static> </span>Eco.Color.hexToHsl<span class="signature">(str)</span><span class="type-signature"> &rarr; {array}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Hexadecimal code를 HSL로 변환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">"red"같이 named color나, "#000000" 값들이 주어진다.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    [H,S,L] 형태의 array 값.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">array</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.Color.hexToHsl("#FF8080")); //output: [0,240,180]
+trace(Eco.Color.hexToHsl("#008000")); //output: [80,240,60]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Color.js.html">Color.js</a>, line 272
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="hexToRgb">
+        <a name="Eco.Color.hexToRgb">
+        <span class="type-signature">&lt;static> </span>Eco.Color.hexToRgb<span class="signature">(str)</span><span class="type-signature"> &rarr; {array}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Hexadecimal code를 [r, g, b, a]로 변환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">"red"같이 named color나, "#000000", "#000000ff" 값들이 주어진다.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    [r, g, b, a] 형태의 array 값.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">array</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.Color.hexToRgb("#FF8C00")); //output: [255,140,0]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Color.js.html">Color.js</a>, line 292
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="hslToRgb">
+        <a name="Eco.Color.hslToRgb">
+        <span class="type-signature">&lt;static> </span>Eco.Color.hslToRgb<span class="signature">(hue,sat,lum)</span><span class="type-signature"> &rarr; {array.&lt;number>}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        HSL을 RGB로 변환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>hue</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">색상.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>sat</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">채도.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>lum</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">명도.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    RGB값을 가진 array. [R,G,B].
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">array.&lt;number></span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code> 
+trace(Eco.Color.hslToRgb(100,240,120)); //output: [0,255,128]
+trace(Eco.Color.hslToRgb(20,240,120));  //output: [255,128,0]</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Color.js.html">Color.js</a>, line 177
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="rgbToHex">
+        <a name="Eco.Color.rgbToHex">
+        <span class="type-signature">&lt;static> </span>Eco.Color.rgbToHex<span class="signature">(red,green,blue,<span class="optional">alpha</span>)</span><span class="type-signature"> &rarr; {string}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        RGB를 Hexadecimal code로 변환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>red</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">red.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>green</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">green.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>blue</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">blue.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>alpha</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">alpha.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Hexadecimal code.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>trace(Eco.Color.rgbToHex(255,140,0)); //output: #FF8C00
+trace(Eco.Color.rgbToHex(255,140,0, 100)); //output: #FF8C0064</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Color.js.html">Color.js</a>, line 241
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="Eco.html">Eco</a></li><li><a href="Eco.array.html">Eco.array</a></li><li><a href="Eco.Color.html">Eco.Color</a></li><li><a href="Eco.date.html">Eco.date</a></li><li><a href="Eco.Json.html">Eco.Json</a></li><li><a href="Eco.LocalStorage.html">Eco.LocalStorage</a></li><li><a href="Eco.Logger.html">Eco.Logger</a></li><li><a href="Eco.number.html">Eco.number</a></li><li><a href="Eco.object.html">Eco.object</a></li><li><a href="Eco.string.html">Eco.string</a></li><li><a href="Eco.XComp.html">Eco.XComp</a></li><li><a href="Eco.XComp.Event.html">Eco.XComp.Event</a></li><li><a href="Eco.XComp.Factory.html">Eco.XComp.Factory</a></li><li><a href="Eco.XComp.PositionSize.html">Eco.XComp.PositionSize</a></li><li><a href="Eco.XComp.Style.html">Eco.XComp.Style</a></li><li><a href="JsNamespace.html">JsNamespace</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Fri May 27 2016 16:56:29 GMT+0900 (KST)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>

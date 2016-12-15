@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="HM_RecrutingInfoSystemForm" classname="HM_RecrutingInfoSystemForm" left="0" top="0" width="1280" height="768" titletext="New Form" onload="HM_RecrutingInfoSystemForm_onload">
+    <Layouts>
+      <Layout>
+        <Div id="Div02" taborder="3" left="0.63%" top="60" right="0.78%" height="651" style="background:#eceff1ff;border:1 solid black ;bordertype:normal 0 0 ;"/>
+        <Div id="Div04" taborder="4" left="0.63%" top="717" right="0.86%" height="38" style="border:1 solid black ;bordertype:normal 0 0 ;font:9 Dotum;"/>
+        <Static id="01Stc" taborder="9" text="채용년도" left="17" top="67" width="100" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;margin:0 0 2 0;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Spin id="applySpin" taborder="10" value="2016" left="123" top="67" width="77" height="30" style="margin:1 0 2 0;bordertype:normal 0 0 ;font:9 Dotum;" class="AreaSpin"/>
+        <Grid id="employInfo" taborder="12" binddataset="dsHmEmployInfo" useinputpanel="false" autofittype="col" oncellclick="employInfo_oncellclick" left="16" top="104" width="775" height="600" class="AreaGrid" style="bordertype:normal 0 0 ;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="28"/>
+                <Column size="101"/>
+                <Column size="56"/>
+                <Column size="167"/>
+                <Column size="54"/>
+                <Column size="95"/>
+                <Column size="82"/>
+                <Column size="80"/>
+                <Column size="78"/>
+                <Column size="54"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#cfd8dcff;" text="No"/>
+                <Cell col="1" style="background:#cfd8dcff;" text="채용시퀀스"/>
+                <Cell col="2" style="background:#cfd8dcff;" text="채용년도"/>
+                <Cell col="3" style="background:#cfd8dcff;" text="채용명"/>
+                <Cell col="4" style="background:#cfd8dcff;" text="고용구분"/>
+                <Cell col="5" style="background:#cfd8dcff;" text="채용공고일"/>
+                <Cell col="6" style="background:#cfd8dcff;" text="채용마감일"/>
+                <Cell col="7" style="background:#cfd8dcff;" text="모집정원"/>
+                <Cell col="8" style="background:#cfd8dcff;" text="주관부서"/>
+                <Cell col="9" style="background:#cfd8dcff;" text="비고"/>
+              </Band>
+              <Band id="body">
+                <Cell style="align:center;background2: ;" expr="currow+1"/>
+                <Cell col="1" displaytype="normal" edittype="normal" style="align:center;background2: ;" text="bind:employSeq"/>
+                <Cell col="2" edittype="normal" style="align:center;background2: ;" text="bind:employYear"/>
+                <Cell col="3" edittype="normal" style="align:center;background2: ;" text="bind:employNm"/>
+                <Cell col="4" edittype="normal" style="align:center;background2: ;" text="bind:hireDiv"/>
+                <Cell col="5" displaytype="date" edittype="date" style="align:center;background2: ;" text="bind:employStartDay"/>
+                <Cell col="6" displaytype="date" edittype="date" style="align:center;background2: ;" text="bind:employEndDay"/>
+                <Cell col="7" edittype="normal" style="align:center;background2: ;" text="bind:recruLimit"/>
+                <Cell col="8" edittype="normal" style="align:center;background2: ;" text="bind:hostDept"/>
+                <Cell col="9" edittype="normal" style="align:center;background2: ;"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="02Stc" taborder="13" text="채용년도" left="795" top="136" width="86" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="03Stc" taborder="14" text="채용명" left="795" top="104" width="86" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Edit id="employNameEd" taborder="15" left="883" top="105" width="230" height="30" style="border:1 solid #a6a6a9ff ;margin:0 0 2 0;bordertype:normal 0 0 ;" class="AreaEdt"/>
+        <Spin id="employYearSp" taborder="16" value="0" left="883" top="136" width="116" height="30" style="border:1 solid #a6a6a9ff ;margin:1 0 2 0;bordertype:normal 0 0 ;" class="AreaSpin"/>
+        <Static id="Static01" taborder="17" text="ㅡ" left="1006" top="204" width="23" height="30" style="color:black;bordertype:normal 0 0 ;font:bold 9 Stencil BT;" class="AreaStc"/>
+        <Static id="05Stc" taborder="18" text="채용기간" left="795" top="201" width="86" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Combo id="hireDivCombo" taborder="19" codecolumn="codecolumn" datacolumn="datacolumn" left="883" top="170" width="116" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;" class="AreaCal">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">정규직</Col>
+                <Col id="datacolumn">정규직</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">비정규직</Col>
+                <Col id="datacolumn">비정규직</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Static id="06Stc" taborder="20" text="과목명" left="795" top="233" width="86" height="157" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="07Stc" taborder="21" text="면접관명" left="795" top="393" width="86" height="161" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="09Stc" taborder="22" text="주관부서" left="1028" top="169" width="86" height="30" style="background:#c4d2daff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Grid id="grdSubject" taborder="23" binddataset="dsHmTestSubject" useinputpanel="false" autofittype="col" left="883" top="233" width="320" height="157" class="AreaGrid" oncellclick="grdSubject_oncellclick" enable="true" readonly="true" style="bordertype:normal 0 0 ;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="17"/>
+                <Column size="80"/>
+                <Column size="113"/>
+                <Column size="23"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#cfd8dcff;" text="No"/>
+                <Cell col="1" style="background:#cfd8dcff;" text="과목코드"/>
+                <Cell col="2" colspan="2" style="background:#cfd8dcff;" text="과목명"/>
+              </Band>
+              <Band id="body">
+                <Cell expr="currow+1"/>
+                <Cell col="1" displaytype="text" edittype="text" text="bind:subjectCd"/>
+                <Cell col="2" displaytype="text" edittype="text" text="bind:subjectNm"/>
+                <Cell col="3" displaytype="button" edittype="button" style="background:@gradation;"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Edit id="hostDeptEd" taborder="24" left="1116" top="170" width="118" height="30" style="border:1 solid #a6a6a9ff ;margin:0 0 2 0;bordertype:normal 0 0 ;" class="AreaEdt"/>
+        <Static id="08Stc" taborder="25" text="고용구분" left="795" top="169" width="86" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <TextArea id="expArea" taborder="26" oneditclick="Div01_Div02_TextArea00_oneditclick" left="795" top="588" width="468" height="116" style="bordertype:normal 0 0 ;font:bold antialias 12 맑은 고딕;" class="AreaArea"/>
+        <Grid id="Grid02" taborder="29" binddataset="dsHmItver" useinputpanel="false" autofittype="col" left="883" top="394" width="320" height="161" class="AreaGrid" readonly="true" oncellclick="Grid02_oncellclick" style="bordertype:normal 0 0 ;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="31"/>
+                <Column size="49"/>
+                <Column size="83"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="26"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#cfd8dcff;" text="No"/>
+                <Cell col="1" style="background:#cfd8dcff;" text="사원번호"/>
+                <Cell col="2" style="background:#cfd8dcff;" text="사원명"/>
+                <Cell col="3" style="background:#cfd8dcff;" text="부서코드"/>
+                <Cell col="4" colspan="2" style="background:#cfd8dcff;" text="부서명"/>
+              </Band>
+              <Band id="body">
+                <Cell expr="currow+1"/>
+                <Cell col="1" displaytype="text" edittype="text" text="bind:empNo"/>
+                <Cell col="2" displaytype="text" edittype="text" text="bind:empNm"/>
+                <Cell col="3" displaytype="text" edittype="text" text="bind:deptCd"/>
+                <Cell col="4" displaytype="text" edittype="text" text="bind:deptNm"/>
+                <Cell col="5" displaytype="button" edittype="button" style="background:@gradation;"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="12Stc" taborder="30" text="설　　　　　　　명" left="795" top="557" width="468" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="04Stc" taborder="31" text="모집정원" left="1028" top="136" width="86" height="30" style="background:#c4d2daff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Edit id="recurLimitEd" taborder="32" inputtype="number" onkeyup="durationEdt_onkeyup" left="1116" top="137" width="118" height="30" style="border:1 solid #a6a6a9ff ;margin:0 0 2 0;bordertype:normal 0 0 ;" class="AreaEdt"/>
+        <Calendar id="employStartDayCal" taborder="35" expr="expr:Date()" left="883" top="202" width="116" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;" class="AreaCal"/>
+        <Calendar id="employEndDayCal" taborder="36" expr="expr:Date()" left="1027" top="202" width="116" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;" class="AreaCal"/>
+        <Button id="insertEmpBtn" taborder="45" text="추가" onclick="btn_insertEmp_onclick" left="71.8%" top="720" right="21.56%" height="30" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="deleteEmpBtn" taborder="46" text="삭제" onclick="btn_deleteEmp_onclick" left="78.52%" top="720" right="14.84%" height="30" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="saveEmpBtn" taborder="47" text="저장" onclick="btn_saveAll_onclick" left="85.23%" top="720" right="8.13%" height="30" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="saveEmpBtn00" taborder="48" text="닫기" onclick="exitFxAstBtn_onclick" left="92.03%" top="720" right="1.33%" height="30" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="InseItver" taborder="49" text="추가" onclick="InseItver_onclick" left="94.14%" top="392" right="1.25%" height="28" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="DelItver" taborder="50" text="삭제" onclick="DelItver_onclick" left="94.14%" top="420" right="1.25%" height="28" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="InseSub" taborder="51" text="추가" onclick="InseSub_onclick" left="94.14%" top="233" right="1.17%" height="28" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="DelSub" taborder="52" text="삭제" onclick="DelSub_onclick" left="94.14%" top="261" right="1.17%" height="28" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="employInfoSch" taborder="53" text="조회" onclick="employInfoSch_onclick" cssclass="btn_WF_Search" left="203" top="68" width="58" height="28" style="background:#455a64ff;bordertype:normal 3 3 ;font:9 Gulim;"/>
+        <Static id="Static00" taborder="54" text="  채용정보관리" left="0.78%" top="4" right="48.05%" height="52" style="color:#6c6c6cff;font:9 돋움;"/>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item53" compid="employNameEd" propid="value" datasetid="dsHmEmployInfo" columnid="employNm"/>
+      <BindItem id="item54" compid="employYearSp" propid="value" datasetid="dsHmEmployInfo" columnid="employYear"/>
+      <BindItem id="item57" compid="hireDivCombo" propid="value" datasetid="dsHmEmployInfo" columnid="hireDiv"/>
+      <BindItem id="item58" compid="hostDeptEd" propid="value" datasetid="dsHmEmployInfo" columnid="hostDept"/>
+      <BindItem id="item59" compid="expArea" propid="value" datasetid="dsHmEmployInfo" columnid="exp"/>
+      <BindItem id="item60" compid="recurLimitEd" propid="value" datasetid="dsHmEmployInfo" columnid="recruLimit"/>
+      <BindItem id="item55" compid="employStartDayCal" propid="value" datasetid="dsHmEmployInfo" columnid="employStartDay"/>
+      <BindItem id="item56" compid="employEndDayCal" propid="value" datasetid="dsHmEmployInfo" columnid="employEndDay"/>
+    </Bind>
+    <Objects>
+      <Dataset id="dsHmTestSubject" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="employSeq" type="STRING" size="256"/>
+          <Column id="subjectCd" type="STRING" size="256"/>
+          <Column id="subjectNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsHmEmployInfo" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="employStartDay" type="STRING" size="256"/>
+          <Column id="employEndDay" type="STRING" size="256"/>
+          <Column id="hireDiv" type="STRING" size="256"/>
+          <Column id="recruLimit" type="STRING" size="256"/>
+          <Column id="employYear" type="STRING" size="256"/>
+          <Column id="employSeq" type="STRING" size="256"/>
+          <Column id="hostDept" type="STRING" size="256"/>
+          <Column id="exp" type="STRING" size="256"/>
+          <Column id="employNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">EmployInfoList</Col>
+            <Col id="URL">his::hrs/emp/findEmployInfoList.do</Col>
+            <Col id="inData"/>
+            <Col id="outData">dsHmEmployInfo=dsHmEmployInfo</Col>
+            <Col id="argument"/>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">TestSubject</Col>
+            <Col id="URL">his::hrs/emp/findTestSubject.do</Col>
+            <Col id="outData">dsHmTestSubject=dsHmTestSubject</Col>
+            <Col id="argument"/>
+            <Col id="inData"/>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">ItverList</Col>
+            <Col id="URL">his::hrs/emp/findItverList.do</Col>
+            <Col id="inData"/>
+            <Col id="outData">dsHmItver=dsHmItver</Col>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">mngntEmployInfo</Col>
+            <Col id="URL">his::hrs/emp/batchEmployProcess.do</Col>
+            <Col id="inData">dsHmEmployInfo=dsHmEmployInfo:U dsHmItver=dsHmItver:U dsHmTestSubject=dsHmTestSubject:U</Col>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsHmItver" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="employSeq" type="STRING" size="256"/>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="deptCd" type="STRING" size="256"/>
+          <Column id="deptNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/********************************************************************
+*                                                                   *
+* 입사채용관리                                                    *
+*                                                                   *
+* @Path		    입사채용정보관리        	                        *
+* @Description  채용정보 조회,등록,수정,삭제 화면               *
+* @Author		최창근   					                        *
+* 								                                    *
+* Created on 2016. 6. 21.                             		        *
+*								                                    *
+********************************************************************/
+
+include "scripts::commonTransaction.xjs";
+include "scripts::commonScripts.xjs";
+
+
+var employSeq; // 채용시퀀스
+
+//날짜받아오는 구문========================================================================================================================
+var sDate;//지금의 날짜임          여기선언하고 아래에 가져다쓴다
+var sYear;//지금의 년도임
+///날짜관련부분임 많이쓰임 
+
+//날짜 가져오는 함수 이부분 좋음 기억합시당
+this.toFormatString = function(dt, fmt) {    
+      return fmt.replace(/(Y|y|m|d|h|H|i|s|am|pm)/gi,
+          function($1){
+              switch ($1){	 
+                  case 'Y' :   return dt.getFullYear();
+                  case 'y' :   return dt.getFullYear().toString().substr(2);
+                  case 'm' :   return (dt.getMonth()+1).toString().padLeft(2,"0");//끝자리 01이면 1만 나와서 저렇게 적어주었다
+                  case 'd' :   return dt.getDate().toString().padLeft(2,"0");     //끝자리 01이면 1만 나와서 저렇게 적어주었다
+                  case 'h' :   return (h = dt.getHours() % 12) ? h : 12;
+                  case 'H' :   return dt.getHours();
+                  case 'i' :   return dt.getMinutes();
+                  case 's' :   return dt.getSeconds();
+                  case 'am':   return dt.getHours() < 12 ? 'am' : 'pm';
+                  case 'pm':   return dt.getHours() < 12 ? 'am' : 'pm';
+            }
+        } 
+    );
+}
+this.HM_RecrutingInfoSystemForm_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+		var objDate = new Date();
+    //var sDate = this.toFormatString(objDate,"%Y%m%d");//원래는 이렇게있었다 이렇게 위에다가 선언안하고 여기 적으면 아래서 사용못다고 여기함수부분 다른 실행부분도  다 실행안된다 	                                                                                                                                               
+        sDate = this.toFormatString(objDate,"Ymd"); //"Y"+"m"+"d"이렇게 적어도되고 앞처럼적어도되고  현재 또는 지정한 로케일, 지정한 형식의 문자열로 변환된 날짜를 반환합니다
+        sYear = this.toFormatString(objDate,"Y");  
+        this.applySpin.set_value(sYear);  //년도넣는곳에 지금의 년도를 미리 넣어둔다 
+        
+}
+
+this.employInfoSch_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	
+	employYear = this.applySpin.value;     //화면에 체크한 연도 적은걸 넘긴다 	        
+  	var argument = 'employYear='+employYear; //채용년도를 가지고간다
+  	this.dsService.setColumn(0,"argument",argument);
+    this.gfnService("EmployInfoList");   
+}
+
+this.employInfo_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+		
+		//ds_employInfo.filter(seq == 채용시퀀스.value;
+		//Div01.Div02.grdSubject.binddataset=ds_employInfo
+	//	alert("!!!!");
+		
+		this.employSeq = this.dsHmEmployInfo.getColumn(this.dsHmEmployInfo.rowposition,"employSeq");
+		var argument = 'employSeq='+this.employSeq;
+		this.dsService.setColumn(1,"argument",argument);
+		//alert(argument);
+		this.gfnService("TestSubject");
+	
+		var employSeq = this.dsHmEmployInfo.getColumn(this.dsHmEmployInfo.rowposition,"employSeq");
+		var argument = 'employSeq='+employSeq;
+		this.dsService.setColumn(2,"argument",argument);
+		//alert(argument);
+		this.gfnService("ItverList");
+		
+}
+
+this.btn_insertEmp_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	if(this.dsHmEmployInfo.findRow("employSeq",sDate) == -1){
+	this.dsHmEmployInfo.addRow();
+	this.dsHmEmployInfo.setColumn(this.dsHmEmployInfo.rowposition, "employSeq", sDate);
+	this.dsHmEmployInfo.setColumn(this.dsHmEmployInfo.rowposition, "employYear", sYear);
+									this.employSeq = this.dsHmEmployInfo.getColumn(this.dsHmEmployInfo.rowposition,"employSeq");
+		var argument = 'employSeq='+this.employSeq;
+		this.dsService.setColumn(1,"argument",argument);
+		//alert(argument);
+		this.gfnService("TestSubject");
+	
+		var employSeq = this.dsHmEmployInfo.getColumn(this.dsHmEmployInfo.rowposition,"employSeq");
+		var argument = 'employSeq='+employSeq;
+		this.dsService.setColumn(2,"argument",argument);
+		//alert(argument);
+		this.gfnService("ItverList");
+	} 
+}
+
+this.btn_deleteEmp_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsHmEmployInfo.deleteRow(this.dsHmEmployInfo.rowposition); 
+									this.employSeq = this.dsHmEmployInfo.getColumn(this.dsHmEmployInfo.rowposition,"employSeq");
+		var argument = 'employSeq='+this.employSeq;
+		this.dsService.setColumn(1,"argument",argument);
+		//alert(argument);
+		this.gfnService("TestSubject");
+	
+		var employSeq = this.dsHmEmployInfo.getColumn(this.dsHmEmployInfo.rowposition,"employSeq");
+		var argument = 'employSeq='+employSeq;
+		this.dsService.setColumn(2,"argument",argument);
+		//alert(argument);
+		this.gfnService("ItverList");
+}
+
+this.btn_saveAll_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+		confirm("변경된 사항을 적용하시겠습니까?");
+	this.gfnService("mngntEmployInfo");
+}
+
+this.exitFxAstBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.close();
+}
+
+//과목그리드 추가버튼
+this.InseSub_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{  
+	alert(this.employSeq);
+    this.dsHmTestSubject.addRow(); 
+	this.dsHmTestSubject.setColumn(this.dsHmTestSubject.rowposition, "employSeq", this.employSeq);
+}
+//과목그리드 삭제버튼
+this.DelSub_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsHmTestSubject.deleteRow(this.dsHmTestSubject.rowposition);
+}
+
+//면접관그리드 추가버튼
+this.InseItver_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{ 
+	alert(this.employSeq);
+	this.dsHmItver.addRow(); 
+	this.dsHmItver.setColumn(this.dsHmItver.rowposition, "employSeq", this.employSeq);
+}
+//면접관그리드 삭제버튼
+this.DelItver_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsHmItver.deleteRow(this.dsHmItver.rowposition);
+}
+
+
+this.grdSubject_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+
+	if(e.cell==3){
+		this.gfnCodePopup("GP214");
+	}
+	this.setCode = function(code,arrRtn,args){
+		this.dsHmTestSubject.setColumn(this.dsHmTestSubject.rowposition,"subjectCd",arrRtn[0]);
+		this.dsHmTestSubject.setColumn(this.dsHmTestSubject.rowposition,"subjectNm",arrRtn[1]);
+	}
+}
+
+this.Grid02_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	if(e.cell==5){
+	this.gfnEmpPopup();
+	this.setEmpInfo = function(arrRtn){
+		this.dsHmItver.setColumn(this.dsHmItver.rowposition,"empNo",arrRtn[0]);
+		this.dsHmItver.setColumn(this.dsHmItver.rowposition,"empNm",arrRtn[1]);
+		this.dsHmItver.setColumn(this.dsHmItver.rowposition,"deptCd",arrRtn[2]);
+		this.dsHmItver.setColumn(this.dsHmItver.rowposition,"deptNm",arrRtn[3]);
+	}
+	}
+}
+
+ this.CallbackFunc = function(trid,errcd,errmsg){
+	
+	if(trid =="EmployInfoList"){ 
+		if(errcd == 1){ 
+								this.employSeq = this.dsHmEmployInfo.getColumn(this.dsHmEmployInfo.rowposition,"employSeq");
+		var argument = 'employSeq='+this.employSeq;
+		this.dsService.setColumn(1,"argument",argument);
+		//alert(argument);
+		this.gfnService("TestSubject");
+	
+		var employSeq = this.dsHmEmployInfo.getColumn(this.dsHmEmployInfo.rowposition,"employSeq");
+		var argument = 'employSeq='+employSeq;
+		this.dsService.setColumn(2,"argument",argument);
+		//alert(argument);
+		this.gfnService("ItverList");
+					
+		}else{                alert("채용정보 불러오기 실패");
+}
+
+}
+	
+}
+		 
+
+]]></Script>
+  </Form>
+</FDL>

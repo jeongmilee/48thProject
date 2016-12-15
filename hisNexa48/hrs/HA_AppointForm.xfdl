@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="HA_AppointForm" classname="HA_AppointForm" left="0" top="0" width="1280" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div02" taborder="0" text="Div01" left="0.68%" top="40" right="0.88%" height="657" style="background:#eceff1ff;border:1 solid #808080ff ;bordertype:normal 0 0 ;">
+          <Layouts>
+            <Layout width="1260" height="657"/>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="1" text="부서" left="50" top="44" width="86" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="Static01" taborder="2" text="사번" left="287" top="44" width="86" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Edit id="Edit02" taborder="3" left="375" top="44" width="133" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;" class="AreaEdt"/>
+        <Static id="Static02" taborder="4" text="성명" left="521" top="44" width="86" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Edit id="Edit00" taborder="5" left="609" top="44" width="144" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;" class="AreaEdt"/>
+        <Static id="Static03" taborder="6" text="발령기간" left="767" top="44" width="86" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Edit id="Edit03" taborder="7" left="138" top="44" width="133" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;" class="AreaEdt"/>
+        <Grid id="Grid00" taborder="8" binddataset="dsAppointInfo" useinputpanel="false" autofittype="col" left="18" top="80" width="1241" height="612" style="bordertype:normal 0 0 ;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="align:center;background:#cfd8dcff;" text="사원번호"/>
+                <Cell col="1" style="align:center;background:#cfd8dcff;" text="사원명"/>
+                <Cell col="2" style="align:center;background:#cfd8dcff;" text="발령구분"/>
+                <Cell col="3" style="align:center;background:#cfd8dcff;" text="발령일자"/>
+                <Cell col="4" style="align:center;background:#cfd8dcff;" text="발령부서"/>
+                <Cell col="5" style="align:center;background:#cfd8dcff;" text="발령직종"/>
+                <Cell col="6" style="align:center;background:#cfd8dcff;" text="발령직급"/>
+                <Cell col="7" style="align:center;background:#cfd8dcff;" text="발령직위"/>
+                <Cell col="8" style="align:center;background:#cfd8dcff;" text="발령호봉"/>
+                <Cell col="9" style="align:center;background:#cfd8dcff;" text="연봉"/>
+                <Cell col="10" style="align:center;background:#cfd8dcff;" text="급여"/>
+                <Cell col="11" style="align:center;background:#cfd8dcff;" text="사유"/>
+                <Cell col="12" style="align:center;background:#cfd8dcff;" text="비고"/>
+                <Cell col="13" style="align:center;background:#cfd8dcff;" text="발령근거"/>
+              </Band>
+              <Band id="body">
+                <Cell style="align:center;" text="bind:empNo"/>
+                <Cell col="1" style="align:center;" text="bind:empNm"/>
+                <Cell col="2" style="align:center;" text="bind:appmtSubject"/>
+                <Cell col="3" style="align:center;" text="bind:appmtDate"/>
+                <Cell col="4" style="align:center;" text="bind:appmtDeptNm"/>
+                <Cell col="5" style="align:center;" text="bind:appmtJobclNm"/>
+                <Cell col="6" style="align:center;" text="bind:appmtJobrkNm"/>
+                <Cell col="7" style="align:center;" text="bind:appmtJobtt"/>
+                <Cell col="8" style="align:center;" text="bind:appmtPstep"/>
+                <Cell col="9" style="align:center;" text="bind:yyPstep"/>
+                <Cell col="10" style="align:center;" text="bind:pay"/>
+                <Cell col="11" style="align:center;" text="bind:reason"/>
+                <Cell col="12" style="align:center;" text="bind:note"/>
+                <Cell col="13" style="align:center;" text="bind:baseAppmtNm"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Calendar id="Calendar00" taborder="9" dateformat="yyyyMMdd" editformat="yyyyMMdd" left="855" top="44" width="138" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;"/>
+        <Calendar id="Calendar01" taborder="10" dateformat="yyyyMMdd" editformat="yyyyMMdd" left="1017" top="45" width="138" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;"/>
+        <Static id="Static04" taborder="11" text="   ~" left="956" top="46" width="39" height="31" style="color:#46463dff;bordertype:normal 0 0 ;"/>
+        <Static id="titleStc" taborder="14" text="발령상세조회" left="34" top="7" width="190" height="26" style="color:yellowgreen;bordertype:normal 0 0 ;font:bold 14 돋움;" class="TStc" onclick="titleStc_onclick"/>
+        <Div id="Div03" taborder="15" left="0.68%" top="703" right="0.78%" height="40" style="border:1 solid black ;bordertype:normal 0 0 ;" cssclass="TStc"/>
+        <Button id="serchAppmt_btn" taborder="17" text="조회" onclick="serchAppmt_btn_onclick" cssclass="btn_WF_Search" left="1160" top="48" width="58" height="25" style="background:#455a64ff;bordertype:normal 3 3 ;font:9 Gulim;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">findAppointInfo</Col>
+            <Col id="URL">his::hrs/appoint/findAppointInfo.do</Col>
+            <Col id="outData">dsAppointInfo=dsAppointInfo</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsUseYN" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">0</Col>
+            <Col id="name">전체</Col>
+          </Row>
+          <Row>
+            <Col id="code">1</Col>
+            <Col id="name">Y</Col>
+          </Row>
+          <Row>
+            <Col id="code">2</Col>
+            <Col id="name">N</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsAppointInfo" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="appmtSubject" type="STRING" size="256"/>
+          <Column id="appmtDate" type="STRING" size="256"/>
+          <Column id="appmtDeptNm" type="STRING" size="256"/>
+          <Column id="appmtJobclNm" type="STRING" size="256"/>
+          <Column id="appmtJobrkNm" type="STRING" size="256"/>
+          <Column id="appmtJobtt" type="STRING" size="256"/>
+          <Column id="appmtPstep" type="STRING" size="256"/>
+          <Column id="yyPstep" type="STRING" size="256"/>
+          <Column id="pay" type="STRING" size="256"/>
+          <Column id="reason" type="STRING" size="256"/>
+          <Column id="note" type="STRING" size="256"/>
+          <Column id="baseAppmtNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/********************************************************************
+*                                                                   *
+* 발령내역관리                                                    *
+*                                                                   *
+* @Path		    발령내역관리        	                            *
+* @Description  발령내역 조회 화면                                *
+* @Author		김재현  					                        *
+* 								                                    *
+* Created on 2016. 2. 21.                             		        *
+*								                                    *
+********************************************************************/
+include "scripts::commonScripts.xjs";
+
+ 
+/*function serchAppmt_btn_onclick(obj:Button,  e:ClickEventInfo)
+{
+	var dept=Edit03.value;
+	var empno=Edit02.value;
+	var empnm=Edit00.value;
+	var startDay=Calendar00.value;
+	var endDay=Calendar01.value;
+	
+	alert(dept);
+	alert(empnm);
+	var argument = 'deptCode='+dept+' empNo='+empno+' empNm='+empnm+' startDay='+startDay+' endDay='+endDay;
+	dsService.setColumn(0,"argument",argument);
+	gfnService("findAppointInfo");
+}*/
+this.serchAppmt_btn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var dept=this.Edit03.value;
+	var empno=this.Edit02.value;
+	var empnm=this.Edit00.value;
+	var startDay=this.Calendar00.value;
+	var endDay=this.Calendar01.value;
+	
+	//alert(dept);
+	//alert(empnm);
+	var argument = 'deptCode='+dept+' empNo='+empno+' empNm='+empnm+' startDay='+startDay+' endDay='+endDay;
+	this.dsService.setColumn(0,"argument",argument);
+	this.gfnService("findAppointInfo");
+}
+]]></Script>
+  </Form>
+</FDL>

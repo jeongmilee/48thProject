@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: Eco.XComp.Event</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: Eco.XComp.Event</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+
+    Eco.XComp.Event
+    
+	</h2> 
+	
+	
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description">XComp 관련 event add, remove 할 때 사용하는 helper<br>그 외 dragging 처리를 용이하게 하는 makeDraggable, repeat처리를 용이하게 하는 makeRepeatable 과 <br>부드러운 animation 처리를 위한 requestAnimationFrame, cancelAnimationFrame 기능을 포함한다.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Method Summary (8) </h3>
+
+
+        
+
+		
+        <dl>
+            
+<dt>
+    <h4 class="name" id="add">
+      <a href="#Eco.XComp.Event.add">
+      add</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 XComp을 가지고 주어진 events 정보로 eventHandler함수들을 추가한다.<br>두번째 events는 이벤트명=eventHandler함수로 이루어진 object collection이다.<br>event가 fire할 때 eventHandler함수가 호출되는데 그 함수 내부의 this는 주어진 scope가 된다.<br>
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="cancelAnimationFrame">
+      <a href="#Eco.XComp.Event.cancelAnimationFrame">
+      cancelAnimationFrame</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        requestAnimationFrame 호출한 것을 중지하고자 할때 사용하는 함수.<br>requestAnimationFrame의 return 값으로 id값이 나온다. 이것을 이 함수 argument로 넘겨준다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="clearDraggable">
+      <a href="#Eco.XComp.Event.clearDraggable">
+      clearDraggable</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 XComp에 drag 기능를 해제한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="clearRepeatable">
+      <a href="#Eco.XComp.Event.clearRepeatable">
+      clearRepeatable</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 XComp에 repeatable 기능를 해제한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="makeDraggable">
+      <a href="#Eco.XComp.Event.makeDraggable">
+      makeDraggable</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 XComp에 drag 기능를 설정한다.<br>두번째 param 값은 function이거나, object type으로 값이 주어져야 한다.<br>function이면 dragging 되는 시점에 호출되는 함수로 설정된다.<br>object이면 object.start, object.end, object.dragging 으로 각각 함수값이 주어지는데.<br>start는 drag시작되는 시점에 호출되는 함수로 return 값이 false 일 경우 드래그를 실행하지 않는다.<br>end는 drag종료되는 시점에 호출되는 함수<br>dragging는 dragging 하는 시점에 계속 호출되는 함수이다.<br>네번째 param인 addArgs로 주어지는 array는 함수 호출시에 추가되는 arguments이다.<br>각 함수의 arguments은 다음과 같다.<br>------------------------------------------------------------------------------------------------------<br>1. start<br>------------------------------------------------------------------------------------------------------<br>addArgs[0], addArg[1], ... ,clientX, clientY, shiftKey, ctrlKey<br>------------------------------------------------------------------------------------------------------<br>2. end<br>------------------------------------------------------------------------------------------------------<br>addArgs[0], addArg[1], ... ,clientX, clientY, shiftKey, ctrlKey<br>------------------------------------------------------------------------------------------------------<br>3. dragging <br>------------------------------------------------------------------------------------------------------<br>offsetX, offsetY, addArgs[0], addArg[1], ... , shiftKey, ctrlKey<br><br>세번째 param인 scope는 호출되는 함수 내부의 this 로 지정되며 만약 scope를 생략하면 this는 form이 된다.<br>offsetX, offsetY param 값은 dragging이 발생하는 시점의 x, y기준으로 그 다음에 발생되는 dragging 시점의 x, y 값의 차이가 주어지는데<br>만약 다섯번째 isOffsetFromStart 값을 true로 주어지면 offsetX, offsetY 는 최초 drag가 시작되는 시점의 x, y 기준으로 dragging 발생하는 x, y 값의 차이가 주어진다.<br>여섯 번째 delayTask 값을 true로 주어지면 dragging 함수 호출 하여 루틴이 실행되고 있는 중에 다시 dragging 함수가 호출하게 되면 호출를 생략하는 하는 처리이다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="makeRepeatable">
+      <a href="#Eco.XComp.Event.makeRepeatable">
+      makeRepeatable</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 XComp에 repeat 기능를 설정한다.<br>두번째 param 값은 function이거나, object type으로 값이 주어져야 한다.<br>function이면 repeating 되는 시점에 호출되는 함수로 설정된다.<br>object이면 object.start, object.end, object.repeating, object.repeatingStop으로 각각 함수값이 주어지는데.<br>start는 mouse down되는 시점에 호출되는 함수<br>end는 mouse up되는 시점에 호출되는 함수<br>repeating는 repeating 하는 시점에 계속 호출되는 함수이다.<br>repeatingStop는 mouse 누른 상태에서 마우스가 XComp 영역을 벗어나면 repeating 멈추게 되는데 이 멈추는 시점에 호출되는 함수이다.<br>네번째 param인 addArgs로 주어지는 array는 함수 호출시에 추가되는 arguments이다.<br>각 함수의 arguments은 다음과 같다.<br>start                            | end                       | repeating                       | repeatingStop<br>----------------------------------------------------------------------------------------------------------------------------<br>x, y, addArgs[0], addArg[1], ... |addArgs[0], addArg[1], ... |x, y, addArgs[0], addArg[1], ... |addArgs[0], addArg[1], ... <br><br>세번째 param인 scope는 호출되는 함수 내부의 this값에 해당한다.<br>만약 scope를 생략하면 this는 form이 된다.<br>x, y param 값은 start, repeating이 발생하는 시점의 마우스 x, y값인데 좌표기준은 XComp.parent 기준으로 처리된다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="remove">
+      <a href="#Eco.XComp.Event.remove">
+      remove</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        주어진 XComp을 가지고 주어진 events 정보로 eventHandler함수들을 제거한다.<br>두번째 events는 이벤트명=eventHandler함수로 이루어진 object collection이다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        
+            
+<dt>
+    <h4 class="name" id="requestAnimationFrame">
+      <a href="#Eco.XComp.Event.requestAnimationFrame">
+      requestAnimationFrame</a></h4>
+     
+    
+    <font face="arial" size="normal">
+        requestAnimationFrame 기능<br>callback 함수 내부의 this는 주어진 scope가 된다.<br>func 내부 루틴에서 화면 render가 존재하면 smooth하게 처리되는 이점이 있다.실행하고자 하는 루프 function 에서 requestAnimationFrame 을 호출하고 callback 함수로자기 자신을 호출하는 recursive 방식을 사용한다.
+    </font>
+        
+    
+    
+  
+</dt>
+
+
+        </dl>
+                
+        <h3 class="subsection-title">Method Detail</h3>        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="add">
+        <a name="Eco.XComp.Event.add">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.Event.add<span class="signature">(XComp,events,scope)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 XComp을 가지고 주어진 events 정보로 eventHandler함수들을 추가한다.<br>두번째 events는 이벤트명=eventHandler함수로 이루어진 object collection이다.<br>event가 fire할 때 eventHandler함수가 호출되는데 그 함수 내부의 this는 주어진 scope가 된다.<br>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>XComp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">events 설정할 대상 XComp.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>events</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">이벤트명=eventHandler함수로 정의된 object collection.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scope</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">scope로 설정할 대상으로 eventHandler 내부 루틴에 this에 해당하는 값</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>this.onLbuttonDownHandler = function(obj, e){   trace(this)//Form}this.onLbuttonUpHandler = function(obj, e){   trace(this)//Form}var events = {"onlbuttondown": this.onLbuttonDownHandler, "onlbuttonup": this.onLbuttonUpHandler};Eco.XComp.Event.add(this.st_sample01, events, this);</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Event.js.html">Event.js</a>, line 45
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="cancelAnimationFrame">
+        <a name="Eco.XComp.Event.cancelAnimationFrame">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.Event.cancelAnimationFrame<span class="signature">(id)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        requestAnimationFrame 호출한 것을 중지하고자 할때 사용하는 함수.<br>requestAnimationFrame의 return 값으로 id값이 나온다. 이것을 이 함수 argument로 넘겨준다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">requestAnimationFrame id.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>Eco.XComp.Event.cancelAnimationFrame(reqId);</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Event.js.html">Event.js</a>, line 1129
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="clearDraggable">
+        <a name="Eco.XComp.Event.clearDraggable">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.Event.clearDraggable<span class="signature">(XComp)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 XComp에 drag 기능를 해제한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>XComp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">draggable기능을 해제하는 xcomp.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>Eco.XComp.Event.clearDraggable(this.st_sample02);</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Event.js.html">Event.js</a>, line 203
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="clearRepeatable">
+        <a name="Eco.XComp.Event.clearRepeatable">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.Event.clearRepeatable<span class="signature">(XComp)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 XComp에 repeatable 기능를 해제한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>XComp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">repeatable기능을 해제하는 xcomp.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>Eco.XComp.Event.clearRepeatable(this.btn_repeat);		 </code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Event.js.html">Event.js</a>, line 641
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="makeDraggable">
+        <a name="Eco.XComp.Event.makeDraggable">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.Event.makeDraggable<span class="signature">(XComp,draggingFunc,<span class="optional">scope</span>,<span class="optional">addArgs</span>,<span class="optional">isOffsetFromStart</span>,<span class="optional">delayTask</span>)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 XComp에 drag 기능를 설정한다.<br>두번째 param 값은 function이거나, object type으로 값이 주어져야 한다.<br>function이면 dragging 되는 시점에 호출되는 함수로 설정된다.<br>object이면 object.start, object.end, object.dragging 으로 각각 함수값이 주어지는데.<br>start는 drag시작되는 시점에 호출되는 함수로 return 값이 false 일 경우 드래그를 실행하지 않는다.<br>end는 drag종료되는 시점에 호출되는 함수<br>dragging는 dragging 하는 시점에 계속 호출되는 함수이다.<br>네번째 param인 addArgs로 주어지는 array는 함수 호출시에 추가되는 arguments이다.<br>각 함수의 arguments은 다음과 같다.<br>------------------------------------------------------------------------------------------------------<br>1. start<br>------------------------------------------------------------------------------------------------------<br>addArgs[0], addArg[1], ... ,clientX, clientY, shiftKey, ctrlKey<br>------------------------------------------------------------------------------------------------------<br>2. end<br>------------------------------------------------------------------------------------------------------<br>addArgs[0], addArg[1], ... ,clientX, clientY, shiftKey, ctrlKey<br>------------------------------------------------------------------------------------------------------<br>3. dragging <br>------------------------------------------------------------------------------------------------------<br>offsetX, offsetY, addArgs[0], addArg[1], ... , shiftKey, ctrlKey<br><br>세번째 param인 scope는 호출되는 함수 내부의 this 로 지정되며 만약 scope를 생략하면 this는 form이 된다.<br>offsetX, offsetY param 값은 dragging이 발생하는 시점의 x, y기준으로 그 다음에 발생되는 dragging 시점의 x, y 값의 차이가 주어지는데<br>만약 다섯번째 isOffsetFromStart 값을 true로 주어지면 offsetX, offsetY 는 최초 drag가 시작되는 시점의 x, y 기준으로 dragging 발생하는 x, y 값의 차이가 주어진다.<br>여섯 번째 delayTask 값을 true로 주어지면 dragging 함수 호출 하여 루틴이 실행되고 있는 중에 다시 dragging 함수가 호출하게 되면 호출를 생략하는 하는 처리이다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>XComp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">draggable하고자 하는 xcomp.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>draggingFunc</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">dragging 처리 루틴에 해당하는 함수들.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scope</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">scope로 설정할 대상.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>addArgs</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">설정된 함수 호출시 추가할 arguments을 array로 설정.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>isOffsetFromStart</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">offsetX, offsetY arguments의 drag시작 시점을 기준할 것인지 여부.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>delayTask</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">반복되어지는 dragging함수 호출을 중간에 겹치면 delay할 것인지 여부</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// 1) 2번째 인자를 function 으로 선언 시 drag 진행 시점에 정의된 함수가 호출된다.Eco.XComp.Event.makeDraggable(this.st_sample02, this.onDragging, this, [this.st_sample02]);// 2) 2번째 인자를 object 로 선언 시 drag 시작, 진행, 종료 시점에 정의된 함수가 호출된다.var draggingFunc = {     'start': this.onDragStart, // 사용자가 정의한 arguments + [clientX, clientY, shiftKey, ctrlKey] 추가함(2015/3/12)      'dragging': this.onDragging, // [offsetX, offsetY] + 사용자가 정의한 arguments + [shiftKey, ctrlKey] 추가함(2015/3/12)      'end': this.onDragEnd // 사용자가 정의한 arguments + [clientX, clientY, shiftKey, ctrlKey] 추가함(2015/3/12) };Eco.XComp.Event.makeDraggable(this.st_sample02, draggingFunc, this, [this.st_sample02]);		 // drag start 시점에 처리할 함수this.onDragStart = function(comp){	    trace(comp.name + " Drag Start !!");	   comp.set_text("Drag Start !!");}// dragging 시점에 처리할 루틴을 정의한 함수this.onDragging = function(offsetX, offsetY, obj){    var x = obj.getOffsetLeft() + offsetX,        y = obj.getOffsetTop() + offsetY;	    obj.move(x, y);}</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Event.js.html">Event.js</a>, line 154
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="makeRepeatable">
+        <a name="Eco.XComp.Event.makeRepeatable">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.Event.makeRepeatable<span class="signature">(XComp,repeatFunc,<span class="optional">scope</span>,<span class="optional">args</span>)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 XComp에 repeat 기능를 설정한다.<br>두번째 param 값은 function이거나, object type으로 값이 주어져야 한다.<br>function이면 repeating 되는 시점에 호출되는 함수로 설정된다.<br>object이면 object.start, object.end, object.repeating, object.repeatingStop으로 각각 함수값이 주어지는데.<br>start는 mouse down되는 시점에 호출되는 함수<br>end는 mouse up되는 시점에 호출되는 함수<br>repeating는 repeating 하는 시점에 계속 호출되는 함수이다.<br>repeatingStop는 mouse 누른 상태에서 마우스가 XComp 영역을 벗어나면 repeating 멈추게 되는데 이 멈추는 시점에 호출되는 함수이다.<br>네번째 param인 addArgs로 주어지는 array는 함수 호출시에 추가되는 arguments이다.<br>각 함수의 arguments은 다음과 같다.<br>start                            | end                       | repeating                       | repeatingStop<br>----------------------------------------------------------------------------------------------------------------------------<br>x, y, addArgs[0], addArg[1], ... |addArgs[0], addArg[1], ... |x, y, addArgs[0], addArg[1], ... |addArgs[0], addArg[1], ... <br><br>세번째 param인 scope는 호출되는 함수 내부의 this값에 해당한다.<br>만약 scope를 생략하면 this는 form이 된다.<br>x, y param 값은 start, repeating이 발생하는 시점의 마우스 x, y값인데 좌표기준은 XComp.parent 기준으로 처리된다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>XComp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">repeatable하고자 하는 xcomp.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>repeatFunc</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">repeating 처리 루틴에 해당하는 함수들.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scope</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">scope로 설정할 대상.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">설정된 함수 호출시 추가할 arguments을 array로 설정.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// 1) 2번째 인자를 function 으로 선언 시 repeat 진행 시점에 정의된 함수가 호출된다.Eco.XComp.Event.makeRepeatable(this.btn_repeat, this.onRepeating, this, [ds, this.grd_sample]);// 2) 2번째 인자를 object 로 선언 시 repeat 시작, 진행, 중단, 종료 시점에 정의된 함수가 호출된다.var repeatFunc = {     'start': this.onRepeatStart,     'repeating': this.onRepeating,     'end': this.onRepeatEnd};Eco.XComp.Event.makeRepeatable(this.btn_repeat, repeatFunc, this, [ds, this.grd_sample]);	 // repeating 시작 시점에 처리할 루틴을 정의한 함수this.onRepeatStart = function(comp){	    trace("onRepeatStart");}// repeating 시점에 처리할 루틴을 정의한 함수this.onRepeating = function(offsetX, offsetY, obj){    trace("onRepeating");}// repeating 중단 시점에 처리할 루틴을 정의한 함수this.onRepeatingStop = function(offsetX, offsetY, obj){    trace("onRepeatingStop");}// repeating 종료 시점에 처리할 루틴을 정의한 함수this.onRepeatEnd = function(offsetX, offsetY, obj){    trace("onRepeatEnd");}</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Event.js.html">Event.js</a>, line 600
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="remove">
+        <a name="Eco.XComp.Event.remove">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.Event.remove<span class="signature">(XComp,events,scope)</span><span class="type-signature"></span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        주어진 XComp을 가지고 주어진 events 정보로 eventHandler함수들을 제거한다.<br>두번째 events는 이벤트명=eventHandler함수로 이루어진 object collection이다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>XComp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">XComp</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">events 설정할 대상 XComp.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>events</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">이벤트명=eventHandler함수로 정의된 object collection.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scope</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">scope로 설정할 대상으로 eventHandler 내부 루틴에 this에 해당하는 값</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>this.onLbuttonDownHandler = function(obj, e){   trace(this)//Form}this.onLbuttonUpHandler = function(obj, e){   trace(this)//Form}var events = {"onlbuttondown": this.onLbuttonDownHandler, "onlbuttonup": this.onLbuttonUpHandler};Eco.XComp.Event.remove(this.st_sample01, events, this);</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Event.js.html">Event.js</a>, line 79
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="requestAnimationFrame">
+        <a name="Eco.XComp.Event.requestAnimationFrame">
+        <span class="type-signature">&lt;static> </span>Eco.XComp.Event.requestAnimationFrame<span class="signature">(callback,scope,호출하는)</span><span class="type-signature"> &rarr; {number}</span>
+        </a></h4>
+    
+    
+   
+
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        requestAnimationFrame 기능<br>callback 함수 내부의 this는 주어진 scope가 된다.<br>func 내부 루틴에서 화면 render가 존재하면 smooth하게 처리되는 이점이 있다.실행하고자 하는 루프 function 에서 requestAnimationFrame 을 호출하고 callback 함수로자기 자신을 호출하는 recursive 방식을 사용한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">콜백 함수</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scope</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">callback 함수 내부에서 this 로 사용할 개체.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>호출하는</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">...</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">함수의 arguments</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    request id.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>this.renderLoop = function(){	   // something animation code	    var reqId = Eco.XComp.Event.requestAnimationFrame(this.renderLoop, this);}this.renderLoop();</code></pre>
+
+    
+    
+    <dl class="details">
+      
+      <dt class="tag-source">Source:</dt>
+      <dd class="tag-source"><ul class="dummy"><li>
+          <a href="Event.js.html">Event.js</a>, line 957
+      </li></ul></dd>
+          
+    </dl>
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="Eco.html">Eco</a></li><li><a href="Eco.array.html">Eco.array</a></li><li><a href="Eco.Color.html">Eco.Color</a></li><li><a href="Eco.date.html">Eco.date</a></li><li><a href="Eco.Json.html">Eco.Json</a></li><li><a href="Eco.LocalStorage.html">Eco.LocalStorage</a></li><li><a href="Eco.Logger.html">Eco.Logger</a></li><li><a href="Eco.number.html">Eco.number</a></li><li><a href="Eco.object.html">Eco.object</a></li><li><a href="Eco.string.html">Eco.string</a></li><li><a href="Eco.XComp.html">Eco.XComp</a></li><li><a href="Eco.XComp.Event.html">Eco.XComp.Event</a></li><li><a href="Eco.XComp.Factory.html">Eco.XComp.Factory</a></li><li><a href="Eco.XComp.PositionSize.html">Eco.XComp.PositionSize</a></li><li><a href="Eco.XComp.Style.html">Eco.XComp.Style</a></li><li><a href="JsNamespace.html">JsNamespace</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0-dev</a> on Fri May 27 2016 16:56:29 GMT+0900 (KST)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>

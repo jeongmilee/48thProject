@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="HA_AppmForm" classname="HA_AppmForm" left="0" top="0" width="1250" height="768" titletext="New Form" onload="HA_AppmForm_onload" oninit="HA_AppmForm_oninit" scrollbars="none">
+    <Layouts>
+      <Layout>
+        <Div id="Div07" taborder="0" text="Div01" left="25.6%" top="512" right="0.4%" height="186" style="background:#eceff1ff;border:1 solid #808080ff ;bordertype:normal 0 0 ;"/>
+        <Div id="Div05" taborder="1" text="Div01" left="25.6%" top="268" right="0.48%" height="212" style="background:#eceff1ff;border:1 solid #808080ff ;bordertype:normal 0 0 ;"/>
+        <Div id="Div02" taborder="2" text="Div01" left="25.6%" top="39" right="0.48%" height="196" style="background:#eceff1ff;border:1 solid #808080ff ;bordertype:normal 0 0 ;"/>
+        <Grid id="emp_grid" taborder="3" binddataset="dsHmEmp" useinputpanel="false" autofittype="col" left="326" top="45" width="913" height="185" class="AreaGrid" style="bordertype:normal 0 0 ;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="50"/>
+                <Column size="73"/>
+                <Column size="71"/>
+                <Column size="121"/>
+                <Column size="99"/>
+                <Column size="33"/>
+                <Column size="64"/>
+                <Column size="43"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#cfd8dcff;" text="사원번호"/>
+                <Cell col="1" style="background:#cfd8dcff;" text="사원명"/>
+                <Cell col="2" style="background:#cfd8dcff;" text="직종"/>
+                <Cell col="3" style="background:#cfd8dcff;" text="직위"/>
+                <Cell col="4" style="background:#cfd8dcff;" text="직급"/>
+                <Cell col="5" style="background:#cfd8dcff;" text="호봉"/>
+                <Cell col="6" style="background:#cfd8dcff;" text="입사일"/>
+                <Cell col="7" style="background:#cfd8dcff;" text="재직상태"/>
+              </Band>
+              <Band id="body">
+                <Cell style="align:center;" text="bind:empNo"/>
+                <Cell col="1" style="align:center;" text="bind:empNm"/>
+                <Cell col="2" style="align:center;" text="bind:jobcl"/>
+                <Cell col="3" style="align:center;" text="bind:jobtt"/>
+                <Cell col="4" style="align:center;" text="bind:jobrk"/>
+                <Cell col="5" style="align:center;" text="bind:payStep"/>
+                <Cell col="6" style="align:center;" text="bind:hireDate"/>
+                <Cell col="7" style="align:center;" text="bind:workStatus"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="Div01" taborder="4" text="Div01" left="0.72%" top="38" right="74.56%" height="660" style="background:#eceff1ff;border:1 solid #808080ff ;bordertype:normal 0 0 ;"/>
+        <Edit id="empno" taborder="6" left="182" top="46" width="69" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;align:left middle;" class="AreaEdt"/>
+        <Edit id="empName" taborder="7" left="56" top="46" width="76" height="30" style="border:1 solid #a6a6a9ff ;bordertype:normal 0 0 ;align:left middle;" class="AreaEdt"/>
+        <Static id="Static04" taborder="8" text="성명" left="12" top="46" width="43" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Grid id="dept_grid" taborder="11" binddataset="dsDept" useinputpanel="false" autofittype="col" treeusecheckbox="false" treeinitstatus="expand,null" oncellclick="dept_grid_oncellclick" left="12" top="80" width="300" height="613" style="linetype:onlyvert;bordertype:normal 0 0 ;" class="AreaGrid">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="320"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell displaytype="tree" edittype="tree" text="bind:deptNm" treestartlevel="0" treelevel="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="appo_grid" taborder="12" binddataset="dsAppoint" useinputpanel="false" autofittype="col" onlbuttonup="appo_grid_onlbuttonup" oncellclick="appo_grid_oncellclick" left="326" top="273" width="913" height="199" class="AreaGrid" style="bordertype:normal 0 0 ;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="78"/>
+                <Column size="92"/>
+                <Column size="191"/>
+                <Column size="53"/>
+                <Column size="112"/>
+                <Column size="24"/>
+                <Column size="50"/>
+                <Column size="108"/>
+                <Column size="24"/>
+                <Column size="154"/>
+                <Column size="57"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#cfd8dcff;" text="사원번호"/>
+                <Cell col="1" style="background:#cfd8dcff;" text="사원명"/>
+                <Cell col="2" style="background:#cfd8dcff;" text="발령호수"/>
+                <Cell col="3" colspan="3" style="background:#cfd8dcff;" text="발신부서코드/명"/>
+                <Cell col="6" colspan="3" style="background:#cfd8dcff;" text="발령구분코드/명"/>
+                <Cell col="9" style="background:#cfd8dcff;" text="발령적용일자"/>
+                <Cell col="10" style="background:#cfd8dcff;" text="발령상태"/>
+              </Band>
+              <Band id="body">
+                <Cell style="align:center;" text="bind:empNo"/>
+                <Cell col="1" style="align:center;" text="bind:empNm"/>
+                <Cell col="2" style="align:center;" text="bind:appmtSeq"/>
+                <Cell col="3" style="align:center;" text="bind:transDept"/>
+                <Cell col="4" style="align:center;" text="bind:transDeptNm"/>
+                <Cell col="5" displaytype="button" edittype="button" style="align:center;controlbackground:@gradation URL('img::img_WF_Expand.png');"/>
+                <Cell col="6" style="align:center;" text="bind:appmtDiv"/>
+                <Cell col="7" displaytype="normal" edittype="none" style="align:center;" text="bind:appmtSubject" expandsize="13"/>
+                <Cell col="8" displaytype="button" edittype="button" style="align:center;selectbackground: ;controlbackground:@gradation URL('img::img_WF_Expand.png');"/>
+                <Cell col="9" displaytype="date" edittype="date" style="align:center;" text="bind:appmtDate" suppress="0" combodisplay="edit" calendardisplay="edit" calendardisplaynulltext="기입필수" calendardisplaynulltype="nulltext"/>
+                <Cell col="10" style="align:center;" text="bind:appmtyn"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="appo_grid00" taborder="13" binddataset="dsAppointDetail" useinputpanel="false" autofittype="col" oncellclick="appo_grid00_oncellclick" onenterdown="appo_grid00_onenterdown" left="326" top="517" width="913" height="176" class="AreaGrid" style="bordertype:normal 0 0 ;">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="27"/>
+                <Column size="63"/>
+                <Column size="65"/>
+                <Column size="127"/>
+                <Column size="121"/>
+                <Column size="23"/>
+                <Column size="70"/>
+                <Column size="52"/>
+                <Column size="98"/>
+                <Column size="130"/>
+                <Column size="145"/>
+                <Column size="25"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="checkbox" edittype="checkbox" style="align:center;background:#cfd8dcff;" editautoselect="false"/>
+                <Cell col="1" style="align:center;background:#cfd8dcff;" text="사원명"/>
+                <Cell col="2" style="align:center;background:#cfd8dcff;color:black;" text="발령직종명"/>
+                <Cell col="3" style="align:center;background:#cfd8dcff;" text="발령직위"/>
+                <Cell col="4" colspan="2" style="align:center;background:#cfd8dcff;color:black;" text="발령직급"/>
+                <Cell col="6" style="align:center;background:#cfd8dcff;" text="발령급여"/>
+                <Cell col="7" style="align:center;background:#cfd8dcff;" text="발령호봉"/>
+                <Cell col="8" style="align:center;background:#cfd8dcff;" text="발령근거"/>
+                <Cell col="9" style="align:center;background:#cfd8dcff;" text="현부서"/>
+                <Cell col="10" colspan="2" style="align:center;background:#cfd8dcff;" text="발령부서명"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkbox" edittype="checkbox" style="align:center;" text="bind:cheack"/>
+                <Cell col="1" style="align:center;" text="bind:empNm"/>
+                <Cell col="2" displaytype="combo" edittype="combo" style="align:center;" text="bind:appmtJobclNm" combodataset="dsGP070" combocodecol="code" combodatacol="bigValue" combodisplay="edit"/>
+                <Cell col="3" displaytype="combo" edittype="combo" style="align:center;" text="bind:appmtJobtt" combodataset="dsGP072" combocodecol="code" combodatacol="bigValue" combodisplay="edit"/>
+                <Cell col="4" style="align:center;" text="bind:appmtJobrkNm"/>
+                <Cell col="5" displaytype="button" edittype="button" style="align:center;controlbackground:@gradation URL('img::img_WF_Expand.png') no-repeat;"/>
+                <Cell col="6" displaytype="decoratetext" edittype="normal" style="align:center;" text="bind:pay" editdisplay="edit" calendardisplay="edit"/>
+                <Cell col="7" displaytype="combo" edittype="combo" style="align:center;" text="bind:appmtPstep" combodataset="dsGP075" combocodecol="code" combodatacol="bigValue" combodisplay="display"/>
+                <Cell col="8" displaytype="normal" edittype="normal" style="align:center;" text="bind:baseAppmtNm" editdisplay="edit" calendardisplay="edit"/>
+                <Cell col="9" displaytype="normal" edittype="normal" style="align:center;" text="bind:currDeptNm" editdisplay="edit" calendardisplay="edit"/>
+                <Cell col="10" style="align:center;" text="bind:appmtDeptNm"/>
+                <Cell col="11" displaytype="button" edittype="button" style="align:center;controlbackground:@gradation URL('img::img_WF_Expand.png');"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="Div08" taborder="18" left="0.68%" top="701" right="0.39%" height="38" style="border:1 solid black ;bordertype:normal 0 0 ;font:9 Dotum;"/>
+        <Combo id="Combo00" taborder="25" innerdataset="dsGP075" codecolumn="code" datacolumn="bigValue" visible="false" left="44.63%" top="708" right="47.46%" height="26" style="bordertype:normal 0 0 ;"/>
+        <Static id="Static03" taborder="34" text="사번" left="136" top="46" width="43" height="30" style="background:#b0bec5ff;border:0 none #808080ff ;color:black;bordertype:normal 0 0 ;align:center middle;font:bold 9 돋움;" class="AreaStc"/>
+        <Static id="regAttStc00" taborder="36" text="   부서목록" onclick="subCodeStc_onclick" left="0.72%" top="6" right="74.56%" height="34" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Static id="regAttStc01" taborder="37" text="   사원목록" onclick="subCodeStc_onclick" left="25.6%" top="6" right="0.48%" height="34" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Static id="regAttStc02" taborder="38" text="   발령내역" onclick="subCodeStc_onclick" left="25.6%" top="234" right="0.48%" height="34" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Static id="regAttStc03" taborder="43" text="   발령상세" onclick="subCodeStc_onclick" left="25.6%" top="478" right="0.48%" height="34" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Button id="addAppmt" taborder="44" text="행추가" onclick="addAppmt_onclick" left="82.64%" top="238" right="10.72%" height="26" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="delAppmt" taborder="45" text="행삭제" onclick="delAppmt_onclick" left="75.92%" top="238" right="17.36%" height="27" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="search_btn" taborder="47" text="조회" onclick="search_btn_onclick" cssclass="btn_WF_Search" left="254" top="50" width="58" height="23" style="background:#455a64ff;bordertype:normal 3 3 ;font:9 Gulim;"/>
+        <Button id="delDetail" taborder="48" text="상세삭제" onclick="delDetail_onclick" left="72.08%" top="704" right="21.36%" height="30" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="appointBtn" taborder="49" text="발령" onclick="btnInsertAppioint_onclick" left="78.8%" top="704" right="14.56%" height="30" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="btnInsertAppioint" taborder="50" text="저장" onclick="btnInsertAppioint_onclick" left="85.52%" top="704" right="7.84%" height="30" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="Button42" taborder="51" text="닫기" onclick="Button42_onclick" left="92.48%" top="704" right="0.88%" height="30" style="background:#455a64ff;color:white;bordertype:normal 0 0 ;font:9 돋움;"/>
+        <Button id="serchAppmt_btn" taborder="52" text="조회" onclick="serchAppmt_btn_onclick" cssclass="btn_WF_Search" left="1181" top="239" width="58" height="23" style="background:#455a64ff;bordertype:normal 3 3 ;font:9 Gulim;"/>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item0" compid="Combo00" propid="value" datasetid="dsAppointDetail" columnid="appmtPstep"/>
+    </Bind>
+    <Objects>
+      <Dataset id="dsGP010" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+          <Column id="bigValue" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsGP072" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+          <Column id="bigValue" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">findAppmtEmpList</Col>
+            <Col id="URL">his::hrs/appoint/findSerchList.do</Col>
+            <Col id="inData"/>
+            <Col id="outData">dsDept=dsDept</Col>
+            <Col id="argument"/>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">findEmpList</Col>
+            <Col id="URL">his::hrs/appoint/findEmpList.do</Col>
+            <Col id="outData">dsHmEmp=gdsEmp</Col>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">insertAppoint</Col>
+            <Col id="URL">his::hrs/appoint/registerAppoint.do</Col>
+            <Col id="inData">dsAppoint=dsAppoint:U</Col>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">findAppmtList</Col>
+            <Col id="URL">his::hrs/appoint/findAppmtList.do</Col>
+            <Col id="outData">dsAppoint=dsAppoint</Col>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">insertAppointDetail</Col>
+            <Col id="URL">his::hrs/appoint/registerAppointDetail.do</Col>
+            <Col id="inData">dsAppointDetail=dsAppointDetail:U</Col>
+            <Col id="outData"/>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">modifyAppointDetail</Col>
+            <Col id="URL">his::hrs/appoint/modifyAppointDetail.do</Col>
+            <Col id="inData">dsAppointDetail=dsAppointDetail:U</Col>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="URL">his::hrs/appoint/modifyAppointEmp.do</Col>
+            <Col id="serviceID">modifyAppointEmp</Col>
+            <Col id="inData">dsAppointDetail=dsAppointDetail:U</Col>
+            <Col id="callbackFunc">CallbackFunc</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsAppointDetail" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="appmtSeq" type="STRING" size="256"/>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="currDept" type="STRING" size="256"/>
+          <Column id="currDeptNm" type="STRING" size="256"/>
+          <Column id="appmtPstep" type="STRING" size="256"/>
+          <Column id="baseAppmtCd" type="STRING" size="256"/>
+          <Column id="baseAppmtNm" type="STRING" size="256"/>
+          <Column id="yyPstep" type="STRING" size="256"/>
+          <Column id="pay" type="STRING" size="256"/>
+          <Column id="appmtJobtt" type="STRING" size="256"/>
+          <Column id="appmtJobcl" type="STRING" size="256"/>
+          <Column id="appmtJobclNm" type="STRING" size="256"/>
+          <Column id="appmtJobrk" type="STRING" size="256"/>
+          <Column id="appmtJobrkNm" type="STRING" size="256"/>
+          <Column id="appmtDept" type="STRING" size="256"/>
+          <Column id="appmtDeptNm" type="STRING" size="256"/>
+          <Column id="reason" type="STRING" size="256"/>
+          <Column id="note" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="cheack" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsBindCode" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="dsName" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">GP075</Col>
+            <Col id="dsName">dsGP075</Col>
+          </Row>
+          <Row>
+            <Col id="code">GP010</Col>
+            <Col id="dsName">dsGP010</Col>
+          </Row>
+          <Row>
+            <Col id="code">GP072</Col>
+            <Col id="dsName">dsGP072</Col>
+          </Row>
+          <Row>
+            <Col id="code">GP070</Col>
+            <Col id="dsName">dsGP070</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsGP075" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+          <Column id="bigValue" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsGP070" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+          <Column id="bigValue" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsAppoint" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="appmtSeq" type="STRING" size="256"/>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="appmtDiv" type="STRING" size="256"/>
+          <Column id="appmtSubject" type="STRING" size="256"/>
+          <Column id="appmtDate" type="STRING" size="256"/>
+          <Column id="transDept" type="STRING" size="256"/>
+          <Column id="transDeptNm" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="deptNm" type="STRING" size="256"/>
+          <Column id="deptCd" type="STRING" size="256"/>
+          <Column id="appmtyn" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsHmEmp" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="deptCd" type="STRING" size="256"/>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="jobcl" type="STRING" size="256"/>
+          <Column id="jobtt" type="STRING" size="256"/>
+          <Column id="jobrk" type="STRING" size="256"/>
+          <Column id="payStep" type="STRING" size="256"/>
+          <Column id="hireDate" type="STRING" size="256"/>
+          <Column id="workStatus" type="STRING" size="256"/>
+          <Column id="deptNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsDept" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="deptCd" type="STRING" size="256"/>
+          <Column id="deptNm" type="STRING" size="256"/>
+          <Column id="sectionManagerNm" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[/********************************************************************
+*                                                                   *
+* 인사발령관리                                                    *
+*                                                                   *
+* @Path		    인사발령관리       	                  		    *
+* @Description  인사발령 조회,등록 화면          			    *
+* @Author		최창근 					                        *
+* 								                                    *
+* Created on    2016.5.31                          		       		*
+*								                                    *
+********************************************************************/
+
+include "scripts::commonScripts.xjs";
+
+this.appoGridROw;
+var empNo;
+var empNm;
+var copyAppmtNo;
+
+
+this.search_btn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var empNo=this.empno.value;
+	var empNa=this.empName.value;
+	var argument = 'empNo='+empNo+' empNm='+empNa;
+	this.dsService.setColumn(1,"argument",argument);
+	var aa=	this.dsService.getColumn(1,"argument");  //alert(aa);//디비에 가져가는 argument값 3개 나타난다
+	this.gfnService("findEmpList");//2번째 그리드 불러주는거임
+}
+
+this.dept_grid_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+		var deptCd=this.dsDept.getColumn(e.row,"deptCd");
+	var argument = 'deptCd='+deptCd;
+	this.dsService.setColumn(1,"argument",argument);
+	this.gfnService("findEmpList");//2번째 그리드 불러주는거임
+}
+
+this.addAppmt_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+var dt;
+		var choiceEmp = this.dsHmEmp.rowposition; //alert(choiceEmp);        //행순번
+ 
+	if(choiceEmp==-1){   alert("사원선택후 행추가가 가능합니다."); //선택안하면 -1
+	}else{
+						var addAppmt=this.dsAppoint.addRow();
+						    copyAppmtNo=addAppmt;//차가된 행의 순번이 저장되고 아래에서 그 번호로 데이터 값을 저장한다
+						dt = this.gfnDate("yy-mm"); 
+						 trace("==============서버시간 ===========" + dt);//발령호수인데 이대로적자 뒤에가서 날짜받아온다
+					  	    empNo=this.dsHmEmp.getColumn(this.dsHmEmp.rowposition,"empNo");
+					  	    
+					  	    
+						    empNm=this.dsHmEmp.getColumn(this.dsHmEmp.rowposition,"empNm");
+						var deptnm=this.dsHmEmp.getColumn(this.dsHmEmp.rowposition,"deptNm");
+						var deptcd=this.dsHmEmp.getColumn(this.dsHmEmp.rowposition,"deptCd");
+						
+						this.dsAppoint.setColumn(addAppmt,"empNo",empNo);
+						this.dsAppoint.setColumn(addAppmt,"appmtSeq",dt);
+						this.dsAppoint.setColumn(addAppmt,"empNm",empNm);
+						this.dsAppoint.setColumn(addAppmt,"deptNm",deptnm);
+						this.dsAppoint.setColumn(addAppmt,"deptCd",deptcd);
+						this.dsAppoint.setColumn(addAppmt,"appmtyn","N");
+						
+						//3번쨰 그리드 발령상세에서 가져간다
+						var cheakcurrDept=this.dsAppoint.getColumn(e.row,"currDept");
+						alert(cheakcurrDept);
+	}
+}
+
+this.delAppmt_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsAppoint.deleteRow(this.dsAppoint.rowposition);
+}
+
+this.serchAppmt_btn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsAppoint.clearData();
+	var appmtseq = this.appmtSeq.value;
+	
+	var argument = 'appmtSeq='+appmtseq;
+	this.dsService.setColumn(3,"argument",argument);
+	this.gfnService("findAppmtList");
+}
+
+this.appo_grid_onlbuttonup = function(obj:Grid, e:nexacro.GridMouseEventInfo)
+{
+		var clickGrid=e.col;
+	var appoGridRow=e.row;
+
+	if(clickGrid=='8'){//////////////////////////////////// 조회팝업뜬다 발령구분
+	
+	 var arr = this.gfnCodePopup("GP016");
+	 //this.dsAppoint.setColumn(appoGridRow,"appmtDiv",arr[0]);
+	 //this.dsAppoint.setColumn(appoGridRow,"appmtSubject",arr[1]);	 
+	 
+	}else if(clickGrid=='5'){/////////////////////////////// 조회팝업뜬다 발신부서코드
+	 var arr = this.gfnCodePopup("GP500","dept");
+	 trace(arr[0]+arr[1]);
+	 //this.dsAppoint.setColumn(appoGridRow,"transDept",arr[0]);
+	 //this.dsAppoint.setColumn(appoGridRow,"transDeptNm",arr[1]);
+	}
+}
+
+this.appo_grid_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+		var clickCol=e.row;
+	var clickCell=e.cell;
+
+	var appmtseq=this.dsAppoint.getColumn(clickCol,"appmtSeq");
+	var empnm=this.dsAppoint.getColumn(clickCol,"empNm");
+	var empno=this.dsAppoint.getColumn(clickCol,"empNo");
+	var cheakEmpNo=this.dsAppoint.getColumn(clickCol,"empNo");//발령정보그리드 내용 발령상세로가져오기
+	var deptnm=this.dsAppoint.getColumn(clickCol,"deptNm");
+	
+	var deptcd=this.dsAppoint.getColumn(clickCol,"deptCd");
+	var appmtYn=this.dsAppoint.getColumn(clickCol,"appmtyn");	
+	var cheakAppmtSubject=this.dsAppoint.getColumn(clickCol,"appmtSubject");//발령정보그리드 내용 발령상세로가져오기
+	var cheakAppmtDiv=this.dsAppoint.getColumn(clickCol,"appmtDiv");//발령정보그리드 내용 발령상세로가져오기
+	var findrow=this.dsAppointDetail.findRow("empNo",cheakEmpNo);   //바로해도되는데 왜??
+     alert(findrow); //가 있으면 -1이 나온다 그거땜시 이거만듬 아래서 사용한다
+	 alert(deptnm);
+
+		if(clickCell==1){//////////사원명 클릭시
+			if(appmtYn=="N"){
+							if(findrow==-1){ var addRow=this.dsAppointDetail.addRow();
+											this.dsAppointDetail.setColumn(addRow,"appmtSeq",appmtseq);
+											this.dsAppointDetail.setColumn(addRow,"empNm",empnm);
+											this.dsAppointDetail.setColumn(addRow,"empNo",empno);
+											this.dsAppointDetail.setColumn(addRow,"currDeptNm",deptnm);
+											this.dsAppointDetail.setColumn(addRow,"currDept",deptcd);
+											this.dsAppointDetail.setColumn(addRow,"baseAppmtNm",cheakAppmtSubject);//위에서 만든거 넣음
+											this.dsAppointDetail.setColumn(addRow,"baseAppmtCd",cheakAppmtDiv);
+											alert(323);
+											}
+			}else{     alert("이미발령된 사원입니다.");
+			} }
+}
+
+
+
+//보낸값 받아서 해당칸에 세팅한다
+this.setCode = function(code,arrRtn,args){
+	// alert(arrRtn[0]);
+	 switch(code){
+// 		case "GP075":this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"appmtPstep",arrRtn[1]);
+// 		break;
+			
+// 		case "GP010":this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"baseAppmtCd",arrRtn[0]);
+// 		this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"baseAppmtNm",arrRtn[1]);	
+// 		break;
+// 		
+// 		case "GP072":this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"appmtJobtt",arrRtn[1]);
+// 		break;
+// 		
+// 		case "GP070": this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"appmtJobcl",arrRtn[0]);
+// 	    this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"appmtJobclNm",arrRtn[1]);
+// 		break;
+		
+		case "GP074":this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"appmtJobrk",arrRtn[0]);
+					 this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"appmtJobrkNm",arrRtn[1]);
+					 alert("asdf"+arrRtn[0]+arrRtn[1]);
+					 break;
+		
+		case "GP500":
+			switch(args){
+				case "deptDetail" : this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"appmtDept",arrRtn[0]);
+									this.dsAppointDetail.setColumn(this.dsAppointDetail.rowposition,"appmtDeptNm",arrRtn[1]);
+									break;
+				case "dept" 	  : this.dsAppoint.setColumn(this.dsAppoint.rowposition,"transDept",arrRtn[0]);
+									this.dsAppoint.setColumn(this.dsAppoint.rowposition,"transDeptNm",arrRtn[1]);
+									break;
+			}
+			break;
+  		case "GP016":this.dsAppoint.setColumn(this.dsAppoint.rowposition,"appmtDiv",arrRtn[0]);
+					 this.dsAppoint.setColumn(this.dsAppoint.rowposition,"appmtSubject",arrRtn[1]);	
+					 break;
+	 }
+	 
+}
+
+this.appo_grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+		var clickcol=e.col;
+	var clickrow=e.row;
+	if(clickcol=='2'){//////////호봉 받는다
+//	 var arr = this.gfn_CodePopup("GP075");
+	// this.dsAppointDetail.setColumn(clickrow,"appmtPstep",arr[1]);
+	 
+// 	}else if(clickcol=='3'){//////////발령근거부서                            GP016 발령근거
+// 	 var arr = this.gfn_CodePopup("GP010");
+// 	 this.dsAppointDetail.setColumn(clickrow,"baseAppmtCd",arr[0]);
+//	 this.dsAppointDetail.setColumn(clickrow,"baseAppmtNm",arr[1]);	
+//	}else if(clickcol=='6'){//////////발령직위
+//	 var arr = this.gfn_CodePopup("GP072");
+//	 this.dsAppointDetail.setColumn(clickrow,"appmtJobtt",arr[1]);
+//	}else if(clickcol=='7'){/////////발령직종
+// 	 var arr = this.gfn_CodePopup("GP070");
+//	 this.dsAppointDetail.setColumn(clickrow,"appmtJobcl",arr[0]);
+//	 this.dsAppointDetail.setColumn(clickrow,"appmtJobclNm",arr[1]);
+  	}else if(clickcol=='5'){/////////발령직급
+  	 var arr = this.gfnCodePopup("GP074");
+ 	 //this.dsAppointDetail.setColumn(clickrow,"appmtJobrk",arr[0]);
+ 	// this.dsAppointDetail.setColumn(clickrow,"appmtJobrkNm",arr[1]);
+  	}else if(clickcol=='11'){/////////발령부서
+ 	 var arr = this.gfnCodePopup("GP500","deptDetail");
+	//this. dsAppointDetail.setColumn(clickrow,"appmtDept",arr[0]);
+	// this.dsAppointDetail.setColumn(clickrow,"appmtDeptNm",arr[1]);
+ 
+ 
+	}
+}
+
+this.appo_grid00_onenterdown = function(obj:Grid, e:nexacro.GridEditEventInfo)
+{
+	var col=e.col;
+	var clickrow=e.row;
+	var pay=this.dsAppointDetail.getColumn(clickrow,"pay");
+	var yypstep=pay*12;
+	if(col=='6'){
+	this.dsAppointDetail.setColumn(clickrow,"yyPstep",yypstep);
+		alert("연봉이 설정되었습니다."); // alert(yypstep);
+	}
+}
+
+this.Button09_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+}
+
+this.delDetail_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsAppointDetail.deleteRow(this.dsAppointDetail.rowposition);
+}
+
+this.btnInsertAppioint_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+		for(i=0;i<this.dsAppoint.getRowCount();i++){
+		var appmtDiv=this.dsAppoint.getColumn(i,"appmtDiv");
+		var appmtDate=this.dsAppoint.getColumn(i,"appmtDate");
+		var transDept=this.dsAppoint.getColumn(i,"transDept");
+		if(appmtDiv==null){
+			return alert("발령구분은 반드시 입력하셔야 합니다.");
+		}else if(appmtDate==null){
+			return alert("발령일자는 반드시 입력하셔야 합니다.");
+		}else if(transDept==null){
+			return alert("발신부서는 반드시 입력하셔야 합니다.");
+		}	
+	}
+	this.gfnService("insertAppoint");
+}
+
+
+// 닫기 버튼 
+/*function Button42_onclick(obj:Button,  e:ClickEventInfo)
+{
+	close();
+}*/
+this.Button42_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.close();
+}
+
+
+
+
+
+// 콜백
+this.CallbackFunc = function(trid,errcd,errmsg){
+	
+	if(trid =="findAppmtEmpList"){
+	
+		if(errcd == 1){
+			alert("부서목록 검색 성공");
+		}else{
+			alert("부서목록 검색 실패");
+		}
+	}else if(trid == "findEmpList"){
+		if(errcd == 1){
+			alert("사원목록이 검색 성공");
+			}else{
+			alert("사원목록이 검색 실패");
+		}		
+	}else if(trid == "findAppmtList"){
+		if(errcd == 1){
+			alert("발령정보 검색 성공");
+			}else{
+			alert("발령정보 검색 실패");
+		}
+	}else if(trid == "insertAppointDetail"){
+		if(errcd == 1){ 	                //alert(global.http.RecvHttpStr); //받을때  //SendHttpStr 이건 보낼때
+			alert("발령상세 저장");
+			}else{                           //    alert(global.http.RecvHttpStr);
+			alert("발령상세 저장 실패");
+		}
+	}else if(trid == "modifyAppointEmp"){
+		if(errcd == 1){
+			alert(" 되었습니다");
+			}else{
+			alert(" 않습니다");
+		}
+	}else if(trid == "insertAppoint"){
+		if(errcd == 1){
+			alert("발령 저장 성공");
+			}else{
+			alert("발령 실패");
+		}
+	}
+}
+
+this.HA_AppmForm_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.gfnBind();
+}
+
+
+this.HA_AppmForm_oninit = function(obj:Form, e:nexacro.InitEventInfo)
+{
+
+	
+	this.gfnService("findAppmtEmpList");
+	this.gfnService("findEmpList");
+}
+
+//발령버튼
+this.appointBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	
+	//var grEmpPms=application.gdsEmp.getColumn(0,"pms");
+	//var grEmpPaystep=application.gdsEmp.getColumn(0,"payStep");
+	var cheackNum=0;
+	var appmtseq;
+	var empname;
+// 	if(grEmpPms!="admin"|| grEmpPaystep<2){  alert("발령권한이 없습니다.");  return false;
+//	}else{
+			for(i=0;i<this.dsAppointDetail.getRowCount();i++){
+							var c = 1;
+							trace(c++);
+							var cheakAppmt=this.dsAppointDetail.getColumn(i,"cheack");
+							alert(cheakAppmt);
+							var appointRow=this.dsAppoint.findRow("empNo",this.dsAppointDetail.getColumn(i,"empNo")); 
+							this.dsAppoint.setColumn(appointRow,"appmtyn","Y");
+						if(cheakAppmt==1){        cheackNum++;       }     	
+						}
+		
+			var trueOrfalse=confirm("발령등록 하시겠습니까?");
+			if(trueOrfalse==true){    			    this.gfnService("insertAppoint");
+													this.gfnService("insertAppointDetail"); //alert(global.http.SendHttpStr); //SendHttpStr
+													this.gfnService("modifyAppointEmp");    //alert(global.http.SendHttpStr); //SendHttpStr
+			}else{      			 return false; }	
+//	}
+}
+]]></Script>
+  </Form>
+</FDL>
