@@ -27,8 +27,8 @@
 				    , END_DATE
 	   FROM     MB_ATTENTIONAL_PATIENT
 	   WHERE 	1=1
-  		<if test='attPtNo != null'>
-        AND PAT_NO = #{attPtNo}
+  		<if test='patNo != null'>
+        AND PAT_NO = #{patNo}
     	</if>
  	</select>
     <update id="insertAttentionalPatient" parameterType="AttentionalPatientBean">
@@ -55,7 +55,7 @@
     <update id="updateAttentionalPatient" parameterType="AttentionalPatientBean">
             UPDATE MB_ATTENTIONAL_PATIENT
             SET
-              , PAT_NO = #{patNo}
+                PAT_NO = #{patNo}
               , PAT_NAME =  #{patName}
               , ATTENTIONAL_FIELD_NAME = #{attentionalFieldName}
               , ATTENTIONAL_DIV = #{attentionalDiv}

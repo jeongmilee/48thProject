@@ -28,7 +28,7 @@
             obj.set_loadkeymode("keep");
             obj.set_loadfiltermode("keep");
             obj.set_reversesubsum("false");
-            obj._setContents("<ColumnInfo><Column id=\"serviceID\" type=\"STRING\" size=\"256\"/><Column id=\"URL\" type=\"STRING\" size=\"256\"/><Column id=\"inData\" type=\"STRING\" size=\"256\"/><Column id=\"outData\" type=\"STRING\" size=\"256\"/><Column id=\"argument\" type=\"STRING\" size=\"256\"/><Column id=\"callbackFunc\" type=\"STRING\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"serviceID\">findAttentionalPatientList</Col><Col id=\"URL\">his::msv/mcm/patientservice/findAttentionalPatientList.do</Col><Col id=\"callbackFunc\">callbackFunc</Col><Col id=\"outData\">dsAttentionalPatient=dsAttentionalPatient</Col><Col id=\"inData\"/></Row><Row><Col id=\"serviceID\">findAttentionalFieldList</Col><Col id=\"URL\">his::msv/mcm/patientservice/findAttentionalFieldList.do</Col><Col id=\"inData\"/><Col id=\"callbackFunc\">callbackFunc</Col><Col id=\"outData\">dsAttentionalField=dsAttentionalField</Col></Row><Row><Col id=\"serviceID\">batchAttentionalFieldProcess</Col><Col id=\"URL\">his::msv/mcm/patientservice/batchAttentionalFieldProcess.do</Col><Col id=\"inData\">dsAttentionalField=dsRegAttentionalField:u</Col><Col id=\"callbackFunc\">callbackFunc</Col></Row><Row><Col id=\"serviceID\">registerAttentionalPatient</Col><Col id=\"URL\">his::msv/mcm/patientservice/registerAttentionalPatient.do</Col><Col id=\"inData\">dsAttentionalPatient=dsRegAttentionalPatient:u</Col><Col id=\"callbackFunc\">callbackFunc</Col></Row><Row><Col id=\"serviceID\">batchAttentionalPatientProcess</Col><Col id=\"URL\">his::msv/mcm/patientservice/batchAttentionalPatientProcess.do</Col><Col id=\"inData\">dsAttentionalPatient=dsAttentionalPatient:u</Col><Col id=\"outData\">[Undefined]</Col><Col id=\"argument\">[Undefined]</Col><Col id=\"callbackFunc\">callbackFunc</Col></Row></Rows>");
+            obj._setContents("<ColumnInfo><Column id=\"serviceID\" type=\"STRING\" size=\"256\"/><Column id=\"URL\" type=\"STRING\" size=\"256\"/><Column id=\"inData\" type=\"STRING\" size=\"256\"/><Column id=\"outData\" type=\"STRING\" size=\"256\"/><Column id=\"argument\" type=\"STRING\" size=\"256\"/><Column id=\"callbackFunc\" type=\"STRING\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"serviceID\">findAttentionalPatientList</Col><Col id=\"URL\">his::msv/mcm/patientservice/findAttentionalPatientList.do</Col><Col id=\"callbackFunc\">callbackFunc</Col><Col id=\"outData\">dsAttentionalPatient=dsAttentionalPatient</Col><Col id=\"inData\"/></Row><Row><Col id=\"serviceID\">findAttentionalFieldList</Col><Col id=\"URL\">his::msv/mcm/patientservice/findAttentionalFieldList.do</Col><Col id=\"inData\"/><Col id=\"callbackFunc\">callbackFunc</Col><Col id=\"outData\">dsAttentionalField=dsAttentionalField</Col></Row><Row><Col id=\"serviceID\">batchAttentionalFieldProcess</Col><Col id=\"URL\">his::msv/mcm/patientservice/batchAttentionalFieldProcess.do</Col><Col id=\"inData\">dsAttentionalField=dsRegAttentionalField:u</Col><Col id=\"callbackFunc\">callbackFunc</Col></Row><Row><Col id=\"serviceID\">registerAttentionalPatient</Col><Col id=\"URL\">his::msv/mcm/patientservice/registerAttentionalPatient.do</Col><Col id=\"inData\">dsAttentionalPatient=dsRegAttentionalPatient:u</Col><Col id=\"callbackFunc\">callbackFunc</Col></Row><Row><Col id=\"serviceID\">batchAttentionalPatientProcess</Col><Col id=\"URL\">his::msv/mcm/patientservice/batchAttentionalPatientProcess.do</Col><Col id=\"inData\">dsAttentionalPatient=dsAttentionalPatient:u</Col><Col id=\"callbackFunc\">callbackFunc</Col></Row></Rows>");
             this.addChild(obj.name, obj);
 
             obj = new Dataset("dsAttentionalPatient", this);
@@ -175,18 +175,18 @@
             obj.style.set_font("9 돋움");
             obj.set_enable("false");
             this.attPatDiv.addChild(obj.name, obj);
-            obj = new Edit("patNoEd", "absolute", "33%", "47", null, "30", "53.18%", null, this.attPatDiv);
+            obj = new Edit("patNoEd", "absolute", "30.51%", "47", null, "30", "55.67%", null, this.attPatDiv);
             obj.set_taborder("12");
             obj.style.set_font("9 돋움");
             obj.set_enable("false");
             this.attPatDiv.addChild(obj.name, obj);
-            obj = new Grid("Grid00", "absolute", "0.87%", "89", null, "563", "2.24%", null, this.attPatDiv);
+            obj = new Grid("attPatientGrid", "absolute", "0.87%", "89", null, "563", "2.24%", null, this.attPatDiv);
             obj.set_taborder("13");
             obj.set_binddataset("dsAttentionalPatient");
             obj.set_autofittype("col");
             obj.style.set_border("2 solid #9f8f71ff,0 none #808080ff,0 none #808080ff,0 none #808080ff");
             obj.style.set_font("9 돋움");
-            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"113\"/><Column size=\"71\"/><Column size=\"71\"/><Column size=\"71\"/><Column size=\"80\"/><Column size=\"116\"/><Column size=\"71\"/><Column size=\"71\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell style=\"align:center;background:#cfd8dcff;\" text=\"관심환자등록번호\"/><Cell col=\"1\" style=\"align:center;background:#cfd8dcff;\" text=\"환자번호\"/><Cell col=\"2\" style=\"align:center;background:#cfd8dcff;\" text=\"이름\"/><Cell col=\"3\" style=\"align:center;background:#cfd8dcff;\" text=\"관심영역\"/><Cell col=\"4\" style=\"align:center;background:#cfd8dcff;\" text=\"관심분류\"/><Cell col=\"5\" style=\"align:center;background:#cfd8dcff;\" text=\"관심내역\"/><Cell col=\"6\" style=\"align:center;background:#cfd8dcff;\" text=\"시작일자\"/><Cell col=\"7\" style=\"align:center;background:#cfd8dcff;\" text=\"종료일자\"/></Band><Band id=\"body\"><Cell text=\"bind:attentionalRegNo\"/><Cell col=\"1\" displaytype=\"normal\" edittype=\"none\" style=\"align:center;\" text=\"bind:patNo\"/><Cell col=\"2\" edittype=\"none\" style=\"align:center;\" text=\"bind:patName\"/><Cell col=\"3\" edittype=\"normal\" style=\"align:center;\" text=\"bind:attentionalFieldName\"/><Cell col=\"4\" edittype=\"none\" style=\"align:center;\" text=\"bind:attentionalDiv\"/><Cell col=\"5\" edittype=\"none\" style=\"align:center;\" text=\"bind:attentionalContent\"/><Cell col=\"6\" edittype=\"none\" style=\"align:center;\" text=\"bind:startDate\"/><Cell col=\"7\" edittype=\"none\" style=\"align:center;\" text=\"bind:endDate\"/></Band></Format></Formats>");
+            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"71\"/><Column size=\"71\"/><Column size=\"71\"/><Column size=\"71\"/><Column size=\"80\"/><Column size=\"239\"/><Column size=\"71\"/><Column size=\"71\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell style=\"align:center;background:#cfd8dcff;\" text=\"등록번호\"/><Cell col=\"1\" style=\"align:center;background:#cfd8dcff;\" text=\"환자번호\"/><Cell col=\"2\" style=\"align:center;background:#cfd8dcff;\" text=\"이름\"/><Cell col=\"3\" style=\"align:center;background:#cfd8dcff;\" text=\"관심영역\"/><Cell col=\"4\" style=\"align:center;background:#cfd8dcff;\" text=\"관심분류\"/><Cell col=\"5\" style=\"align:center;background:#cfd8dcff;\" text=\"관심내역\"/><Cell col=\"6\" style=\"align:center;background:#cfd8dcff;\" text=\"시작일자\"/><Cell col=\"7\" style=\"align:center;background:#cfd8dcff;\" text=\"종료일자\"/></Band><Band id=\"body\"><Cell style=\"align:center;\" text=\"bind:attentionalRegNo\"/><Cell col=\"1\" displaytype=\"normal\" edittype=\"none\" style=\"align:center;\" text=\"bind:patNo\"/><Cell col=\"2\" edittype=\"none\" style=\"align:center;\" text=\"bind:patName\"/><Cell col=\"3\" edittype=\"combo\" style=\"align:center;\" text=\"bind:attentionalFieldName\" combodataset=\"dsAttFieldCombo\" combocodecol=\"attentionalFieldName\" combodatacol=\"attentionalFieldName\"/><Cell col=\"4\" edittype=\"combo\" style=\"align:center;\" text=\"bind:attentionalDiv\" combodataset=\"dsAttentionalField\" combocodecol=\"attentionalFieldName\" combodatacol=\"attentionalDiv\"/><Cell col=\"5\" edittype=\"normal\" style=\"align:center;\" text=\"bind:attentionalContent\"/><Cell col=\"6\" edittype=\"date\" style=\"align:center;\" text=\"bind:startDate\"/><Cell col=\"7\" edittype=\"date\" style=\"align:center;\" text=\"bind:endDate\" editautoselect=\"true\"/></Band></Format></Formats>");
             this.attPatDiv.addChild(obj.name, obj);
             obj = new Static("subCodeStc03", "absolute", "0.87%", "6", null, "30", "2.24%", null, this.attPatDiv);
             obj.set_taborder("15");
@@ -359,7 +359,7 @@
             obj.set_cssclass("btn_WF_SearchSmall");
             this.addChild(obj.name, obj);
 
-            obj = new Button("searchAttBtnForSch", "absolute", "641", "115", "30", "30", null, null, this);
+            obj = new Button("searchAttBtnForSch", "absolute", "636", "115", "30", "30", null, null, this);
             obj.set_taborder("36");
             obj.set_cssclass("btn_WF_SearchSmall");
             this.addChild(obj.name, obj);
@@ -370,7 +370,7 @@
             obj.set_autofittype("col");
             obj.style.set_border("2 solid #9f8f71ff,0 none #808080ff,0 none #808080ff,0 none #808080ff");
             obj.style.set_font("9 돋움");
-            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"71\"/><Column size=\"220\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell style=\"background:#cfd8dcff;\" text=\"분류번호\"/><Cell col=\"1\" style=\"background:#cfd8dcff;\" text=\"분류명\"/></Band><Band id=\"body\"><Cell displaytype=\"normal\" edittype=\"none\" style=\"align:center;\" text=\"bind:attentionalFieldSeq\"/><Cell col=\"1\" edittype=\"normal\" style=\"align:center;\" text=\"bind:attentionalDiv\"/></Band></Format></Formats>");
+            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"63\"/><Column size=\"220\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell style=\"background:#cfd8dcff;\" text=\"No\"/><Cell col=\"1\" style=\"background:#cfd8dcff;\" text=\"분류명\"/></Band><Band id=\"body\"><Cell style=\"align:center;\" text=\"bind:attentionalFieldSeq\"/><Cell col=\"1\" edittype=\"normal\" style=\"align:center;\" text=\"bind:attentionalDiv\"/></Band></Format></Formats>");
             this.addChild(obj.name, obj);
 
             obj = new Static("Static00", "absolute", "1.84%", "7", null, "41", "85.76%", null, this);
@@ -529,9 +529,8 @@
         +-------------------------------------------------------------------------------------------------*/
         this.SCP_AttentionalPatientForm_onload = function(obj,e)
         {
-        	this.dsAttentionalField.clearData();
         	this.gfnService("findAttentionalFieldList","false");
-        	//this.dsAttentionalField.filter("attentionalFieldName=='###'");
+
         }
 
         this.callbackFunc = function(svcID,ErrorCode,ErrorMsg){
@@ -605,8 +604,7 @@
 
         this.clickSearchAttBtn = function () {
         	var patNoEd=this.attPatDiv.patNoEd.value;
-        	this.dsAttentionalPatient.clearData();
-        	var argument = 'attPtNo='+patNoEd;
+        	var argument = 'patNo='+patNoEd;
         	var serviceRow = this.dsService.findRow("serviceID", "findAttentionalPatientList");
         	this.dsService.setColumn(serviceRow,"argument",argument);
         	this.gfnService("findAttentionalPatientList","false");
@@ -652,7 +650,6 @@
         	}else{
         			this.dsRegAttentionalField.addRow();
         			var rowIdx=this.dsRegAttentionalField.getRowCount();
-        			this.dsRegAttentionalField.setColumn(rowIdx-1,"attentionalFieldSeq",rowIdx+1);
         			this.dsRegAttentionalField.setColumn(rowIdx-1,"attentionalDiv",attDiv);
         			this.dsRegAttentionalField.setColumn(rowIdx-1,"attentionalFieldName",fieldNm);
         		}
@@ -686,6 +683,12 @@
 
         this.clickSaveAttPatientBtn = function ()
         {
+        	var startDate=this.attPatDiv.attPatientGrid.getCellText(this.dsAttentionalPatient.rowposition,6);
+        	var endDate=this.attPatDiv.attPatientGrid.getCellText(this.dsAttentionalPatient.rowposition,7);
+        	if (endDate-startDate < 0){
+        		alert("종료일자가 시작일자보다 빠릅니다.");
+        		return;
+        	}
         	this.gfnService("batchAttentionalPatientProcess","false");
         	this.reload();
         }
@@ -717,9 +720,13 @@
         	this.regAttPatDiv.attDivCombo.set_value(null);
         	this.dsAttentionalField.filter("attentionalFieldName=='###'");
         }
-
-        
-        
+        /*-------------------------------------------------------------------------------------------------+
+        >>  GRID EVENT
+        +-------------------------------------------------------------------------------------------------*/
+        this.attPatDiv_attPatientGrid_ondropdown = function(obj,e)
+        {
+        	this.dsAttentionalField.filter("attentionalFieldName=='"+this.attPatDiv.attPatientGrid.getCellText(this.dsAttentionalPatient.rowposition,3)+"'");
+        }
         });
 
 
@@ -736,6 +743,7 @@
             this.regAttPatDiv.fieldStc03.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.regAttPatDiv.pNameStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.regAttPatDiv.attFieldCombo.addEventHandler("oncloseup", this.regAttPatDiv_attFieldCombo_oncloseup, this);
+            this.attPatDiv.attPatientGrid.addEventHandler("ondropdown", this.attPatDiv_attPatientGrid_ondropdown, this);
             this.attPatDiv.subCodeStc03.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.attPatDiv.DelBtn02.addEventHandler("onclick", this.searchBtn_onclick, this);
             this.attPatDiv.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);

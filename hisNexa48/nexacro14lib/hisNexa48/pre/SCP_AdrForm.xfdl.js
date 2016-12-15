@@ -221,7 +221,7 @@
 
             obj = new Div("adrDiv03", "absolute", "33.92%", "604", "805", "148", null, null, this);
             obj.set_taborder("11");
-            obj.style.set_background("whitesmoke");
+            obj.style.set_background("#eceff1ff");
             obj.style.set_border("1 solid #808080ff");
             obj.style.set_font("9 돋움");
             this.addChild(obj.name, obj);
@@ -662,7 +662,7 @@
             	//-- Layout function
             	function(p) {
             		p.set_taborder("11");
-            		p.style.set_background("whitesmoke");
+            		p.style.set_background("#eceff1ff");
             		p.style.set_border("1 solid #808080ff");
             		p.style.set_font("9 돋움");
 

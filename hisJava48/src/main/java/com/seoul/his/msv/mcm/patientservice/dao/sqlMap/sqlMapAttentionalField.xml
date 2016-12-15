@@ -21,23 +21,13 @@
 
  	</select>
 
-
-
-
-
-
-
-
-
-
-
  	<update id="insertAttentionalField" parameterType="AttentionalFieldBean">
             INSERT INTO MB_ATTENTIONAL_FIELD (
                 ATTENTIONAL_FIELD_SEQ
               , ATTENTIONAL_FIELD_NAME
               , ATTENTIONAL_DIV
             ) VALUES (
-               #{attentionalFieldSeq}
+               ATTENTIONAL_FIELD_SEQ.NEXTVAL
              , #{attentionalFieldName}
              , #{attentionalDiv}
             )

@@ -134,7 +134,7 @@
             </Layout>
           </Layouts>
         </Div>
-        <Div id="adrDiv03" taborder="11" left="33.92%" top="604" width="805" height="148" style="background:whitesmoke;border:1 solid #808080ff ;font:9 돋움;">
+        <Div id="adrDiv03" taborder="11" left="33.92%" top="604" width="805" height="148" style="background:#eceff1ff;border:1 solid #808080ff ;font:9 돋움;">
           <Layouts>
             <Layout>
               <Static id="subCodeStc00" taborder="0" text="종합소견" onclick="subCodeStc_onclick" left="0.62%" top="7" right="88.04%" height="30" style="background:#c4d2daff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
