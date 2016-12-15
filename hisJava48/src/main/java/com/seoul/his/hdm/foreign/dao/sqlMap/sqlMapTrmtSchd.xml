@@ -23,20 +23,21 @@
 	</select>
 
 	<select id="selectTrmtSchdList" resultType="TrmtSchdBean">
-		select
-		      a.meddate,		     
-		      a.EMP_NO empNo,		      
-		      a.rsvcnt,      
-		      a.examtm,
-       	      a.ampmflag,
-        	  a.RSVPOSCNT,
-              a.totcnt,
-              a.COMMENTS		       
-		from erp48.MC_TRMT_SCHD_MAN a 
-		where a.emp_no=#{empNo}
-		and meddate like #{yearMonth}||'%'
-		and examtm is not null
-		order by meddate, examtm		
+		SELECT emp_no as medDr, MEDDATE as medDate, EXAMTM as examTm, RSVCNT as rsvCnt,
+            TOTCNT as totCnt, 
+            AMPMFLAG as amPmFlag
+      FROM
+       
+     (SELECT M.EMP_NO AS EMP_NO ,M.MEDDATE AS MEDDATE, M.AMPMFLAG AS AMPMFLAG,
+         M.EXAMTM AS EXAMTM, COUNT(W.PAT_NO) AS RSVCNT, MAX(M.TOTCNT) AS TOTCNT
+         FROM MC_TRMT_SCHD_MAN M, WS_OUTPA_RECEIPT W
+          WHERE M.EMP_NO=W.TRMT_DOCT(+)
+            AND M.MEDDATE=W.TRMT_DATE(+)
+          AND M.EXAMTM=W.TRMT_TIME(+)
+          AND M.emp_no=#{empNo}
+		  AND meddate like #{yearMonth}||'%'
+         GROUP BY MEDDATE, EMP_NO,AMPMFLAG,EXAMTM)
+          ORDER BY MEDDATE,EXAMTM	
 	</select>
 
 	<select id="selectApplyHistoryList" resultType="ApplyHistoryBean">
@@ -52,24 +53,43 @@
 	</select>
 	
 	<select id="selectDayScheduleList" resultType="DaySchBean">
-		WITH DAYSCHEDULE AS (SELECT EMP_NO,MEDDATE,AMPMFLAG,SUM(RSVCNT) AS RsvCnt , 
-																		SUM(TOTCNT) TotCnt
-		FROM MC_TRMT_SCHD_MAN
-		WHERE EMP_NO=#{empNo}
-		GROUP BY MEDDATE, EMP_NO,AMPMFLAG
-		)
-		SELECT DECODE(AM.MEDDATE,NULL,PM.MEDDATE,AM.MEDDATE) AS MEDDATE, 
-						AM.RsvCnt AS amRsvCnt, AM.TotCnt AS amTotCnt,PM.RsvCnt AS pmRsvCnt,
-						PM.TotCnt AS pmTotCnt
-		FROM
-		(SELECT *
-		FROM DAYSCHEDULE
-		WHERE AMPMFLAG='오전')AM
-		FULL OUTER JOIN
-		(SELECT * 
-		FROM DAYSCHEDULE
-		WHERE AMPMFLAG='오후')PM
-		on AM.MEDDATE=PM.MEDDATE
-		ORDER BY AM.MEDDATE
+		WITH DAYSCHEDULE AS (
+      SELECT
+      EMP_NO,MEDDATE,AMPMFLAG,SUM(RSVCNT) AS
+      SUMRSVCNT,
+      SUM(TOTCNT) AS
+      SUMTOTCNT
+      FROM(
+      SELECT M.EMP_NO AS EMP_NO ,M.MEDDATE AS MEDDATE,
+      M.AMPMFLAG AS AMPMFLAG,
+      M.EXAMTM AS EXAMTM, COUNT(W.PAT_NO) AS RSVCNT,
+      MAX(M.TOTCNT) AS TOTCNT
+      FROM MC_TRMT_SCHD_MAN M, WS_OUTPA_RECEIPT W
+      WHERE M.EMP_NO=W.TRMT_DOCT(+)
+      AND M.MEDDATE=W.TRMT_DATE(+)
+      AND
+      M.EXAMTM=W.TRMT_TIME(+)
+      AND M.EMP_NO=#{empNo}
+      GROUP BY MEDDATE,
+      EMP_NO,AMPMFLAG,EXAMTM )
+      GROUP BY MEDDATE, EMP_NO,AMPMFLAG
+      )
+      SELECT
+      DECODE(AM.MEDDATE,NULL,PM.MEDDATE,AM.MEDDATE) AS medDate,
+      AM.SUMRSVCNT
+      AS amRsvCnt, AM.SUMTOTCNT AS amTotCnt,PM.SUMRSVCNT AS pmRsvCnt,
+      PM.SUMTOTCNT AS pmTotCnt
+      FROM
+      (SELECT *
+      FROM DAYSCHEDULE
+      WHERE
+      AMPMFLAG='오전')AM
+      FULL OUTER JOIN
+      (SELECT *
+      FROM DAYSCHEDULE
+      WHERE
+      AMPMFLAG='오후')PM
+      on AM.MEDDATE=PM.MEDDATE
+      ORDER BY medDate
 	</select>
 </mapper>

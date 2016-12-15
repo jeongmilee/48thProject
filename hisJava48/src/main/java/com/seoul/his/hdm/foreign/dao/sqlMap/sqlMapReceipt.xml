@@ -52,7 +52,8 @@
             R.NT_TT_YB,
             R.EXP_CD,
             FN_CM_CODE_DTL_NAME('MD001',R.EXP_CD) AS EXP_NM,
-            R.NW_DIV
+            R.NW_DIV,
+            R.TRMT_TIME
         FROM
             WS_OUTPA_RECEIPT R
         ,   WS_PAT P
@@ -90,7 +91,8 @@
             NT_TT_YB ,
             EXP_CD ,
             NW_DIV ,
-             HOSPTLZ_RSVT_YB 
+             HOSPTLZ_RSVT_YB,
+             TRMT_TIME 
         ) VALUES
         (
         	#{patNo},
@@ -110,7 +112,8 @@
             #{ntTtYb},
             #{expCd},
             #{nwDiv},
-            #{hosptlzRsvtYb}
+            #{hosptlzRsvtYb},
+            #{trmtTime}
         )
     </update>
     

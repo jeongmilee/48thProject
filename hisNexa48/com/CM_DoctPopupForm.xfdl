@@ -65,6 +65,7 @@
           <Column id="empNo" type="STRING" size="256"/>
           <Column id="empNm" type="STRING" size="256"/>
           <Column id="deptNm" type="STRING" size="256"/>
+          <Column id="deptCd" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
     </Objects>
@@ -91,6 +92,7 @@ this.doctGrid_oncelldblclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
 	arr[i++] = this.gdsEmp.getColumn(e.row,"empNo");
 	arr[i++] = this.gdsEmp.getColumn(e.row,"empNm");
 	arr[i++] = this.gdsEmp.getColumn(e.row,"deptNm");
+	arr[i++] = this.gdsEmp.getColumn(e.row,"deptCd");
 	this.opener.setDoct(arr);
 	this.close();
 }

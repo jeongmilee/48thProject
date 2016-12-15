@@ -59,24 +59,20 @@
               <Static id="Static02" taborder="201" text="~" left="21.99%" top="463" right="77.01%" height="26" style="align:center middle;"/>
               <Static id="trmtDeptStc" taborder="202" text="진료과" left="46.87%" top="46" right="45.17%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
               <Static id="expStc" taborder="203" text="진료의사" left="46.87%" top="78" right="45.17%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
-              <Static id="patNoStc16" taborder="204" text="감면사항" left="46.87%" top="110" right="45.17%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
-              <Edit id="trmtDeptCdEd" taborder="205" readonly="true" left="55.22%" top="46" right="39.2%" height="28"/>
-              <Edit id="trmtDoctCdEd" taborder="206" readonly="true" left="55.22%" top="78" right="39.2%" height="28"/>
-              <Edit id="expCdEd" taborder="207" readonly="true" left="55.22%" top="110" right="39.2%" height="28"/>
-              <Button id="searchTrmtDeptCdBtn" taborder="208" onclick="clickBtn" cssclass="AddBtn" left="61.19%" top="44" right="36.22%" height="32" style="background:@gradation URL('img::miniSearchBtn1.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
-              <Button id="searchTrmtDoctCdBtn" taborder="209" onclick="clickBtn" cssclass="AddBtn" left="61.19%" top="76" right="36.22%" height="32" style="background:@gradation URL('img::miniSearchBtn1.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
-              <Button id="searchExpCdBtn" taborder="210" onclick="clickBtn" cssclass="AddBtn" left="61.19%" top="108" right="36.22%" height="32" style="background:@gradation URL('img::miniSearchBtn1.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
+              <Static id="patNoStc16" taborder="204" text="감면사항" left="46.86%" top="141" right="45.15%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
+              <Edit id="expCdEd" taborder="207" readonly="true" left="55.26%" top="141" right="39.2%" height="28"/>
+              <Button id="searchExpCdBtn" taborder="210" onclick="clickBtn" cssclass="AddBtn" left="61.21%" top="139" right="36.19%" height="32" style="background:@gradation URL('img::miniSearchBtn1.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
               <Edit id="trmtDeptNmEd" taborder="211" readonly="true" left="64.18%" top="46" right="25.37%" height="28"/>
               <Edit id="trmtDoctNmEd" taborder="212" readonly="true" left="64.18%" top="78" right="25.37%" height="28"/>
-              <Edit id="expNmEd" taborder="213" readonly="true" left="64.18%" top="110" right="25.37%" height="28"/>
+              <Edit id="expNmEd" taborder="213" readonly="true" left="64.14%" top="141" right="25.35%" height="28"/>
               <Static id="ntTtStc" taborder="214" text="초/재진" left="76.82%" top="46" right="15.12%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
               <Static id="nwDivStc" taborder="215" text="내원구분" left="76.82%" top="78" right="15.12%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
-              <Static id="trmtDateStc" taborder="216" text="진료일시" left="76.82%" top="110" right="15.12%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
+              <Static id="trmtDateStc" taborder="216" text="진료일시" left="76.85%" top="142" right="15.16%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
               <Combo id="ntTtCombo" taborder="217" innerdataset="dsNtTt" codecolumn="code" datacolumn="value" left="85.27%" top="47" right="2.99%" height="26"/>
-              <Static id="patTypeStc" taborder="218" text="환자유형" left="76.82%" top="142" right="15.12%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
+              <Static id="patTypeStc" taborder="218" text="환자유형" left="76.85%" top="110" right="15.16%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
               <Combo id="nwDivCombo" taborder="219" innerdataset="dsNwDiv" codecolumn="code" datacolumn="value" left="85.27%" top="79" right="2.99%" height="26"/>
-              <Combo id="patTypeCombo" taborder="220" innerdataset="dsPatType" codecolumn="code" datacolumn="value" left="85.27%" top="143" right="2.99%" height="26"/>
-              <Calendar id="trmtDateCal" taborder="221" left="85.27%" top="111" right="2.99%" height="27"/>
+              <Combo id="patTypeCombo" taborder="220" innerdataset="dsPatType" codecolumn="code" datacolumn="value" left="85.25%" top="111" right="3.02%" height="26"/>
+              <Calendar id="trmtDateCal" taborder="221" left="85.25%" top="143" right="3.02%" height="27"/>
               <Static id="trmtHistTitleStc" taborder="222" text="수진이력" left="46.87%" top="190" right="43.18%" height="28" style="background:#455a64ff;color:ivory;align:center middle;font:bold 9 arial;"/>
               <Grid id="trmtHistGrid" taborder="223" binddataset="dsReceiptHist" useinputpanel="false" autofittype="col" left="46.87%" top="222" right="1.39%" height="188">
                 <Formats>
@@ -150,6 +146,10 @@
                   </Format>
                 </Formats>
               </Grid>
+              <Button id="trmtSchBtn" taborder="226" text="진료일정조회" left="66.5%" top="112" right="25.35%" height="23" style="background:#848484ff;color:ivory;font:bold 10 Arial Narrow;" onclick="WS_OutPatReceiptMngnDiv_trmtSchBtn_onclick"/>
+              <Edit id="trmtTimeEdit" taborder="227" left="85.25%" top="175" right="3.02%" height="27"/>
+              <Edit id="trmtDoctCdEd" taborder="228" readonly="true" left="55.26%" top="78" right="39.2%" height="28"/>
+              <Edit id="trmtDeptCdEd" taborder="229" readonly="true" left="55.26%" top="46" right="39.2%" height="28"/>
             </Layout>
           </Layouts>
         </Div>
@@ -397,6 +397,7 @@
           <Column id="expNm" type="STRING" size="256"/>
           <Column id="nwDiv" type="STRING" size="256"/>
           <Column id="patNm" type="STRING" size="256"/>
+          <Column id="trmtTime" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="dsNwDiv" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
@@ -565,6 +566,7 @@ this.clickAddReceiptBtn = function(){
 	this.dsOutpaReceipt.setColumn(addRow,"nwDiv",this.WS_OutPatReceiptMngnDiv.nwDivCombo.text);
 	this.dsOutpaReceipt.setColumn(addRow,"trmtDate",this.WS_OutPatReceiptMngnDiv.trmtDateCal.value);
 	this.dsOutpaReceipt.setColumn(addRow,"patType",this.WS_OutPatReceiptMngnDiv.patTypeCombo.text);	
+	this.dsOutpaReceipt.setColumn(addRow,"trmtTime",this.WS_OutPatReceiptMngnDiv.trmtTimeEdit.value);
 	this.dsOutpaReceipt.setColumn(addRow,"trmtYb",'N');
 	
 	this.gfnService("registerReceipt","true");
@@ -631,6 +633,31 @@ this.WS_OutPatReceiptMngnDiv_searchPatNoBtn_onclick = function(obj:Button,  e:ne
 	this.dsService.setColumn(0,"argument",'patNo='+this.WS_OutPatReceiptMngnDiv.patNoEd.value);
 	this.dsPat.clearData();
 	this.gfnService("findPat","false");	
+}
+
+this.WS_OutPatReceiptMngnDiv_trmtSchBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	application.open(
+	   "의사진료일정팝업",
+	   "hdm::HF_DoctTrmtSchdMngntForm.xfdl",
+	   this.parent,
+	   {},
+	   "showtitlebar=true showstatusbar=false",
+	   200, 300,
+	   this
+   );
+   
+   this.setTrmtInfo = function(arrTrmt){
+		this.WS_OutPatReceiptMngnDiv.trmtDeptNmEd.set_value(arrTrmt[0]);		
+		this.WS_OutPatReceiptMngnDiv.trmtDoctNmEd.set_value(arrTrmt[1]);
+		this.WS_OutPatReceiptMngnDiv.trmtDoctCdEd.set_value(arrTrmt[2]);
+		this.WS_OutPatReceiptMngnDiv.trmtDeptCdEd.set_value(arrTrmt[3]);
+		this.WS_OutPatReceiptMngnDiv.trmtTimeEdit.set_value(arrTrmt[4]);
+	}
+	
+	this.setDate = function(date){
+		this.WS_OutPatReceiptMngnDiv.trmtDateCal.set_value(date);
+		}
 }
 ]]></Script>
   </Form>

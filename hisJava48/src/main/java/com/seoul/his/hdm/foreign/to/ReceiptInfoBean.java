@@ -28,6 +28,7 @@ import lombok.ToString;
                    cngDept,                 //변경부서
                    receiptDate,             //접수일
                    dgnsNm,                  //진단명
+                   trmtTime,				//진료시간
                    ntTtYb,                   //초/재진여부
                    nwDiv,                   //내원구분
                    patNo,                   //환자등록번호
