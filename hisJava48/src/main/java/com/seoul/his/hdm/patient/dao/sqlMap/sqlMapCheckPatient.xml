@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seoul.his.hdm.patient.dao.CheckPatientDAO">
+	<cache flushInterval="86400000" eviction="LRU" />
+	
+	<resultMap type="CheckPatientBean" id="CheckPatient">
+        <result property="postStartDate"   		        column="POST_START_DATE" />		<!-- 게시 시작일 -->
+		<result property="importance"           		column="IMPORTANCE" />				<!-- 중요도 -->
+		<result property="receiptYb"           			column="RECEIPT_YB" /> 					<!-- 접수여부 -->
+		<result property="othersDelPossYb"           	column="OTHERS_DEL_POSS_YB" /> 		<!-- 타인 삭제 가능 여부 -->
+		<result property="checkNtc"           			column="CHECK_NTC" /> 						<!-- 체크사항 -->
+		<result property="regDate"           			column="REG_DATE" /> 						<!-- 등록일 -->
+		<result property="finModDate"           		column="FIN_MOD_DATE" /> 					<!-- 최종 수정일 -->
+		<result property="regWorker"           			column="REG_WORKER" /> 					<!-- 등록자 -->
+		<result property="finModWorker"           		column="FIN_MOD_WORKER" /> 				<!-- 최종 수정자 -->
+		<result property="checkPatSeq"           		column="CHECK_PAT_SEQ" /> 				<!-- 체크환자등록번호 -->
+		<result property="postEndDate"           		column="POST_END_DATE" /> 				<!-- 게시종료일 -->
+		<result property="patNo"           				column="PAT_NO" />							<!-- 환자등록번호 -->
+ 		<result property="patNm"                        column="PAT_NM" />
+ 		<result property="rrn1"                 		column="rrn1" />                                   <!--//주민번호앞자리-->
+ 	</resultMap>
+
+
+
+ 	<select id="selectCheckPatientList" flushCache="false"  useCache="true" resultMap="CheckPatient" >
+
+		select 
+		cp.POST_START_DATE,
+		cp.IMPORTANCE,
+		cp.RECEIPT_YB,
+		cp.OTHERS_DEL_POSS_YB,
+		cp.CHECK_NTC,
+		cp.REG_DATE,
+		cp.FIN_MOD_DATE,
+		cp.REG_WORKER,
+		cp.FIN_MOD_WORKER,
+		cp.CHECK_PAT_SEQ,
+		cp.POST_END_DATE,
+		cp.PAT_NO,
+		p.PAT_NM,
+    	p.RRN1
+		from 
+		ws_check_pat cp,
+    	ws_pat p
+    WHERE cp.PAT_NO=p.PAT_NO
+ 
+ 	</select>
+ 	
+ 	
+ 	
+ 	
+<update id="insertCheckPatient">
+        INSERT INTO ws_check_pat (
+        POST_START_DATE,
+        IMPORTANCE,
+        RECEIPT_YB,
+        OTHERS_DEL_POSS_YB,
+        CHECK_NTC,REG_DATE,
+        FIN_MOD_DATE,
+        REG_WORKER,
+        FIN_MOD_WORKER,
+        CHECK_PAT_SEQ,
+        POST_END_DATE,
+        PAT_NO
+        ) 
+        VALUES (
+        #{postStartDate},
+        #{importance},
+        #{receiptYb},
+        #{othersDelPossYb},
+        #{checkNtc},
+        #{regDate},
+        #{finModDate},
+        #{regWorker},
+        #{finModWorker},
+        CHECK_PAT_SEQ.NEXTVAL,
+        #{postEndDate},
+        #{patNo}          
+            )
+    </update>
+
+
+
+	<update id="updateCheckPatient">
+        UPDATE ws_check_pat SET 
+        POST_START_DATE=#{postStartDate},
+        IMPORTANCE=#{importance},
+        RECEIPT_YB=#{receiptYb},
+        OTHERS_DEL_POSS_YB=#{othersDelPossYb},
+        CHECK_NTC=#{checkNtc},
+        REG_DATE=#{regDate},
+        FIN_MOD_DATE=#{finModDate},
+        REG_WORKER=#{regWorker},
+        FIN_MOD_WORKER=#{finModWorker},
+        POST_END_DATE=#{postEndDate} WHERE PAT_NO =#{patNo}
+    </update>
+ 	
+ 	
+ 	 <delete id="deleteCheckPatient">
+        delete from
+            ws_check_pat
+        where
+            CHECK_PAT_SEQ=#{checkPatSeq}
+    </delete>
+
+ 	
+
+</mapper>
