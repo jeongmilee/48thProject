@@ -308,7 +308,7 @@ this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
 this.Button03_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
 {		                         
             this.dsCheckPatient.filter("");
-	application.open("modeless", "hrs::HP_searchPatientForm.xfdl", this.getOwnerFrame(), {mode:'modeless'}, "", 400, 200);
+	application.open("modeless", "hdm::HP_searchPatientForm.xfdl", this.getOwnerFrame(), {mode:'modeless'}, "", 400, 200);
 }
 
 
