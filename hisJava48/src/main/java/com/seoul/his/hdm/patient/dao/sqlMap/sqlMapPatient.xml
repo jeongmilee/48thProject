@@ -6,15 +6,182 @@
 	
 	<resultMap type="PatientBean" id="Patient">
 
-		<result property="empNo" column="EMP_NO" />
-		<result property="empNm" column="EMP_NM" />
+        <result property="patNo"           column="PAT_NO" />                    <!--환자등록번호   -->
+        <result property="patNm"           column="PAT_NM" />                    <!--환자이름       -->
+        <result property="rrn1"            column="RRN1" />                      <!--주민번호앞자리 -->
+        <result property="age"             column="AGE" />                       <!--나이           -->
+        <result property="tel"             column="TEL" />                       <!--전화번호       -->
+        <result property="addr"            column="ADDR" />                      <!--주소           -->
+        <result property="barrAss"         column="BARR_ASS" />                  <!--장애종별       -->
+        <result property="dtlAddr"         column="DTL_ADDR" />                  <!--상세주소       -->
+        <result property="zip"             column="ZIP" />                       <!--우편번호       -->
+        <result property="deathDate"       column="DEATH_DATE" />                <!--사망일시       -->
+        <result property="note"            column="NOTE" />                      <!--메모           -->
+        <result property="gender"          column="GENDER" />                    <!--성별           -->
+        <result property="smsReceiveYb"    column="SMS_RECEIVE_YB" />            <!--sms수신여부    -->
+        <result property="smsReceiveNo"    column="SMS_RECEIVE_NO" />            <!--sms수신전화번호-->
+        <result property="smsReceiver"     column="SMS_RECEIVER" />              <!--sms수신자      -->
+        <result property="recNwDate"       column="REC_NW_DATE" />               <!--최근내원일     -->
+        <result property="rrn2"            column="RRN2" />                      <!--주민번호 뒷자리-->
+        <result property="estbGiho"        column="ESTB_GIHO" />                 <!--사업장 기호    -->
+        <result property="certfctNo"       column="CERTFCT_NO" />                <!--증번호         -->
+        <result property="insuRrn"         column="INSU_RRN" />                  <!--피보험자 주민등록번호 -->
+        <result property="insuRrn1"        column="INSU_RRN1" />                  <!--피보험자 주민등록번호 -->
+        <result property="insuNm"          column="INSU_NM" />                   <!--피보험자 이름  -->
+        <result property="applyStartDate"  column="APPLY_START_DATE" />          <!--적용시작일     -->
+        <result property="applyEndDate"    column="APPLY_END_DATE" />            <!--적용종료일     -->
+        <result property="outpaReceiptNo"  column="OUTPA_RECEIPT_NO" />          <!--외래접수번호   -->
+        <result property="hosptlzReceiptNo"  column="HOSPTLZ_RECEIPT_NO" />      <!--입원접수번호   -->
 
  	</resultMap>
 
+
+
  	<select id="selectPatientList" flushCache="false"  useCache="true" resultMap="Patient" >
 
-	select * from hm_emp
+		select
+         p.PAT_NO ,
+         p.PAT_NM,
+         p.RRN1 ,
+         p.AGE ,
+         p.TEL ,
+         p.ADDR ,
+         p.BARR_ASS ,
+         p.DTL_ADDR ,
+         p.ZIP ,
+         p.DEATH_DATE ,
+         p.NOTE ,
+         p.GENDER ,
+         p.SMS_RECEIVE_YB ,
+         p.SMS_RECEIVE_NO ,
+         p.SMS_RECEIVER,
+         p.REC_NW_DATE,
+         FN_WS_DECRYPT(RRN2) as RRN2,
+         p.ESTB_GIHO,
+         p.CERTFCT_NO,
+         p.INSU_RRN,
+         p.INSU_NM,
+         p.APPLY_START_DATE,
+         p.APPLY_END_DATE,
+         o.OUTPA_RECEIPT_NO,
+         h.HOSPTLZ_RECEIPT_NO
+      FROM
+         WS_PAT p, (SELECT pat_no, MAX(outpa_receipt_no) OUTPA_RECEIPT_NO
+                         FROM WS_OUTPA_RECEIPT
+               GROUP BY pat_no) o, (SELECT hosptlz_receipt_no, pat_no FROM WH_HOSPTLZ_RECEIPT) h
+		 WHERE p.pat_no = o.pat_no(+)
+	  
+	   AND
+	  	 o.pat_no = h.pat_no(+)
+			<if test="patNm != '' and patNm != null">
+				AND p.PAT_NM LIKE '%'||#{patNm}||'%'
+			</if>
+			<if test="tel != '' and tel != null">
+				AND p.TEL LIKE '%'||#{tel}||'%'
+			</if>
+			<if test="rrn1 != '' and rrn1 != null and rrn2 != '' and rrn2 != null">
+				AND p.RRN1=#{rrn1} AND FN_WS_DECRYPT(p.RRN2)=#{rrn2}
+			</if>
+		
+		order by
+		pat_no
+		
 
  	</select>
+ 	
+ 	
+ 	
+ 	
+<update id="insertPatient">
+        INSERT INTO
+        ws_pat
+            (
+            PAT_NO ,
+            PAT_NM ,
+            RRN1 ,
+            AGE ,
+            TEL ,
+            ADDR ,
+            BARR_ASS ,
+            DTL_ADDR ,
+            ZIP ,
+            DEATH_DATE ,
+            NOTE ,
+            GENDER ,
+            SMS_RECEIVE_YB ,
+            SMS_RECEIVE_NO ,
+            SMS_RECEIVER,
+            REC_NW_DATE,
+            RRN2,
+            ESTB_GIHO,
+            CERTFCT_NO,
+            INSU_RRN,
+            INSU_RRN1,
+            INSU_NM,
+            APPLY_START_DATE,
+            APPLY_END_DATE
+            ) VALUES(
+                #{patNo},
+                #{patNm},
+                #{rrn1},
+                #{age},
+                #{tel},
+                #{addr},
+                #{barrAss},
+                #{dtlAddr},
+                #{zip},
+                #{deathDate},
+                #{note},
+                #{gender},
+                #{smsReceiveYb},
+                #{smsReceiveNo},
+                #{smsReceiver},
+                #{recNwDate},
+                FN_WS_ENCRYPT(#{rrn2}),
+                #{estbGiho},
+                #{certfctNo},
+                #{insuRrn},
+                #{insuRrn1},
+                #{insuNm},
+                #{applyStartDate},
+                #{applyEndDate}
+            )
+    </update>
+
+
+
+<update id="updatePatient">
+        UPDATE
+            ws_pat
+        SET
+            PAT_NM =#{patNm},
+            AGE =#{age},
+            RRN1=#{rrn1},
+            RRN2=FN_WS_ENCRYPT(#{rrn2}),
+            TEL =#{tel},
+            ADDR =#{addr},
+            BARR_ASS =#{barrAss},
+            DTL_ADDR =#{dtlAddr},
+            ZIP =#{zip},
+            DEATH_DATE =#{deathDate},
+            NOTE =#{note},
+            SMS_RECEIVE_YB =#{smsReceiveYb},
+            SMS_RECEIVE_NO =#{smsReceiveNo},
+            SMS_RECEIVER =#{smsReceiver},
+            REC_NW_DATE =#{recNwDate},
+            ESTB_GIHO =#{estbGiho},
+            CERTFCT_NO =#{certfctNo},
+            INSU_RRN =#{insuRrn},
+            INSU_RRN1 =#{insuRrn1},
+            INSU_NM =#{insuNm},
+            APPLY_START_DATE =#{applyStartDate},
+            APPLY_END_DATE =#{applyEndDate}
+        WHERE
+        PAT_NO =#{patNo}
+    </update>
+ 	
+ 	
+ 	
+ 	
 
 </mapper>

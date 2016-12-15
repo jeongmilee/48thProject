@@ -9,5 +9,11 @@ public interface PatientDAO {
 
 	List<PatientBean> selectPatientList(Map<String, String> argsMap);
 
+	void insertPatient(PatientBean patientBean);
+
+	void updatePatient(PatientBean patientBean);
+
+	void deleteEmp(PatientBean patientBean);
+
 
 }
