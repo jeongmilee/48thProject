@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="test" classname="test" left="0" top="0" width="483" height="681" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="43" left="1.24%" top="9" right="1.24%" height="667" style="background:#eceff1ff;border:1 solid #b0bec5ff ;color:#b0bec5ff;" applystyletype="cascade,keep" visible="true" position="fixed">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" binddataset="dsPatient" useinputpanel="false" left="2.57%" top="47" right="2.14%" height="578" autofittype="col" oncellclick="patGrid_oncellclick" oncelldblclick="Div00_Grid00_oncelldblclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="환자번호"/>
+                      <Cell col="1" text="성명"/>
+                      <Cell col="2" text="나이"/>
+                      <Cell col="3" text="성별"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell style="align:center;" text="bind:patNo"/>
+                      <Cell col="1" style="align:center;" text="bind:patNm"/>
+                      <Cell col="2" style="align:center;" text="bind:age"/>
+                      <Cell col="3" style="align:center;" text="bind:gender"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Combo id="searchWardCombo" taborder="1" innerdataset="@dsWardCd" codecolumn="code" datacolumn="data" left="25.59%" top="9" height="28" style="background:white;" displaynulltext="선택" width="100"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button00" taborder="136" text="검색" cssclass="btn_WF_CRUD" left="369" top="18" width="45" height="28" onclick="Button00_onclick"/>
+        <Edit id="Edit00" taborder="137" left="233" top="19" width="131" height="28" displaynulltext="입력"/>
+        <Static id="Static51" taborder="138" text="환자정보 검색" cssclass="sta_WF_SubTitle1" left="23" top="22" width="94" height="21" style="font:bold 9 돋움;"/>
+        <Button id="Button01" taborder="139" text="재설정" onclick="Button01_onclick" cssclass="btn_WF_CRUD" left="420" top="18" width="45" height="28"/>
+        <Button id="addPatBtn" taborder="140" text="선택" onclick="clickBtn" left="88.61%" top="641" right="3.73%" height="28" style="background:#37474fff;border:1 solid #263238ff ;color:white;bordertype:normal 0 0 ;font:bold 10 돋움;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">findPatientList</Col>
+            <Col id="URL">his::hdm/patient/findPatientList.do</Col>
+            <Col id="outData">dsPatient=dsPatient</Col>
+            <Col id="inData"/>
+            <Col id="callbackFunc">Patient_CallbackFunc</Col>
+            <Col id="argument"/>
+          </Row>
+          <Row>
+            <Col id="serviceID">batchPatientProcess</Col>
+            <Col id="URL">his::hdm/patient/batchPatientProcess.do</Col>
+            <Col id="inData">dsPatient=dsPatient:U</Col>
+            <Col id="callbackFunc">Patient_CallbackFunc</Col>
+            <Col id="outData"/>
+            <Col id="argument"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsPatient" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="patNo" type="STRING" size="256"/>
+          <Column id="patNm" type="STRING" size="256"/>
+          <Column id="rrn1" type="STRING" size="256"/>
+          <Column id="rrn2" type="STRING" size="256"/>
+          <Column id="age" type="STRING" size="256"/>
+          <Column id="tel" type="STRING" size="256"/>
+          <Column id="addr" type="STRING" size="256"/>
+          <Column id="barrAss" type="STRING" size="256"/>
+          <Column id="dtlAddr" type="STRING" size="256"/>
+          <Column id="zip" type="STRING" size="256"/>
+          <Column id="deathDate" type="STRING" size="256"/>
+          <Column id="note" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="smsReceiveYb" type="STRING" size="256"/>
+          <Column id="smsReceiveNo" type="STRING" size="256"/>
+          <Column id="smsReceiver" type="STRING" size="256"/>
+          <Column id="recNwDate" type="STRING" size="256"/>
+          <Column id="estbGiho" type="STRING" size="256"/>
+          <Column id="certfctNo" type="STRING" size="256"/>
+          <Column id="insuRrn" type="STRING" size="256"/>
+          <Column id="insuRrn1" type="STRING" size="256"/>
+          <Column id="insuNm" type="STRING" size="256"/>
+          <Column id="applyStartDate" type="STRING" size="256"/>
+          <Column id="applyEndDate" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsWardCd">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">patNo</Col>
+            <Col id="data">환자번호</Col>
+          </Row>
+          <Row>
+            <Col id="code">patNm</Col>
+            <Col id="data">성함</Col>
+          </Row>
+          <Row>
+            <Col id="code">age</Col>
+            <Col id="data">나이</Col>
+          </Row>
+          <Row>
+            <Col id="code">gender</Col>
+            <Col id="data">성별</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset00"/>
+      <Dataset id="Dataset01"/>
+    </Objects>
+    <Bind/>
+    <Script type="xscript5.0"><![CDATA[/********************************************************************************
+*                                               			                    *
+* 외래환자관리 및 외래진료접수관리                             		        *
+*                                                                   			*
+* @Path			원무 - 환자정보등록									 		*
+* @Description 	환자정보를 등록한다					*
+* @Author		최민하						 								*
+* 									 											*
+* Created on	2015. 6. 16.                           		 					*
+*									 											*
+********************************************************************************/
+
+/**************************************************************************************************
+*                                         공통 Script Include                                     *
+***************************************************************************************************/
+
+include "scripts::commonScripts.xjs";
+
+
+
+/***************************************************************************************************
+*                                          dsService 호출                                       *
+/*-------------------------------------------------------------------------------------------------+
+>>  this.gfnService(" ",false);   
++-------------------------------------------------------------------------------------------------*/
+
+
+this.gfnService("findPatientList",false);
+
+
+/**************************************************************************************************
+*                                         화면 변수 선언부                                      *
+***************************************************************************************************/
+
+
+var patNo="";
+var patNm="";
+var rrn1="";
+
+/***************************************************************************************************
+*                                         조회조건 EVENT START                                    *
+/*-------------------------------------------------------------------------------------------------+
+>>  onkeyDown EVENT
++-------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/***************************************************************************************************
+*                                          버튼 EVENT START                                       *
+/*-------------------------------------------------------------------------------------------------+
+>>  click EVENT
++-------------------------------------------------------------------------------------------------*/
+
+
+
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var swc=this.Div00.searchWardCombo.value;
+	var edit00=this.Edit00.value
+	this.dsPatient.filter("");
+	this.dsPatient.filter(swc+"=="+edit00);  
+}
+
+
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsPatient.filter("");
+	
+	
+	
+}
+
+
+this.Button03_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{		
+	var rowCount = this.dsPatient.getRowCount();
+	var patNo=this.dsPatient.getColumn(rowCount-1,"patNo");
+	this.dsPatient.addRow();
+	this.dsPatient.setColumn(rowCount,"patNo",parseInt(patNo)+1);
+}
+
+
+
+/***************************************************************************************************
+*                                          그리드 클릭 EVENT START                                       *
+/*-------------------------------------------------------------------------------------------------+
+>>  click EVENT
++-------------------------------------------------------------------------------------------------*/
+
+
+
+/***************************************************************************************************
+*                                          콜백 EVENT START                                       *
+/*-------------------------------------------------------------------------------------------------+
+>>  click EVENT
++-------------------------------------------------------------------------------------------------*/
+
+
+
+
+this.Patient_CallbackFunc = function(svcID, ErrorCode, ErrorMsg){
+
+   if (ErrorCode < 1) {
+      alert(svcID + "가 처리되지 않았습니다");
+   } else {
+      alert(svcID + "의 처리가 완료되었습니다");
+   }
+}
+
+
+
+this.patGrid_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	patNo=this.dsPatient.getColumn(obj.currentrow,"patNo");
+	patNm=this.dsPatient.getColumn(obj.currentrow,"patNm");
+	rrn1=this.dsPatient.getColumn(obj.currentrow,"rrn1");
+}
+
+this.clickBtn = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var rowCount = this.opener.dsCheckPatient.getRowCount();
+	
+	for(var i=0;i<rowCount;i++){
+	var forPatNo=this.opener.dsCheckPatient.getColumn(i,"patNo");
+		if(forPatNo==patNo){
+		alert("이미 존재하는 환자번호입니다.");
+		this.opener.dsCheckPatient.filter("patNo=="+forPatNo);
+		alert(forPatNo);
+		this.close();
+		}
+	}
+	
+		this.opener.dsCheckPatient.addRow();
+		this.opener.dsCheckPatient.setColumn(rowCount,"patNo",patNo);
+		this.opener.dsCheckPatient.setColumn(rowCount,"patNm",patNm);
+		this.opener.dsCheckPatient.setColumn(rowCount,"rrn1",rrn1);
+		
+		var rowCount2 = this.opener.dsCheckPatient.getRowCount();
+		for(var i=0;i<rowCount2;i++){
+		var forPatNo=this.opener.dsCheckPatient.getColumn(i,"patNo");
+		if(forPatNo==null){
+		this.opener.dsCheckPatient.deleteRow(i);	
+		}
+	} 	
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="test" classname="test" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="titleDiv" taborder="4" left="0%" top="0" right="0%" height="60" style="background:transparent URL('img::titleBar5.jpg');">
+          <Layouts>
+            <Layout>
+              <Static id="titleStc" taborder="0" text="환자정보 관리" left="4.79%" top="-4" right="74.41%" height="60" style="color:#6c6c6cff;font:bold 20 돋움;" onclick="titleDiv_titleStc_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00" taborder="43" left="1.95%" top="64" right="46.68%" height="686" style="background:#eceff1ff;border:1 solid #b0bec5ff ;color:#b0bec5ff;" applystyletype="cascade,keep" visible="true" position="fixed">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" binddataset="dsPatient" useinputpanel="false" left="2.48%" top="47" right="2.48%" height="628" autofittype="col" oncellclick="patGrid_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="환자번호"/>
+                      <Cell col="1" text="성명"/>
+                      <Cell col="2" text="나이"/>
+                      <Cell col="3" text="성별"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell style="align:center;" text="bind:patNo"/>
+                      <Cell col="1" style="align:center;" text="bind:patNm"/>
+                      <Cell col="2" style="align:center;" text="bind:age"/>
+                      <Cell col="3" style="align:center;" text="bind:gender"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Combo id="searchWardCombo" taborder="1" innerdataset="@dsWardCd" codecolumn="code" datacolumn="data" left="23.09%" top="9" height="28" style="background:white;" displaynulltext="선택" width="100"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div01" taborder="87" left="54.3%" top="64" right="1.76%" height="686" style="background:#eceff1ff;border:1 solid #b0bec5ff ;">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Static id="patNmStc" taborder="90" text="성명" left="55.37%" top="106" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Edit id="patNmEd" taborder="91" left="65.72%" top="106" height="28" width="151"/>
+        <Static id="rrnStc" taborder="92" text="주민번호" left="55.37%" top="138" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Edit id="rrn1Ed" taborder="93" left="65.72%" top="138" height="28" width="151"/>
+        <Edit id="rrn2Ed" taborder="94" left="82.32%" top="138" height="28" width="151"/>
+        <Edit id="zipEd" taborder="95" readonly="true" left="65.72%" top="170" height="28" width="151"/>
+        <Static id="zipStc" taborder="96" text="우편번호" left="55.37%" top="170" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Static id="addrStc" taborder="97" text="주소" left="55.37%" top="202" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Edit id="addrEd" taborder="98" left="65.72%" top="202" right="2.93%" height="28"/>
+        <Edit id="telEd" taborder="99" left="65.72%" top="234" height="28" width="151"/>
+        <Static id="telStc" taborder="100" text="연락처" left="55.37%" top="234" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Static id="smsNoStc" taborder="101" text="SMS" left="55.37%" top="266" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Edit id="smsNoEd" taborder="102" left="65.72%" top="266" height="28" width="151"/>
+        <Static id="recNwDateStc" taborder="103" text="최근내원일" left="55.37%" top="331" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Calendar id="recNwDateCal" taborder="104" left="65.72%" top="332" height="27" width="151"/>
+        <Static id="barrAssStc" taborder="105" text="장애종별" left="55.37%" top="363" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Combo id="barrAssCombo" taborder="106" innerdataset="@dsBarrAssCode" codecolumn="code" datacolumn="value" left="65.82%" top="364" height="26" width="151"/>
+        <Calendar id="deathDateCal" taborder="107" left="65.72%" top="396" height="27" width="151"/>
+        <Static id="deathDateStc" taborder="108" text="사망일시" left="55.37%" top="395" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Static id="certfctNoStc" taborder="109" text="의료보험증" left="55.37%" top="427" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Edit id="certfctNoEd" taborder="110" left="65.72%" top="427" height="28" width="151"/>
+        <Edit id="insuNmEd" taborder="111" left="65.72%" top="459" height="28" width="151"/>
+        <Static id="insuNmStc" taborder="112" text="피보험자명" left="55.37%" top="459" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Static id="insuRrnStc" taborder="113" text="주민번호" left="55.37%" top="491" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Edit id="insuRrn1Ed" taborder="114" left="65.72%" top="491" height="28" width="151"/>
+        <Edit id="insuRrn2Ed" taborder="115" left="82.32%" top="491" height="28" width="151"/>
+        <Calendar id="applyEndDateCal" taborder="116" left="82.32%" top="524" height="27" width="151"/>
+        <Calendar id="applyStartDateCal" taborder="117" left="65.72%" top="524" height="27" width="151"/>
+        <Static id="applyStc" taborder="118" text="적용기간" left="55.37%" top="523" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Static id="noteStc" taborder="119" text="메모" left="55.37%" top="555" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;"/>
+        <Edit id="noteTextArea" taborder="120" left="65.72%" top="555" right="2.93%" height="141"/>
+        <Static id="smsReceiverStc" taborder="124" text="SMS 수신인" left="55.37%" top="299" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;" onclick="smsReceiverStc_onclick"/>
+        <Edit id="smsReceiverEd" taborder="125" left="65.72%" top="299" height="28" width="151"/>
+        <CheckBox id="smsCheck" taborder="126" left="82.23%" top="267" right="15.53%" height="26" style="buttonalign:center middle;align:center middle;"/>
+        <Button id="addPatBtn" taborder="127" text="저장" onclick="clickBtn" left="80.76%" top="711" right="11.62%" height="28" style="background:#37474fff;border:1 solid #263238ff ;color:white;bordertype:normal 0 0 ;font:bold 10 돋움;"/>
+        <Static id="Static00" taborder="128" text="-" left="81.05%" top="139" right="17.87%" height="26" style="align:center middle;" onclick="Static00_onclick"/>
+        <Static id="Static01" taborder="129" text="-" left="81.05%" top="492" right="17.87%" height="26" style="align:center middle;"/>
+        <Static id="Static02" taborder="130" text="-" left="81.05%" top="524" right="17.87%" height="26" style="align:center middle;"/>
+        <Button id="addPatBtn00" taborder="131" text="삭제" onclick="clickBtn" left="89.36%" top="711" right="3.03%" height="28" style="background:#37474fff;border:1 solid #263238ff ;color:white;bordertype:normal 0 0 ;font:bold 10 돋움;"/>
+        <Button id="Button05" taborder="133" text="조회" cssclass="btn_WF_Search" left="843" top="170" width="58" height="28"/>
+        <Static id="Static03" taborder="134" text="문자알림 수신허용" left="84.38%" top="267" right="5.27%" height="27" onclick="Static03_onclick"/>
+        <Button id="Button03" taborder="135" text="추가" cssclass="btn_WF_CRUD" left="487" top="74" width="45" height="28" onclick="Button03_onclick"/>
+        <Button id="Button00" taborder="136" text="검색" cssclass="btn_WF_CRUD" left="385" top="74" width="45" height="28" onclick="Button00_onclick"/>
+        <Edit id="Edit00" taborder="137" left="248" top="74" width="131" height="28" displaynulltext="입력"/>
+        <Static id="Static51" taborder="138" text="환자정보 검색" cssclass="sta_WF_SubTitle1" left="35" top="79" width="94" height="21" style="font:bold 9 돋움;"/>
+        <Button id="Button01" taborder="139" text="재설정" onclick="Button01_onclick" cssclass="btn_WF_CRUD" left="436" top="74" width="45" height="28"/>
+        <Static id="patNmStc00" taborder="140" text="환자번호" left="55.37%" top="74" right="34.67%" height="28" style="background:#78909cff;color:ivory;align:center middle;font:bold 9 arial;" onclick="patNmStc00_onclick"/>
+        <Edit id="patNmEd00" taborder="141" left="65.72%" top="74" width="151" height="28" enable="false"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">findPatientList</Col>
+            <Col id="URL">his::hdm/patient/findPatientList.do</Col>
+            <Col id="outData">dsPatient=dsPatient</Col>
+            <Col id="inData"/>
+            <Col id="callbackFunc">Patient_CallbackFunc</Col>
+            <Col id="argument"/>
+          </Row>
+          <Row>
+            <Col id="serviceID">batchPatientProcess</Col>
+            <Col id="URL">his::hdm/patient/batchPatientProcess.do</Col>
+            <Col id="inData">dsPatient=dsPatient:U</Col>
+            <Col id="callbackFunc">Patient_CallbackFunc</Col>
+            <Col id="outData"/>
+            <Col id="argument"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsPatient" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="patNo" type="STRING" size="256"/>
+          <Column id="patNm" type="STRING" size="256"/>
+          <Column id="rrn1" type="STRING" size="256"/>
+          <Column id="rrn2" type="STRING" size="256"/>
+          <Column id="age" type="STRING" size="256"/>
+          <Column id="tel" type="STRING" size="256"/>
+          <Column id="addr" type="STRING" size="256"/>
+          <Column id="barrAss" type="STRING" size="256"/>
+          <Column id="dtlAddr" type="STRING" size="256"/>
+          <Column id="zip" type="STRING" size="256"/>
+          <Column id="deathDate" type="STRING" size="256"/>
+          <Column id="note" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="smsReceiveYb" type="STRING" size="256"/>
+          <Column id="smsReceiveNo" type="STRING" size="256"/>
+          <Column id="smsReceiver" type="STRING" size="256"/>
+          <Column id="recNwDate" type="STRING" size="256"/>
+          <Column id="estbGiho" type="STRING" size="256"/>
+          <Column id="certfctNo" type="STRING" size="256"/>
+          <Column id="insuRrn" type="STRING" size="256"/>
+          <Column id="insuRrn1" type="STRING" size="256"/>
+          <Column id="insuNm" type="STRING" size="256"/>
+          <Column id="applyStartDate" type="STRING" size="256"/>
+          <Column id="applyEndDate" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsWardCd">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">patNo</Col>
+            <Col id="data">환자번호</Col>
+          </Row>
+          <Row>
+            <Col id="code">patNm</Col>
+            <Col id="data">성함</Col>
+          </Row>
+          <Row>
+            <Col id="code">age</Col>
+            <Col id="data">나이</Col>
+          </Row>
+          <Row>
+            <Col id="code">gender</Col>
+            <Col id="data">성별</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset00"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="patNmEd" propid="value" datasetid="dsPatient" columnid="patNm"/>
+      <BindItem id="item1" compid="rrn1Ed" propid="value" datasetid="dsPatient" columnid="rrn1"/>
+      <BindItem id="item2" compid="rrn2Ed" propid="value" datasetid="dsPatient" columnid="rrn2"/>
+      <BindItem id="item4" compid="zipEd" propid="value" datasetid="dsPatient" columnid="zip"/>
+      <BindItem id="item5" compid="addrEd" propid="value" datasetid="dsPatient" columnid="addr"/>
+      <BindItem id="item6" compid="telEd" propid="value" datasetid="dsPatient" columnid="tel"/>
+      <BindItem id="item7" compid="smsNoEd" propid="value" datasetid="dsPatient" columnid="smsReceiveNo"/>
+      <BindItem id="item10" compid="recNwDateCal" propid="value" datasetid="dsPatient" columnid="recNwDate"/>
+      <BindItem id="item11" compid="barrAssCombo" propid="value" datasetid="dsPatient" columnid="barrAss"/>
+      <BindItem id="item12" compid="deathDateCal" propid="value" datasetid="dsPatient" columnid="deathDate"/>
+      <BindItem id="item13" compid="certfctNoEd" propid="value" datasetid="dsPatient" columnid="certfctNo"/>
+      <BindItem id="item14" compid="insuNmEd" propid="value" datasetid="dsPatient" columnid="insuNm"/>
+      <BindItem id="item15" compid="insuRrn1Ed" propid="value" datasetid="dsPatient" columnid="rrn1"/>
+      <BindItem id="item16" compid="insuRrn2Ed" propid="value" datasetid="dsPatient" columnid="insuRrn1"/>
+      <BindItem id="item18" compid="applyEndDateCal" propid="value" datasetid="dsPatient" columnid="applyEndDate"/>
+      <BindItem id="item17" compid="applyStartDateCal" propid="value" datasetid="dsPatient" columnid="applyStartDate"/>
+      <BindItem id="item19" compid="noteTextArea" propid="value" datasetid="dsPatient" columnid="note"/>
+      <BindItem id="item9" compid="smsReceiverEd" propid="value" datasetid="dsPatient" columnid="smsReceiver"/>
+      <BindItem id="item8" compid="smsCheck" propid="value" datasetid="dsPatient" columnid="smsReceiveYb"/>
+      <BindItem id="item3" compid="patNmEd00" propid="value" datasetid="dsPatient" columnid="patNo"/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[/********************************************************************************
+*                                               			                    *
+* 외래환자관리 및 외래진료접수관리                             		        *
+*                                                                   			*
+* @Path			원무 - 환자정보등록									 		*
+* @Description 	환자정보를 등록한다					*
+* @Author		최민하						 								*
+* 									 											*
+* Created on	2015. 6. 16.                           		 					*
+*									 											*
+********************************************************************************/
+
+/**************************************************************************************************
+*                                         공통 Script Include                                     *
+***************************************************************************************************/
+
+include "scripts::commonScripts.xjs";
+
+
+
+/***************************************************************************************************
+*                                          dsService 호출                                       *
+/*-------------------------------------------------------------------------------------------------+
+>>  this.gfnService(" ",false);   
++-------------------------------------------------------------------------------------------------*/
+
+
+this.gfnService("findPatientList",false);
+
+
+/**************************************************************************************************
+*                                         화면 변수 선언부                                      *
+***************************************************************************************************/
+
+
+
+
+
+/***************************************************************************************************
+*                                         조회조건 EVENT START                                    *
+/*-------------------------------------------------------------------------------------------------+
+>>  onkeyDown EVENT
++-------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/***************************************************************************************************
+*                                          버튼 EVENT START                                       *
+/*-------------------------------------------------------------------------------------------------+
+>>  click EVENT
++-------------------------------------------------------------------------------------------------*/
+
+this.clickBtn = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.gfnService("batchPatientProcess",false);
+}
+
+
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var swc=this.Div00.searchWardCombo.value;
+	var edit00=this.Edit00.value
+	this.dsPatient.filter("");
+	this.dsPatient.filter(swc+"=="+edit00);  
+}
+
+
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.dsPatient.filter("");
+}
+
+
+this.Button03_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{		
+	var rowCount = this.dsPatient.getRowCount();
+	var patNo=this.dsPatient.getColumn(rowCount-1,"patNo");
+	this.dsPatient.addRow();
+	this.dsPatient.setColumn(rowCount,"patNo",parseInt(patNo)+1);
+}
+
+
+
+/***************************************************************************************************
+*                                          그리드 클릭 EVENT START                                       *
+/*-------------------------------------------------------------------------------------------------+
+>>  click EVENT
++-------------------------------------------------------------------------------------------------*/
+
+
+
+/***************************************************************************************************
+*                                          콜백 EVENT START                                       *
+/*-------------------------------------------------------------------------------------------------+
+>>  click EVENT
++-------------------------------------------------------------------------------------------------*/
+
+
+
+
+this.Patient_CallbackFunc = function(svcID, ErrorCode, ErrorMsg){
+
+   if (ErrorCode < 1) {
+      alert(svcID + "가 처리되지 않았습니다");
+   } else {
+      alert(svcID + "의 처리가 완료되었습니다");
+   }
+}
+
+
+
+this.patNmStc00_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>
