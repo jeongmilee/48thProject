@@ -5,8 +5,8 @@ import java.util.Map;
 
 import com.seoul.his.hdm.foreign.to.ApplyHistoryBean;
 import com.seoul.his.hdm.foreign.to.CalendarBean;
-import com.seoul.his.hdm.foreign.to.DaySchBean;
 import com.seoul.his.hdm.foreign.to.TrmtSchdBean;
+import com.seoul.his.msv.mcm.patientservice.to.DaySchBean;
 
 public interface DoctorDiagnosisDAO {
 
@@ -15,7 +15,7 @@ public interface DoctorDiagnosisDAO {
 	List<TrmtSchdBean> selectTrmtSchdList(Map<String, String> queryMap);
 
 	List<ApplyHistoryBean> selectApplyHistoryList(String empNo);
-	
+
 	List<DaySchBean> selectDayScheduleList(String empNo);
 
 }

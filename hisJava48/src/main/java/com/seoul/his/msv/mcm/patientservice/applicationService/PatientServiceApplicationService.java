@@ -6,6 +6,8 @@ import java.util.Map;
 import com.seoul.his.msv.mcm.patientservice.to.AdrBean;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalFieldBean;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalPatientBean;
+import com.seoul.his.msv.mcm.patientservice.to.EmrBean;
+import com.seoul.his.msv.mcm.patientservice.to.MedicalConsultationRequestBean;
 
 public interface PatientServiceApplicationService {
 	List<AdrBean> findAdrList(Map<String, String> argsMap);

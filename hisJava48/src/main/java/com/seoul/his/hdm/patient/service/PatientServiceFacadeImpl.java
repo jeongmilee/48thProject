@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.seoul.his.hdm.patient.applicationService.CheckPatientApplicationService;
 import com.seoul.his.hdm.patient.applicationService.PatientApplicationService;
 import com.seoul.his.hdm.patient.to.CheckPatientBean;
-import com.seoul.his.hdm.patient.to.DustBean;
 import com.seoul.his.hdm.patient.to.PatientBean;
 
 
@@ -20,7 +19,7 @@ import com.seoul.his.hdm.patient.to.PatientBean;
  * @Author   jeong
  * @Description
  *
- * @LastUpdated 
+ * @LastUpdated
  */
 
 @Service
@@ -35,8 +34,8 @@ public class PatientServiceFacadeImpl implements PatientServiceFacade{
 		List<PatientBean> patientList = patientApplicationService.findPatientList(argsMap);
 		return patientList;
 	}
-	
-	
+
+
 	@Override
     public void batchPatientProcess(List<PatientBean> patientBeanList) {
 		patientApplicationService.batchPatientProcess(patientBeanList);
@@ -53,8 +52,8 @@ public class PatientServiceFacadeImpl implements PatientServiceFacade{
 	@Override
 	public void batchCheckPatientProcess(List<CheckPatientBean> checkPatientBeanList) {
 		checkPatientApplicationService.batchCheckPatientProcess(checkPatientBeanList);
-		
+
 	}
 
-	
+
 }

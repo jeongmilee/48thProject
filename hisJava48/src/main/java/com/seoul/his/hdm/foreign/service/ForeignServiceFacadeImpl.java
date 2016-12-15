@@ -10,16 +10,16 @@ import com.seoul.his.hdm.foreign.applicationService.DoctorDiagnosisSchdApplicati
 import com.seoul.his.hdm.foreign.applicationService.ForeignApplicationService;
 import com.seoul.his.hdm.foreign.to.ApplyHistoryBean;
 import com.seoul.his.hdm.foreign.to.CalendarBean;
-import com.seoul.his.hdm.foreign.to.DaySchBean;
 import com.seoul.his.hdm.foreign.to.PatInfoBean;
 import com.seoul.his.hdm.foreign.to.ReceiptInfoBean;
 import com.seoul.his.hdm.foreign.to.TrmtSchdBean;
+import com.seoul.his.msv.mcm.patientservice.to.DaySchBean;
 
 @Service
 public class ForeignServiceFacadeImpl implements ForeignServiceFacade {
 	@Autowired
 	ForeignApplicationService foreignApplicationService;
-	
+
 	@Autowired
 	DoctorDiagnosisSchdApplicationService doctorDiagnosisSchdApplicationService;
 
@@ -47,7 +47,7 @@ public class ForeignServiceFacadeImpl implements ForeignServiceFacade {
 	public void removeDiagnosisReceipt(ReceiptInfoBean receiptInfoBean) {
 		foreignApplicationService.removeDiagnosisReceipt(receiptInfoBean);
 	}
-	
+
 	//진료일정달력조회
     @Override
     public List<CalendarBean> findCalendarList(String yearMonth) {
@@ -68,6 +68,6 @@ public class ForeignServiceFacadeImpl implements ForeignServiceFacade {
     public List<DaySchBean> findDayScheduleList(String empNo){
     	return doctorDiagnosisSchdApplicationService.findDayScheduleList(empNo);
     }
-    
+
 
 }

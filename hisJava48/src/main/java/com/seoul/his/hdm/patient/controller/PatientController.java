@@ -1,10 +1,5 @@
 package com.seoul.his.hdm.patient.controller;
 
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -19,11 +14,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nexacro.xapi.data.PlatformData;
-import com.seoul.his.hdm.patient.service.PatientServiceFacade;
-import com.seoul.his.hdm.patient.to.DustBean;
-import com.seoul.his.hdm.patient.to.PatientBean;
-import com.seoul.his.hrs.emp.to.EmpBean;
 import com.seoul.his.common.util.DataSetBeanMapper;
+import com.seoul.his.hdm.patient.service.PatientServiceFacade;
+import com.seoul.his.hdm.patient.to.PatientBean;
 
 /**
  * @Package  com.seoul.his.acc.budget.controller
@@ -32,17 +25,17 @@ import com.seoul.his.common.util.DataSetBeanMapper;
  * @Author   jeong
  * @Description
  *
- * @LastUpdated 
+ * @LastUpdated
  */
 
 @Controller
 public class PatientController {
-	
+
 	@Autowired
-	DataSetBeanMapper dataSetBeanMapper; 
+	DataSetBeanMapper dataSetBeanMapper;
 	@Autowired
 	PatientServiceFacade patientServiceFacade;
-	
+
 	@RequestMapping("hdm/patient/findPatientList.do")
 	public void findPatientList(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		PlatformData outData = (PlatformData) request.getAttribute("outData");
@@ -51,9 +44,9 @@ public class PatientController {
 		List<PatientBean> list = patientServiceFacade.findPatientList(argsMap);
 		dataSetBeanMapper.beansToDataset(outData, list, PatientBean.class);
 	}
-	
-	
-	
+
+
+
 	@RequestMapping("hdm/patient/batchPatientProcess.do") //xxx.do로 넥사크로에서 요청하는 패키지구조와 xxx.do를 기입
 	public void batchPatientProcess(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	PlatformData inData = (PlatformData) request.getAttribute("inData");
@@ -61,13 +54,13 @@ public class PatientController {
 	patientServiceFacade.batchPatientProcess(PatientBeanList);
 	}
 
-	
+
 	/*
-	
+
 	@RequestMapping("hdm/patient/findDustList.do")
 	public void findDustList(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		
-		PlatformData outData = (PlatformData) request.getAttribute("outData");		
+
+		PlatformData outData = (PlatformData) request.getAttribute("outData");
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 	    Calendar c1 = Calendar.getInstance();
 		String strToday = sdf.format(c1.getTime());
@@ -78,7 +71,7 @@ public class PatientController {
 		JSONObject channel = (JSONObject)(object.get("DailyAverageAirQuality"));
 		JSONArray items = (JSONArray)channel.get("row");
 		ArrayList<DustBean> dustList=new ArrayList<DustBean>();
-		
+
 		for(int i = 0 ; i < items.size(); i++) {
 			JSONObject obj1 = (JSONObject)items.get(i);
 			DustBean dustBean=new DustBean();
@@ -94,5 +87,5 @@ public class PatientController {
 		}
 		dataSetBeanMapper.beansToDataset(outData, dustList, DustBean.class);
 	}*/
-	
+
 }

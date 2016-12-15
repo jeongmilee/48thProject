@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import com.seoul.his.hdm.foreign.dao.DoctorDiagnosisDAO;
 import com.seoul.his.hdm.foreign.to.ApplyHistoryBean;
 import com.seoul.his.hdm.foreign.to.CalendarBean;
-import com.seoul.his.hdm.foreign.to.DaySchBean;
 import com.seoul.his.hdm.foreign.to.TrmtSchdBean;
+import com.seoul.his.msv.mcm.patientservice.to.DaySchBean;
 
 @Service
 public class DoctorDiagnosisSchdApplicationServiceImpl implements DoctorDiagnosisSchdApplicationService{
@@ -34,11 +34,11 @@ public class DoctorDiagnosisSchdApplicationServiceImpl implements DoctorDiagnosi
 	public List<ApplyHistoryBean> findApplyHistoryList(String empNo) {
 		return doctorDiagnosisDAO.selectApplyHistoryList(empNo);
 	}
-	
+
 	//일별 의사 진료일정
 	@Override
 	public List<DaySchBean> findDayScheduleList(String empNo){
 		return doctorDiagnosisDAO.selectDayScheduleList(empNo);
 	}
-	
+
 }

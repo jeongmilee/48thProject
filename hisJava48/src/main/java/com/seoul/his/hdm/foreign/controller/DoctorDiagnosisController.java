@@ -15,12 +15,12 @@ import com.seoul.his.common.util.DataSetBeanMapper;
 import com.seoul.his.hdm.foreign.service.ForeignServiceFacade;
 import com.seoul.his.hdm.foreign.to.ApplyHistoryBean;
 import com.seoul.his.hdm.foreign.to.CalendarBean;
-import com.seoul.his.hdm.foreign.to.DaySchBean;
 import com.seoul.his.hdm.foreign.to.TrmtSchdBean;
+import com.seoul.his.msv.mcm.patientservice.to.DaySchBean;
 
 @Controller
-public class DoctorDiagnosisController {    
-    
+public class DoctorDiagnosisController {
+
     @Autowired
 	private DataSetBeanMapper dataSetBeanMapper;
 	@Autowired
@@ -59,11 +59,11 @@ public class DoctorDiagnosisController {
     	applyHistoryList=foreignServiceFacade.findApplyHistoryList(empNo);
     	dataSetBeanMapper.beansToDataset(outData, applyHistoryList, ApplyHistoryBean.class);
     }
-	
+
 	//일별 의사 진료현황
 	@RequestMapping("hdm/foreign/findDayScheduleList.do")
 	public void findDayScheduleList (HttpServletRequest request, HttpServletResponse response) throws Exception{
-			
+
 			PlatformData inData = (PlatformData) request.getAttribute("inData");
 	    	PlatformData outData = (PlatformData) request.getAttribute("outData");
 	    	String empNo= inData.getVariable("empNo").getString();
