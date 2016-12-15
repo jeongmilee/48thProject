@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.seoul.his.hdm.foreign.dao.PatInfoDAO">
+<mapper namespace="com.seoul.his.hdm.foreign.dao.ForeignDAO">
 	<cache flushInterval="86400000" eviction="LRU" />
 
     <resultMap type="PatInfoBean" id="resultPat">
@@ -65,7 +65,7 @@
                          FROM WS_OUTPA_RECEIPT
                GROUP BY pat_no) o, (SELECT hosptlz_receipt_no, pat_no FROM WH_HOSPTLZ_RECEIPT) h
 		 WHERE p.pat_no = o.pat_no(+)
-	  
+
 	   AND
 	  	 o.pat_no = h.pat_no(+)
 			<if test="patNm != '' and patNm != null">
@@ -77,7 +77,7 @@
 			<if test="rrn1 != '' and rrn1 != null and rrn2 != '' and rrn2 != null">
 				AND p.RRN1=#{rrn1} AND FN_WS_DECRYPT(p.RRN2)=#{rrn2}
 			</if>
-		
+
 		order by
 		pat_no
 	</select>

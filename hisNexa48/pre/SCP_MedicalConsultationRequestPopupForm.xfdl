@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SCP_MedicalConsultationRequestPopupForm" classname="SCP_MedicalConsultationRequestPopupForm" left="0" top="0" width="689" height="695" titletext="협의진료의뢰" onload="SCP_MedicalConsultationRequestPopupForm_onload">
+    <Layouts>
+      <Layout>
+        <Div id="autoInsertedDiv" taborder="56" left="2.47%" top="24" right="2.32%" height="79" style="background:#cfd8dcff;">
+          <Layouts>
+            <Layout>
+              <Static id="Static06" taborder="0" text="환자번호" cssclass="sta_WF_DetailLabel01" left="12" top="6" width="66" height="29" style="background:#78909cff;align:left middle;font:9 Gulim;"/>
+              <Static id="Static09" taborder="1" text="의뢰일자" cssclass="sta_WF_DetailLabel01" left="12" top="38" width="66" height="29" style="background:#78909cff;align:left middle;font:9 Gulim;"/>
+              <Static id="Static19" taborder="2" text="주민번호" cssclass="sta_WF_DetailLabel01" left="234" top="6" width="70" height="29" style="background:#78909cff;align:left middle;font:9 Gulim;"/>
+              <Calendar id="askingDateCal" taborder="3" left="80" top="42" width="141" height="21" enable="false" style=":disabled {background:#f3f3f3ff;color:dimgray;}"/>
+              <Edit id="patNoEd" taborder="4" enable="false" left="79" top="10" width="69" height="21" style=":disabled {background:#f3f3f3ff;color:dimgray;}"/>
+              <Edit id="sexAgeEd" taborder="5" cssclass="readonly" enable="false" left="548" top="10" width="79" height="21" style=":disabled {color:dimgray;}"/>
+              <Static id="Static18" taborder="6" text="성별/나이" cssclass="sta_WF_DetailLabel01" left="471" top="6" width="74" height="29" style="background:#78909cff;align:left middle;font:9 Gulim;"/>
+              <Edit id="patNameEd" taborder="7" enable="false" left="149" top="10" width="79" height="21" style=":disabled {background:#f3f3f3ff;color:dimgray;}"/>
+              <Edit id="frontResiNoEd" taborder="9" enable="false" left="305" top="10" width="66" height="21" style=":disabled {background:#f3f3f3ff;color:dimgray;}"/>
+              <MaskEdit id="MaskEdit00" taborder="10" left="56.71%" top="10" right="28.96%" height="21" enable="false" style=":disabled {background:#f3f3f3ff;color:dimgray;align:left middle;}" mask="@{@@@@@@}" type="string"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="buttonDiv" taborder="57" left="3.05%" top="619" right="2.32%" height="45" style="background:#cfd8dcff;">
+          <Layouts>
+            <Layout>
+              <Button id="closeBtn" taborder="0" cssclass="DelBtn" left="551" top="6" width="90" height="32" style="background:@gradation URL('img::closeBtn.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn" onclick="buttonDiv_closeBtn_onclick"/>
+              <Button id="saveBtn" taborder="1" cssclass="DelBtn" left="459" top="6" width="90" height="32" style="background:@gradation URL('img::saveBtn.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn" onclick="buttonDiv_saveBtn_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00" taborder="58" text="Div00" left="2.61%" top="115" right="2.18%" height="493" style="background:#eceff1ff;">
+          <Layouts>
+            <Layout>
+              <Calendar id="hopeDateCal" taborder="7" left="131" top="15" width="141" height="21"/>
+              <Static id="Static21" taborder="8" text="희망일자" cssclass="sta_WF_DetailLabel01" left="20" top="12" width="107" height="29" style="font:9 Gulim;"/>
+              <Div id="askingDiv" taborder="9" left="1.68%" top="44" right="2.13%" height="72" style="background:#cfd8dcff;border:1 solid black ;">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static07" taborder="27" text="응답과" cssclass="sta_WF_DetailLabel01" left="10" top="7" width="107" height="29" style="font:9 Gulim;"/>
+                    <Static id="Static01" taborder="28" text="응급여부" cssclass="sta_WF_DetailLabel01" left="10" top="35" width="107" height="29" style="font:9 Gulim;"/>
+                    <Radio id="emeRadio" taborder="29" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" left="121" top="39" width="141" height="21" style="font:9 Gulim;">
+                      <Dataset id="innerdataset">
+                        <ColumnInfo>
+                          <Column id="codecolumn" size="256"/>
+                          <Column id="datacolumn" size="256"/>
+                        </ColumnInfo>
+                        <Rows>
+                          <Row>
+                            <Col id="codecolumn">Y</Col>
+                            <Col id="datacolumn">응급</Col>
+                          </Row>
+                          <Row>
+                            <Col id="codecolumn">N</Col>
+                            <Col id="datacolumn">비응급</Col>
+                          </Row>
+                        </Rows>
+                      </Dataset>
+                    </Radio>
+                    <Combo id="medDeptCombo" taborder="30" left="120" top="11" width="141" height="21" innerdataset="@dsMedDept" codecolumn="deptNm" datacolumn="deptNm" oncloseup="Div00_askingDiv_medDeptCombo_oncloseup"/>
+                    <Static id="Static15" taborder="31" text="의뢰유형" cssclass="sta_WF_DetailLabel01" left="273" top="35" width="107" height="29" style="font:9 Gulim;"/>
+                    <Static id="Static20" taborder="32" text="응답의사" cssclass="sta_WF_DetailLabel01" left="273" top="7" width="107" height="29" style="font:9 Gulim;"/>
+                    <Combo id="medDrCombo" taborder="33" left="385" top="11" width="141" height="21" innerdataset="@dsMedDr" codecolumn="empNm" datacolumn="empNm"/>
+                    <Radio id="callRadio" taborder="34" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" left="383" top="37" width="141" height="21" style="font:9 Gulim;">
+                      <Dataset id="innerdataset">
+                        <ColumnInfo>
+                          <Column id="codecolumn" size="256"/>
+                          <Column id="datacolumn" size="256"/>
+                        </ColumnInfo>
+                        <Rows>
+                          <Row>
+                            <Col id="codecolumn">Y</Col>
+                            <Col id="datacolumn">왕진유</Col>
+                          </Row>
+                          <Row>
+                            <Col id="codecolumn">N</Col>
+                            <Col id="datacolumn">왕진무</Col>
+                          </Row>
+                        </Rows>
+                      </Dataset>
+                    </Radio>
+                    <CheckBox id="adrCheck" taborder="35" text="ADR" left="545" top="37" width="60" height="20" style="font:9 Gulim;" truevalue="Y" falsevalue="N"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static18" taborder="10" text="진료소견" cssclass="sta_WF_DetailLabel01" left="13" top="134" width="624" height="29" style="background:#78909cff;align:center middle;font:9 Gulim;"/>
+              <TextArea id="TextArea00" taborder="11" left="1.98%" top="162" right="2.9%" height="141"/>
+              <TextArea id="TextArea01" taborder="12" left="1.98%" top="338" right="2.9%" height="141"/>
+              <Static id="Static00" taborder="13" text="사유" cssclass="sta_WF_DetailLabel01" left="13" top="310" width="624" height="29" style="background:#78909cff;align:center middle;font:9 Gulim;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">findMedDrList</Col>
+            <Col id="URL">his::hrs/emp/findEmpList.do</Col>
+            <Col id="inData"/>
+            <Col id="argument"/>
+            <Col id="callbackFunc">callbackFunc</Col>
+            <Col id="outData">dsMedDr=gdsEmp</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">findPatInfo</Col>
+            <Col id="URL">his::hdm/foreign/findPat.do</Col>
+            <Col id="outData">dsPat=dsPat</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">batchMedicalConsultationRequestProcess</Col>
+            <Col id="URL">his::msv/mcm/patientservice/batchMedicalConsultationRequestProcess.do</Col>
+            <Col id="inData">dsMedicalConsultationRequest=dsMedicalConsultationRequest:u</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsMedDr" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="deptNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsMedDept" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="deptNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsMedicalConsultationRequest" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="patNo" type="STRING" size="256"/>
+          <Column id="patDiv" type="STRING" size="256"/>
+          <Column id="patNm" type="STRING" size="256"/>
+          <Column id="cfrnTrmtNo" type="STRING" size="256"/>
+          <Column id="trmtDeptNm" type="STRING" size="256"/>
+          <Column id="trmtDate" type="STRING" size="256"/>
+          <Column id="trmtTime" type="STRING" size="256"/>
+          <Column id="trmtDept" type="STRING" size="256"/>
+          <Column id="hroom" type="STRING" size="256"/>
+          <Column id="mtDoct" type="STRING" size="256"/>
+          <Column id="hopeDoctNm" type="STRING" size="256"/>
+          <Column id="hopeDate" type="STRING" size="256"/>
+          <Column id="hopeDoct" type="STRING" size="256"/>
+          <Column id="callYN" type="STRING" size="256"/>
+          <Column id="adrYN" type="STRING" size="256"/>
+          <Column id="emeYN" type="STRING" size="256"/>
+          <Column id="ward" type="STRING" size="256"/>
+          <Column id="respDoctNm" type="STRING" size="256"/>
+          <Column id="respDoct" type="STRING" size="256"/>
+          <Column id="respDate" type="STRING" size="256"/>
+          <Column id="respCon" type="STRING" size="256"/>
+          <Column id="respType" type="STRING" size="256"/>
+          <Column id="askingDoct" type="STRING" size="256"/>
+          <Column id="askingDept" type="STRING" size="256"/>
+          <Column id="askingDeptNm" type="STRING" size="256"/>
+          <Column id="askingDate" type="STRING" size="256"/>
+          <Column id="askingDiv" type="STRING" size="256"/>
+          <Column id="askingCon" type="STRING" size="256"/>
+          <Column id="askingCau" type="STRING" size="256"/>
+          <Column id="askingDoctNm" type="STRING" size="256"/>
+          <Column id="respDept" type="STRING" size="256"/>
+          <Column id="respDeptNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsPat">
+        <ColumnInfo>
+          <Column id="patNo" type="STRING" size="256"/>
+          <Column id="patNm" type="STRING" size="256"/>
+          <Column id="rrn1" type="STRING" size="256"/>
+          <Column id="rrn2" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="age" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="autoInsertedDiv.patNoEd" propid="value" datasetid="dsMedicalConsultationRequest" columnid="patNo"/>
+      <BindItem id="item1" compid="autoInsertedDiv.patNameEd" propid="value" datasetid="dsMedicalConsultationRequest" columnid="patNm"/>
+      <BindItem id="item2" compid="autoInsertedDiv.frontResiNoEd" propid="value" datasetid="dsPat" columnid="rrn1"/>
+      <BindItem id="item3" compid="autoInsertedDiv.askingDateCal" propid="value" datasetid="dsMedicalConsultationRequest" columnid="askingDate"/>
+      <BindItem id="item4" compid="Div00.hopeDateCal" propid="value" datasetid="dsMedicalConsultationRequest" columnid="hopeDate"/>
+      <BindItem id="item5" compid="Div00.askingDiv.medDeptCombo" propid="value" datasetid="dsMedicalConsultationRequest" columnid="respDeptNm"/>
+      <BindItem id="item6" compid="Div00.askingDiv.medDrCombo" propid="value" datasetid="dsMedicalConsultationRequest" columnid="respDoctNm"/>
+      <BindItem id="item7" compid="Div00.askingDiv.emeRadio" propid="value" datasetid="dsMedicalConsultationRequest" columnid="emeYN"/>
+      <BindItem id="item8" compid="Div00.askingDiv.callRadio" propid="value" datasetid="dsMedicalConsultationRequest" columnid="callYN"/>
+      <BindItem id="item9" compid="Div00.askingDiv.adrCheck" propid="value" datasetid="dsMedicalConsultationRequest" columnid="adrYN"/>
+      <BindItem id="item10" compid="Div00.TextArea00" propid="value" datasetid="dsMedicalConsultationRequest" columnid="askingCon"/>
+      <BindItem id="item11" compid="Div00.TextArea01" propid="value" datasetid="dsMedicalConsultationRequest" columnid="askingCau"/>
+      <BindItem id="item13" compid="autoInsertedDiv.sexAgeEd" propid="value" datasetid="dsPat" columnid="gender"/>
+      <BindItem id="item12" compid="autoInsertedDiv.MaskEdit00" propid="value" datasetid="dsPat" columnid="rrn2"/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[ 
+/**************************************************************************************************
+*                                         공통 Script Include                                     *
+***************************************************************************************************/
+
+include "scripts::commonScripts.xjs";
+include "scripts::wonScripts.xjs";
+/***************************************************************************************************/
+var mode;
+var rowposition;
+this.SCP_MedicalConsultationRequestPopupForm_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{		var nRow=this.dsService.findRow("serviceID","findMedDrList");
+		this.dsService.setColumn(nRow,"argument","jobrk=의사");
+		this.gfnService("findMedDrList");
+		var patNo=this.parent.patNo;
+		mode=this.parent.mode;
+		
+		if(mode=="modify"){
+			this.dsMedicalConsultationRequest.copyData(this.parent.ds);
+			rowposition=this.parent.rowposition;
+			this.dsMedicalConsultationRequest.set_rowposition(rowposition);
+	
+		}else if(mode=="register"){
+			//this.autoInsertedDiv.askingDateCal.set_value(sYear+sMonth+sDate);
+			
+	}
+		var nRow=this.dsService.findRow("serviceID","findPatInfo");
+		this.dsService.setColumn(nRow,"argument","patNo="+patNo);
+		this.gfnService("findPatInfo");
+}
+this.callbackFunc = function(svcID, ErrorCode, ErrorMsg){
+   if (ErrorCode < 1) {
+      trace("[" + svcID + "] 에러코드 : " + ErrorCode + "\n" + ErrorMsg);
+   } else {
+      // 트랜잭션 완료
+       trace("===== " + svcID + " 트랜잭션 성공 =====\n");
+      if(svcID=="findMedDrList"){
+		this.dsMedDr.set_keystring("deptNm"); 
+		var rowCnt=this.dsMedDr.getRowCount();
+		var deptNm="";
+		for(var i=0;i<rowCnt;i++){
+			if(deptNm!=this.dsMedDr.getColumn(i,"deptNm")){
+				deptNm=this.dsMedDr.getColumn(i,"deptNm");
+				var nRow=this.dsMedDept.addRow();
+				this.dsMedDept.setColumn(nRow,"deptNm",deptNm);
+			}
+		}
+		this.dsMedDr.set_keystring(""); 
+      }else if(svcID=="findPatInfo"){
+		var patNo=this.dsPat.getColumn(0,"patNo");
+		var patNm=this.dsPat.getColumn(0,"patNm");
+		if(mode=="register"){
+		var row=this.dsMedicalConsultationRequest.addRow();
+		var today=new Date();
+		var sYear=today.getFullYear().toString();
+		var sMonth=(today.getMonth()+1).toString().padLeft(2,"0");
+		var sDate=(today.getDate()).toString().padLeft(2,"0");
+
+		this.dsMedicalConsultationRequest.setColumn(row,"askingDate",sYear+sMonth+sDate);
+		this.dsMedicalConsultationRequest.setColumn(row,"patNo",patNo);
+		this.dsMedicalConsultationRequest.setColumn(row,"patNm",patNm);
+		
+		this.dsMedicalConsultationRequest.setColumn(row,"cfrnTrmtNo","2");
+		this.dsMedicalConsultationRequest.setColumn(row,"askingDoct",application.gdsEmp.getColumn("empNo"));
+		this.dsMedicalConsultationRequest.setColumn(row,"askingDoctNm",application.gdsEmp.getColumn("empNm"));
+		this.dsMedicalConsultationRequest.setColumn(row,"askingDept",application.gdsEmp.getColumn("deptCd"));
+		this.dsMedicalConsultationRequest.setColumn(row,"askingDeptNm",application.gdsEmp.getColumn("deptNm"));
+		}
+      }
+   }
+}
+
+this.Div00_askingDiv_medDeptCombo_oncloseup = function(obj:Combo, e:nexacro.ComboCloseUpEventInfo)
+{
+	this.dsMedDr.filter("deptNm=='"+obj.value+"'");
+}
+
+this.buttonDiv_saveBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+		this.gfnService("batchMedicalConsultationRequestProcess");
+
+}
+
+
+this.buttonDiv_closeBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	
+	if(mode=="modify"){
+	if(this.dsMedicalConsultationRequest.getRowType(rowposition)==1){
+	this.opener.dsMedicalConsultationRequest.deleteAll();
+	this.opener.dsMedicalConsultationRequest.copyData(this.dsMedicalConsultationRequest);
+	}
+	
+	this.opener.dsMedicalConsultationRequest.set_rowposition(rowposition);
+	}
+	this.close();
+}
+]]></Script>
+  </Form>
+</FDL>

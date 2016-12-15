@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.seoul.his.msv.mcm.patientservice.dao.MedicalConsultationRequestDAO">
+	<cache flushInterval="86400000" eviction="LRU" />
+
+	<resultMap type="MedicalConsultationRequestBean" id="MedicalConsultationRequestResultMap">
+
+		<result property="patNo" column="PAT_NO" />
+		<result property="patDiv" column="PAT_DIV" />
+		<result property="patNm" column="PAT_NM" />
+		<result property="cfrnTrmtNo" column="CFRN_TRMT_NO" />
+		<result property="trmtDeptNm" column="TRMP_DEPT_NM" />
+		<result property="trmtDate" column="TRMT_DATE" />
+		<result property="trmtTime" column="TRMT_TIME" />
+		<result property="trmtDept" column="TRMT_DEPT" />
+		<result property="hroom" column="HROOM" />
+		<result property="mtDoct" column="MT_DOCT" />
+		<result property="hopeDoctNm" column="HOPE_DOCT_NM" />
+		<result property="hopeDate" column="HOPE_DATE" />
+		<result property="hopeDoct" column="HOPE_DOCT" />
+		<result property="callYN" column="CALL_YN" />
+		<result property="adrYN" column="ADR_YN" />
+		<result property="emeYN" column="EME_YN" />
+		<result property="ward" column="WARD" />
+		<result property="respDoctNm" column="RESP_DOCT_NM" />
+		<result property="RespDoct" column="RESP_DOCT" />
+		<result property="respDate" column="RESP_DATE" />
+		<result property="respCon" column="RESP_CON" />
+		<result property="respType" column="RESP_TYPE" />
+		<result property="askingDoct" column="ASKING_DOCT" />
+		<result property="askingDept" column="ASKING_DEPT" />
+		<result property="askingDeptNm" column="ASKING_DEPT_NM" />
+		<result property="askingDate" column="ASKING_DATE" />
+		<result property="askingDiv" column="ASKING_DIV" />
+		<result property="askingCon" column="ASKING_CON" />
+		<result property="askingCau" column="ASKING_CAU" />
+		<result property="askingDoctNm" column="ASKING_DOCT_NM" />
+		<result property="respDept" column="RESP_DEPT" />
+		<result property="respDeptNm" column="RESP_DEPT_NM" />
+
+	</resultMap>
+
+	<select id="findMedicalConsultationRequestList" flushCache="false"
+		useCache="true" resultMap="MedicalConsultationRequestResultMap">
+		SELECT *
+		FROM MQ_CFRN_TRMT_MNG
+		WHERE 1=1
+		<if test='askingHopeRadio=="asking"'>
+			AND ASKING_DATE BETWEEN #{startDate} AND #{endDate}
+		</if>
+		<if test='askingHopeRadio=="hope"'>
+			AND HOPE_DATE BETWEEN #{startDate} AND #{endDate}
+
+		</if>
+		<if test='occurRadio=="Y"'>
+			AND RESP_DATE IS NOT NULL
+		</if>
+		<if test='occurRadio=="N"'>
+			AND RESP_DATE IS NULL
+		</if>
+
+	</select>
+	<update id="insertMedicalConsultationRequest" parameterType="MedicalConsultationRequestBean">
+		INSERT INTO MQ_CFRN_TRMT_MNG(
+		CFRN_TRMT_NO,
+		PAT_NO,
+		PAT_NM,
+		ASKING_DATE,
+		ASKING_DOCT,
+		ASKING_DOCT_NM,
+		ASKING_DEPT_NM,
+		HOPE_DATE,
+		RESP_DEPT_NM,
+		RESP_DOCT_NM,
+		EME_YN,
+		CALL_YN,
+		ADR_YN,
+		ASKING_CON,
+		ASKING_CAU
+		)
+		VALUES(
+		#{askingDate}||#{patNo},
+		#{patNo},
+		#{patNm},
+		#{askingDate},
+		#{askingDoct},
+		#{askingDoctNm},
+		#{askingDeptNm},
+		#{hopeDate},
+		#{respDeptNm},
+		#{respDoctNm},
+		#{emeYN},
+		#{callYN},
+		#{adrYN},
+		#{askingCon},
+		#{askingCau}
+		)
+	</update>
+	<update id="updateMedicalConsultationRequest" parameterType="MedicalConsultationRequestBean">
+		UPDATE MQ_CFRN_TRMT_MNG
+		SET HOPE_DATE=#{hopeDate},
+		RESP_DEPT_NM=#{respDeptNm},
+		RESP_DOCT_NM=#{respDoctNm},
+		EME_YN=#{emeYN},
+		CALL_YN=#{callYN},
+		ADR_YN=#{adrYN},
+		ASKING_CON=#{askingCon},
+		ASKING_CAU=#{askingCau}
+		WHERE
+		CFRN_TRMT_NO=#{cfrnTrmtNo}
+	</update>
+	<delete id="deleteMedicalConsultationRequest" parameterType="String">
+		DELETE MQ_CFRN_TRMT_MNG
+		WHERE CFRN_TRMT_NO=#{cfrnTrmtNo}
+	</delete>
+</mapper>

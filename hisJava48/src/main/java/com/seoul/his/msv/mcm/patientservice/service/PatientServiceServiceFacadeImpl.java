@@ -7,9 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.seoul.his.msv.mcm.patientservice.applicationService.PatientServiceApplicationService;
+import com.seoul.his.msv.mcm.patientservice.applicationService.TreatmentReservationApplicationService;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalCodeBean;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalPatientBean;
+import com.seoul.his.msv.mcm.patientservice.to.DaySchBean;
+import com.seoul.his.msv.mcm.patientservice.to.MedicalConsultationRequestBean;
 import com.seoul.his.msv.mcm.patientservice.to.PatientServiceBean;
+import com.seoul.his.msv.mcm.patientservice.to.RsvPatBean;
+import com.seoul.his.msv.mcm.patientservice.to.TimeSchBean;
 
 /**
  * <pre>
@@ -26,7 +31,8 @@ import com.seoul.his.msv.mcm.patientservice.to.PatientServiceBean;
 public class PatientServiceServiceFacadeImpl implements PatientServiceServiceFacade {
 	@Autowired
 	PatientServiceApplicationService patientserviceApplicationService;
-
+	@Autowired
+	TreatmentReservationApplicationService treatmentReservationAppService;
 	@Override
 	public List<PatientServiceBean> findPatientServiceList(Map<String, String> argsMap) {
 		List<PatientServiceBean> patientserviceList = patientserviceApplicationService.findPatientServiceList(argsMap);
@@ -43,7 +49,35 @@ public class PatientServiceServiceFacadeImpl implements PatientServiceServiceFac
 	/* 관심분류코드관리 */
 	@Override
 	public List<AttentionalCodeBean> findAttentionalCodeList(Map<String, String> argsMap) {
+
 		List<AttentionalCodeBean> attentionalCodeList = patientserviceApplicationService.findAttentionalCodeList(argsMap);
 		return attentionalCodeList;
+	}
+	/* 외래재진예약관리 */
+	@Override
+	public List<DaySchBean> findDayScheduleList(Map<String, String> argsMap) {
+
+		return treatmentReservationAppService.findDayScheduleList(argsMap);
+	}
+
+	@Override
+	public List<TimeSchBean> findTimeScheduleList(Map<String, String> argsMap) {
+		return treatmentReservationAppService.findTimeScheduleList(argsMap);
+	}
+
+	@Override
+	public List<MedicalConsultationRequestBean> findMedicalConsultationRequestList(Map<String, String> argsMap) {
+		return patientserviceApplicationService.findMedicalConsultationRequestList(argsMap);
+	}
+
+	@Override
+	public void batchMedicalConsultationRequestProcess(
+			List<MedicalConsultationRequestBean> medicalConsultationRequestList) {
+		patientserviceApplicationService.batchMedicalConsultationRequestProcess(medicalConsultationRequestList);
+	}
+
+	@Override
+	public List<RsvPatBean> findRsvByPatList(Map<String, String> argsMap) {
+		return treatmentReservationAppService.findRsvByPatList(argsMap);
 	}
 }
