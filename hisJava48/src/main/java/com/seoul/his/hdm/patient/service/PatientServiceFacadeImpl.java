@@ -6,7 +6,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.seoul.his.hdm.patient.applicationService.CheckPatientApplicationService;
 import com.seoul.his.hdm.patient.applicationService.PatientApplicationService;
+import com.seoul.his.hdm.patient.to.CheckPatientBean;
+import com.seoul.his.hdm.patient.to.DustBean;
 import com.seoul.his.hdm.patient.to.PatientBean;
 
 
@@ -23,8 +26,9 @@ import com.seoul.his.hdm.patient.to.PatientBean;
 @Service
 public class PatientServiceFacadeImpl implements PatientServiceFacade{
 	@Autowired
+	CheckPatientApplicationService checkPatientApplicationService;
+	@Autowired
 	PatientApplicationService patientApplicationService;
-
 
 	@Override
 		public List<PatientBean> findPatientList(Map<String, String> argsMap) {
@@ -33,5 +37,24 @@ public class PatientServiceFacadeImpl implements PatientServiceFacade{
 	}
 	
 	
+	@Override
+    public void batchPatientProcess(List<PatientBean> patientBeanList) {
+		patientApplicationService.batchPatientProcess(patientBeanList);
+    }
+
+
+	@Override
+	public List<CheckPatientBean> findCheckPatientList(Map<String, String> argsMap) {
+		List<CheckPatientBean> checkPatientList = checkPatientApplicationService.findCheckPatientList(argsMap);
+		return checkPatientList;
+	}
+
+
+	@Override
+	public void batchCheckPatientProcess(List<CheckPatientBean> checkPatientBeanList) {
+		checkPatientApplicationService.batchCheckPatientProcess(checkPatientBeanList);
+		
+	}
+
 	
 }
