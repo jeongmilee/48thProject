@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="MQ_CfrcTrmtAskingForm" classname="MC_CfrcTrmtAskingForm" left="0" top="0" width="1250" height="768" titletext="협의진료 관리" onload="MC_CfrcTrmtAskingForm_onload">
+    <Layouts>
+      <Layout>
+        <Div id="topDiv" taborder="0" left="0.64%" top="74" right="1.12%" height="48" style="background:#eceff1ff;">
+          <Layouts>
+            <Layout width="1228" height="45">
+              <Radio id="AskingHopeRadio" taborder="1" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" left="7.41%" top="9" height="30" style="font:9 돋움;" width="150" onitemclick="TopDiv_Radio01_onitemclick">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">asking</Col>
+                      <Col id="datacolumn">의뢰일</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">hope</Col>
+                      <Col id="datacolumn">희망일</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Calendar id="startDateCal" taborder="2" autoskip="true" left="20.85%" top="9" height="30" style="padding:0 0 0 0;" width="150"/>
+              <Static id="ctrtDateSelStc03" taborder="3" text="~" onclick="subCodeStc_onclick" left="33.47%" top="9" right="63.52%" height="30" style="background:transparent;color:black;bordertype:round 5 5 ;align:center middle;font:20 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+              <Calendar id="endDateCal" taborder="4" autoskip="true" left="36.73%" top="9" height="30" style="padding:0 0 0 0;" width="150"/>
+              <Static id="ctrtDateSelStc00" taborder="5" text="조회조건" onclick="subCodeStc_onclick" left="52.04%" top="9" right="41.37%" height="30" style="background:#78909cff;color:black;align:center middle;font:10 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+              <Radio id="occurRadio" taborder="6" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" left="59.61%" top="9" right="22.39%" height="30" style="font:9 돋움;">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">A</Col>
+                      <Col id="datacolumn">전체</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">Y</Col>
+                      <Col id="datacolumn">실시</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">N</Col>
+                      <Col id="datacolumn">미실시</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Static id="ctrtDateSelStc01" taborder="8" text="진료일" onclick="subCodeStc_onclick" left="1.79%" top="9" height="30" style="background:#78909cff;color:black;align:center middle;font:10 돋움;blur:0 ;glow:0 transparent;" class="AreaStc" width="60"/>
+              <Button id="searchBtn" taborder="9" left="91.78%" top="8" right="0.9%" height="32" style="background:@gradation URL('img::searchBtn.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="" onclick="topDiv_searchBtn_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="centerDiv" taborder="1" left="0.48%" top="133" right="1.12%" height="585" style="background:#eceff1ff;">
+          <Layouts>
+            <Layout width="1230" height="585">
+              <Grid id="surgGrid" taborder="0" binddataset="dsMedicalConsultationRequest" useinputpanel="false" autofittype="col" oncelldblclick="surgGrid_oncelldblclick" left="1.79%" top="12" right="36.75%" height="527">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="100"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="60"/>
+                      <Column size="60"/>
+                      <Column size="60"/>
+                      <Column size="60"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell style="background:#cfd8dcff;font:9 돋움;" text="의뢰일"/>
+                      <Cell col="1" style="background:#cfd8dcff;font:9 돋움;" text="구분"/>
+                      <Cell col="2" style="background:#cfd8dcff;font:9 돋움;" text="환자명"/>
+                      <Cell col="3" style="background:#cfd8dcff;font:9 돋움;" text="등록번호"/>
+                      <Cell col="4" style="background:#cfd8dcff;font:9 돋움;" text="의뢰과"/>
+                      <Cell col="5" style="background:#cfd8dcff;font:9 돋움;" text="의뢰의"/>
+                      <Cell col="6" style="background:#cfd8dcff;font:9 돋움;" text="응답과"/>
+                      <Cell col="7" style="background:#cfd8dcff;font:9 돋움;" text="응답의"/>
+                      <Cell col="8" style="background:#cfd8dcff;font:9 돋움;" text="유형"/>
+                      <Cell col="9" style="background:#cfd8dcff;font:9 돋움;" text="응급"/>
+                      <Cell col="10" style="background:#cfd8dcff;font:9 돋움;" text="ADR"/>
+                      <Cell col="11" style="background:#cfd8dcff;font:9 돋움;" text="실시"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell displaytype="text" text="bind:askingDate" mask="@@@@/@@/@@"/>
+                      <Cell col="1" displaytype="combo" text="bind:patDiv" combodataset="dsPatDiv" combocodecol="code" combodatacol="value"/>
+                      <Cell col="2" text="bind:patNm"/>
+                      <Cell col="3" text="bind:cfrnTrmtNo"/>
+                      <Cell col="4" text="bind:askingDeptNm"/>
+                      <Cell col="5" text="bind:askingDoctNm"/>
+                      <Cell col="6" text="bind:respDeptNm"/>
+                      <Cell col="7" text="bind:respDoctNm"/>
+                      <Cell col="8" displaytype="combo" text="bind:callYN" combodataset="dsCallYN" combocodecol="code" combodatacol="name"/>
+                      <Cell col="9" displaytype="combo" text="bind:emeYN" combodataset="dsEmeYN" combocodecol="code" combodatacol="name" calendardisplay="display"/>
+                      <Cell col="10" celltype="none" displaytype="normal" edittype="none" text="bind:adrYN" calendardisplay="display"/>
+                      <Cell col="11" text="bind:respDate" expr="expr:(respDate == null) ? &quot;N&quot; : &quot;Y&quot;"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Div id="Div00" taborder="1" left="64.07%" top="10" right="0.73%" height="526" style="background:#cfd8dcff;">
+                <Layouts>
+                  <Layout>
+                    <Static id="ctrtDateSelStc02" taborder="0" text="진 료 소 견" onclick="subCodeStc_onclick" left="3.7%" top="53" height="30" style="background:#78909cff;color:black;align:center middle;font:10 돋움;blur:0 ;glow:0 transparent;" class="AreaStc" width="400"/>
+                    <TextArea id="askingConArea" taborder="1" left="3.7%" top="83" height="100" width="400" enable="false"/>
+                    <TextArea id="askingCauArea" taborder="2" left="3.7%" top="217" height="100" width="400" enable="false"/>
+                    <TextArea id="respConArea" taborder="3" left="3.7%" top="396" height="100" width="400" enable="false"/>
+                    <Static id="ctrtDateSelStc00" taborder="4" text="사          유" onclick="subCodeStc_onclick" left="3.7%" top="194" height="25" style="background:#78909cff;color:black;align:center middle;font:10 돋움;blur:0 ;glow:0 transparent;" class="AreaStc" width="400"/>
+                    <Static id="ctrtDateSelStc01" taborder="5" text="회          신" onclick="subCodeStc_onclick" left="3.7%" top="366" height="30" style="background:#78909cff;color:black;align:center middle;font:10 돋움;blur:0 ;glow:0 transparent;" class="AreaStc" width="400"/>
+                    <Static id="Static00" taborder="6" text="의뢰내용" left="4.85%" top="20" height="21" width="60" style="font:9 돋움;"/>
+                    <Static id="Static01" taborder="7" text="회신내용" left="4.85%" top="332" height="21" width="60" style="font:9 돋움;"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Button id="delMedicalConsultationRequestBtn" taborder="8" cssclass="DelBtn" left="1125" top="547" width="90" height="32" style="background:@gradation URL('img::cancelBtn.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn" onclick="centerDiv_delMedicalConsultationRequestBtn_onclick"/>
+              <Button id="modiMedicalConsultationRequestBtn" taborder="9" cssclass="DelBtn" left="1029" top="547" width="90" height="32" style="background:@gradation URL('img::reviseBtn.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn" onclick="centerDiv_modiMedicalConsultationRequestBtn_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="2" text="권한관리" left="4.72%" top="-3" right="81.76%" height="60" style="color:#6c6c6cff;font:bold 20 다음_Regular;"/>
+        <Div id="Div06" taborder="3" left="0.64%" top="2" right="63.36%" height="60" style="background:transparent URL('img::miniTitleBar1.jpg');">
+          <Layouts>
+            <Layout width="450" height="60"/>
+          </Layouts>
+        </Div>
+        <Static id="Static01" taborder="4" text="협의진료의뢰내역" left="5.36%" top="5" right="75.68%" height="60" style="color:#6c6c6cff;font:bold 20 돋움;"/>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item0" compid="" propid="" datasetid="gdsPrcsReceipt" columnid=""/>
+      <BindItem id="dsGubun" compid="" propid="" datasetid="gdsPrcsReceipt" columnid=""/>
+      <BindItem id="item1" compid="Div03.Div00.respConArea" propid="value" datasetid="dsCfrnTrmt" columnid="respCon"/>
+      <BindItem id="item2" compid="Div03.Div00.askingCauArea" propid="value" datasetid="dsCfrnTrmt" columnid="askingCau"/>
+      <BindItem id="item3" compid="Div03.Div00.askingConArea" propid="value" datasetid="dsCfrnTrmt" columnid="askingCon"/>
+      <BindItem id="item4" compid="centerDiv.Div00.askingCauArea" propid="value" datasetid="dsMedicalConsultationRequest" columnid="askingCau"/>
+      <BindItem id="item5" compid="centerDiv.Div00.askingConArea" propid="value" datasetid="dsMedicalConsultationRequest" columnid="askingCon"/>
+      <BindItem id="item6" compid="centerDiv.Div00.respConArea" propid="value" datasetid="dsMedicalConsultationRequest" columnid="respCon"/>
+    </Bind>
+    <Objects>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">findMedicalConsultationRequestList</Col>
+            <Col id="URL">his::msv/mcm/patientservice/findMedicalConsultationRequestList.do</Col>
+            <Col id="inData"/>
+            <Col id="outData">dsMedicalConsultationRequest=dsMedicalConsultationRequest</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">batchMedicalConsultationRequestProcess</Col>
+            <Col id="URL">his::msv/mcm/patientservice/batchMedicalConsultationRequestProcess.do</Col>
+            <Col id="inData">dsMedicalConsultationRequest=dsMedicalConsultationRequest:u</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsMedicalConsultationRequest" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="patNo" type="STRING" size="256"/>
+          <Column id="patDiv" type="STRING" size="256"/>
+          <Column id="patNm" type="STRING" size="256"/>
+          <Column id="cfrnTrmtNo" type="STRING" size="256"/>
+          <Column id="trmtDeptNm" type="STRING" size="256"/>
+          <Column id="trmtDate" type="STRING" size="256"/>
+          <Column id="trmtTime" type="STRING" size="256"/>
+          <Column id="trmtDept" type="STRING" size="256"/>
+          <Column id="hroom" type="STRING" size="256"/>
+          <Column id="mtDoct" type="STRING" size="256"/>
+          <Column id="hopeDoctNm" type="STRING" size="256"/>
+          <Column id="hopeDate" type="STRING" size="256"/>
+          <Column id="hopeDoct" type="STRING" size="256"/>
+          <Column id="callYN" type="STRING" size="256"/>
+          <Column id="adrYN" type="STRING" size="256"/>
+          <Column id="emeYN" type="STRING" size="256"/>
+          <Column id="ward" type="STRING" size="256"/>
+          <Column id="respDoctNm" type="STRING" size="256"/>
+          <Column id="RespDoct" type="STRING" size="256"/>
+          <Column id="respDate" type="STRING" size="256"/>
+          <Column id="respCon" type="STRING" size="256"/>
+          <Column id="respType" type="STRING" size="256"/>
+          <Column id="askingDoct" type="STRING" size="256"/>
+          <Column id="askingDept" type="STRING" size="256"/>
+          <Column id="askingDeptNm" type="STRING" size="256"/>
+          <Column id="askingDate" type="STRING" size="256"/>
+          <Column id="askingDiv" type="STRING" size="256"/>
+          <Column id="askingCon" type="STRING" size="256"/>
+          <Column id="askingCau" type="STRING" size="256"/>
+          <Column id="askingDoctNm" type="STRING" size="256"/>
+          <Column id="respDept" type="STRING" size="256"/>
+          <Column id="respDeptNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsEmeYN" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">Y</Col>
+            <Col id="name">응급</Col>
+          </Row>
+          <Row>
+            <Col id="code">N</Col>
+            <Col id="name">비응급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsCallYN" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">왕진유</Col>
+            <Col id="code">Y</Col>
+          </Row>
+          <Row>
+            <Col id="name">왕진무</Col>
+            <Col id="code">N</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsPatDiv" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">O</Col>
+            <Col id="value">외래</Col>
+          </Row>
+          <Row>
+            <Col id="code">E</Col>
+            <Col id="value">응급</Col>
+          </Row>
+          <Row>
+            <Col id="code">I</Col>
+            <Col id="value">입원</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[ /********************************************************************************
+*                                                                               *
+* 				            												    *
+*                                                                               *
+* @Path		    협의진료 관리   							                 	*
+* @Description  협의진료 관리 							 	                *
+* 																				*
+                            		                    *
+*									                                            *
+********************************************************************************/
+/********************************************************************************
+ 공통스크립트 include
+********************************************************************************/
+include "scripts::commonScripts.xjs";
+include "scripts::commonBind.xjs";
+
+this.MC_CfrcTrmtAskingForm_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+
+}
+
+//조회
+this.topDiv_searchBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+
+	var startDate=this.topDiv.startDateCal.value;
+	var endDate=this.topDiv.endDateCal.value;
+	var askingHopeRadio=this.topDiv.AskingHopeRadio.value;
+	var occurRadio=this.topDiv.occurRadio.value;
+	alert(occurRadio);
+	var argument = 'startDate='+startDate+' endDate='+endDate+' askingHopeRadio='+askingHopeRadio+' occurRadio='+occurRadio;
+	this.dsService.setColumn(0,"argument",argument);
+	
+	this.gfnService("findMedicalConsultationRequestList"); //협의진료 조회
+}
+
+
+this.centerDiv_saveBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	//this.gfnService("batchMedicalConsultationRequestProcess"); //저장
+}
+
+this.centerDiv_delCfrnTrmtBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	//this.dsCfrnTrmt.deleteRow(this.dsCfrnTrmt.rowposition);
+}
+
+
+
+this.centerDiv_modiMedicalConsultationRequestBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var resDate=this.dsMedicalConsultationRequest.getColumn(this.dsMedicalConsultationRequest.rowposition,"respDate");
+	var patNo=this.dsMedicalConsultationRequest.getColumn(this.dsMedicalConsultationRequest.rowposition,"patNo");
+	var rowposition=this.dsMedicalConsultationRequest.rowposition;
+	if(resDate!=null){
+		alert("회신을 받을 경우는 수정할 수 없습니다");
+	}else{
+		application.open("SCP_MedicalConsultationRequestPopupForm","pre::SCP_MedicalConsultationRequestPopupForm.xfdl",this.parent,{"patNo":patNo,"mode":"modify","ds":this.dsMedicalConsultationRequest,"rowposition":rowposition},"showtitlebar=true showstatusbar=false", 0, 0, 800, 443, this);
+	}
+}
+
+this.centerDiv_delMedicalConsultationRequestBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	var resDate=this.dsMedicalConsultationRequest.getColumn(this.dsMedicalConsultationRequest.rowposition,"respDate");
+	if(resDate!=null){
+		alert("회신을 받을 경우는 취소할 수 없습니다");
+	}else{
+	this.dsMedicalConsultationRequest.deleteRow(this.dsMedicalConsultationRequest.rowposition);
+	var bOK=application.confirm("저장하시겠습니까");
+	if(bOK){
+	
+	this.gfnService("batchMedicalConsultationRequestProcess");}
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

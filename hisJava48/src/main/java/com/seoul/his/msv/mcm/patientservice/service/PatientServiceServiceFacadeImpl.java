@@ -7,10 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.seoul.his.msv.mcm.patientservice.applicationService.PatientServiceApplicationService;
-import com.seoul.his.msv.mcm.patientservice.to.AdrBean;
-import com.seoul.his.msv.mcm.patientservice.to.AttentionalFieldBean;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalPatientBean;
-import com.seoul.his.msv.mcm.patientservice.to.EmrBean;
+import com.seoul.his.msv.mcm.patientservice.to.RsvPatBean;
+import com.seoul.his.msv.mcm.patientservice.to.TimeSchBean;
 
 /**
  * <pre>
@@ -27,7 +26,8 @@ import com.seoul.his.msv.mcm.patientservice.to.EmrBean;
 public class PatientServiceServiceFacadeImpl implements PatientServiceServiceFacade {
 	@Autowired
 	PatientServiceApplicationService patientserviceApplicationService;
-
+	@Autowired
+	TreatmentReservationApplicationService treatmentReservationAppService;
 	/* 	 EMR 관리	*/
 	@Override
 	public List<EmrBean> findEmrList(Map<String, String> argsMap) {
@@ -61,13 +61,6 @@ public class PatientServiceServiceFacadeImpl implements PatientServiceServiceFac
 
 	/* 관심분류관리 */
 	@Override
-	public List<AttentionalFieldBean> findAttentionalFieldList(Map<String, String> argsMap) {
-		List<AttentionalFieldBean> attentionalFieldList = patientserviceApplicationService
-				.findAttentionalFieldList(argsMap);
-		return attentionalFieldList;
 	}
-	@Override
-	public void batchAttentionalFieldProcess(List<AttentionalFieldBean> attentionalFieldList) {
-		patientserviceApplicationService.batchAttentionalFieldProcess(attentionalFieldList);
-	}
+}
 }

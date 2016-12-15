@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.seoul.his.msv.mcm.patientservice.dao.TreatmentReservationDAO">
+	<cache flushInterval="86400000" eviction="LRU" />
+	<resultMap type="TimeSchBean" id="TimeScheduleResultMap">
+		<result property="medDr" column="EMP_NO" />
+		<result property="medDate" column="MEDDATE" />
+		<result property="examTm" column="EXAMTM" />
+		<result property="rsvCnt" column="RSVCNT" />
+		<result property="totCnt" column="TOTCNT" />
+		<result property="amPmFlag" column="AMPMFLAG" />
+		<collection property="rsvPatList"
+			column="{medDate=MEDDATE,medDr=EMP_NO,examTm=EXAMTM}"
+			select="com.seoul.his.msv.mcm.patientservice.dao.TreatmentReservationDAO.selectRsvPatByTimeList"
+			javaType="list" />
+	</resultMap>
+
+	<select id="selectDayScheduleList" flushCache="false" useCache="true"
+		resultType="DaySchBean">
+
+		WITH DAYSCHEDULE AS (
+		SELECT
+		EMP_NO,MEDDATE,AMPMFLAG,SUM(RSVCNT) AS
+		SUMRSVCNT,
+		SUM(TOTCNT) AS
+		SUMTOTCNT
+		FROM(
+		SELECT M.EMP_NO AS EMP_NO ,M.MEDDATE AS MEDDATE,
+		M.AMPMFLAG AS AMPMFLAG,
+		M.EXAMTM AS EXAMTM, COUNT(W.PAT_NO) AS RSVCNT,
+		MAX(M.TOTCNT) AS TOTCNT
+		FROM MC_TRMT_SCHD_MAN M, WS_OUTPA_RECEIPT W
+		WHERE M.EMP_NO=W.TRMT_DOCT(+)
+		AND M.MEDDATE=W.TRMT_DATE(+)
+		AND
+		M.EXAMTM=W.TRMT_TIME(+)
+		AND M.EMP_NO=#{empNo}
+		GROUP BY MEDDATE,
+		EMP_NO,AMPMFLAG,EXAMTM )
+		GROUP BY MEDDATE, EMP_NO,AMPMFLAG
+		)
+		SELECT
+		DECODE(AM.MEDDATE,NULL,PM.MEDDATE,AM.MEDDATE) AS medDate,
+		AM.SUMRSVCNT
+		AS amRsvCnt, AM.SUMTOTCNT AS amTotCnt,PM.SUMRSVCNT AS pmRsvCnt,
+		PM.SUMTOTCNT AS pmTotCnt
+		FROM
+		(SELECT *
+		FROM DAYSCHEDULE
+		WHERE
+		AMPMFLAG='오전')AM
+		FULL OUTER JOIN
+		(SELECT *
+		FROM DAYSCHEDULE
+		WHERE
+		AMPMFLAG='오후')PM
+		on AM.MEDDATE=PM.MEDDATE
+		ORDER BY medDate
+
+	</select>
+	<select id="selectTimeScheduleList" flushCache="false" useCache="true"
+		resultMap="TimeScheduleResultMap">
+		SELECT EMP_NO, MEDDATE , EXAMTM, RSVCNT,
+		TOTCNT, AMPMFLAG
+		FROM
+		(SELECT M.EMP_NO AS EMP_NO ,M.MEDDATE AS MEDDATE, M.AMPMFLAG AS
+		AMPMFLAG,
+		M.EXAMTM AS EXAMTM, COUNT(W.PAT_NO) AS RSVCNT, MAX(M.TOTCNT)
+		AS TOTCNT
+		FROM MC_TRMT_SCHD_MAN M, WS_OUTPA_RECEIPT W
+		WHERE
+		M.EMP_NO=W.TRMT_DOCT(+)
+		AND M.MEDDATE=W.TRMT_DATE(+)
+		AND
+		M.EXAMTM=W.TRMT_TIME(+)
+		AND M.EMP_NO=#{empNo}
+		AND M.MEDDATE=#{date}
+		GROUP BY MEDDATE, EMP_NO,AMPMFLAG,EXAMTM)
+		ORDER BY MEDDATE,EXAMTM
+	</select>
+	<select id="selectRsvPatByTimeList" flushCache="false" useCache="true"
+		resultType="RsvPatBean" parameterType="map">
+		SELECT
+		O.TRMT_DOCT as medDr,
+		O.TRMT_DATE as medDate,
+		O.TRMT_TIME as examTm,
+		O.PAT_NO,
+		P.PAT_NM,
+		P.GENDER,
+		P.AGE,
+		P.TEL,
+		P.NOTE,
+		O.PAT_TYPE,
+		O.TRMT_COST_CALCU_YB,
+		O.NT_TT_YB,
+		O.NW_DIV,
+		O.OUTPA_RECEIPT_NO,
+		O.TRMT_YB
+		FROM WS_PAT P,
+		WS_OUTPA_RECEIPT O
+		WHERE
+		P.PAT_NO=O.PAT_NO
+		AND O.TRMT_DATE=#{medDate}
+		AND
+		O.TRMT_DOCT=#{medDr}
+		AND O.TRMT_TIME=#{examTm}
+	</select>
+	<select id="selectRsvByPatList" flushCache="false" useCache="true"
+		resultType="RsvPatBean" parameterType="map">
+		SELECT
+		O.TRMT_DOCT as medDr,
+		O.TRMT_DATE as medDate,
+		O.TRMT_TIME as examTm,
+		O.PAT_NO,
+		P.PAT_NM,
+		P.GENDER,
+		P.AGE,
+		P.TEL,
+		P.NOTE,
+		O.PAT_TYPE,
+		O.TRMT_COST_CALCU_YB,
+		O.NT_TT_YB,
+		O.NW_DIV,
+		O.OUTPA_RECEIPT_NO,
+		O.TRMT_YB
+		FROM WS_PAT P, WS_OUTPA_RECEIPT O
+		WHERE P.PAT_NO=O.PAT_NO
+		AND O.TRMT_YB='N'
+		AND O.PAT_NO=#{patNo}
+	</select>
+</mapper>

@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SCP_RetreatmentReservationForm" classname="외래재진예약" left="0" top="0" width="1200" height="768" titletext="New Form" onload="SCP_RetreatmentReservationForm_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="calendarGrid" taborder="0" useinputpanel="false" left="2.5%" top="272" right="55.33%" height="448" binddataset="dsCalendar" autofittype="col" autosizingtype="none" cellsizingtype="none" selecttype="cell" oncellclick="calendarGrid_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="30"/>
+                <Column size="50"/>
+                <Column size="30"/>
+                <Column size="50"/>
+                <Column size="30"/>
+                <Column size="50"/>
+                <Column size="30"/>
+                <Column size="50"/>
+                <Column size="30"/>
+                <Column size="48"/>
+                <Column size="30"/>
+                <Column size="50"/>
+                <Column size="30"/>
+                <Column size="50"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="30"/>
+                <Row size="20"/>
+                <Row size="20"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2" style="background:#cfd8dcff;font:11 돋움;" text="일"/>
+                <Cell col="2" colspan="2" style="background:#cfd8dcff;font:11 돋움;" text="월"/>
+                <Cell col="4" colspan="2" style="background:#cfd8dcff;font:11 돋움;" text="화"/>
+                <Cell col="6" colspan="2" style="background:#cfd8dcff;font:11 돋움;" text="수"/>
+                <Cell col="8" colspan="2" style="background:#cfd8dcff;font:11 돋움;" text="목"/>
+                <Cell col="10" colspan="2" style="background:#cfd8dcff;font:11 돋움;" text="금"/>
+                <Cell col="12" colspan="2" style="background:#cfd8dcff;font:11 돋움;" text="토"/>
+              </Band>
+              <Band id="body" style="cellbackground2:#ffffffff;">
+                <Cell rowspan="3" colspan="2">
+                  <Cell style="color:red;color2:red;font:12 arial;" text="bind:DOW1"/>
+                  <Cell col="1" text="bind:TEXT1"/>
+                  <Cell row="1"/>
+                  <Cell row="1" col="1" text="bind:AM1"/>
+                  <Cell row="2"/>
+                  <Cell row="2" col="1" text="bind:PM1"/>
+                </Cell>
+                <Cell col="2" rowspan="3" colspan="2">
+                  <Cell style="color:#90a4aeff;color2:#90a4aeff;font:12 arial;" text="bind:DOW2"/>
+                  <Cell col="1" text="bind:TEXT2"/>
+                  <Cell row="1"/>
+                  <Cell row="1" col="1" text="bind:AM2"/>
+                  <Cell row="2"/>
+                  <Cell row="2" col="1" text="bind:PM2"/>
+                </Cell>
+                <Cell col="4" rowspan="3" colspan="2">
+                  <Cell style="color:#90a4aeff;color2:#90a4aeff;font:12 arial;" text="bind:DOW3"/>
+                  <Cell col="1" text="bind:TEXT3"/>
+                  <Cell row="1"/>
+                  <Cell row="1" col="1" text="bind:AM3"/>
+                  <Cell row="2"/>
+                  <Cell row="2" col="1" text="bind:PM3"/>
+                </Cell>
+                <Cell col="6" rowspan="3" colspan="2">
+                  <Cell style="color:#90a4aeff;color2:#90a4aeff;font:12 arial;" text="bind:DOW4"/>
+                  <Cell col="1" text="bind:TEXT4"/>
+                  <Cell row="1"/>
+                  <Cell row="1" col="1" text="bind:AM4"/>
+                  <Cell row="2"/>
+                  <Cell row="2" col="1" text="bind:PM4"/>
+                </Cell>
+                <Cell col="8" rowspan="3" colspan="2">
+                  <Cell style="color:#90a4aeff;color2:#90a4aeff;font:12 arial;" text="bind:DOW5"/>
+                  <Cell col="1" text="bind:TEXT5"/>
+                  <Cell row="1"/>
+                  <Cell row="1" col="1" text="bind:AM5"/>
+                  <Cell row="2"/>
+                  <Cell row="2" col="1" text="bind:PM5"/>
+                </Cell>
+                <Cell col="10" rowspan="3" colspan="2">
+                  <Cell style="color:#90a4aeff;color2:#90a4aeff;font:12 arial;" text="bind:DOW6"/>
+                  <Cell col="1" text="bind:TEXT6"/>
+                  <Cell row="1"/>
+                  <Cell row="1" col="1" text="bind:AM6"/>
+                  <Cell row="2"/>
+                  <Cell row="2" col="1" text="bind:PM6"/>
+                </Cell>
+                <Cell col="12" rowspan="3" colspan="2">
+                  <Cell style="color:blue;color2:blue;font:12 arial;" text="bind:DOW7"/>
+                  <Cell col="1" text="bind:TEXT7"/>
+                  <Cell row="1"/>
+                  <Cell row="1" col="1" text="bind:AM7"/>
+                  <Cell row="2"/>
+                  <Cell row="2" col="1" text="bind:PM7"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="Div06" taborder="15" left="1.56%" top="16" right="62.5%" height="60" style="background:transparent URL('img::miniTitleBar1.jpg');">
+          <Layouts>
+            <Layout>
+              <Static id="Static01" taborder="0" text="외래재진예약" left="14.4%" top="5" right="15.22%" height="46" style="color:#6c6c6cff;font:bold 20 돋움;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="16" text="년" left="21.75%" top="226" right="76.25%" height="28" style="font:11 돋움;"/>
+        <Static id="Static01" taborder="17" text="월" left="28.08%" top="226" right="70%" height="28" style="font:11 돋움;"/>
+        <Static id="yearStc" taborder="18" left="15.83%" top="228" right="79.25%" height="27" style="align:middle;font:11 arial;"/>
+        <Static id="monthStc" taborder="19" left="23.25%" top="228" right="72.75%" height="27" style="align:middle;font:11 arial;"/>
+        <Grid id="Grid00" taborder="27" useinputpanel="false" left="48%" top="195" right="2.17%" height="91" autofittype="col" binddataset="dsPatRsvInfo">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="86"/>
+                <Column size="91"/>
+                <Column size="120"/>
+                <Column size="90"/>
+                <Column size="61"/>
+                <Column size="116"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#cfd8dcff;font:9 돋움;" text="예약일"/>
+                <Cell col="1" style="background:#cfd8dcff;font:9 돋움;" text="예약시간"/>
+                <Cell col="2" style="background:#cfd8dcff;font:9 돋움;" text="진료과"/>
+                <Cell col="3" style="background:#cfd8dcff;font:9 돋움;" text="진료의"/>
+                <Cell col="4" style="background:#cfd8dcff;font:9 돋움;" text="수납"/>
+                <Cell col="5" style="background:#cfd8dcff;font:9 돋움;" text="특기사항"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:medDate"/>
+                <Cell col="1" edittype="mask" text="bind:examTm" mask="##:##"/>
+                <Cell col="2" displaytype="combo" text="bind:medDr" combodataset="dsMedDrGridComboData" combocodecol="empNo" combodatacol="deptNm"/>
+                <Cell col="3" displaytype="combo" edittype="none" text="bind:medDr" combodataset="dsMedDrGridComboData" combocodecol="empNo" combodatacol="empNm" combodisplay="edit"/>
+                <Cell col="4" text="bind:trmtCostCalcuYb"/>
+                <Cell col="5" text="bind:note"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="DayScheduleGrid" taborder="28" useinputpanel="false" left="48.17%" top="349" right="36.17%" height="371" autofittype="col" binddataset="dsTimeSchedule">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="38"/>
+                <Column size="34"/>
+                <Column size="37"/>
+                <Column size="37"/>
+                <Column size="39"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#cfd8dcff;font:9 arial;" text="시간"/>
+                <Cell col="1" style="background:#cfd8dcff;font:9 arial;" text="예약"/>
+                <Cell col="2" style="background:#cfd8dcff;font:9 arial;" text="가능"/>
+                <Cell col="3" style="background:#cfd8dcff;font:9 arial;" text="A/P"/>
+                <Cell col="4" style="background:#cfd8dcff;font:9 arial;" text="타과"/>
+              </Band>
+              <Band id="body">
+                <Cell edittype="mask" text="bind:examTm" mask="##:##"/>
+                <Cell col="1" edittype="none" text="bind:rsvCnt"/>
+                <Cell col="2" expr="expr:parseInt(totCnt)-parseInt(rsvCnt)"/>
+                <Cell col="3" text="bind:amPmFlag"/>
+                <Cell col="4"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="rsvPatGrid" taborder="29" useinputpanel="false" left="64.83%" top="350" right="2.17%" height="176" autofittype="col" binddataset="dsRsvPat">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="51"/>
+                <Column size="61"/>
+                <Column size="87"/>
+                <Column size="88"/>
+                <Column size="87"/>
+                <Column size="50"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell style="background:#cfd8dcff;font:9 돋움;" text="시간"/>
+                <Cell col="1" style="background:#cfd8dcff;font:9 돋움;" text="성명"/>
+                <Cell col="2" style="background:#cfd8dcff;font:9 돋움;" text="등록번호"/>
+                <Cell col="3" style="background:#cfd8dcff;font:9 돋움;" text="Sex/Age"/>
+                <Cell col="4" style="background:#cfd8dcff;font:9 돋움;" text="환자유형"/>
+                <Cell col="5" style="background:#cfd8dcff;font:9 돋움;" text="수납"/>
+              </Band>
+              <Band id="body">
+                <Cell edittype="mask" text="bind:examTm" mask="##:##"/>
+                <Cell col="1" text="bind:patNm"/>
+                <Cell col="2" text="bind:patNo"/>
+                <Cell col="3" expr="expr:gender+&quot;/&quot;+age"/>
+                <Cell col="4" text="bind:patType"/>
+                <Cell col="5" text="bind:trmtCostCalcuYb"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="stDiv02" taborder="30" text="특기사항" wordwrap="char" onclick="subCodeStc_onclick" left="64.83%" top="585" width="74" height="30" style="background:#cfd8dcff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Edit id="deptNmEd02" taborder="31" readonly="true" left="71.33%" top="655" width="129" height="30" style="background:#fbf8f1ff;border:1 solid #a6a6a9ff ;font:9 Dotum;"/>
+        <TextArea id="TextArea00" taborder="32" left="71.58%" top="582" right="2.17%" height="63" enable="false"/>
+        <Static id="stDiv03" taborder="33" text="핸드폰" wordwrap="char" onclick="subCodeStc_onclick" left="64.83%" top="654" width="74" height="30" style="background:#cfd8dcff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Static id="stDiv04" taborder="34" text="초진/재진" wordwrap="char" onclick="subCodeStc_onclick" left="64.83%" top="541" width="74" height="30" style="background:#cfd8dcff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Edit id="deptNmEd03" taborder="35" readonly="true" left="71.33%" top="542" width="129" height="30" style="background:#fbf8f1ff;border:1 solid #a6a6a9ff ;font:9 Dotum;"/>
+        <Static id="stDiv05" taborder="37" text="내원구분" wordwrap="char" onclick="subCodeStc_onclick" left="82.5%" top="541" width="74" height="30" style="background:#cfd8dcff;color:black;align:center middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Combo id="Combo00" taborder="38" left="89%" top="540" right="2.17%" height="31" enable="false" codecolumn="codecolumn" datacolumn="datacolumn">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">원무접수</Col>
+                <Col id="datacolumn">원무접수</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">진료과접수</Col>
+                <Col id="datacolumn">진료과접수</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Button id="DelBtn30" taborder="39" onclick="DelBtn_onclick" cssclass="DelBtn" left="1064" top="723" width="110" height="32" style="background:@gradation URL('img::reserveXBtn.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
+        <Button id="DelBtn02" taborder="40" onclick="DelBtn_onclick" cssclass="DelBtn" left="964" top="723" width="90" height="32" style="background:@gradation URL('img::reviseBtn.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
+        <Button id="DelBtn23" taborder="41" onclick="DelBtn_onclick" cssclass="DelBtn" left="867" top="723" width="90" height="32" style="background:@gradation URL('img::reserveBtn.png') stretch;border:1 none #999999ff ;bordertype:normal 3 3 ;cursor:hand;gradation:none 0,0 white 100,100 black;" class="DelBtn"/>
+        <Static id="subCodeStc03" taborder="42" text="  월간 예약현황" onclick="subCodeStc_onclick" left="2.25%" top="146" right="55.25%" height="30" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Static id="subCodeStc00" taborder="43" text="  개인 예약현황" onclick="subCodeStc_onclick" left="48.33%" top="146" right="2.17%" height="30" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Static id="subCodeStc01" taborder="44" text="  일별 예약현황" onclick="subCodeStc_onclick" left="48%" top="307" right="36.08%" height="30" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Static id="subCodeStc02" taborder="46" text="  시간대별 예약환자" onclick="subCodeStc_onclick" left="64.83%" top="307" right="2.17%" height="30" style="background:#78909cff;color:ivory;align:left middle;font:9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
+        <Div id="div_Search" taborder="47" left="32" top="88" right="26" height="43" cssclass="div_WF_SearchBg" style="background:#90a4aeff;">
+          <Layouts>
+            <Layout width="1152" height="43">
+              <Edit id="medDeptEd" taborder="22" cssclass="edt_WF_Search" left="104" top="10" width="132" height="21"/>
+              <Button id="searchMedDrBtn" taborder="23" cssclass="btn_WF_SearchSmall" left="235" top="10" width="21" height="21" onclick="div_Search_searchMedDrBtn_onclick"/>
+              <Combo id="MedDrCombo" taborder="24" left="371" top="10" width="152" height="21" innerdataset="@dsMedDr" codecolumn="empNo" datacolumn="empNm"/>
+              <Static id="Static01" taborder="26" text="진료과" cssclass="sta_WF_SearchLabel" left="19" top="10" width="85" height="21" style="font:9 돋움;"/>
+              <Static id="Static02" taborder="27" text="진료의" cssclass="sta_WF_SearchLabel" left="286" top="10" width="85" height="21" style="font:9 돋움;"/>
+              <Static id="Static04" taborder="28" text="환자등록번호" cssclass="sta_WF_SearchLabel" left="553" top="10" width="85" height="21" style="font:9 돋움;"/>
+              <Button id="searchTrmtSchBtn" taborder="29" text="조회" cssclass="btn_WF_Search" top="8" right="11" width="60" height="25" style="background:#37474fff;" onclick="div_Search_searchTrmtSchBtn_onclick"/>
+              <Edit id="patNoEd" taborder="30" cssclass="edt_WF_Search" left="648" top="10" width="132" height="21"/>
+              <Button id="searchPatBtn" taborder="31" cssclass="btn_WF_SearchSmall" left="779" top="10" width="21" height="21" onclick="div_Search_searchPatBtn_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="nextMonthBtn" taborder="48" cssclass="btn_WF_ShuttleR" left="374" top="222" width="29" height="29" onclick="nextMonthBtn_onclick"/>
+        <Button id="preMonthBtn" taborder="49" cssclass="btn_WF_ShuttleL" left="162" top="222" width="29" height="29" onclick="preMonthBtn_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCalendar">
+        <ColumnInfo>
+          <Column id="DOW1" type="STRING" size="256"/>
+          <Column id="TEXT1" type="STRING" size="256"/>
+          <Column id="AM1" type="STRING" size="256"/>
+          <Column id="PM1" type="STRING" size="256"/>
+          <Column id="DOW2" type="STRING" size="256"/>
+          <Column id="TEXT2" type="STRING" size="256"/>
+          <Column id="AM2" type="STRING" size="256"/>
+          <Column id="PM2" type="STRING" size="256"/>
+          <Column id="DOW3" type="STRING" size="256"/>
+          <Column id="TEXT3" type="STRING" size="256"/>
+          <Column id="AM3" type="STRING" size="256"/>
+          <Column id="PM3" type="STRING" size="256"/>
+          <Column id="DOW4" type="STRING" size="256"/>
+          <Column id="TEXT4" type="STRING" size="256"/>
+          <Column id="AM4" type="STRING" size="256"/>
+          <Column id="PM4" type="STRING" size="256"/>
+          <Column id="DOW5" type="STRING" size="256"/>
+          <Column id="TEXT5" type="STRING" size="256"/>
+          <Column id="AM5" type="STRING" size="256"/>
+          <Column id="PM5" type="STRING" size="256"/>
+          <Column id="DOW6" type="STRING" size="256"/>
+          <Column id="TEXT6" type="STRING" size="256"/>
+          <Column id="AM6" type="STRING" size="256"/>
+          <Column id="PM6" type="STRING" size="256"/>
+          <Column id="DOW7" type="STRING" size="256"/>
+          <Column id="TEXT7" type="STRING" size="256"/>
+          <Column id="AM7" type="STRING" size="256"/>
+          <Column id="PM7" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsService" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="serviceID" type="STRING" size="256"/>
+          <Column id="URL" type="STRING" size="256"/>
+          <Column id="inData" type="STRING" size="256"/>
+          <Column id="outData" type="STRING" size="256"/>
+          <Column id="argument" type="STRING" size="256"/>
+          <Column id="callbackFunc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="serviceID">findDayScheduleList</Col>
+            <Col id="URL">his::msv/mcm/patientservice/findDayScheduleList.do</Col>
+            <Col id="inData"/>
+            <Col id="outData">dsDaySchedule=dsDaySchedule</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">findMedDrList</Col>
+            <Col id="URL">his::hrs/emp/findEmpList.do</Col>
+            <Col id="outData">dsMedDr=gdsEmp</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="serviceID">findTimeScheduleList</Col>
+            <Col id="URL">his::msv/mcm/patientservice/findTimeScheduleList.do</Col>
+            <Col id="outData">dsTimeSchedule=dsTimeSchedule dsRsvPat=dsRsvPat</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
+          </Row>
+          <Row>
+            <Col id="URL">his::msv/mcm/patientservice/findRsvByPatList.do</Col>
+            <Col id="serviceID">findRsvByPatList</Col>
+            <Col id="outData">dsPatRsvInfo=dsRsvPat</Col>
+            <Col id="callbackFunc">callbackFunc</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsTimeSchedule" onrowposchanged="dsTimeSchedule_onrowposchanged">
+        <ColumnInfo>
+          <Column id="medDr" type="STRING" size="256"/>
+          <Column id="medDate" type="STRING" size="256"/>
+          <Column id="examTm" type="STRING" size="256"/>
+          <Column id="rsvCnt" type="STRING" size="256"/>
+          <Column id="totCnt" type="STRING" size="256"/>
+          <Column id="amPmFlag" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsMedDr" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="deptNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsDaySchedule">
+        <ColumnInfo>
+          <Column id="medDate" type="STRING" size="256"/>
+          <Column id="amRsvCnt" type="STRING" size="256"/>
+          <Column id="amTotCnt" type="STRING" size="256"/>
+          <Column id="pmRsvCnt" type="STRING" size="256"/>
+          <Column id="pmTotCnt" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsRsvPat">
+        <ColumnInfo>
+          <Column id="medDr" type="STRING" size="256"/>
+          <Column id="medDate" type="STRING" size="256"/>
+          <Column id="examTm" type="STRING" size="256"/>
+          <Column id="patNo" type="STRING" size="256"/>
+          <Column id="patNm" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="age" type="STRING" size="256"/>
+          <Column id="tel" type="STRING" size="256"/>
+          <Column id="note" type="STRING" size="256"/>
+          <Column id="patType" type="STRING" size="256"/>
+          <Column id="trmtCostCalcuYb" type="STRING" size="256"/>
+          <Column id="ntTtYb" type="STRING" size="256"/>
+          <Column id="nwDiv" type="STRING" size="256"/>
+          <Column id="outpaReceiptNo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsPatRsvInfo">
+        <ColumnInfo>
+          <Column id="medDr" type="STRING" size="256"/>
+          <Column id="medDate" type="STRING" size="256"/>
+          <Column id="examTm" type="STRING" size="256"/>
+          <Column id="patNo" type="STRING" size="256"/>
+          <Column id="patNm" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="age" type="STRING" size="256"/>
+          <Column id="tel" type="STRING" size="256"/>
+          <Column id="note" type="STRING" size="256"/>
+          <Column id="patType" type="STRING" size="256"/>
+          <Column id="trmtCostCalcuYb" type="STRING" size="256"/>
+          <Column id="ntTtYb" type="STRING" size="256"/>
+          <Column id="nwDiv" type="STRING" size="256"/>
+          <Column id="outpaReceiptNo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsMedDrGridComboData" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="empNo" type="STRING" size="256"/>
+          <Column id="empNm" type="STRING" size="256"/>
+          <Column id="deptNm" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="TextArea00" propid="value" datasetid="dsRsvPat" columnid="note"/>
+      <BindItem id="item1" compid="deptNmEd02" propid="value" datasetid="dsRsvPat" columnid="tel"/>
+      <BindItem id="item2" compid="Combo00" propid="value" datasetid="dsRsvPat" columnid="nwDiv"/>
+      <BindItem id="item3" compid="deptNmEd03" propid="value" datasetid="dsRsvPat" columnid="ntTtYb"/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[ 
+/**************************************************************************************************
+*                                         공통 Script Include                                     *
+***************************************************************************************************/
+
+include "scripts::commonScripts.xjs";
+include "scripts::wonScripts.xjs";
+
+
+
+ var L_SYSDATE;
+this.lfn_GetSysDate = function(sFormatYn)   //현재날짜를 리턴하는 함수 parameter에 "Y"를 전달하면 년-월-일로 반환
+{
+    //var sUrl;
+    //var sArgument;
+    var sSysDate;
+
+    //sUrl = G_SERVICEURL + "/CommonCtrl.do";	    
+	//sArgument += " service=" + "sysCommonSvc";
+	//sArgument += " method="  + "selectSysDate";
+	
+    //http.Sync = true;
+    
+    //L_SYSDATEERRYN = "N";
+    
+    //transaction("getSysDate", sURL, "", " ", sArgument, "lfn_GetSysDateCallBack");
+   
+    //http.Sync = false;
+
+    // 서버 날짜 조회시 에러가 발생하면 PC 날짜로 리턴
+    //if (L_SYSDATEERRYN == "Y") {
+       var objDate = new Date();
+       var sYear=objDate.getFullYear()+"";//년
+       var sMonth=objDate.getMonth()+1+"";//월
+       if(sMonth.toString().length == 1)
+	{
+	sMonth = "0" + sMonth;
+	}
+       var sDate=objDate.getDate()+"";//일
+         if(sDate.toString().length == 1)
+	{
+	sDate = "0" + sDate;
+	}
+       L_SYSDATE = sYear+sMonth+sDate;
+      // alert(L_SYSDATE);
+    //}
+    
+   if (sFormatYn == "Y" || sFormatYn == "y") {    
+        sSysDate = L_SYSDATE.substr(0, 4) + "-" + L_SYSDATE.substr(4, 2) + "-" + L_SYSDATE.substr(6, 2);
+   } else {
+       sSysDate = L_SYSDATE;
+   }
+	return sSysDate;
+}
+
+this.SCP_RetreatmentReservationForm_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{	var sDate=this.lfn_GetSysDate();
+	this.fn_MakeCalendar(sDate);
+	this.gfnService("findMedDrList");
+	
+}
+//function lfn_IsDate(val)  //날짜 적합성 구하기
+//{    
+ //   if (lfn_IsNumber(val) != true)
+ //   {
+ //       return false;
+ //   }
+    
+  // if (trim(val).length != 8) 
+    //{
+    //    return false;
+   // }
+    
+   // if (getDay(val) == -1)
+   // {
+   //     return false;
+   // }
+    
+   // return true;
+//}
+this.lfn_GetLastDate = function(val)   //마지막 날짜 구하기
+{
+    var sDate;
+
+    if (val.length == 6)
+    {
+        sDate = val + '01';
+    } else if (val.length == 8) {
+        sDate = val;
+    }
+	var objDate=new Date();
+	objDate.setYear(sDate.substr(0,4));
+	objDate.setMonth(sDate.substr(4,2)-1,1);
+	objDate.addMonth(1);
+	objDate.addDate(-1);
+	var last_date  = objDate.getDate();
+// 	if(sMonth.toString().length == 1)
+// 	{
+// 		sMonth = "0" + sMonth;
+//     }
+//     if(sDate.toString().length == 1)
+//     {
+//        sDate = "0" + sDate;
+//     }
+//     last_date = last_date+sMonth+sDate;
+	 return last_date;
+}
+this.fn_MakeCalendar = function(sDate)
+ {
+			sYYYY = sDate.substr(0,4);
+			sMM = sDate.substr(4,2);
+		    sDD = sDate.substr(6,2);
+			this.yearStc.set_text(sYYYY);
+			this.monthStc.set_text(sMM);
+		  //  fn_SetMonthCalendar(sYYYYMM);
+		            
+		    // 1일~말일까지 표시
+			this.dsCalendar.clearData();
+		    var sLastDay = this.lfn_GetLastDate(sDate);
+		     var objDate=new Date();
+		        objDate.setYear(sYYYY);
+		        objDate.setMonth(sMM-1);
+		   //grdCalendar.Redraw = false;    
+		    var nRow = this.dsCalendar.addRow();    
+		    var amRsvCnt;//오전예약인원
+			var amTotCnt;//오전총원
+			var pmRsvCnt;//오후예약인원
+			var pmTotCnt;//오후총원
+		    for(var i=1; i<= parseInt(sLastDay); i++) {         //1일 ~ 말일
+				objDate.setDate(i);
+				var dd=i;
+				  if(dd.toString().length == 1)
+					{
+					dd = "0" + dd;
+					}
+				
+		        var nDow = parseInt(objDate.getDay());                  //GetDay() : 0=일,1=월,2=화,..,6=토
+		        
+		        this.dsCalendar.setColumn(nRow,"DOW"+(nDow+1),i) ;
+				var row=this.dsDaySchedule.findRow("medDate",sYYYY+sMM+dd);
+				
+				if(row!=-1){
+					amRsvCnt=this.dsDaySchedule.getColumn(row,"amRsvCnt");
+					amTotCnt=this.dsDaySchedule.getColumn(row,"amTotCnt");
+					pmRsvCnt=this.dsDaySchedule.getColumn(row,"pmRsvCnt");
+					pmTotCnt=this.dsDaySchedule.getColumn(row,"pmTotCnt");
+					if(amTotCnt){
+					this.dsCalendar.setColumn(nRow,"AM"+(nDow+1),amRsvCnt+"/"+amTotCnt);}
+					if(pmTotCnt){
+					this.dsCalendar.setColumn(nRow,"PM"+(nDow+1),pmRsvCnt+"/"+pmTotCnt);}
+				}
+		        if (nDow == 6&&i!=sLastDay) nRow = this.dsCalendar.addRow();      //토요일이면 다음행 추가               
+		    }
+		    this.calendarGrid_setCellPosToday();
+
+}
+		
+this.calendarGrid_setCellPosToday=function()
+{
+	//지정일자 디폴트로 보이기
+	var objDate=new Date();
+	var sDD=objDate.getDate();
+	var sLastDay=this.lfn_GetLastDate(this.lfn_GetSysDate());
+	            
+	    
+    if ( sDD > parseInt(sLastDay) ) {
+		sDD = sLastDay;  //말일을 초과지정한 경우는 말일로.
+	}
+   
+      var nRow, nCol;
+      var bFind = false;
+      for (nRow=0; nRow<6; nRow++) {
+ 	         for (nCol=0; nCol<this.calendarGrid.getCellCount("Body"); nCol++) {
+				//alert(this.calendarGrid.getSubCellText(nRow,nCol,0));
+	            if (parseInt(this.calendarGrid.getSubCellText(nRow,nCol,0)) == parseInt(sDD)) {
+ 		                bFind = true;
+ 		                break;
+ 		            }    
+	        }
+		        if (bFind) break;
+	       }
+    
+			if (bFind) {
+				//alert(nRow);
+		        this.calendarGrid.selectRow(nRow);
+				this.calendarGrid.setCellPos(nCol);
+	    }
+	    if(this.div_Search.MedDrCombo.value){
+			this.getTimeScheduleList(nRow,nCol);
+	    }
+	
+}
+
+this.nextMonthBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sYYYY=this.yearStc.text;
+	var sMM=this.monthStc.text;
+	if(sMM==12){
+		sMM=1;
+		sYYYY=parseInt(sYYYY)+1;
+		this.yearStc.set_text(sYYYY);
+	}else{
+		sMM=parseInt(sMM)+1;
+	}
+	this.monthStc.set_text(sMM);
+	if(sMM.toString().length == 1)
+	{
+	sMM = "0" + sMM;
+	}
+	this.fn_MakeCalendar(sYYYY+""+sMM);
+	
+}
+
+this.preMonthBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sYYYY=this.yearStc.text;
+	var sMM=this.monthStc.text;
+	if(sMM==1){
+		sMM=12;
+		sYYYY=parseInt(sYYYY)-1;
+		this.yearStc.set_text(sYYYY);
+	}else{
+		sMM=parseInt(sMM)-1;
+	}
+	this.monthStc.set_text(sMM);
+	if(sMM.toString().length == 1)
+	{
+	sMM = "0" + sMM;
+	}
+	this.fn_MakeCalendar(sYYYY+""+sMM);
+
+}
+
+this.callbackFunc = function(svcID, ErrorCode, ErrorMsg){
+   if (ErrorCode < 1) {
+      trace("[" + svcID + "] 에러코드 : " + ErrorCode + "\n" + ErrorMsg);
+   } else {
+      // 트랜잭션 완료
+       trace("===== " + svcID + " 트랜잭션 성공 =====\n");
+      if(svcID=="findDayScheduleList"){
+		var sDate=this.lfn_GetSysDate();
+		this.fn_MakeCalendar(sDate);
+		this.gfnService("findRsvByPatList",false);
+		
+      }else if(svcID=="findMedDrList"){
+		this.dsMedDrGridComboData.copyData(this.dsMedDr);
+      }else if(svcID=="findTimeScheduleList"){
+      }else if(svcID=="findRsvByPatList"){
+      }
+   }
+}
+this.calendarGrid_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{	
+	var row=e.row;
+	var cell=e.cell;
+	this.getTimeScheduleList(row,cell);
+}
+this.getTimeScheduleList=function(row,cell)
+{
+var sYear=this.yearStc.text;
+	var sMonth=this.monthStc.text;
+	var sDate=(this.calendarGrid.getSubCellText(row,cell,0)).padLeft(2,"0"); 
+	var date=sYear+sMonth+sDate;
+	var empNo=this.div_Search.MedDrCombo.value;
+	var argument="empNo="+empNo+" date="+date;
+	var nRow=this.dsService.findRow("serviceID","findTimeScheduleList");
+	this.dsService.setColumn(nRow,"argument",argument);
+	this.gfnService("findTimeScheduleList",false);	
+
+}
+this.div_Search_searchMedDrBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	application.open("CM_DoctPopupForm","com::CM_DoctPopupForm.xfdl",this.parent,{},"showtitlebar=true showstatusbar=false", 0, 0, 800, 443, this);
+}
+
+this.div_Search_searchPatBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	application.open("WS_PatPopupForm","hdm::WS_PatPopupForm.xfdl",this.parent,{},"showtitlebar=true showstatusbar=false", 0, 0, 800, 443, this);
+}
+
+this.setDoct = function(arr)
+{
+	this.div_Search.medDeptEd.set_value(arr[2]);
+	this.dsMedDr.filter("deptNm=='"+arr[2]+"'");
+	this.div_Search.MedDrCombo.set_value(arr[0]);
+	
+}
+this.div_Search_searchTrmtSchBtn_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	
+	var empNo=this.div_Search.MedDrCombo.value;
+	var patNo=this.div_Search.patNoEd.value;
+	var argument="empNo="+empNo+" patNo="+patNo;
+	var nRow=this.dsService.findRow("serviceID","findDayScheduleList");
+	this.dsService.setColumn(nRow,"argument",argument);
+	nRow=this.dsService.findRow("serviceID","findRsvByPatList");
+	this.dsService.setColumn(nRow,"argument",argument);
+	this.gfnService("findDayScheduleList",false);
+	
+	
+}
+
+this.dsTimeSchedule_onrowposchanged = function(obj:Dataset, e:nexacro.DSRowPosChangeEventInfo)
+{
+	var examTm=obj.getColumn(obj.rowposition,"examTm");
+	this.dsRsvPat.filter("examTm=='"+examTm+"'");
+}
+
+]]></Script>
+  </Form>
+</FDL>

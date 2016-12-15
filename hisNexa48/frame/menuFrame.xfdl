@@ -4,7 +4,8 @@
   <Form id="menuFrame" classname="menuFrame" left="0" top="0" width="1275" height="85" titletext="menuFrame" onload="menuFrame_onload">
     <Layouts>
       <Layout>
-        <Menu id="menu" taborder="0" innerdataset="@dsMenu" idcolumn="menuCode" captioncolumn="menuName" levelcolumn="menuLevel" userdatacolumn="menuUrl" onmenuclick="menu_onmenuclick" left="2.96%" top="7" right="0.32%" height="33" style="itempadding:0 13 0 13;popupitemheight:25;popupitempadding:1 3 1 3;popupfont:bold antialias 12 맑은 고딕;background:transparent;color:black;font:bold antialias 12 문체부 돋음체;"/>
+    
+        <Menu id="menu" taborder="0" innerdataset="@dsMenu" idcolumn="menuCode" captioncolumn="menuName" levelcolumn="menuLevel" userdatacolumn="menuUrl" onmenuclick="menu_onmenuclick" left="2.96%" top="7" right="0.32%" height="33" style="itempadding:0 13 0 13;popuppadding:0 0 0 0;popupitemheight:25;popupitempadding:3 1 3 1;popupfont:bold antialias 12 맑은 고딕;background:transparent;color:black;font:bold antialias 12 문체부 돋음체;"/>
         <Static id="subCodeStc" taborder="1" text="권한명" onclick="subCodeStc_onclick" left="10.96%" top="-1429" right="87.28%" height="27" style="background:#c4d2daff;color:black;bordertype:round 5 5 ;align:center middle;font:bold 10 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
         <Static id="empNameStc" taborder="2" onclick="subCodeStc_onclick" left="90.24%" top="49" right="1.52%" height="26" style="background:transparent;border:1 solid lightsteelblue ;color:black;bordertype:round 2 2 ;align:center middle;font:bold 9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>
         <Static id="empNameStc00" taborder="3" onclick="subCodeStc_onclick" left="77.36%" top="49" right="16.16%" height="26" style="background:transparent;border:1 solid lightsteelblue ;color:black;bordertype:round 2 2 ;align:center middle;font:bold 9 돋움;blur:0 ;glow:0 transparent;" class="AreaStc"/>

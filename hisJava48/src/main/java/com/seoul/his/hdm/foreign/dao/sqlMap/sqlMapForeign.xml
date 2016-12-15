@@ -65,7 +65,7 @@
                          FROM WS_OUTPA_RECEIPT
                GROUP BY pat_no) o, (SELECT hosptlz_receipt_no, pat_no FROM WH_HOSPTLZ_RECEIPT) h
 		 WHERE p.pat_no = o.pat_no(+)
-	  
+
 	   AND
 	  	 o.pat_no = h.pat_no(+)
 			<if test="patNm != '' and patNm != null">
@@ -77,7 +77,7 @@
 			<if test="rrn1 != '' and rrn1 != null and rrn2 != '' and rrn2 != null">
 				AND p.RRN1=#{rrn1} AND FN_WS_DECRYPT(p.RRN2)=#{rrn2}
 			</if>
-		
+
 		order by
 		pat_no
 	</select>

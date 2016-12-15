@@ -9,11 +9,7 @@ import org.springframework.stereotype.Component;
 import com.seoul.his.msv.mcm.patientservice.dao.AdrDAO;
 import com.seoul.his.msv.mcm.patientservice.dao.AttentionalFieldDAO;
 import com.seoul.his.msv.mcm.patientservice.dao.AttentionalPatientDAO;
-import com.seoul.his.msv.mcm.patientservice.dao.EmrDAO;
-import com.seoul.his.msv.mcm.patientservice.to.AdrBean;
-import com.seoul.his.msv.mcm.patientservice.to.AttentionalFieldBean;
 import com.seoul.his.msv.mcm.patientservice.to.AttentionalPatientBean;
-import com.seoul.his.msv.mcm.patientservice.to.EmrBean;
 
 /**
  * <pre>
@@ -37,8 +33,9 @@ public class PatientServiceApplicationServiceImpl implements PatientServiceAppli
 	AdrDAO adrDAO;
 	@Autowired
 	EmrDAO emrDAO;
+	@Autowired
+	MedicalConsultationRequestDAO medicalConsultationRequestDAO;
 
-	/* 	 EMR 관리	*/
 	@Override
 	public List<EmrBean> findEmrList(Map<String, String> argsMap) {
 		return emrDAO.selectEmrList(argsMap);
@@ -81,45 +78,4 @@ public class PatientServiceApplicationServiceImpl implements PatientServiceAppli
 		List<AttentionalFieldBean> attentionalCodeList = attentionalFieldDAO.selectAttentionalFieldList(argsMap);
 		return attentionalCodeList;
 	}
-
-	@Override
-	public void batchAttentionalFieldProcess(List<AttentionalFieldBean> attentionalFieldList) {
-		for (AttentionalFieldBean attentionalFieldBean : attentionalFieldList) {
-			String status = attentionalFieldBean.getStatus();
-			switch (status) {
-			case "inserted":
-				attentionalFieldDAO.insertAttentionalField(attentionalFieldBean);
-				break;
-			case "updated":
-				attentionalFieldDAO.updateAttentionalField(attentionalFieldBean);
-				break;
-			case "deleted":
-				attentionalFieldDAO.deleteAttentionalField(attentionalFieldBean);
-				break;
-			}
-		}
-	}
-	/* ADR 관리 */
-	@Override
-	public List<AdrBean> findAdrList(Map<String, String> argsMap) {
-		return adrDAO.selectAdrList(argsMap);
-	}
-
-	@Override
-	public void batchAdrProcess(List<AdrBean> adrList) {
-		for (AdrBean adrBean : adrList) {
-			String status = adrBean.getStatus();
-			switch (status) {
-			case "inserted":
-			case "updated":
-				adrDAO.upsertAdr(adrBean);
-				break;
-			case "deleted":
-				adrDAO.deleteAdr(adrBean);
-				break;
-			}
-		}
-
-	}
-
 }
