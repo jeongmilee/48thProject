@@ -91,16 +91,6 @@
             obj.getSetter("class").set("AreaEdt");
             obj.style.set_font("9 돋움");
             this.adrDiv.addChild(obj.name, obj);
-            obj = new Button("DelBtn10", "absolute", "212", "11", "32", "32", null, null, this.adrDiv);
-            obj.set_taborder("25");
-            obj.set_cssclass("DelBtn");
-            obj.style.set_background("@gradation URL('img::miniSearchBtn.png') stretch");
-            obj.style.set_border("1 none #999999ff");
-            obj.style.set_font("9 돋움");
-            obj.style.set_cursor("hand");
-            obj.style.set_gradation("none 0,0 white 100,100 black");
-            obj.getSetter("class").set("DelBtn");
-            this.adrDiv.addChild(obj.name, obj);
 
             obj = new Grid("Grid00", "absolute", "1.92%", "232", null, "520", "67.6%", null, this);
             obj.set_taborder("5");
@@ -228,16 +218,6 @@
             obj.set_codecolumn("codecolumn");
             obj.set_datacolumn("datacolumn");
             obj.style.set_font("9 돋움");
-            obj = new Button("DelBtn00", "absolute", "445", "41", "32", "32", null, null, this.adrDiv02);
-            obj.set_taborder("7");
-            obj.set_cssclass("DelBtn");
-            obj.style.set_background("@gradation URL('img::miniSearchBtn.png') stretch");
-            obj.style.set_border("1 none #999999ff");
-            obj.style.set_font("9 돋움");
-            obj.style.set_cursor("hand");
-            obj.style.set_gradation("none 0,0 white 100,100 black");
-            obj.getSetter("class").set("DelBtn");
-            this.adrDiv02.addChild(obj.name, obj);
 
             obj = new Div("adrDiv03", "absolute", "33.92%", "604", "805", "148", null, null, this);
             obj.set_taborder("11");
@@ -480,15 +460,6 @@
             obj.set_taborder("3");
             obj.style.set_font("9 돋움");
             this.patDiv.addChild(obj.name, obj);
-            obj = new Button("prscSearchBtn", "absolute", "213", "5", "32", "32", null, null, this.patDiv);
-            obj.set_taborder("4");
-            obj.style.set_background("@gradation URL('img::miniSearchBtn.png') stretch");
-            obj.style.set_border("1 none #999999ff");
-            obj.style.set_font("9 돋움");
-            obj.style.set_cursor("hand");
-            obj.style.set_gradation("none 0,0 white 100,100 black");
-            obj.getSetter("class").set("DelBtn");
-            this.patDiv.addChild(obj.name, obj);
             obj = new Edit("patNmEdit", "absolute", "27.02%", "40", null, "30", "54.67%", null, this.patDiv);
             obj.set_taborder("6");
             obj.style.set_font("9 돋움");
@@ -575,7 +546,7 @@
             obj.set_taborder("6");
             obj.style.set_font("9 돋움");
             this.adrDiv00.addChild(obj.name, obj);
-            obj = new Edit("Edit00", "absolute", "12.7%", "42", null, "30", "0.75%", null, this.adrDiv00);
+            obj = new Edit("Edit00", "absolute", "12.7%", "44", null, "30", "0.75%", null, this.adrDiv00);
             obj.set_taborder("7");
             obj.style.set_font("9 돋움");
             this.adrDiv00.addChild(obj.name, obj);
@@ -625,7 +596,7 @@
             obj.set_cssclass("btn_WF_SearchSmall");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button00", "absolute", "642", "72", "30", "30", null, null, this);
+            obj = new Button("prscSearchBtn", "absolute", "642", "72", "30", "30", null, null, this);
             obj.set_taborder("21");
             obj.set_cssclass("btn_WF_SearchSmall");
             this.addChild(obj.name, obj);
@@ -951,7 +922,6 @@
         {
             this.adrDiv.subCodeStc02.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.adrDiv.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
-            this.adrDiv.DelBtn10.addEventHandler("onclick", this.DelBtn_onclick, this);
             this.writerDiv.subCodeStc02.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.writerDiv.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.writerDiv.subCodeStc01.addEventHandler("onclick", this.subCodeStc_onclick, this);
@@ -959,7 +929,6 @@
             this.adrDiv02.subCodeStc01.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.adrDiv02.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.adrDiv02.subCodeStc02.addEventHandler("onclick", this.subCodeStc_onclick, this);
-            this.adrDiv02.DelBtn00.addEventHandler("onclick", this.DelBtn_onclick, this);
             this.adrDiv03.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.drugDiv.subCodeStc02.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.drugDiv.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
@@ -974,7 +943,6 @@
             this.revealDiv.inoutRadio.addEventHandler("onitemclick", this.adrDiv05_inoutRadio_onitemclick, this);
             this.patDiv.subCodeStc02.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.patDiv.subCodeStc00.addEventHandler("onclick", this.subCodeStc_onclick, this);
-            this.patDiv.prscSearchBtn.addEventHandler("onclick", this.patDiv_prscSearchBtn_onclick, this);
             this.patDiv.subCodeStc01.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.patDiv.subCodeStc03.addEventHandler("onclick", this.subCodeStc_onclick, this);
             this.patDiv.subCodeStc04.addEventHandler("onclick", this.subCodeStc_onclick, this);
@@ -985,6 +953,8 @@
             this.addBtn.addEventHandler("onclick", this.addBtn_onclick, this);
             this.delBtn.addEventHandler("onclick", this.delBtn_onclick, this);
             this.findWriterBtn.addEventHandler("onclick", this.findWriterBtn_onclick, this);
+            this.prscSearchBtn.addEventHandler("onclick", this.patDiv_prscSearchBtn_onclick, this);
+            this.Button01.addEventHandler("onclick", this.DelBtn_onclick, this);
             this.batchBtn.addEventHandler("onclick", this.batchBtn_onclick, this);
 
         };
