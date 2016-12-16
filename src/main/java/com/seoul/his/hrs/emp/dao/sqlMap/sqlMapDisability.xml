@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seoul.his.hrs.emp.dao.DisabilityDAO">
+
+	<select id="findDisabilityList" resultType="DisabilityBean">
+		SELECT
+		EMP_NO AS empNo,							<!-- 사원번호 -->
+		DISABILITY_APV_DAY AS disabilityApvDay,     <!-- 장애인정일 -->
+		DISABILITY_APV_DIV AS disabilityApvDiv,		<!-- 장애인정 구분 -->
+		DISABILITY_TYPE AS disabilityType,          <!-- 장애유형 -->
+		DISABILITY_GRADE AS disabilityGrade,	    <!-- 장애등급 -->
+		INTENSIVE_YN AS intensiveYn,				<!-- 중증여부 -->
+		NOTE,									    <!-- 비고 -->
+		DISABILITY_SEQ AS disabilitySeq			    <!-- 장애시퀀스 -->
+		FROM HM_DISABILITY_INFO
+		where emp_no=#{empNo}						<!-- 사원번호 -->
+	</select>
+
+	<insert id="insertDisability" parameterType="DisabilityBean">
+		INSERT INTO
+		HM_DISABILITY_INFO
+		(EMP_NO ,				<!-- 사원번호 -->
+		DISABILITY_APV_DAY ,	<!-- 장애인정일 -->
+		DISABILITY_APV_DIV ,    <!-- 장애인정 구분 -->
+		DISABILITY_TYPE ,		<!-- 장애유형 -->
+		DISABILITY_GRADE ,		<!-- 장애등급 -->
+		INTENSIVE_YN ,			<!-- 중증여부 -->
+		NOTE,					<!-- 비고 -->
+		DISABILITY_SEQ			<!-- 장애시퀀스 -->
+		)
+		VALUES
+		(
+		#{empNo},				<!-- 사원번호 -->
+		#{disabilityApvDay},	<!-- 장애인정일 -->
+		#{disabilityApvDiv},	<!-- 장애인정 구분 -->
+		#{disabilityType},		<!-- 장애유형 -->
+		#{disabilityGrade},		<!-- 장애등급 -->
+		#{intensiveYn},			<!-- 중증여부 -->
+		#{note},				<!-- 비고 -->
+		DISABILITY_SEQ.nextval  <!-- 장애시퀀스 -->
+		)
+	</insert>
+
+	<update id="updateDisability" parameterType="DisabilityBean">
+		update
+		HM_DISABILITY_INFO
+		set
+		DISABILITY_APV_DAY = #{disabilityApvDay},	<!-- 장애인정일 -->
+		DISABILITY_APV_DIV = #{disabilityApvDiv},	<!-- 장애인정 구분 -->
+		DISABILITY_TYPE = #{disabilityType},		<!-- 장애유형 -->
+		DISABILITY_GRADE = #{disabilityGrade},		<!-- 장애등급 -->
+		INTENSIVE_YN = #{intensiveYn},				<!-- 중증여부 -->
+		NOTE = #{note}								<!-- 비고 -->
+		where
+		EMP_NO =#{empNo} and						<!-- 사원번호 -->
+		DISABILITY_SEQ = #{disabilitySeq}			<!-- 장애시퀀스 -->
+	</update>
+
+	<delete id="deleteDisability" parameterType="DisabilityBean">
+		delete from
+		HM_DISABILITY_INFO
+		where
+		EMP_NO =#{empNo}							<!-- 사원번호 -->
+	</delete>
+
+	<delete id="destroyDisability" parameterType="String">
+		delete from
+		HM_DISABILITY_INFO
+		where
+		EMP_NO =#{empNo}							<!-- 사원번호 -->
+	</delete>
+
+</mapper>

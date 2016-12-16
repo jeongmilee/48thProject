@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seoul.his.com.base.dao.AuthDAO">
+
+    <cache flushInterval="86400000" eviction="LRU" />
+    
+    <select id="selectAuthList" flushCache="false" useCache="true" resultType="AuthBean">
+        SELECT 
+            auth_code as authCode,
+            auth_name as authName
+        FROM
+            CM_AUTH
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="authName != null">
+                AND AUTH_NAME LIKE '%' || #{authName} || '%'
+            </if>
+        </trim>
+    </select>
+    
+    <insert id="insertAuth" parameterType="AuthBean">
+        INSERT INTO 
+            CM_AUTH(
+                AUTH_CODE,
+                AUTH_NAME
+            )
+        VALUES (
+            #{authCode},
+            #{authName}
+        )
+    </insert>
+
+    <delete id="deleteAuth" parameterType="AuthBean">
+        DELETE FROM 
+            CM_AUTH
+        WHERE
+            AUTH_CODE = #{authCode}
+    </delete>
+
+    <update id="updateAuth" parameterType="AuthBean">
+        UPDATE
+            CM_AUTH
+        SET
+            AUTH_CODE = #{authCode}
+        WHERE 
+            AUTH_NAME = #{authName}
+    </update>
+    
+</mapper>

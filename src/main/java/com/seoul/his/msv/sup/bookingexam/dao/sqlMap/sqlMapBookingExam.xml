@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seoul.his.msv.sup.bookingexam.dao.BookingExamDAO">
+	<cache flushInterval="86400000" eviction="LRU" />
+	
+	<resultMap type="BookingExamBean" id="BookingExam">
+
+		<result property="empNo" column="EMP_NO" />
+		<result property="empNm" column="EMP_NM" />
+
+ 	</resultMap>
+
+ 	<select id="selectBookingExamList" flushCache="false"  useCache="true" resultMap="BookingExam" >
+
+	select * from hm_emp
+
+ 	</select>
+
+</mapper>

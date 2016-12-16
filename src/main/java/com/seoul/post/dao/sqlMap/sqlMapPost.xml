@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seoul.post.dao.PostDAO">
+    
+    <select id="selectSidoList" resultType="PostCondBean">
+    <![CDATA[
+        SELECT DISTINCT
+            code AS sido_code,
+            value AS sido_name,
+            '' AS sigungu_code,
+            '' AS sigungu_name,
+            '' AS road_keyword,
+            '' AS dong_keyword
+        FROM
+            post_si
+        ORDER BY 
+            sido_name
+    ]]>
+    </select>
+    
+    <select id="selectSigunguList" resultType="PostCondBean" parameterType="String">
+    <![CDATA[
+        SELECT DISTINCT
+            '' AS sido_code,
+            '' AS sido_name,
+            code AS sigungu_code,
+            value AS sigungu_name,
+            '' AS road_keyword,
+            '' AS dong_keyword
+        FROM
+            post_sigungu
+        WHERE
+            code = #{sido}
+        ORDER BY
+            value
+    ]]>
+    </select>
+    
+    <select id="selectRoadPostList" resultType="PostBean" parameterType="PostCondBean">
+    <![CDATA[
+        SELECT DISTINCT
+            road_id,
+            zipcode AS zip_code,
+            si 
+            || ' ' 
+            || sigungu 
+            || CASE WHEN borough IS NULL THEN '' ELSE ' ' || borough END
+            || CASE WHEN ri IS NULL THEN ' ' ELSE ' ' || ri || ' ' END
+            || road_name 
+            || ' '
+            || building_code1 
+            || DECODE(building_code2, '0', '', '-' || building_code2) 
+            || ' '
+            || building_sigungu AS base_addr 
+        FROM 
+            road_post_${sidoCode}
+        WHERE
+            sigungu = #{sigunguName} AND
+            (road_name LIKE '%' || #{roadKeyword} || '%' OR building_sigungu LIKE '%' || #{roadKeyword} || '%')
+        ORDER BY
+            road_id
+    ]]>
+    </select>
+    
+      
+    <select id="selectDongPostList" resultType="PostBean" parameterType="string">
+    <![CDATA[
+        SELECT
+            zip_no AS zip_code,
+            sido || ' ' || gugun || ' ' || dong || ' ' || ri || ' ' || bunji AS base_addr
+        FROM
+            s_zipcode
+        WHERE
+            dong LIKE '%${dong}%'
+        ORDER BY
+            seq
+    ]]>
+    </select>
+
+</mapper>

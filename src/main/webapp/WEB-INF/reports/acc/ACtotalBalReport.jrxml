@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ACtotalBalReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c9babeae-c5d3-442f-8a60-a7aece4888c9">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="29"/>
+	<property name="ireport.y" value="0"/>
+	<field name="acntNm" class="java.lang.String"/>
+	<field name="debBal" class="java.lang.String"/>
+	<field name="debSum" class="java.lang.String"/>
+	<field name="creSum" class="java.lang.String"/>
+	<field name="creBal" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="111" height="20" uuid="244f44e1-851c-4f06-a730-65c42de720b0"/>
+				<textElement>
+					<font pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[잔액]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="20" width="111" height="20" uuid="aed453c8-d587-465e-a7ad-d7f65755fb23"/>
+				<textElement>
+					<font pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[합계]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="40" uuid="d0c2eb6d-8644-4523-a135-a2581c7af04f"/>
+				<textElement>
+					<font pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[계정과목]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="20" width="111" height="20" uuid="6d735fe7-8f4b-4151-9e82-24cdc2afb525"/>
+				<textElement>
+					<font pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[합계]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="20" width="111" height="20" uuid="e7ddead9-7d37-489b-bb3b-d91eb3977272"/>
+				<textElement>
+					<font pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[잔액]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="222" height="20" uuid="d4dcb97c-d8d2-405c-b8fc-4ce750f694e3"/>
+				<textElement>
+					<font pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[차변]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="222" height="20" uuid="1db12294-9e2c-45e2-bcbc-9f4d4fb40f44"/>
+				<textElement>
+					<font pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[대변]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="222" y="0" width="111" height="20" uuid="9c116595-ad2c-4765-98c3-787abc5618ed"/>
+				<textFieldExpression><![CDATA[$F{acntNm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="cc0bd676-59ed-44e5-8c38-d5cc95a117ee"/>
+				<textFieldExpression><![CDATA[$F{debBal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="b2c8508a-2169-42c4-9c75-091234254825"/>
+				<textFieldExpression><![CDATA[$F{debSum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="c74a7706-87e4-4f3b-98f9-36325c4fa95d"/>
+				<textFieldExpression><![CDATA[$F{creSum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="6ba6bd01-065c-4a82-9240-11496b273336"/>
+				<textFieldExpression><![CDATA[$F{creBal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

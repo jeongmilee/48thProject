@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="settlemReporting" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0011ea58-59db-4689-9987-4577faf15530">
+	<property name="ireport.zoom" value="1.6105100000000165"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="655"/>
+	<property name="ireport.callouts" value="##Thu Sep 17 12:34:44 KST 2015"/>
+	<field name="patNo" class="java.lang.String"/>
+	<field name="prescNo" class="java.lang.String"/>
+	<field name="prescDate" class="java.lang.String"/>
+	<field name="dept" class="java.lang.String"/>
+	<field name="surYn" class="java.lang.String"/>
+	<field name="gubun" class="java.lang.String"/>
+	<field name="code" class="java.lang.String"/>
+	<field name="codeNm" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement x="133" y="31" width="283" height="32" uuid="1d11fca4-cdd4-482b-80d6-2ae897a36684"/>
+				<textElement textAlignment="Center">
+					<font fontName="한컴 윤고딕 230" size="30" pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Patient's Chart]]></text>
+			</staticText>
+			<line>
+				<reportElement x="143" y="65" width="260" height="1" uuid="f0cfbd5f-5975-4667-a662-349f001afc1f"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="14" height="20" uuid="7454a257-45e2-4fe6-b4db-2fb6be77ab94"/>
+				<textElement>
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="0" width="14" height="20" uuid="3cdd575a-3a78-4e73-b443-22ffdf148858"/>
+				<textElement>
+					<font size="12" pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="28" y="0" width="18" height="20" uuid="4376f229-bf61-44ce-afde-87ea9ef54224"/>
+				<textElement>
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="17" width="60" height="1" uuid="1923d702-3d26-4eda-b958-7dbcc653b51b"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="17" width="56" height="20" uuid="ba464608-2c46-4edf-9dad-d3374177611b"/>
+				<textElement>
+					<font size="12" pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Page]]></text>
+			</staticText>
+			<line>
+				<reportElement x="143" y="69" width="260" height="1" uuid="63fd910b-bb71-4e39-9dfa-17dab1b07f4d"/>
+			</line>
+			<rectangle>
+				<reportElement x="506" y="20" width="49" height="43" uuid="ce623e46-0b36-4777-b8a3-2033a193eac6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="506" y="0" width="49" height="20" uuid="6aeec7fa-8a9d-4f5e-8747-eed1cc0913b8"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="506" y="0" width="49" height="20" uuid="b93e52b4-9694-4dc5-8cb1-4e6bbc15a7e9"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[발행처]]></text>
+			</staticText>
+			<image>
+				<reportElement x="508" y="21" width="180" height="41" uuid="f83a6041-1bd2-44b3-9d0c-fa39f20df4e9"/>
+				<imageExpression><![CDATA["http://192.168.1.135/img/origin32.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="41" width="134" height="20" uuid="70f11ef0-398d-4d2e-951d-2155a58678a7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="321" y="41" width="234" height="20" uuid="5c394839-75c3-4f9c-9a4c-f693c42c9f71"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="41" width="134" height="20" uuid="7d7ffb18-1d31-4490-87c8-90e40065f467"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[환자등록번호]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="41" width="82" height="20" uuid="4a8240a6-02d7-49a7-84b1-c0de1b5da76e"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[진료과]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="134" y="1" width="421" height="25" uuid="0582ceb3-b4b2-498b-8ac4-1a3fc90bbb90"/>
+			</rectangle>
+			<line>
+				<reportElement x="0" y="28" width="555" height="1" uuid="8a511f81-a185-486f-8b12-7e20c0c91034"/>
+			</line>
+			<staticText>
+				<reportElement x="143" y="1" width="298" height="25" backcolor="#999999" uuid="5abc7189-7795-4b1a-b743-88d2fc9f3825"/>
+				<textElement textAlignment="Right">
+					<font size="10" pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[작성일시 :]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="441" y="1" width="114" height="25" backcolor="#999999" uuid="dcad102b-a653-4352-b1ac-23e97c32abc9"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="56" y="1" width="87" height="25" uuid="0eb12264-5a18-49a0-aadf-79d23535ccf7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="1" width="56" height="25" uuid="65502ed1-7886-4645-be07-3edee1825e39"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="1" width="56" height="25" uuid="a68058b8-be0b-4cf2-bb9e-bff0884af33f"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[Presc No.]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="134" y="41" width="187" height="20" uuid="55927665-74fa-46ae-ab41-d4b676a9ad73"/>
+			</rectangle>
+			<textField>
+				<reportElement x="134" y="41" width="187" height="20" uuid="6ef1ea66-4a43-4c7b-8cd5-f942f17e5d93"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patNo}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="403" y="41" width="152" height="20" uuid="b3b67f03-7f0f-4d9d-83d7-04f655820954"/>
+			</rectangle>
+			<textField>
+				<reportElement x="56" y="1" width="87" height="25" uuid="47c6d84b-2037-4115-8040-7fee874e315e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{prescNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="41" width="152" height="20" uuid="2b392e97-f82b-47e1-89e9-4077cb510de3"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dept}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="517" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="134" height="20" uuid="f7c0ce8e-7c6b-4a32-9e7f-7b7e1815d767"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="134" y="0" width="187" height="20" uuid="7a9088d5-b910-4bc6-ac5f-f5f4fda060db"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="321" y="0" width="234" height="20" uuid="fa529b70-92ef-480f-87c8-d9fffe18de4a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="55" width="555" height="20" uuid="4d989f10-38bc-4e56-9c63-cdc6c83af5f4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="55" width="555" height="20" uuid="066c5a81-7a33-44a1-8e91-ba722d20b05c"/>
+				<textElement textAlignment="Justified">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[     Diagnosis]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="75" width="555" height="193" uuid="5c960109-3034-44fb-8c6c-ea6cb154df13"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="134" height="20" uuid="673530be-6243-4125-b684-a266e58d9c5c"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[환자구분]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="321" y="0" width="82" height="20" uuid="5af7f5f6-3009-481d-904e-ace2e53642d1"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="321" y="0" width="82" height="20" uuid="68e692e3-4aa2-43e1-beca-b5c8a039c440"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[수술여부]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="304" width="555" height="200" uuid="840b9d40-c133-49c1-a8e2-c18b16066748"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="20" width="134" height="20" uuid="302f3660-09d1-4059-acac-a9998c12fe94"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="20" width="134" height="20" uuid="230ab8b9-fbdf-4ff9-8fff-e2d02f34866a"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[처방일자]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="134" y="20" width="187" height="20" uuid="53e6bbc9-fbeb-4aaa-93c7-1cb560b7dd33"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="321" y="20" width="82" height="20" uuid="caaff64d-221b-4370-a366-15257e8b46fe"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="403" y="20" width="152" height="20" uuid="75b8299b-c1d0-4380-a735-bb96517cfbec"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="284" width="555" height="20" uuid="12295f93-e38e-47d8-9cec-35c7c1828487"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="284" width="555" height="20" uuid="299121e3-78ac-4ea1-82ec-afc7f05d7ddf"/>
+				<textElement>
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[     C / C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="116" width="77" height="20" uuid="322e8388-daff-4582-91b1-75eace3bf859"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[상       병  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="91" width="77" height="20" uuid="bb2388ac-a487-4281-8810-fdae56b6c840"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[상 병 코 드  :]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="304" width="416" height="180" uuid="49065e7c-c37d-42be-9ba5-ec38b7f26610"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="484" width="416" height="20" uuid="af52a1f6-b540-47cd-9468-6e0bd4c3b5d6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="319" width="56" height="20" uuid="e37e8cbd-0731-4c27-bdde-e0a5c9fde5c6"/>
+				<textElement>
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[수가 코드 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="319" width="34" height="20" uuid="d30f5a5b-7ff8-4e2b-aebf-e6a99c2f3e7c"/>
+				<textElement>
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[명칭 : ]]></text>
+			</staticText>
+			<elementGroup/>
+			<rectangle>
+				<reportElement x="327" y="75" width="228" height="193" uuid="888f73b3-1915-47e9-a7b4-17d36117e762"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="416" y="304" width="139" height="25" uuid="d0456874-02ae-419c-b6d0-ff11d985abfb"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="416" y="304" width="139" height="25" uuid="7d683bf6-898e-42f3-a041-37fa407d35f9"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[특이사항]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="20" width="187" height="20" uuid="b03b824f-e2b7-4461-9c3f-1400ea803229"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prescDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="0" width="152" height="20" uuid="907fda9f-5182-4c48-82ee-a3a8677169b1"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{surYn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="0" width="187" height="20" uuid="bcdd5193-f6a5-4d39-b9e4-b2f81b34e3d5"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gubun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="91" width="100" height="20" uuid="335e970f-26af-4c92-b967-84931c3d17cf"/>
+				<textElement>
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="116" width="100" height="20" uuid="a5227a9d-13a6-4b17-9c53-9ff1453df4b9"/>
+				<textElement>
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codeNm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="416" y="329" width="139" height="20" uuid="60e3003f-388f-4b07-8446-eef91400268e"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[특이사항 없음.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="344" y="83" width="366" height="177" uuid="f0452b4f-184f-4776-8a0b-6cfbc731e1d6"/>
+				<imageExpression><![CDATA["http://192.168.1.135/img/image005.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="441" y="5" width="46" height="20" uuid="7288d0c4-ae43-47f1-aa6d-fd768959fe11"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[진료의 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="5" width="68" height="20" uuid="8a6778dd-2dc4-4b87-a906-17e327841717"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[ 허  준]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="12" width="540" height="29" uuid="c8a0db81-d56a-4534-8b1d-aa94716083e1"/>
+				<textElement textAlignment="Center">
+					<font size="16" pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[SASAM HOSPITAL]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="41" width="555" height="1" uuid="b705482f-859b-4553-a247-a120c68604db"/>
+			</line>
+			<image>
+				<reportElement x="182" y="10" width="55" height="29" uuid="44c9aaf0-3e4c-4d62-999a-7222d4443508"/>
+				<imageExpression><![CDATA["http://192.168.1.135/img/cross_1-128.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

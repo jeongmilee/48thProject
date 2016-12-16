@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6fda4e58-e072-4523-a1b7-5e389c5a1f2e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<field name="patNo" class="java.lang.String"/>
+	<field name="receAmt" class="java.lang.String"/>
+	<field name="sal" class="java.lang.String"/>
+	<field name="nonSal" class="java.lang.String"/>
+	<field name="memo" class="java.lang.String"/>
+	<field name="patName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#000000" uuid="f0ec639f-808d-4f9d-ab29-ba5d66e9f941"/>
+				<staticText>
+					<reportElement x="2" y="0" width="344" height="66" forecolor="#FFFFFF" uuid="eb286969-f931-473c-805b-384c9e67e9a2"/>
+					<textElement>
+						<font size="35" isBold="true" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<text><![CDATA[외래 수납 내역]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="95" width="555" height="37" forecolor="#000000" backcolor="#CC0000" uuid="0b69440b-213f-4fda-9018-57f2268c3278"/>
+				<textField pattern="yyyy년 MMMMM dd일 EEEEE ">
+					<reportElement x="410" y="17" width="144" height="20" forecolor="#FFFFFF" uuid="79f2662c-498b-404c-9d16-cb4ecbb797cb"/>
+					<textElement textAlignment="Right">
+						<font size="12" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="0" width="88" height="32" forecolor="#FFFFFF" backcolor="#CCFF33" uuid="23fccdd4-0787-4bce-b688-d5ef9758aa9e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="17" isBold="true" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<text><![CDATA[환자번호]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="90" y="0" width="120" height="32" uuid="a59af1d4-8ff9-4019-85d2-49c3e3511814"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="17"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{patNo}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="350" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="60" width="200" height="60" forecolor="#FFFFFF" uuid="714ab666-77a1-4f36-802b-8a720f2be012"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="17" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[주민번호]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="288" width="200" height="60" forecolor="#FFFFFF" uuid="98b9d259-8c5c-4462-98d5-fb68aac0ab44"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="17" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[부서번호]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="210" height="348" forecolor="#B89F7D" backcolor="#000000" uuid="a688ebf3-172a-489d-9df3-cc8b5ed3864c"/>
+				<staticText>
+					<reportElement x="2" y="0" width="200" height="60" forecolor="#FFFFFF" uuid="50c04894-f74f-4ccd-aed0-641f240f3c3d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="17" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<text><![CDATA[이름]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="110" width="200" height="59" forecolor="#FFFFFF" uuid="051a08cf-2ccb-476c-bd80-841c82f53c6f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="17" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<text><![CDATA[비급여]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="169" width="200" height="60" forecolor="#FFFFFF" uuid="9c3b2d45-8190-4d3b-9f02-271c86155371"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="17" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<text><![CDATA[계]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="228" width="200" height="109" forecolor="#FFFFFF" uuid="ad2faf15-16da-4cc8-b02c-db849d34750f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="17" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<text><![CDATA[메모]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="60" width="200" height="59" forecolor="#FFFFFF" uuid="f6d73361-921a-4e24-b6ab-24fc871cf5e4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="17" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<text><![CDATA[의료급여]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="411" y="0" width="144" height="348" forecolor="#B89F7D" backcolor="#000000" uuid="2007bc9d-5b17-4a33-b96f-d5f4e333ade0"/>
+			</frame>
+			<textField>
+				<reportElement x="210" y="0" width="200" height="60" uuid="f4a4ea8f-e23c-4e76-85f8-e3dab31ec568"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="60" width="200" height="50" uuid="c1d2caf8-0e88-4ba6-984e-fc13f20ae9ac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="110" width="200" height="59" uuid="7dc17420-600b-4850-bed6-406ff6096fe1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nonSal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="228" width="199" height="120" uuid="547e5a4d-50c9-4a9e-afad-8a544247d261"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{memo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="169" width="200" height="60" uuid="e573d157-7075-4f67-b82c-b3dfd318ede6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{receAmt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="829732c4-7153-4037-a92d-d01ed0b8f843"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="291" y="4" width="40" height="20" forecolor="#FFFFFF" uuid="f039235a-6147-47be-90c2-90d6dd9f9622"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="211" y="4" width="80" height="20" forecolor="#FFFFFF" uuid="0cc7a8b3-33a9-4f64-acf4-ea7a34537fd8"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false" pdfFontName="HYGoThic-Medium" pdfEncoding="UniKS-UCS2-H"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

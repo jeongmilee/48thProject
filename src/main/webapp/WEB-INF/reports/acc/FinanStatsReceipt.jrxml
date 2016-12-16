@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FinanStatsReceipt" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c63aafc0-050b-431c-8881-0d1584b619b2">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset1" uuid="89a2ec9e-7857-4b19-bedb-3185e6113ffa"/>
+	<subDataset name="dataset2" uuid="2e09d1a0-195b-45de-9d24-4c0383e4d250"/>
+	<subDataset name="dataset3" uuid="4558533b-a7b6-4152-91ca-2a6d58237d2e"/>
+	<parameter name="subData" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<field name="artiNm" class="java.lang.String"/>
+	<field name="dangiAmt" class="java.lang.String"/>
+	<field name="dangiSum" class="java.lang.String"/>
+	<field name="jungiAmt" class="java.lang.String"/>
+	<field name="jungiSum" class="java.lang.String"/>
+	<title>
+		<band height="79" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="79" uuid="933d948c-5b7a-4098-984e-12943af0aacd"/>
+				<dataSourceExpression><![CDATA[$P{subData}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["\\\\192.168.1.135\\htdocs\\FinanStatsReceipt_subreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="40">
+			<staticText>
+				<reportElement style="table" x="0" y="0" width="118" height="40" uuid="a7b687cb-71cf-41b9-90ec-9309ee88400e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[구    분]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="118" y="0" width="213" height="19" uuid="f3734ef9-42f7-4f54-91d1-2afb983357cc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[당        기]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="331" y="0" width="224" height="19" uuid="adb07007-a1b9-415d-9437-7a5c5c4726b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[전      기]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="118" y="19" width="114" height="21" uuid="3530e443-1f52-4f49-8747-975ba2046f4c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[금     액]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="232" y="19" width="99" height="21" uuid="d8f6ee34-b35a-42bf-a467-f1db9334b2ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[합     계]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="442" y="19" width="113" height="21" uuid="a40a6cb2-2f03-473d-9665-4515cb5b5277"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[합     계]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="331" y="19" width="111" height="21" uuid="4b8e3c30-c9e7-4533-b782-8a899fdd2679"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[금     액]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="table" x="0" y="0" width="118" height="20" uuid="ba054a68-157f-4e27-8587-cf2742b7dddb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{artiNm}==null? "" : $F{artiNm}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement style="table" x="118" y="0" width="114" height="20" uuid="dbbcae8d-fe76-41c3-b702-7b96922e1a93"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+					<paragraph rightIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dangiAmt}==null? "" : $F{dangiAmt}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement style="table" x="232" y="0" width="99" height="20" uuid="833a640f-6d3a-437c-8908-243c9791dc20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+					<paragraph rightIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dangiSum}== null ? "" : $F{dangiSum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement style="table" x="331" y="0" width="111" height="20" uuid="3b8cb999-b5e9-486e-bf81-d7fac7a28804"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+					<paragraph rightIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jungiAmt}== null ? " " : $F{jungiAmt}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement style="table" x="442" y="0" width="113" height="20" uuid="e0b86f4c-9043-44d0-a262-907bc9d11cbc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfFontName="H2GTRM.TTF" pdfEncoding="Identity-H"/>
+					<paragraph rightIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jungiSum}== null ? " " : $F{jungiSum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

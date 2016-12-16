@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seoul.his.hdm.consultationfee.dao.ConsultationFeeDAO">
+	<cache flushInterval="86400000" eviction="LRU" />
+	
+	<resultMap type="ConsultationFeeBean" id="ConsultationFee">
+
+		<result property="empNo" column="EMP_NO" />
+		<result property="empNm" column="EMP_NM" />
+
+ 	</resultMap>
+
+ 	<select id="selectConsultationFeeList" flushCache="false"  useCache="true" resultMap="ConsultationFee" >
+
+	select * from hm_emp
+
+ 	</select>
+
+</mapper>

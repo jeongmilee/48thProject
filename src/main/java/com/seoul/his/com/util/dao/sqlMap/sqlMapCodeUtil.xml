@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seoul.his.com.util.dao.CodeUtilDAO">
+    <cache flushInterval="86400000" eviction="LRU" />
+    
+    <select id="selectCodeList" flushCache="false" useCache="true" resultType="OutCodeBean">
+        SELECT
+            DETAIL_CODE AS code,
+            CODE_NAME AS value,
+            DETAIL_CODE_NAME AS bigValue
+        FROM
+            CM_CODE
+        WHERE
+            CODE = #{code}
+    </select>
+    
+    <select id="selectCodeName" flushCache="false" useCache="true" resultType="string">
+        SELECT 
+            DETAIL_CODE_NAME
+        FROM
+            CM_CODE
+        WHERE 
+            CODE        = #{code}
+        AND DETAIL_CODE = #{detailCode}
+    </select>
+
+</mapper>

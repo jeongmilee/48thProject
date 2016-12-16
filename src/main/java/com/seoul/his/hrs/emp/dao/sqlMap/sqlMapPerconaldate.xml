@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seoul.his.hrs.emp.dao.PerconaldateDAO">
+
+	<select id="findPerconaldateList" resultType="PerconaldateBean">
+		SELECT
+		HEIGHT ,							<!-- 신장 -->
+		WEIGHT ,							<!-- 체중 -->
+		EYESEGHT ,							<!-- 시력 -->
+		COLORBLIND ,						<!-- 색맹 -->
+		BLOOD_TYPE AS bloodType,			<!-- 혈액형 -->
+		MEDICAL_HISTORY	AS medicalHistory,	<!-- 장애유형 -->
+		RELIGION ,							<!-- 종교 -->
+		EMP_NO AS empNo,					<!-- 사원번호 -->
+		HOBBY ,								<!-- 취미 -->
+		TALENT ,							<!-- 특기 -->
+		REALESTATE,							<!-- 부동산 -->
+		LIFE_LEVEL AS lifeLevel,			<!-- 생활정도 -->
+		LIVING ,							<!-- 주거 -->
+		CITIZENSHIP ,						<!-- 시민권 -->
+		PERRESI ,							<!-- 영주권 -->
+		CTY_NAME AS	ctyName					<!-- 국명 -->
+		FROM HM_PERCONALDATE_INFO
+		where emp_no = #{empNo}				<!-- 사원번호 -->
+	</select>
+
+	<insert id="insertPerconaldate" parameterType="PerconaldateBean">
+		INSERT INTO
+		HM_PERCONALDATE_INFO
+		(
+		HEIGHT ,
+		WEIGHT ,
+		EYESEGHT ,
+		COLORBLIND ,
+		BLOOD_TYPE ,
+		MEDICAL_HISTORY ,
+		RELIGION ,
+		EMP_NO ,
+		HOBBY ,
+		TALENT ,
+		REALESTATE ,
+		LIFE_LEVEL ,
+		LIVING ,
+		CITIZENSHIP ,
+		PERRESI ,
+		CTY_NAME
+		) VALUES
+		(
+		#{height},
+		#{weight},
+		#{eyeseght},
+		#{colorblind},
+		#{bloodType},
+		#{medicalHistory},
+		#{religion},
+		#{empNo},
+		#{hobby},
+		#{talent},
+		#{realestate},
+		#{lifeLevel},
+		#{living},
+		#{citizenship},
+		#{perresi},
+		#{ctyName}
+		)
+	</insert>
+
+	<update id="updatePerconaldate" parameterType="PerconaldateBean">
+		update
+		HM_PERCONALDATE_INFO
+		set
+		HEIGHT          =#{height},			<!-- 신장 -->
+		WEIGHT          =#{weight},			<!-- 체중 -->
+		EYESEGHT        =#{eyeseght},		<!-- 시력 -->
+		COLORBLIND      =#{colorblind},		<!-- 색맹 -->
+		BLOOD_TYPE      =#{bloodType},		<!-- 혈액형 -->
+		MEDICAL_HISTORY =#{medicalHistory},	<!-- 장애유형 -->
+		RELIGION        =#{religion},		<!-- 종교 -->
+		HOBBY           =#{hobby},			<!-- 취미 -->
+		TALENT          =#{talent},			<!-- 특기 -->
+		REALESTATE      =#{realestate},		<!-- 부동산 -->
+		LIFE_LEVEL      =#{lifeLevel},		<!-- 생활정도 -->
+		LIVING          =#{living},			<!-- 주거 -->
+		CITIZENSHIP     =#{citizenship},	<!-- 시민권 -->
+		PERRESI         =#{perresi},		<!-- 영주권 -->
+		CTY_NAME        =#{ctyName}			<!-- 국명 -->
+		where
+		EMP_NO =#{empNo}
+	</update>
+
+	<delete id="deletePerconaldate" parameterType="PerconaldateBean">
+		delete from
+		HM_PERCONALDATE_INFO
+		where
+		EMP_NO =#{empNo}	<!-- 사원번호 -->
+	</delete>
+
+	<delete id="destroyPerconaldate" parameterType="String">
+		delete from
+		HM_PERCONALDATE_INFO
+		where
+		EMP_NO =#{empNo}	<!-- 사원번호 -->
+	</delete>
+
+</mapper>

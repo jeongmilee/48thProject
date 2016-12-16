@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seoul.his.hrs.emp.dao.FamilyDAO">
+
+	<select id="findFamilyList" resultType="FamilyBean">
+		SELECT
+		FAM_SEQ AS famSeq,	  <!-- 가족시퀀스 -->
+		EMP_NO AS empNo,	  <!-- 사원번호 -->
+		NAME ,				  <!-- 이름 -->
+		RELT ,				  <!-- 관계 -->
+		SPPT_YN AS spptYn,	  <!-- 부양여부 -->
+		RRN					  <!-- 주민번호 -->
+		FROM HM_FAMILY_INFO
+		where emp_no=#{empNo} <!-- 사원번호 -->
+	</select>
+
+	<insert id="insertFamily" parameterType="FamilyBean">
+		INSERT INTO
+		HM_FAMILY_INFO
+		(
+		FAM_SEQ ,
+		EMP_NO ,
+		NAME ,
+		RELT ,
+		SPPT_YN ,
+		RRN
+		) VALUES
+		(
+		FAMILY_SEQ.nextval ,	<!-- 가족시퀀스 -->
+		#{empNo},				<!-- 사원번호 -->
+		#{name},				<!-- 사원번호 -->
+		#{relt},				<!-- 사원번호 -->
+		#{spptYn},				<!-- 사원번호 -->
+		#{rrn}					<!-- 사원번호 -->
+		)
+	</insert>
+
+	<update id="updateFamily" parameterType="FamilyBean">
+		update
+		HM_FAMILY_INFO
+		set
+		NAME =#{name},			<!-- 사원번호 -->
+		RELT =#{relt},			<!-- 사원번호 -->
+		SPPT_YN =#{spptYn},		<!-- 사원번호 -->
+		RRN =#{rrn}				<!-- 주민번호 -->
+		where
+		FAM_SEQ =#{famSeq} and	<!-- 가족시퀀스 -->
+		EMP_NO =#{empNo}		<!-- 사원번호 -->
+	</update>
+
+	<delete id="deleteFamily" parameterType="FamilyBean">
+		delete from
+		HM_FAMILY_INFO
+		where
+		FAM_SEQ =#{famSeq} and  <!-- 가족시퀀스 -->
+		EMP_NO =#{empNo}		<!-- 사원번호 -->
+	</delete>
+
+	<delete id="destroyFamily" parameterType="String">
+		delete from
+		HM_FAMILY_INFO
+		where
+		EMP_NO =#{empNo}	<!-- 사원번호 -->
+	</delete>
+
+</mapper>

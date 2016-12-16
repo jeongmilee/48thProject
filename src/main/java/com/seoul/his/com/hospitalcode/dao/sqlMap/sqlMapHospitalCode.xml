@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seoul.his.com.hospitalcode.dao.HospitalCodeDAO">
+	<cache flushInterval="86400000" eviction="LRU" />
+	
+	<resultMap type="HospitalCodeBean" id="HospitalCode">
+
+		<result property="empNo" column="EMP_NO" />
+		<result property="empNm" column="EMP_NM" />
+
+ 	</resultMap>
+
+ 	<select id="selectHospitalCodeList" flushCache="false"  useCache="true" resultMap="HospitalCode" >
+
+	select * from hm_emp
+
+ 	</select>
+
+</mapper>
